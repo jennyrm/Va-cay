@@ -28,12 +28,6 @@ class MediaSelectorViewController: UIViewController {
         setupViews()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        uploadMediaButton.setImage(UIImage(systemName: "camera"), for: .normal)
-        uploadedMediaImageView.image = nil
-    }
-    
     //MARK: - Actions
     @IBAction func uploadMediaButtonTapped(_ sender: UIButton) {
         let alert = UIAlertController(title: "Add a photo or video", message: nil, preferredStyle: .alert)
@@ -88,7 +82,6 @@ extension MediaSelectorViewController: UIImagePickerControllerDelegate, UINaviga
         if let pickedImage = info[.originalImage] as? UIImage {
             guard let delegate = delegate else { return }
             delegate.mediaPickerSelected(image: pickedImage)
-            uploadMediaButton.setImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControl.State#>)
             uploadedMediaImageView.image = pickedImage
         }
         picker.dismiss(animated: true, completion: nil)

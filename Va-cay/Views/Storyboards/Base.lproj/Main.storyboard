@@ -195,14 +195,112 @@
                     <view key="view" contentMode="scaleToFill" id="MFW-oB-90d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBv-fK-8lU">
+                                <rect key="frame" x="20.5" y="310" width="373" height="45"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cCK-fx-Stf">
+                                        <rect key="frame" x="0.0" y="0.0" width="328" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rf-SA-LZw">
+                                        <rect key="frame" x="328" y="0.0" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1Rf-SA-LZw" secondAttribute="height" multiplier="1:1" id="TvI-r0-Qtl"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal" image="mappin" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="yku-Yu-6fU" kind="show" id="gFd-4A-Wi2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34m-Ll-BDU">
+                                <rect key="frame" x="161" y="118" width="93" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FB4-HY-2sF">
+                                <rect key="frame" x="28" y="167" width="366" height="45.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvV-of-Y5l">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="45.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xf-7d-upB">
+                                                <rect key="frame" x="0.0" y="0.0" width="320.5" height="45.5"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45.5" id="NC4-X7-ZL9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVa-yL-ZpR">
+                                                <rect key="frame" x="320.5" y="0.0" width="45.5" height="45.5"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="aVa-yL-ZpR" secondAttribute="height" multiplier="1:1" id="BXI-P1-lDr"/>
+                                                </constraints>
+                                                <state key="normal" image="calendar.badge.clock" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="liV-kz-289"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aBv-fK-8lU" firstAttribute="width" secondItem="MFW-oB-90d" secondAttribute="width" multiplier="0.9" id="1p7-hC-RNY"/>
+                            <constraint firstItem="aBv-fK-8lU" firstAttribute="centerX" secondItem="liV-kz-289" secondAttribute="centerX" id="2Ym-9T-Lgd"/>
+                            <constraint firstItem="aBv-fK-8lU" firstAttribute="centerY" secondItem="liV-kz-289" secondAttribute="centerY" multiplier="0.7" id="4zr-qR-yGf"/>
+                            <constraint firstItem="aBv-fK-8lU" firstAttribute="height" secondItem="MFW-oB-90d" secondAttribute="height" multiplier="0.05" id="8G5-wU-r8E"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uhz-Ca-nQn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3g-cp-XqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2333" y="126"/>
+            <point key="canvasLocation" x="2330.434782608696" y="125.89285714285714"/>
+        </scene>
+        <!--Location Manager View Controller-->
+        <scene sceneID="2hr-A1-GRH">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sVG-9w-KQv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="yku-Yu-6fU" customClass="LocationManagerViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w7n-xZ-aga">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wVV-Cq-veG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kck-8M-4Q7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wVV-Cq-veG" firstAttribute="top" secondItem="kck-8M-4Q7" secondAttribute="top" id="W9q-EE-g99"/>
+                            <constraint firstItem="wVV-Cq-veG" firstAttribute="trailing" secondItem="kck-8M-4Q7" secondAttribute="trailing" id="hJg-nR-gIX"/>
+                            <constraint firstItem="wVV-Cq-veG" firstAttribute="leading" secondItem="kck-8M-4Q7" secondAttribute="leading" id="rWU-iJ-U8x"/>
+                            <constraint firstItem="kck-8M-4Q7" firstAttribute="bottom" secondItem="wVV-Cq-veG" secondAttribute="bottom" id="yR1-Il-zCJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dUM-eD-HYN"/>
+                    <connections>
+                        <outlet property="mapView" destination="wVV-Cq-veG" id="vTF-qH-Imw"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3030" y="126"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Lz1-pV-giJ">
@@ -418,14 +516,34 @@
             </objects>
             <point key="canvasLocation" x="1553.6231884057972" y="630.80357142857144"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xGK-EE-Yso">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V8X-eh-8x1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KfE-um-73E" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8UV-WA-iEO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yku-Yu-6fU" kind="relationship" relationship="rootViewController" id="noC-Nr-Z4w"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="3029" y="-550"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="gFd-4A-Wi2"/>
         <segue reference="VFW-jN-PSY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="plus.app.fill" catalog="system" width="128" height="114"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -435,6 +553,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
