@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		645865D8133CD9789C54A4C6 /* Pods_Va_cay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DD421D3AC2E0A9378B7C84 /* Pods_Va_cay.framework */; };
+		9B1C572726648E2200CAAF0B /* ItineraryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C572626648E2200CAAF0B /* ItineraryDetailsViewController.swift */; };
 		9B335CB5265F3EF700FC202B /* UserFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B335CB4265F3EF700FC202B /* UserFeedViewController.swift */; };
 		9B335CE5265F476800FC202B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B335CE4265F476800FC202B /* GoogleService-Info.plist */; };
 		9B335CEA265F493400FC202B /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B335CE9265F493400FC202B /* test.swift */; };
 		9B335CED2660193300FC202B /* MediaSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B335CEC2660193300FC202B /* MediaSelectorViewController.swift */; };
 		9B335CF32660546C00FC202B /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B335CF22660546B00FC202B /* ErrorAlert.swift */; };
-		9B335CF626605E4400FC202B /* ItineraryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B335CF526605E4400FC202B /* ItineraryDetailsViewController.swift */; };
+		9B335CF626605E4400FC202B /* TripDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B335CF526605E4400FC202B /* TripDetailsViewController.swift */; };
 		9B543C05265F309500F5353A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C04265F309500F5353A /* AppDelegate.swift */; };
 		9B543C07265F309500F5353A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C06265F309500F5353A /* SceneDelegate.swift */; };
 		9B543C0C265F309500F5353A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B543C0A265F309500F5353A /* Main.storyboard */; };
@@ -21,16 +22,18 @@
 		9B543C11265F309800F5353A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B543C0F265F309800F5353A /* LaunchScreen.storyboard */; };
 		9B543C6F265F35AD00F5353A /* LocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C6E265F35AD00F5353A /* LocationManagerViewController.swift */; };
 		9B543C72265F35CA00F5353A /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C71265F35CA00F5353A /* LocationSearchTableViewController.swift */; };
+		9BE480EF266169800079DDBF /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE480EE266169800079DDBF /* AddActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		291561126532659012BB1D3B /* Pods-Va-cay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.release.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.release.xcconfig"; sourceTree = "<group>"; };
+		9B1C572626648E2200CAAF0B /* ItineraryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryDetailsViewController.swift; sourceTree = "<group>"; };
 		9B335CB4265F3EF700FC202B /* UserFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedViewController.swift; sourceTree = "<group>"; };
 		9B335CE4265F476800FC202B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B335CE9265F493400FC202B /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		9B335CEC2660193300FC202B /* MediaSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSelectorViewController.swift; sourceTree = "<group>"; };
 		9B335CF22660546B00FC202B /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
-		9B335CF526605E4400FC202B /* ItineraryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItineraryDetailsViewController.swift; path = "Va-cay/Controllers/View Controllers/ItineraryDetailsViewController.swift"; sourceTree = SOURCE_ROOT; };
+		9B335CF526605E4400FC202B /* TripDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripDetailsViewController.swift; path = "Va-cay/Controllers/View Controllers/TripDetailsViewController.swift"; sourceTree = SOURCE_ROOT; };
 		9B543C01265F309500F5353A /* Va-cay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Va-cay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B543C04265F309500F5353A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B543C06265F309500F5353A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		9B543C12265F309800F5353A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B543C6E265F35AD00F5353A /* LocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewController.swift; sourceTree = "<group>"; };
 		9B543C71265F35CA00F5353A /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
+		9BE480EE266169800079DDBF /* AddActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 		A8DD421D3AC2E0A9378B7C84 /* Pods_Va_cay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Va_cay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADD31EF13CC4EA801DC69E5 /* Pods-Va-cay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.debug.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,8 +174,10 @@
 				9B335CB4265F3EF700FC202B /* UserFeedViewController.swift */,
 				9B543C6E265F35AD00F5353A /* LocationManagerViewController.swift */,
 				9B543C71265F35CA00F5353A /* LocationSearchTableViewController.swift */,
-				9B335CF526605E4400FC202B /* ItineraryDetailsViewController.swift */,
+				9B335CF526605E4400FC202B /* TripDetailsViewController.swift */,
 				9B335CEC2660193300FC202B /* MediaSelectorViewController.swift */,
+				9B1C572626648E2200CAAF0B /* ItineraryDetailsViewController.swift */,
+				9BE480EE266169800079DDBF /* AddActivityViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -299,15 +305,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1C572726648E2200CAAF0B /* ItineraryDetailsViewController.swift in Sources */,
 				9B543C72265F35CA00F5353A /* LocationSearchTableViewController.swift in Sources */,
 				9B335CEA265F493400FC202B /* test.swift in Sources */,
 				9B543C6F265F35AD00F5353A /* LocationManagerViewController.swift in Sources */,
+				9BE480EF266169800079DDBF /* AddActivityViewController.swift in Sources */,
 				9B335CED2660193300FC202B /* MediaSelectorViewController.swift in Sources */,
 				9B543C05265F309500F5353A /* AppDelegate.swift in Sources */,
 				9B335CF32660546C00FC202B /* ErrorAlert.swift in Sources */,
 				9B543C07265F309500F5353A /* SceneDelegate.swift in Sources */,
 				9B335CB5265F3EF700FC202B /* UserFeedViewController.swift in Sources */,
-				9B335CF626605E4400FC202B /* ItineraryDetailsViewController.swift in Sources */,
+				9B335CF626605E4400FC202B /* TripDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
