@@ -8,22 +8,338 @@
 import UIKit
 
 class ItineraryDetailsViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    //MARK: - Properties
+    var safeArea: UILayoutGuide {
+        return self.view.safeAreaLayoutGuide
+    }
+    var calendarCounter = 0
+    
+    //MARK: - Lifecyle
+    override func loadView() {
+        super.loadView()
+        setupConstraints()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    */
+    
+    //MARK: - Functions
+    func createLabelCalendarButton() -> UIStackView {
+        let label = UILabel()
+        label.text = "Choose a date"
+        label.textColor = .systemGray4
+        label.backgroundColor = .systemGray6
+        
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
+        button.tintColor = .systemBlue
+        button.backgroundColor = .systemGray6
+        button.tag = calendarCounter
+        button.addTarget(self, action: #selector(showCalendarButtonAction), for: .touchUpInside)
+        
+        let labelButtonStackView = UIStackView()
+        labelButtonStackView.axis = .horizontal
+        labelButtonStackView.alignment = .fill
+        labelButtonStackView.distribution = .fillProportionally
+        labelButtonStackView.spacing = 0
+        
+        self.view.addSubview(label)
+        self.view.addSubview(button)
+        self.view.addSubview(labelButtonStackView)
+        
+        labelButtonStackView.addArrangedSubview(label)
+        labelButtonStackView.addArrangedSubview(button)
+    
+        calendarCounter += 1
+        
+        return labelButtonStackView
+    }
+    
+    func createFlightDetailsStackView() {
+        let flightArrivalLabel = UILabel()
+        flightArrivalLabel.text = "Flight Arrival"
+        flightArrivalLabel.textAlignment = .center
+        
+        let flightDepartureLabel = UILabel()
+        flightDepartureLabel.text = "Flight Departure"
+        flightDepartureLabel.textAlignment = .center
+        
+        let flightArrivalStackView = UIStackView()
+        flightArrivalStackView.axis = .vertical
+        flightArrivalStackView.alignment = .fill
+        flightArrivalStackView.spacing = 0
+        
+        let flightDepartureStackView = UIStackView()
+        flightDepartureStackView.axis = .vertical
+        flightDepartureStackView.alignment = .fill
+        flightDepartureStackView.spacing = 0
+        
+        self.view.addSubview(flightArrivalLabel)
+        self.view.addSubview(flightDepartureLabel)
+        self.view.addSubview(flightArrivalStackView)
+        self.view.addSubview(flightDepartureStackView)
+        self.view.addSubview(flightDetailsStackView)
 
-}
+        flightArrivalStackView.addArrangedSubview(flightArrivalLabel)
+        flightArrivalStackView.addArrangedSubview(createLabelCalendarButton())
+        
+        flightDepartureStackView.addArrangedSubview(flightDepartureLabel)
+        flightDepartureStackView.addArrangedSubview(createLabelCalendarButton())
+        
+        flightDetailsStackView.addArrangedSubview(flightArrivalStackView)
+        flightDetailsStackView.addArrangedSubview(flightDepartureStackView)
+    }
+    
+    func createHotelAccomodationStackView() {
+        let label = UILabel()
+        label.text = "Hotel/Airbnb"
+        label.textAlignment = .center
+        
+        let textField = UITextField()
+        textField.borderStyle = .line
+        
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
+        button.backgroundColor = .white
+        button.tintColor = .red
+        button.addTarget(self, action: #selector(showMapButtonAction), for: .touchUpInside)
+        
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = 0
+        
+        self.view.addSubview(label)
+        self.view.addSubview(textField)
+        self.view.addSubview(button)
+        self.view.addSubview(stackView)
+        self.view.addSubview(hotelAccomodationStackView)
+        
+        stackView.addArrangedSubview(textField)
+        stackView.addArrangedSubview(button)
+        
+        hotelAccomodationStackView.addArrangedSubview(label)
+        hotelAccomodationStackView.addArrangedSubview(stackView)
+    }
+    
+    func createTotalBudgetStackView() {
+        let label = UILabel()
+        label.text = "Total Budget"
+        label.textAlignment = .center
+        
+        let textField = UITextField()
+        textField.borderStyle = .line
+
+        self.view.addSubview(label)
+        self.view.addSubview(textField)
+        self.view.addSubview(totalBudgetStackView)
+        
+        totalBudgetStackView.addArrangedSubview(label)
+        totalBudgetStackView.addArrangedSubview(textField)
+    }
+    
+    func createAddToChecklistStackView() {
+        let label = UILabel()
+        label.text = "Checklist"
+        label.textAlignment = .center
+        
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.tintColor = .green
+        button.addTarget(self, action: #selector(addNewChecklistItem), for: .touchUpInside)
+        
+        self.view.addSubview(label)
+        self.view.addSubview(button)
+        self.view.addSubview(addToChecklistStackView)
+        
+        addToChecklistStackView.addArrangedSubview(label)
+        addToChecklistStackView.addArrangedSubview(button)
+    }
+    
+    func createScrollableStackView() {
+        self.view.addSubview(scrollView)
+        self.view.addSubview(scrollableStackView)
+        
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "square"), for: .normal)
+        button.backgroundColor = .systemGray6
+        button.tintColor = .black
+        
+        let textField = UITextField()
+        textField.backgroundColor = .systemGray6
+        textField.placeholder = "Add a to-do item"
+        
+        let textFieldButtonStackView = UIStackView()
+        textFieldButtonStackView.axis = .horizontal
+        textFieldButtonStackView.alignment = .fill
+        textFieldButtonStackView.distribution = .fillProportionally
+        textFieldButtonStackView.spacing = 0
+        
+        self.view.addSubview(button)
+        self.view.addSubview(textField)
+        self.view.addSubview(textFieldButtonStackView)
+        
+        textFieldButtonStackView.addArrangedSubview(button)
+        textFieldButtonStackView.addArrangedSubview(textField)
+        
+        scrollableStackView.addArrangedSubview(textFieldButtonStackView)
+        scrollView.addSubview(scrollableStackView)
+    }
+    
+    //    func createScrollableStackView() {
+    //        self.view.addSubview(scrollView)
+    //
+    //        let textField = UITextField()
+    //        textField.borderStyle = .line
+    //        textField.backgroundColor = .white
+    //        textFieldArr.append(textField)
+    //
+    //        self.view.addSubview(textField)
+    //        self.view.addSubview(scrollableStackView)
+    //
+    //        scrollableStackView.addArrangedSubview(textField)
+    //        scrollView.addSubview(scrollableStackView)
+    //    }
+    @objc func showCalendarButtonAction(sender: UIButton) {
+        switch (sender.tag) {
+        case 0:
+            self.performSegue(withIdentifier: "toFlightArrivalVC", sender: sender)
+        case 1:
+            self.performSegue(withIdentifier: "toFlightDepartureVC", sender: sender)
+        default:
+            break
+        }
+    }
+    
+    @objc func showMapButtonAction(sender: UIButton) {
+        switch (sender.tag) {
+        default:
+            self.performSegue(withIdentifier: "toMapVC", sender: sender)
+        }
+    }
+    
+    @objc func addNewChecklistItem() {
+        setupScrollableStackViewConstraints()
+    }
+    
+    @objc func nextVC(sender: UIButton) {
+        switch (sender.tag) {
+        default:
+            self.performSegue(withIdentifier: "toAddActivityVC", sender: sender)
+        }
+    }
+    
+    //MARK: - Constraints
+    func setupConstraints() {
+        createFlightDetailsStackView()
+        createHotelAccomodationStackView()
+        createTotalBudgetStackView()
+        createAddToChecklistStackView()
+        self.view.addSubview(nextButton)
+        
+        flightDetailsStackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 100).isActive = true
+        flightDetailsStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
+        flightDetailsStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
+        
+        hotelAccomodationStackView.topAnchor.constraint(equalTo: flightDetailsStackView.bottomAnchor, constant: 32).isActive = true
+        hotelAccomodationStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
+        hotelAccomodationStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
+        
+        totalBudgetStackView.topAnchor.constraint(equalTo: hotelAccomodationStackView.bottomAnchor, constant: 32).isActive = true
+        totalBudgetStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
+        totalBudgetStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
+        
+        addToChecklistStackView.topAnchor.constraint(equalTo: totalBudgetStackView.bottomAnchor, constant: 32).isActive = true
+        addToChecklistStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 140).isActive = true
+        addToChecklistStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -140).isActive = true
+        
+        setupScrollableStackViewConstraints()
+        
+        nextButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 32).isActive = true
+        nextButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 140).isActive = true
+        nextButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -140).isActive = true
+        nextButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -100).isActive = true
+    }
+    
+    func setupScrollableStackViewConstraints() {
+        createScrollableStackView()
+        
+        scrollView.topAnchor.constraint(equalTo: addToChecklistStackView.bottomAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -200).isActive = true
+        
+        scrollableStackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        scrollableStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        scrollableStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+    }
+    
+    //MARK: - Views
+    var flightDetailsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 16
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    var hotelAccomodationStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    var totalBudgetStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    var addToChecklistStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fillProportionally
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    var scrollableStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    var nextButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Next", for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        button.layer.cornerRadius = 30.0
+        button.tag = 0
+        button.addTarget(self, action: #selector(nextVC), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+}//End of class
