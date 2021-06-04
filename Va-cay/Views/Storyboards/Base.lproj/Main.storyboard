@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Pn-oo-3mX">
-                                <rect key="frame" x="0.0" y="88" width="414" height="524"/>
+                                <rect key="frame" x="0.0" y="188" width="414" height="424"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktR-Lp-bsa">
                                 <rect key="frame" x="96" y="687" width="222" height="100"/>
@@ -33,15 +33,27 @@
                                     <segue destination="DDW-h3-aWU" kind="show" id="znz-mM-Txb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where is your next destination?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrQ-R0-jfb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5zF-uc-WYA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9ZC-aH-V0T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ktR-Lp-bsa" firstAttribute="leading" secondItem="9ZC-aH-V0T" secondAttribute="leading" constant="96" id="9h0-0e-Zr8"/>
+                            <constraint firstItem="3Pn-oo-3mX" firstAttribute="top" secondItem="vrQ-R0-jfb" secondAttribute="bottom" id="Mcc-en-Pia"/>
                             <constraint firstItem="9ZC-aH-V0T" firstAttribute="trailing" secondItem="ktR-Lp-bsa" secondAttribute="trailing" constant="96" id="Ogk-ld-qGb"/>
                             <constraint firstItem="9ZC-aH-V0T" firstAttribute="bottom" secondItem="ktR-Lp-bsa" secondAttribute="bottom" constant="75" id="RLI-kW-ht5"/>
+                            <constraint firstItem="vrQ-R0-jfb" firstAttribute="top" secondItem="9ZC-aH-V0T" secondAttribute="top" id="X6x-5Q-FJG"/>
+                            <constraint firstItem="vrQ-R0-jfb" firstAttribute="leading" secondItem="9ZC-aH-V0T" secondAttribute="leading" id="b8L-k5-Kpy"/>
                             <constraint firstItem="ktR-Lp-bsa" firstAttribute="top" secondItem="3Pn-oo-3mX" secondAttribute="bottom" constant="75" id="baK-XV-r2r"/>
-                            <constraint firstItem="3Pn-oo-3mX" firstAttribute="top" secondItem="9ZC-aH-V0T" secondAttribute="top" id="i8j-Jn-dF0"/>
+                            <constraint firstItem="9ZC-aH-V0T" firstAttribute="trailing" secondItem="vrQ-R0-jfb" secondAttribute="trailing" id="rHn-pF-bc2"/>
                             <constraint firstItem="3Pn-oo-3mX" firstAttribute="leading" secondItem="9ZC-aH-V0T" secondAttribute="leading" id="tdY-lx-0Gr"/>
                             <constraint firstItem="9ZC-aH-V0T" firstAttribute="trailing" secondItem="3Pn-oo-3mX" secondAttribute="trailing" id="wBD-UJ-Hwy"/>
                         </constraints>
@@ -121,6 +133,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="tripCalendarButtonTapped:" destination="DDW-h3-aWU" eventType="touchUpInside" id="nPm-To-4MO"/>
                                                     <segue destination="E8T-T9-ejh" kind="presentation" id="ceV-XU-6a7"/>
                                                 </connections>
                                             </button>
@@ -155,7 +168,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="ewc-Yv-uN5" kind="show" id="K1E-fa-56i"/>
+                                    <segue destination="ewc-Yv-uN5" kind="show" identifier="toItineraryDetailsVC" id="K1E-fa-56i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -182,6 +195,8 @@
                     <navigationItem key="navigationItem" id="xo3-B3-hr8"/>
                     <connections>
                         <outlet property="mediaContainerView" destination="YJU-Jx-sIC" id="ESW-Pn-4hD"/>
+                        <outlet property="tripDateLabel" destination="xxR-Rb-DcW" id="0Ag-r7-mL4"/>
+                        <outlet property="tripNameTextField" destination="84f-hE-NwD" id="z37-ZP-uf1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnL-4W-33w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

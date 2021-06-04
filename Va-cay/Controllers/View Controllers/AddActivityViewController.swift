@@ -10,10 +10,11 @@ import UIKit
 class AddActivityViewController: UIViewController {
     
     //MARK: - Properties
-    var activityCounter = 1
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
     }
+    var activityCounter = 1
+    var activitiesTextFieldItems = [Int: String]()
     var activitiesArray = [UITextField]()
     
     //MARK: - Lifecycle
@@ -37,7 +38,6 @@ class AddActivityViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
         button.tintColor = .systemBlue
-        button.tag = 0
         button.addTarget(self, action: #selector(showCalendarButtonAction), for: .touchUpInside)
         
         self.view.addSubview(label)
@@ -75,6 +75,8 @@ class AddActivityViewController: UIViewController {
         textField.backgroundColor = .white
         textField.placeholder = "Enter activity here or use the map"
         textField.borderStyle = .line
+        textField.tag = activityCounter
+        textField.addTarget(self, action: #selector(AddActivityViewController.textFieldDidChangeActivityItem(_:)), for: .editingChanged)
         activitiesArray.append(textField)
         
         let button = UIButton()
@@ -122,7 +124,7 @@ class AddActivityViewController: UIViewController {
         addDayButton.setTitle("Add Day", for: .normal)
         addDayButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         addDayButton.layer.cornerRadius = 30.0
-        addDayButton.addTarget(self, action: #selector(clearAllInput), for: .touchUpInside)
+        addDayButton.addTarget(self, action: #selector(updateView), for: .touchUpInside)
         
         let submitButton = UIButton()
         submitButton.setTitle("Submit", for: .normal)
@@ -138,10 +140,7 @@ class AddActivityViewController: UIViewController {
     }
     
     @objc func showCalendarButtonAction(sender: UIButton) {
-        switch sender.tag {
-        default:
-            self.performSegue(withIdentifier: "toCalendarVC", sender: sender)            
-        }
+        self.performSegue(withIdentifier: "toCalendarVC", sender: sender)
     }
     
     @objc func addActivityButtonAction() {
@@ -156,10 +155,16 @@ class AddActivityViewController: UIViewController {
         }
     }
     
-    @objc func clearAllInput() {
-        for textfield in activitiesArray {
-            textfield.text = ""
-        }
+    @objc func textFieldDidChangeActivityItem(_ textField: UITextField) {
+        activitiesTextFieldItems[textField.tag] = textField.text
+        print(activitiesTextFieldItems)
+    }
+    
+    @objc func updateView() {
+        ItineraryController.sharedInstance.itineraryPlaceholder["activities"] = activitiesTextFieldItems
+//        for textfield in activitiesArray {
+//            textfield.text = ""
+//        }
     }
     
     //MARK: - Constraints

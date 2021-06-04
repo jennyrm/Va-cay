@@ -14,6 +14,10 @@ class ItineraryDetailsViewController: UIViewController {
         return self.view.safeAreaLayoutGuide
     }
     var calendarCounter = 0
+    var budgetTextField: UITextField?
+    var checklistCounter = 0
+    var checklist = [String]()
+    var checklistTextFieldItems = [UITextField]()
     
     //MARK: - Lifecyle
     override func loadView() {
@@ -23,9 +27,32 @@ class ItineraryDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
     }
     
     //MARK: - Functions
+    func updateView() {
+        if let budget = ItineraryController.sharedInstance.itineraryPlaceholder["budget"] as? String {
+            budgetTextField?.text = budget
+        }
+        if let checklistDictionary = ItineraryController.sharedInstance.itineraryPlaceholder["checklist"] as? [String] {
+            for index in 0..<checklistDictionary.count {
+                setupScrollableStackViewConstraints()
+                checklistTextFieldItems[index].text = checklistDictionary[index]
+            }
+        }
+    }
+    
+    func saveTextFieldInputs() {
+        ItineraryController.sharedInstance.itineraryPlaceholder["budget"] = budgetTextField?.text
+        //if checklist textfield is empty, dont append to local checklist variable
+        checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
+        //add
+        ItineraryController.sharedInstance.itineraryPlaceholder["checklist"] = checklist
+        checklist = []
+        print(ItineraryController.sharedInstance.itineraryPlaceholder)
+    }
+    
     func createLabelCalendarButton() -> UIStackView {
         let label = UILabel()
         label.text = "Choose a date"
@@ -51,7 +78,7 @@ class ItineraryDetailsViewController: UIViewController {
         
         labelButtonStackView.addArrangedSubview(label)
         labelButtonStackView.addArrangedSubview(button)
-    
+        
         calendarCounter += 1
         
         return labelButtonStackView
@@ -81,7 +108,7 @@ class ItineraryDetailsViewController: UIViewController {
         self.view.addSubview(flightArrivalStackView)
         self.view.addSubview(flightDepartureStackView)
         self.view.addSubview(flightDetailsStackView)
-
+        
         flightArrivalStackView.addArrangedSubview(flightArrivalLabel)
         flightArrivalStackView.addArrangedSubview(createLabelCalendarButton())
         
@@ -132,7 +159,8 @@ class ItineraryDetailsViewController: UIViewController {
         
         let textField = UITextField()
         textField.borderStyle = .line
-
+        budgetTextField = textField
+        
         self.view.addSubview(label)
         self.view.addSubview(textField)
         self.view.addSubview(totalBudgetStackView)
@@ -171,6 +199,8 @@ class ItineraryDetailsViewController: UIViewController {
         let textField = UITextField()
         textField.backgroundColor = .systemGray6
         textField.placeholder = "Add a to-do item"
+        textField.tag = checklistCounter
+        checklistTextFieldItems.append(textField)
         
         let textFieldButtonStackView = UIStackView()
         textFieldButtonStackView.axis = .horizontal
@@ -222,14 +252,13 @@ class ItineraryDetailsViewController: UIViewController {
     }
     
     @objc func addNewChecklistItem() {
+        checklistCounter += 1
         setupScrollableStackViewConstraints()
     }
     
     @objc func nextVC(sender: UIButton) {
-        switch (sender.tag) {
-        default:
-            self.performSegue(withIdentifier: "toAddActivityVC", sender: sender)
-        }
+        saveTextFieldInputs()
+        self.performSegue(withIdentifier: "toAddActivityVC", sender: sender)
     }
     
     //MARK: - Constraints
@@ -336,7 +365,6 @@ class ItineraryDetailsViewController: UIViewController {
         button.setTitle("Next", for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         button.layer.cornerRadius = 30.0
-        button.tag = 0
         button.addTarget(self, action: #selector(nextVC), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
