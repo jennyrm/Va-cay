@@ -43,6 +43,8 @@ class LocationManagerViewController: UIViewController {
         
         locationSearchTableVC.mapView = mapView
         locationSearchTableVC.handleMapSearchDelegate = self
+        
+        loadMapAnnotations()
     }
 }//End of class
 
@@ -82,9 +84,24 @@ extension LocationManagerViewController: HandleMapSearch {
             annotation.subtitle = "\(city) \(state)"
         }
         mapView.addAnnotation(annotation)
+        ItineraryController.sharedInstance.itineraryPlaceholder["latitude"] = annotation.coordinate.latitude
+        ItineraryController.sharedInstance.itineraryPlaceholder["longitude"] = annotation.coordinate.longitude
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)
+    }
+    
+    func loadMapAnnotations() {
+        let annotation = MKPointAnnotation()
+        print(ItineraryController.sharedInstance.mapCoordinates)
+        if let latitude = ItineraryController.sharedInstance.mapCoordinates["latitude"] as? Double {
+            annotation.coordinate.latitude = latitude
+        }
+        if let longitude = ItineraryController.sharedInstance.mapCoordinates["longitude"] as? Double {
+            annotation.coordinate.longitude = longitude
+        }
+        mapView.addAnnotation(annotation)
+        print(annotation.coordinate)
     }
 }//End of extension
 

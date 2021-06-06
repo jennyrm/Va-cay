@@ -23,6 +23,12 @@
 		9B543C6F265F35AD00F5353A /* LocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C6E265F35AD00F5353A /* LocationManagerViewController.swift */; };
 		9B543C72265F35CA00F5353A /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C71265F35CA00F5353A /* LocationSearchTableViewController.swift */; };
 		9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83332926673108008EB6E9 /* Itinerary.swift */; };
+		9BB77709266A92BE008D3645 /* TripCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */; };
+		9BB77710266ADB04008D3645 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7770F266ADB03008D3645 /* DateExtension.swift */; };
+		9BB77715266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77714266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift */; };
+		9BB77719266B3A7E008D3645 /* FlightDepartureCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77718266B3A7E008D3645 /* FlightDepartureCalendarViewController.swift */; };
+		9BB7771D266B3B4D008D3645 /* DayCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7771C266B3B4D008D3645 /* DayCalendarViewController.swift */; };
+		9BB77721266C1ECE008D3645 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77720266C1ECE008D3645 /* Protocols.swift */; };
 		9BE480EF266169800079DDBF /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE480EE266169800079DDBF /* AddActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +51,12 @@
 		9B543C6E265F35AD00F5353A /* LocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewController.swift; sourceTree = "<group>"; };
 		9B543C71265F35CA00F5353A /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		9B83332926673108008EB6E9 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
+		9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCalendarViewController.swift; sourceTree = "<group>"; };
+		9BB7770F266ADB03008D3645 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		9BB77714266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightArrivalCalendarViewController.swift; sourceTree = "<group>"; };
+		9BB77718266B3A7E008D3645 /* FlightDepartureCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDepartureCalendarViewController.swift; sourceTree = "<group>"; };
+		9BB7771C266B3B4D008D3645 /* DayCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCalendarViewController.swift; sourceTree = "<group>"; };
+		9BB77720266C1ECE008D3645 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		9BE480EE266169800079DDBF /* AddActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 		A8DD421D3AC2E0A9378B7C84 /* Pods_Va_cay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Va_cay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADD31EF13CC4EA801DC69E5 /* Pods-Va-cay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.debug.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				9B335CF22660546B00FC202B /* ErrorAlert.swift */,
+				9BB7770F266ADB03008D3645 /* DateExtension.swift */,
+				9BB77720266C1ECE008D3645 /* Protocols.swift */,
 			);
 			path = "Helper+Extensions";
 			sourceTree = "<group>";
@@ -178,9 +192,13 @@
 				9B543C6E265F35AD00F5353A /* LocationManagerViewController.swift */,
 				9B543C71265F35CA00F5353A /* LocationSearchTableViewController.swift */,
 				9B335CF526605E4400FC202B /* TripDetailsViewController.swift */,
+				9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */,
 				9B335CEC2660193300FC202B /* MediaSelectorViewController.swift */,
 				9B1C572626648E2200CAAF0B /* ItineraryDetailsViewController.swift */,
+				9BB77714266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift */,
+				9BB77718266B3A7E008D3645 /* FlightDepartureCalendarViewController.swift */,
 				9BE480EE266169800079DDBF /* AddActivityViewController.swift */,
+				9BB7771C266B3B4D008D3645 /* DayCalendarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -308,12 +326,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB7771D266B3B4D008D3645 /* DayCalendarViewController.swift in Sources */,
 				9B1C572726648E2200CAAF0B /* ItineraryDetailsViewController.swift in Sources */,
+				9BB77710266ADB04008D3645 /* DateExtension.swift in Sources */,
+				9BB77721266C1ECE008D3645 /* Protocols.swift in Sources */,
+				9BB77709266A92BE008D3645 /* TripCalendarViewController.swift in Sources */,
 				9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */,
+				9BB77715266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift in Sources */,
 				9B543C72265F35CA00F5353A /* LocationSearchTableViewController.swift in Sources */,
 				9B335CEA265F493400FC202B /* ItineraryController.swift in Sources */,
 				9B543C6F265F35AD00F5353A /* LocationManagerViewController.swift in Sources */,
 				9BE480EF266169800079DDBF /* AddActivityViewController.swift in Sources */,
+				9BB77719266B3A7E008D3645 /* FlightDepartureCalendarViewController.swift in Sources */,
 				9B335CED2660193300FC202B /* MediaSelectorViewController.swift in Sources */,
 				9B543C05265F309500F5353A /* AppDelegate.swift in Sources */,
 				9B335CF32660546C00FC202B /* ErrorAlert.swift in Sources */,

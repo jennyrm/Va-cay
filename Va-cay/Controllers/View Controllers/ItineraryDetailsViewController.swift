@@ -13,11 +13,14 @@ class ItineraryDetailsViewController: UIViewController {
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
     }
+    var flightArrivalDateLabel = UILabel()
+    var flightDepartureDateLabel = UILabel()
+    var flightArrivalOrDeparture: String?
     var calendarCounter = 0
-    var budgetTextField: UITextField?
     var checklistCounter = 0
-    var checklist = [String]()
+    var budgetTextField: UITextField?
     var checklistTextFieldItems = [UITextField]()
+    var checklist = [String]()
     
     //MARK: - Lifecyle
     override func loadView() {
@@ -32,6 +35,12 @@ class ItineraryDetailsViewController: UIViewController {
     
     //MARK: - Functions
     func updateView() {
+        if let flightArrival = ItineraryController.sharedInstance.itineraryPlaceholder["flightArrival"] as? Date {
+            flightArrivalDateLabel.text = flightArrival.formatToStringWithShortDateAndTime()
+        }
+        if let flightDeparture = ItineraryController.sharedInstance.itineraryPlaceholder["flightDeparture"] as? Date {
+            flightDepartureDateLabel.text = flightDeparture.formatToStringWithShortDateAndTime()
+        }
         if let budget = ItineraryController.sharedInstance.itineraryPlaceholder["budget"] as? String {
             budgetTextField?.text = budget
         }
@@ -53,33 +62,31 @@ class ItineraryDetailsViewController: UIViewController {
         print(ItineraryController.sharedInstance.itineraryPlaceholder)
     }
     
-    func createLabelCalendarButton() -> UIStackView {
-        let label = UILabel()
-        label.text = "Choose a date"
-        label.textColor = .systemGray4
-        label.backgroundColor = .systemGray6
+    func createLabelCalendarButton(with flightLabel: UILabel) -> UIStackView {
+        flightLabel.textColor = .black
+        flightLabel.backgroundColor = .systemGray6
+        flightLabel.textAlignment = .center
         
         let button = UIButton()
         button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
         button.tintColor = .systemBlue
         button.backgroundColor = .systemGray6
         button.tag = calendarCounter
+        calendarCounter += 1
         button.addTarget(self, action: #selector(showCalendarButtonAction), for: .touchUpInside)
         
         let labelButtonStackView = UIStackView()
         labelButtonStackView.axis = .horizontal
         labelButtonStackView.alignment = .fill
-        labelButtonStackView.distribution = .fillProportionally
-        labelButtonStackView.spacing = 0
+        labelButtonStackView.distribution = .fill
+        labelButtonStackView.spacing = 8
         
-        self.view.addSubview(label)
+        self.view.addSubview(flightLabel)
         self.view.addSubview(button)
         self.view.addSubview(labelButtonStackView)
         
-        labelButtonStackView.addArrangedSubview(label)
+        labelButtonStackView.addArrangedSubview(flightLabel)
         labelButtonStackView.addArrangedSubview(button)
-        
-        calendarCounter += 1
         
         return labelButtonStackView
     }
@@ -96,12 +103,12 @@ class ItineraryDetailsViewController: UIViewController {
         let flightArrivalStackView = UIStackView()
         flightArrivalStackView.axis = .vertical
         flightArrivalStackView.alignment = .fill
-        flightArrivalStackView.spacing = 0
+        flightArrivalStackView.spacing = 4
         
         let flightDepartureStackView = UIStackView()
         flightDepartureStackView.axis = .vertical
         flightDepartureStackView.alignment = .fill
-        flightDepartureStackView.spacing = 0
+        flightDepartureStackView.spacing = 4
         
         self.view.addSubview(flightArrivalLabel)
         self.view.addSubview(flightDepartureLabel)
@@ -110,10 +117,10 @@ class ItineraryDetailsViewController: UIViewController {
         self.view.addSubview(flightDetailsStackView)
         
         flightArrivalStackView.addArrangedSubview(flightArrivalLabel)
-        flightArrivalStackView.addArrangedSubview(createLabelCalendarButton())
+        flightArrivalStackView.addArrangedSubview(createLabelCalendarButton(with: flightArrivalDateLabel))
         
         flightDepartureStackView.addArrangedSubview(flightDepartureLabel)
-        flightDepartureStackView.addArrangedSubview(createLabelCalendarButton())
+        flightDepartureStackView.addArrangedSubview(createLabelCalendarButton(with: flightDepartureDateLabel))
         
         flightDetailsStackView.addArrangedSubview(flightArrivalStackView)
         flightDetailsStackView.addArrangedSubview(flightDepartureStackView)
@@ -236,8 +243,10 @@ class ItineraryDetailsViewController: UIViewController {
     @objc func showCalendarButtonAction(sender: UIButton) {
         switch (sender.tag) {
         case 0:
+            flightArrivalOrDeparture = "flightArrival"
             self.performSegue(withIdentifier: "toFlightArrivalVC", sender: sender)
         case 1:
+            flightArrivalOrDeparture = "flightDeparture"
             self.performSegue(withIdentifier: "toFlightDepartureVC", sender: sender)
         default:
             break
@@ -370,4 +379,28 @@ class ItineraryDetailsViewController: UIViewController {
         return button
     }()
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toFlightArrivalVC" {
+            guard let destinationVC = segue.destination as? FlightArrivalCalendarViewController else { return }
+            destinationVC.delegate = self
+        }
+        if segue.identifier == "toFlightDepartureVC" {
+            guard let destinationVC = segue.destination as? FlightDepartureCalendarViewController else { return }
+            destinationVC.delegate = self
+        }
+    }
+    
 }//End of class
+
+//MARK: - Extensions
+extension ItineraryDetailsViewController: DatePickerDelegate {
+    func dateSelected(_ date: Date?) {
+        if flightArrivalOrDeparture == "flightArrival" {
+            flightArrivalDateLabel.text = date?.formatToStringWithShortDateAndTime()
+        }
+        if flightArrivalOrDeparture == "flightDeparture" {
+            flightDepartureDateLabel.text = date?.formatToStringWithShortDateAndTime()
+        }
+    }
+}//End of extension

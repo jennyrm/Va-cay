@@ -13,9 +13,11 @@ class AddActivityViewController: UIViewController {
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
     }
+    var dayDateLabel: UILabel?
     var activityCounter = 1
     var activitiesTextFieldItems = [Int: String]()
     var activitiesArray = [UITextField]()
+    var costTextField: UITextField?
     
     //MARK: - Lifecycle
     override func loadView() {
@@ -25,15 +27,24 @@ class AddActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
     }
     
     //MARK: - Functions
+    func updateView() {
+        if let day = ItineraryController.sharedInstance.itineraryPlaceholder["day"] as? Date {
+            dayDateLabel?.text = day.formatToStringWithLongDateAndTime()
+        }
+    }
+    
     func createCalendarStackView() {
         let label = UILabel()
-        label.text = "Use the calendar to choose a date"
-        label.textColor = .systemGray4
+        label.textColor = .black
         label.layer.borderWidth = 1.0
         label.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+//        label.backgroundColor = .systemGray6
+        label.textAlignment = .center
+        dayDateLabel = label
         
         let button = UIButton()
         button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
@@ -76,7 +87,6 @@ class AddActivityViewController: UIViewController {
         textField.placeholder = "Enter activity here or use the map"
         textField.borderStyle = .line
         textField.tag = activityCounter
-        textField.addTarget(self, action: #selector(AddActivityViewController.textFieldDidChangeActivityItem(_:)), for: .editingChanged)
         activitiesArray.append(textField)
         
         let button = UIButton()
@@ -109,7 +119,9 @@ class AddActivityViewController: UIViewController {
         label.textAlignment = .center
         
         let textField = UITextField()
-        textField.borderStyle = .bezel
+        textField.borderStyle = .line
+        costTextField = textField
+        
         
         self.view.addSubview(label)
         self.view.addSubview(textField)
@@ -124,7 +136,7 @@ class AddActivityViewController: UIViewController {
         addDayButton.setTitle("Add Day", for: .normal)
         addDayButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         addDayButton.layer.cornerRadius = 30.0
-        addDayButton.addTarget(self, action: #selector(updateView), for: .touchUpInside)
+//        addDayButton.addTarget(self, action: #selector(), for: .touchUpInside)
         
         let submitButton = UIButton()
         submitButton.setTitle("Submit", for: .normal)
@@ -140,7 +152,7 @@ class AddActivityViewController: UIViewController {
     }
     
     @objc func showCalendarButtonAction(sender: UIButton) {
-        self.performSegue(withIdentifier: "toCalendarVC", sender: sender)
+        self.performSegue(withIdentifier: "toDayCalendarVC", sender: sender)
     }
     
     @objc func addActivityButtonAction() {
@@ -153,18 +165,6 @@ class AddActivityViewController: UIViewController {
         default:
             self.performSegue(withIdentifier: "toMapVC", sender: sender)
         }
-    }
-    
-    @objc func textFieldDidChangeActivityItem(_ textField: UITextField) {
-        activitiesTextFieldItems[textField.tag] = textField.text
-        print(activitiesTextFieldItems)
-    }
-    
-    @objc func updateView() {
-        ItineraryController.sharedInstance.itineraryPlaceholder["activities"] = activitiesTextFieldItems
-//        for textfield in activitiesArray {
-//            textfield.text = ""
-//        }
     }
     
     //MARK: - Constraints
@@ -226,7 +226,7 @@ class AddActivityViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .fill
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.spacing = 0
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -277,5 +277,19 @@ class AddActivityViewController: UIViewController {
         return stackView
     }()
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDayCalendarVC" {
+            guard let destinationVC = segue.destination as? DayCalendarViewController else { return }
+            destinationVC.delegate = self
+        }
+    }
+    
 }//End of class
 
+//MARK: - Extensions
+extension AddActivityViewController: DatePickerDelegate {
+    func dateSelected(_ date: Date?) {
+        dayDateLabel?.text = date?.formatToStringWithLongDateAndTime()
+    }
+}//End of extension

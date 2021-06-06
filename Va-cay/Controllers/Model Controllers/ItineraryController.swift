@@ -16,6 +16,7 @@ class ItineraryController {
     //MARK: - Source of Truth
     var itineraryPlaceholder = [String: Any]()
     var itineraries = [Itinerary]()
+    var mapCoordinates = [String: Any]()
     
     //MARK: - Reference to DB
     let db = Firestore.firestore()
