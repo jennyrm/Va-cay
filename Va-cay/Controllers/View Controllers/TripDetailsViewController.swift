@@ -15,7 +15,7 @@ class TripDetailsViewController: UIViewController {
     @IBOutlet weak var tripDateLabel: UILabel!
     
     //MARK: - Properties
-//    var selectedImage = UIImage?
+    var tripImage: UIImage?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -23,9 +23,9 @@ class TripDetailsViewController: UIViewController {
         updateView()
     }
     
-    //MARK: - Outlets
-    @IBAction func tripCalendarButtonTapped(_ sender: UIButton) {
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveTextFieldInputs()
     }
     
     //MARK: - Functions
@@ -34,7 +34,10 @@ class TripDetailsViewController: UIViewController {
             tripNameTextField.text = tripName
         }
         if let tripDate = ItineraryController.sharedInstance.itineraryPlaceholder["tripDate"] as? Date {
-            self.tripDateLabel.text = tripDate.formatToString()
+            tripDateLabel.text = tripDate.formatToString()
+        }
+        if let tripImage = ItineraryController.sharedInstance.itineraryPlaceholder["tripImage"] as? UIImage {
+            self.tripImage = tripImage
         }
     }
     
@@ -42,15 +45,25 @@ class TripDetailsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMediaSelectorVC" {
             guard let destinationVC = segue.destination as? MediaSelectorViewController else { return }
+            destinationVC.tripImage = tripImage
             destinationVC.delegate = self
         }
         if segue.identifier == "toItineraryDetailsVC" {
             guard let _ = segue.destination as? ItineraryDetailsViewController else { return }
-            ItineraryController.sharedInstance.itineraryPlaceholder["tripName"] = tripNameTextField.text
+            saveTextFieldInputs()
         }
         if segue.identifier == "toTripCalendarVC" {
             guard let destinationVC = segue.destination as? TripCalendarViewController else { return }
             destinationVC.delegate = self
+        }
+    }
+    
+    func saveTextFieldInputs() {
+        if tripNameTextField.text != "" {
+            ItineraryController.sharedInstance.itineraryPlaceholder["tripName"] = tripNameTextField.text
+        }
+        if tripImage != nil {
+            ItineraryController.sharedInstance.itineraryPlaceholder["tripImage"] = tripImage
         }
     }
     
@@ -59,7 +72,7 @@ class TripDetailsViewController: UIViewController {
 //MARK: - Extensions
 extension TripDetailsViewController: MediaSelectorDelegate {
     func mediaPickerSelected(image: UIImage) {
-//        self.selectedImage = image
+        self.tripImage = image
     }
 }//End of extension
 

@@ -1,18 +1,18 @@
 //
-//  LocationSearchTableViewController.swift
+//  HotelAirbnbLocationSearchTableViewController.swift
 //  Va-cay
 //
-//  Created by Jenny Morales on 5/26/21.
+//  Created by Jenny Morales on 6/6/21.
 //
 
 import UIKit
 import MapKit
 
-class LocationSearchTableViewController: UITableViewController {
+class HotelAirbnbLocationSearchTableViewController: UITableViewController {
     
     var matchingItems: [MKMapItem] = []
-    var mapView: MKMapView? = nil
-    var handleMapSearchDelegate: HandleMapSearch? = nil
+    var mapView: MKMapView?
+    var handleMapSearchDelegate: HandleMapSearch?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class LocationSearchTableViewController: UITableViewController {
 }//End of class
 
 //MARK: - Extensions
-extension LocationSearchTableViewController: UISearchResultsUpdating {
+extension HotelAirbnbLocationSearchTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let mapView = mapView,
               let searchBarText = searchController.searchBar.text else { return }
@@ -38,12 +38,12 @@ extension LocationSearchTableViewController: UISearchResultsUpdating {
     }
 }//End of extension
 
-extension LocationSearchTableViewController {
+extension HotelAirbnbLocationSearchTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchingItems.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "hotelAirbnbLocationCell")
         let selectedItem = matchingItems[indexPath.row].placemark
         cell?.textLabel?.text = selectedItem.name
         let address = "\(selectedItem.thoroughfare ?? ""), \(selectedItem.locality ?? ""), \(selectedItem.subLocality ?? ""), \(selectedItem.administrativeArea ?? ""), \(selectedItem.postalCode ?? ""), \(selectedItem.country ?? "")"
@@ -57,3 +57,4 @@ extension LocationSearchTableViewController {
         dismiss(animated: true, completion: nil)
     }
 }//End of extension
+

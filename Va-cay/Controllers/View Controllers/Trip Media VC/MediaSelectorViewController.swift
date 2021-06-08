@@ -20,6 +20,7 @@ class MediaSelectorViewController: UIViewController {
     
     //MARK: - Properties
     let imagePicker = UIImagePickerController()
+    var tripImage: UIImage?
     weak var delegate: MediaSelectorDelegate?
     
     //MARK: - Lifecycle
@@ -49,6 +50,10 @@ class MediaSelectorViewController: UIViewController {
     }
 
     func setupViews() {
+        if let tripImage = tripImage {
+            uploadedMediaImageView.image = tripImage
+            print(tripImage)
+        }
         uploadedMediaImageView.contentMode = .scaleAspectFill
         uploadedMediaImageView.clipsToBounds = true
         uploadedMediaImageView.backgroundColor = .gray

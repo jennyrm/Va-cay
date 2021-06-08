@@ -16,8 +16,7 @@ class ItineraryDetailsViewController: UIViewController {
     var flightArrivalDateLabel = UILabel()
     var flightDepartureDateLabel = UILabel()
     var flightArrivalOrDeparture: String?
-    var calendarCounter = 0
-    var checklistCounter = 0
+    var hotelAirbnbTextField: UITextField?
     var budgetTextField: UITextField?
     var checklistTextFieldItems = [UITextField]()
     var checklist = [String]()
@@ -33,6 +32,11 @@ class ItineraryDetailsViewController: UIViewController {
         updateView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveTextFieldInputs()
+    }
+    
     //MARK: - Functions
     func updateView() {
         if let flightArrival = ItineraryController.sharedInstance.itineraryPlaceholder["flightArrival"] as? Date {
@@ -41,25 +45,38 @@ class ItineraryDetailsViewController: UIViewController {
         if let flightDeparture = ItineraryController.sharedInstance.itineraryPlaceholder["flightDeparture"] as? Date {
             flightDepartureDateLabel.text = flightDeparture.formatToStringWithShortDateAndTime()
         }
+        if let hotelAirbnb = ItineraryController.sharedInstance.itineraryPlaceholder["hotelAirbnb"] as? String {
+            hotelAirbnbTextField?.text = hotelAirbnb
+        }
+//        if let hotelAirbnbCoordinates = ItineraryController.sharedInstance.itineraryPlaceholder["hotelAirbnbMapCoordinates"] as? [ [String?? : (Double, Double)] ] {
+//            let title = hotelAirbnbCoordinates[0].keys
+//            hotelAirbnbTextField?.text = "\(title)"
+//        }
         if let budget = ItineraryController.sharedInstance.itineraryPlaceholder["budget"] as? String {
             budgetTextField?.text = budget
         }
-        if let checklistDictionary = ItineraryController.sharedInstance.itineraryPlaceholder["checklist"] as? [String] {
-            for index in 0..<checklistDictionary.count {
+        if let checklist = ItineraryController.sharedInstance.itineraryPlaceholder["checklist"] as? [String] {
+            for index in 0..<checklist.count {
                 setupScrollableStackViewConstraints()
-                checklistTextFieldItems[index].text = checklistDictionary[index]
+                checklistTextFieldItems[index].text = checklist[index]
             }
         }
     }
     
     func saveTextFieldInputs() {
-        ItineraryController.sharedInstance.itineraryPlaceholder["budget"] = budgetTextField?.text
-        //if checklist textfield is empty, dont append to local checklist variable
-        checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
-        //add
-        ItineraryController.sharedInstance.itineraryPlaceholder["checklist"] = checklist
-        checklist = []
-        print(ItineraryController.sharedInstance.itineraryPlaceholder)
+        if hotelAirbnbTextField?.text != "" {
+            ItineraryController.sharedInstance.itineraryPlaceholder["hotelAirbnb"] = hotelAirbnbTextField?.text
+        }
+        if budgetTextField?.text != "" {
+            ItineraryController.sharedInstance.itineraryPlaceholder["budget"] = budgetTextField?.text
+        }
+        if checklistTextFieldItems[0].text != "" {
+            //if checklist textfield is empty, dont append to local checklist variable
+            checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
+            //add
+            ItineraryController.sharedInstance.itineraryPlaceholder["checklist"] = checklist
+            checklist = []
+        }
     }
     
     func createLabelCalendarButton(with flightLabel: UILabel) -> UIStackView {
@@ -71,8 +88,6 @@ class ItineraryDetailsViewController: UIViewController {
         button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
         button.tintColor = .systemBlue
         button.backgroundColor = .systemGray6
-        button.tag = calendarCounter
-        calendarCounter += 1
         button.addTarget(self, action: #selector(showCalendarButtonAction), for: .touchUpInside)
         
         let labelButtonStackView = UIStackView()
@@ -126,13 +141,14 @@ class ItineraryDetailsViewController: UIViewController {
         flightDetailsStackView.addArrangedSubview(flightDepartureStackView)
     }
     
-    func createHotelAccomodationStackView() {
+    func createHotelAirbnbStackView() {
         let label = UILabel()
         label.text = "Hotel/Airbnb"
         label.textAlignment = .center
         
         let textField = UITextField()
         textField.borderStyle = .line
+        hotelAirbnbTextField = textField
         
         let button = UIButton()
         button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
@@ -150,13 +166,13 @@ class ItineraryDetailsViewController: UIViewController {
         self.view.addSubview(textField)
         self.view.addSubview(button)
         self.view.addSubview(stackView)
-        self.view.addSubview(hotelAccomodationStackView)
+        self.view.addSubview(hotelAirbnbStackView)
         
         stackView.addArrangedSubview(textField)
         stackView.addArrangedSubview(button)
         
-        hotelAccomodationStackView.addArrangedSubview(label)
-        hotelAccomodationStackView.addArrangedSubview(stackView)
+        hotelAirbnbStackView.addArrangedSubview(label)
+        hotelAirbnbStackView.addArrangedSubview(stackView)
     }
     
     func createTotalBudgetStackView() {
@@ -206,7 +222,6 @@ class ItineraryDetailsViewController: UIViewController {
         let textField = UITextField()
         textField.backgroundColor = .systemGray6
         textField.placeholder = "Add a to-do item"
-        textField.tag = checklistCounter
         checklistTextFieldItems.append(textField)
         
         let textFieldButtonStackView = UIStackView()
@@ -254,14 +269,10 @@ class ItineraryDetailsViewController: UIViewController {
     }
     
     @objc func showMapButtonAction(sender: UIButton) {
-        switch (sender.tag) {
-        default:
-            self.performSegue(withIdentifier: "toMapVC", sender: sender)
-        }
+        self.performSegue(withIdentifier: "toHotelAirbnbMapVC", sender: sender)
     }
     
     @objc func addNewChecklistItem() {
-        checklistCounter += 1
         setupScrollableStackViewConstraints()
     }
     
@@ -273,7 +284,7 @@ class ItineraryDetailsViewController: UIViewController {
     //MARK: - Constraints
     func setupConstraints() {
         createFlightDetailsStackView()
-        createHotelAccomodationStackView()
+        createHotelAirbnbStackView()
         createTotalBudgetStackView()
         createAddToChecklistStackView()
         self.view.addSubview(nextButton)
@@ -282,11 +293,11 @@ class ItineraryDetailsViewController: UIViewController {
         flightDetailsStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         flightDetailsStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
-        hotelAccomodationStackView.topAnchor.constraint(equalTo: flightDetailsStackView.bottomAnchor, constant: 32).isActive = true
-        hotelAccomodationStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
-        hotelAccomodationStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
+        hotelAirbnbStackView.topAnchor.constraint(equalTo: flightDetailsStackView.bottomAnchor, constant: 32).isActive = true
+        hotelAirbnbStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
+        hotelAirbnbStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
-        totalBudgetStackView.topAnchor.constraint(equalTo: hotelAccomodationStackView.bottomAnchor, constant: 32).isActive = true
+        totalBudgetStackView.topAnchor.constraint(equalTo: hotelAirbnbStackView.bottomAnchor, constant: 32).isActive = true
         totalBudgetStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         totalBudgetStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
@@ -326,7 +337,7 @@ class ItineraryDetailsViewController: UIViewController {
         return stackView
     }()
     
-    var hotelAccomodationStackView: UIStackView = {
+    var hotelAirbnbStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .fill
@@ -389,6 +400,10 @@ class ItineraryDetailsViewController: UIViewController {
             guard let destinationVC = segue.destination as? FlightDepartureCalendarViewController else { return }
             destinationVC.delegate = self
         }
+        if segue.identifier == "toHotelAirbnbMapVC" {
+            guard let destinationVC = segue.destination as? HotelAirbnbLocationManagerViewController else { return }
+            destinationVC.mapPinDelegate = self
+        }
     }
     
 }//End of class
@@ -402,5 +417,11 @@ extension ItineraryDetailsViewController: DatePickerDelegate {
         if flightArrivalOrDeparture == "flightDeparture" {
             flightDepartureDateLabel.text = date?.formatToStringWithShortDateAndTime()
         }
+    }
+}//End of extension
+
+extension ItineraryDetailsViewController: MapPinDropped {
+    func droppedPin(title: String) {
+        hotelAirbnbTextField?.text = title
     }
 }//End of extension

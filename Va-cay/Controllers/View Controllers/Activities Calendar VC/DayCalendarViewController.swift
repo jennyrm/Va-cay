@@ -27,7 +27,6 @@ class DayCalendarViewController: UIViewController {
         day = dayDatePicker.date
         delegate?.dateSelected(day)
         ItineraryController.sharedInstance.itineraryPlaceholder["day"] = day
-        print(ItineraryController.sharedInstance.itineraryPlaceholder)
     }
     
     //MARK: - Functions

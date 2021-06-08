@@ -14,22 +14,20 @@ class ItineraryController {
     static let sharedInstance = ItineraryController()
     
     //MARK: - Source of Truth
-    var itineraryPlaceholder = [String: Any]()
+    var itineraryPlaceholder = [String : Any]()
     var itineraries = [Itinerary]()
-    var mapCoordinates = [String: Any]()
     
     //MARK: - Reference to DB
     let db = Firestore.firestore()
     
     //MARK: - CRUD Functions
     func createItinerary(for itinerary: Itinerary) {
-        let itineraryToAdd: Itinerary = itinerary
-        let itineraryReference = db.collection("itineraries").document("test")
-        itineraryReference.setData(["tripName": itineraryToAdd.tripName
+        let itineraryToAdd = Itinerary()
+//        let itineraryReference = db.collection("itineraries").document("test")
+//        itineraryReference.setData(["tripName": itineraryToAdd.tripName
 //                                         "tripDate": itineraryToAdd.tripDate
-                                        ])
-        itineraries.append(itineraryToAdd)
+//                                        ])
+//        itineraries.append(itineraryToAdd)
     }
-    
-    
-}
+
+}//End of class

@@ -1,5 +1,5 @@
 //
-//  AddActivityViewController.swift
+//  ActivityDetailsViewController.swift
 //  Va-cay
 //
 //  Created by Jenny Morales on 5/28/21.
@@ -7,17 +7,18 @@
 
 import UIKit
 
-class AddActivityViewController: UIViewController {
+class ActivityDetailsViewController: UIViewController {
     
     //MARK: - Properties
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
     }
+    var dayCounter = 1
     var dayDateLabel: UILabel?
-    var activityCounter = 1
-    var activitiesTextFieldItems = [Int: String]()
-    var activitiesArray = [UITextField]()
-    var costTextField: UITextField?
+    var activities = [String]()
+    var activitiesTextFieldItems = [UITextField]()
+    var costOfActivitiesTextField: UITextField?
+    var daysArray = [ [String : Any?] ]()
     
     //MARK: - Lifecycle
     override func loadView() {
@@ -30,11 +31,49 @@ class AddActivityViewController: UIViewController {
         updateView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveTextFieldInputs()
+    }
+    
     //MARK: - Functions
     func updateView() {
         if let day = ItineraryController.sharedInstance.itineraryPlaceholder["day"] as? Date {
             dayDateLabel?.text = day.formatToStringWithLongDateAndTime()
         }
+        if let activities = ItineraryController.sharedInstance.itineraryPlaceholder["activities"] as? [String] {
+            for index in 0..<activities.count {
+                setupScrollableStackViewConstraints()
+                activitiesTextFieldItems[index].text = activities[index]
+            }
+        }
+        if let costOfActivities = ItineraryController.sharedInstance.itineraryPlaceholder["costOfActivities"] as? String {
+            costOfActivitiesTextField?.text = costOfActivities
+        }
+    }
+    
+    func saveTextFieldInputs() {
+        if activitiesTextFieldItems[0].text != "" {
+            activitiesTextFieldItems.forEach { if !$0.text!.isEmpty { activities.append($0.text!) } }
+            ItineraryController.sharedInstance.itineraryPlaceholder["activities"] = activities
+            activities = []
+        }
+        if costOfActivitiesTextField?.text != "" {
+            ItineraryController.sharedInstance.itineraryPlaceholder["costOfActivities"] = costOfActivitiesTextField?.text
+        }
+    }
+    
+    func clearTextFieldInputs() {
+        ItineraryController.sharedInstance.itineraryPlaceholder.removeValue(forKey: "day")
+        dayDateLabel?.text = ""
+        
+        ItineraryController.sharedInstance.itineraryPlaceholder.removeValue(forKey: "activities")
+        activitiesTextFieldItems.forEach { $0.text = "" }
+        
+        ItineraryController.sharedInstance.itineraryPlaceholder.removeValue(forKey: "costOfActivities")
+        costOfActivitiesTextField?.text = ""
+        
+        updateView()
     }
     
     func createCalendarStackView() {
@@ -42,7 +81,7 @@ class AddActivityViewController: UIViewController {
         label.textColor = .black
         label.layer.borderWidth = 1.0
         label.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//        label.backgroundColor = .systemGray6
+        //        label.backgroundColor = .systemGray6
         label.textAlignment = .center
         dayDateLabel = label
         
@@ -58,6 +97,7 @@ class AddActivityViewController: UIViewController {
         calendarStackView.addArrangedSubview(label)
         calendarStackView.addArrangedSubview(button)
     }
+    
     
     func createAddActivityStackView() {
         let label = UILabel()
@@ -86,14 +126,12 @@ class AddActivityViewController: UIViewController {
         textField.backgroundColor = .white
         textField.placeholder = "Enter activity here or use the map"
         textField.borderStyle = .line
-        textField.tag = activityCounter
-        activitiesArray.append(textField)
+        activitiesTextFieldItems.append(textField)
         
         let button = UIButton()
         button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
         button.backgroundColor = .white
         button.tintColor = .red
-        button.tag = activityCounter
         button.addTarget(self, action: #selector(showMapButtonAction), for: .touchUpInside)
         
         let textFieldButtonStackView = UIStackView()
@@ -120,7 +158,7 @@ class AddActivityViewController: UIViewController {
         
         let textField = UITextField()
         textField.borderStyle = .line
-        costTextField = textField
+        costOfActivitiesTextField = textField
         
         
         self.view.addSubview(label)
@@ -136,12 +174,13 @@ class AddActivityViewController: UIViewController {
         addDayButton.setTitle("Add Day", for: .normal)
         addDayButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         addDayButton.layer.cornerRadius = 30.0
-//        addDayButton.addTarget(self, action: #selector(), for: .touchUpInside)
+        addDayButton.addTarget(self, action: #selector(addNewDay), for: .touchUpInside)
         
         let submitButton = UIButton()
         submitButton.setTitle("Submit", for: .normal)
         submitButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         submitButton.layer.cornerRadius = 30.0
+        submitButton.addTarget(self, action: #selector(createItineraryObject), for: .touchUpInside)
         
         self.view.addSubview(addDayButton)
         self.view.addSubview(submitButton)
@@ -156,15 +195,36 @@ class AddActivityViewController: UIViewController {
     }
     
     @objc func addActivityButtonAction() {
-        activityCounter += 1
         setupScrollableStackViewConstraints()
     }
     
     @objc func showMapButtonAction(sender: UIButton) {
-        switch (sender.tag) {
-        default:
-            self.performSegue(withIdentifier: "toMapVC", sender: sender)
+        self.performSegue(withIdentifier: "toActivitiesMapVC", sender: sender)
+    }
+    
+    @objc func addNewDay() {
+        saveTextFieldInputs()
+        
+        let day = ItineraryController.sharedInstance.itineraryPlaceholder["day"] as? Date
+        let activities = ItineraryController.sharedInstance.itineraryPlaceholder["activities"] as? [String]
+        let costOfActivities = ItineraryController.sharedInstance.itineraryPlaceholder["costOfActivities"] as? String
+        
+        if day != nil || activities != nil || costOfActivities != nil {
+            daysArray.append( ["Day \(dayCounter)" : day] )
+            daysArray.append( ["Day \(dayCounter)" : activities] )
+            daysArray.append( ["Day \(dayCounter)" : costOfActivities] )
+            ItineraryController.sharedInstance.itineraryPlaceholder["days"] = daysArray
+            dayCounter += 1
+            clearTextFieldInputs()
         }
+        
+        dayLabel.text = "Day \(dayCounter)"
+    }
+    
+    @objc func createItineraryObject() {
+        self.navigationController?.popToRootViewController(animated: true)
+
+        print(ItineraryController.sharedInstance.itineraryPlaceholder)
     }
     
     //MARK: - Constraints
@@ -283,13 +343,36 @@ class AddActivityViewController: UIViewController {
             guard let destinationVC = segue.destination as? DayCalendarViewController else { return }
             destinationVC.delegate = self
         }
+        if segue.identifier == "toActivitiesMapVC" {
+            guard let destinationVC = segue.destination as? ActivitiesLocationManagerViewController else { return }
+            destinationVC.mapPinDelegate = self
+        }
     }
     
 }//End of class
 
 //MARK: - Extensions
-extension AddActivityViewController: DatePickerDelegate {
+extension ActivityDetailsViewController: DatePickerDelegate {
     func dateSelected(_ date: Date?) {
         dayDateLabel?.text = date?.formatToStringWithLongDateAndTime()
     }
 }//End of extension
+
+extension ActivityDetailsViewController: MapPinDropped {
+    func droppedPin(title: String) {
+        //        for index in 0..<arrayOfTitles.count {
+        //            activitiesTextFieldItems[index].text = arrayOfTitles[index]
+        //            if (activitiesTextFieldItems.count == index + 1) {
+        //                setupScrollableStackViewConstraints()
+        //            }
+        //        }
+        for textField in activitiesTextFieldItems {
+            if textField.text == "" {
+                textField.text = title
+            }
+        }
+        setupScrollableStackViewConstraints()
+    }
+}//End of extension
+
+

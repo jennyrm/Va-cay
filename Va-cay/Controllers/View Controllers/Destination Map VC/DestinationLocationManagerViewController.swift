@@ -8,27 +8,26 @@
 import UIKit
 import MapKit
 
-protocol HandleMapSearch {
-    func dropPinZoomIn(placemark: MKPlacemark)
-}
-
-class LocationManagerViewController: UIViewController {
-
+class DestinationLocationManagerViewController: UIViewController {
+    
+    //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
     
+    //MARK: - Properties
     let locationManager = CLLocationManager()
-    var resultSearchController: UISearchController? = nil
-    var selectedPin: MKPlacemark? = nil
-
+    var resultSearchController: UISearchController?
+    var selectedPin: MKPlacemark?
+    var coordinates = [ [String?? : (Double, Double)] ]()
+    var mapPinDelegate: MapPinDropped?
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
         
-        let locationSearchTableVC = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTableVC") as! LocationSearchTableViewController
+        let locationSearchTableVC = storyboard!.instantiateViewController(withIdentifier: "DestinationLocationSearchTableVC") as! DestinationLocationSearchTableViewController
         resultSearchController = UISearchController(searchResultsController: locationSearchTableVC)
         resultSearchController?.searchResultsUpdater = locationSearchTableVC
         
@@ -44,12 +43,24 @@ class LocationManagerViewController: UIViewController {
         locationSearchTableVC.mapView = mapView
         locationSearchTableVC.handleMapSearchDelegate = self
         
-        loadMapAnnotations()
+        loadMapPins()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        saveMapAnnotations()
+    }
+    
+    //MARK: - Actions
+    
+    @IBAction func getCurrentLocationButtonTapped(_ sender: UIButton) {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
     }
 }//End of class
 
 //MARK: - Extensions
-extension LocationManagerViewController: CLLocationManagerDelegate {
+extension DestinationLocationManagerViewController: CLLocationManagerDelegate {
 //    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 //
 //    }
@@ -72,7 +83,7 @@ extension LocationManagerViewController: CLLocationManagerDelegate {
     }
 }//End of extension
 
-extension LocationManagerViewController: HandleMapSearch {
+extension DestinationLocationManagerViewController: HandleMapSearch {
     func dropPinZoomIn(placemark: MKPlacemark) {
         selectedPin = placemark
         mapView.removeAnnotations(mapView.annotations)
@@ -84,24 +95,40 @@ extension LocationManagerViewController: HandleMapSearch {
             annotation.subtitle = "\(city) \(state)"
         }
         mapView.addAnnotation(annotation)
-        ItineraryController.sharedInstance.itineraryPlaceholder["latitude"] = annotation.coordinate.latitude
-        ItineraryController.sharedInstance.itineraryPlaceholder["longitude"] = annotation.coordinate.longitude
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)
     }
     
-    func loadMapAnnotations() {
-        let annotation = MKPointAnnotation()
-        print(ItineraryController.sharedInstance.mapCoordinates)
-        if let latitude = ItineraryController.sharedInstance.mapCoordinates["latitude"] as? Double {
-            annotation.coordinate.latitude = latitude
+    func saveMapAnnotations() {
+        for annotation in mapView.annotations {
+            coordinates.append( [annotation.title : (annotation.coordinate.latitude, annotation.coordinate.longitude)] )
         }
-        if let longitude = ItineraryController.sharedInstance.mapCoordinates["longitude"] as? Double {
-            annotation.coordinate.longitude = longitude
+        if !coordinates.isEmpty {
+            ItineraryController.sharedInstance.itineraryPlaceholder["destinationMapCoordinates"] = coordinates
         }
-        mapView.addAnnotation(annotation)
-        print(annotation.coordinate)
     }
+    
+    func loadMapPins() {
+        if let destinationMapCoordinates = (ItineraryController.sharedInstance.itineraryPlaceholder["destinationMapCoordinates"] as? [ [String?? : (Double, Double)] ]) {
+            destinationMapCoordinates.forEach { coordinate in
+                for (key, value) in coordinate {
+                    let annotation = MKPointAnnotation()
+                    let latitude = value.0
+                    let longitude = value.1
+                    annotation.title = key as? String
+                    annotation.coordinate.latitude = latitude
+                    annotation.coordinate.longitude = longitude
+                    mapView.addAnnotation(annotation)
+
+                    let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                    let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                    let region = MKCoordinateRegion(center: center, span: span)
+                    mapView.setRegion(region, animated: true)
+                }
+            }
+        }
+    }
+
 }//End of extension
 

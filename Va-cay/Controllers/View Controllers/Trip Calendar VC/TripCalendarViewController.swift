@@ -26,6 +26,7 @@ class TripCalendarViewController: UIViewController {
     @IBAction func tripDatePickerChanged(_ sender: UIDatePicker) {
         tripDate = tripDatePicker.date
         delegate?.dateSelected(tripDate)
+        
         ItineraryController.sharedInstance.itineraryPlaceholder["tripDate"] = tripDate
     }
     

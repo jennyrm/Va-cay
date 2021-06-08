@@ -6,7 +6,16 @@
 //
 
 import Foundation
+import MapKit
 
 protocol DatePickerDelegate: AnyObject {
     func dateSelected(_ date: Date?)
+}
+
+protocol HandleMapSearch: AnyObject {
+    func dropPinZoomIn(placemark: MKPlacemark)
+}
+
+protocol MapPinDropped: AnyObject {
+    func droppedPin(title: String)
 }
