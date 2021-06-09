@@ -38,16 +38,16 @@ class ActivityDetailsViewController: UIViewController {
     
     //MARK: - Functions
     func updateView() {
-        if let day = ItineraryController.sharedInstance.itineraryPlaceholder["day"] as? Date {
+        if let day = ItineraryController.sharedInstance.itineraryData["day"] as? Date {
             dayDateLabel?.text = day.formatToStringWithLongDateAndTime()
         }
-        if let activities = ItineraryController.sharedInstance.itineraryPlaceholder["activities"] as? [String] {
+        if let activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [String] {
             for index in 0..<activities.count {
                 setupScrollableStackViewConstraints()
                 activitiesTextFieldItems[index].text = activities[index]
             }
         }
-        if let costOfActivities = ItineraryController.sharedInstance.itineraryPlaceholder["costOfActivities"] as? String {
+        if let costOfActivities = ItineraryController.sharedInstance.itineraryData["costOfActivities"] as? String {
             costOfActivitiesTextField?.text = costOfActivities
         }
     }
@@ -55,22 +55,22 @@ class ActivityDetailsViewController: UIViewController {
     func saveTextFieldInputs() {
         if activitiesTextFieldItems[0].text != "" {
             activitiesTextFieldItems.forEach { if !$0.text!.isEmpty { activities.append($0.text!) } }
-            ItineraryController.sharedInstance.itineraryPlaceholder["activities"] = activities
+            ItineraryController.sharedInstance.itineraryData["activities"] = activities
             activities = []
         }
         if costOfActivitiesTextField?.text != "" {
-            ItineraryController.sharedInstance.itineraryPlaceholder["costOfActivities"] = costOfActivitiesTextField?.text
+            ItineraryController.sharedInstance.itineraryData["costOfActivities"] = costOfActivitiesTextField?.text
         }
     }
     
     func clearTextFieldInputs() {
-        ItineraryController.sharedInstance.itineraryPlaceholder.removeValue(forKey: "day")
+        ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "day")
         dayDateLabel?.text = ""
         
-        ItineraryController.sharedInstance.itineraryPlaceholder.removeValue(forKey: "activities")
+        ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "activities")
         activitiesTextFieldItems.forEach { $0.text = "" }
         
-        ItineraryController.sharedInstance.itineraryPlaceholder.removeValue(forKey: "costOfActivities")
+        ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "costOfActivities")
         costOfActivitiesTextField?.text = ""
         
         updateView()
@@ -205,15 +205,15 @@ class ActivityDetailsViewController: UIViewController {
     @objc func addNewDay() {
         saveTextFieldInputs()
         
-        let day = ItineraryController.sharedInstance.itineraryPlaceholder["day"] as? Date
-        let activities = ItineraryController.sharedInstance.itineraryPlaceholder["activities"] as? [String]
-        let costOfActivities = ItineraryController.sharedInstance.itineraryPlaceholder["costOfActivities"] as? String
+        let day = ItineraryController.sharedInstance.itineraryData["day"] as? Date
+        let activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [String]
+        let costOfActivities = ItineraryController.sharedInstance.itineraryData["costOfActivities"] as? String
         
         if day != nil || activities != nil || costOfActivities != nil {
             daysArray.append( ["Day \(dayCounter)" : day] )
             daysArray.append( ["Day \(dayCounter)" : activities] )
             daysArray.append( ["Day \(dayCounter)" : costOfActivities] )
-            ItineraryController.sharedInstance.itineraryPlaceholder["days"] = daysArray
+            ItineraryController.sharedInstance.itineraryData["days"] = daysArray
             dayCounter += 1
             clearTextFieldInputs()
         }
@@ -222,9 +222,10 @@ class ActivityDetailsViewController: UIViewController {
     }
     
     @objc func createItineraryObject() {
+        print("placeholder:", ItineraryController.sharedInstance.itineraryData)
+        ItineraryController.sharedInstance.itineraries = []
+        ItineraryController.sharedInstance.createItinerary()
         self.navigationController?.popToRootViewController(animated: true)
-
-        print(ItineraryController.sharedInstance.itineraryPlaceholder)
     }
     
     //MARK: - Constraints

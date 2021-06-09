@@ -39,23 +39,23 @@ class ItineraryDetailsViewController: UIViewController {
     
     //MARK: - Functions
     func updateView() {
-        if let flightArrival = ItineraryController.sharedInstance.itineraryPlaceholder["flightArrival"] as? Date {
+        if let flightArrival = ItineraryController.sharedInstance.itineraryData["flightArrival"] as? Date {
             flightArrivalDateLabel.text = flightArrival.formatToStringWithShortDateAndTime()
         }
-        if let flightDeparture = ItineraryController.sharedInstance.itineraryPlaceholder["flightDeparture"] as? Date {
+        if let flightDeparture = ItineraryController.sharedInstance.itineraryData["flightDeparture"] as? Date {
             flightDepartureDateLabel.text = flightDeparture.formatToStringWithShortDateAndTime()
         }
-        if let hotelAirbnb = ItineraryController.sharedInstance.itineraryPlaceholder["hotelAirbnb"] as? String {
+        if let hotelAirbnb = ItineraryController.sharedInstance.itineraryData["hotelAirbnb"] as? String {
             hotelAirbnbTextField?.text = hotelAirbnb
         }
 //        if let hotelAirbnbCoordinates = ItineraryController.sharedInstance.itineraryPlaceholder["hotelAirbnbMapCoordinates"] as? [ [String?? : (Double, Double)] ] {
 //            let title = hotelAirbnbCoordinates[0].keys
 //            hotelAirbnbTextField?.text = "\(title)"
 //        }
-        if let budget = ItineraryController.sharedInstance.itineraryPlaceholder["budget"] as? String {
+        if let budget = ItineraryController.sharedInstance.itineraryData["budget"] as? String {
             budgetTextField?.text = budget
         }
-        if let checklist = ItineraryController.sharedInstance.itineraryPlaceholder["checklist"] as? [String] {
+        if let checklist = ItineraryController.sharedInstance.itineraryData["checklist"] as? [String] {
             for index in 0..<checklist.count {
                 setupScrollableStackViewConstraints()
                 checklistTextFieldItems[index].text = checklist[index]
@@ -65,16 +65,16 @@ class ItineraryDetailsViewController: UIViewController {
     
     func saveTextFieldInputs() {
         if hotelAirbnbTextField?.text != "" {
-            ItineraryController.sharedInstance.itineraryPlaceholder["hotelAirbnb"] = hotelAirbnbTextField?.text
+            ItineraryController.sharedInstance.itineraryData["hotelAirbnb"] = hotelAirbnbTextField?.text
         }
         if budgetTextField?.text != "" {
-            ItineraryController.sharedInstance.itineraryPlaceholder["budget"] = budgetTextField?.text
+            ItineraryController.sharedInstance.itineraryData["budget"] = budgetTextField?.text
         }
         if checklistTextFieldItems[0].text != "" {
             //if checklist textfield is empty, dont append to local checklist variable
             checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
             //add
-            ItineraryController.sharedInstance.itineraryPlaceholder["checklist"] = checklist
+            ItineraryController.sharedInstance.itineraryData["checklist"] = checklist
             checklist = []
         }
     }

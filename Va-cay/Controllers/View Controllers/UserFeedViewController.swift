@@ -9,21 +9,52 @@ import UIKit
 
 class UserFeedViewController: UIViewController {
 
+    //MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        fetchData()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - Actions
+    
+    //MARK: - Functions
+    func fetchData() {
+        DispatchQueue.main.async {
+            ItineraryController.sharedInstance.fetchItineraries { (success) in
+                if success {
+                    print("Successfully fetched data!!")
+                    print(ItineraryController.sharedInstance.itineraries)
+                    self.tableView.reloadData()
+                } else {
+                    print("Firebase didn't return shit")
+                }
+            }
+        }
     }
-    */
+    
+}//End of class
 
-}
+//MARK: - Extensions
+extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        ItineraryController.sharedInstance.itineraries.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itineraryCell", for: indexPath) as? ItineraryTableViewCell else { return UITableViewCell() }
+        let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
+        cell.itinerary = itinerary
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 225
+    }
+    
+}//End of extension

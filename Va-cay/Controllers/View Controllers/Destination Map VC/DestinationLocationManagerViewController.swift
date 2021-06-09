@@ -17,7 +17,7 @@ class DestinationLocationManagerViewController: UIViewController {
     let locationManager = CLLocationManager()
     var resultSearchController: UISearchController?
     var selectedPin: MKPlacemark?
-    var coordinates = [ [String?? : (Double, Double)] ]()
+    var coordinates = [[String?? : (Double, Double)]]()
     var mapPinDelegate: MapPinDropped?
     
     //MARK: - Lifecycle
@@ -105,12 +105,12 @@ extension DestinationLocationManagerViewController: HandleMapSearch {
             coordinates.append( [annotation.title : (annotation.coordinate.latitude, annotation.coordinate.longitude)] )
         }
         if !coordinates.isEmpty {
-            ItineraryController.sharedInstance.itineraryPlaceholder["destinationMapCoordinates"] = coordinates
+            ItineraryController.sharedInstance.itineraryData["destinationMapCoordinates"] = coordinates
         }
     }
     
     func loadMapPins() {
-        if let destinationMapCoordinates = (ItineraryController.sharedInstance.itineraryPlaceholder["destinationMapCoordinates"] as? [ [String?? : (Double, Double)] ]) {
+        if let destinationMapCoordinates = (ItineraryController.sharedInstance.itineraryData["destinationMapCoordinates"] as? [ [String?? : (Double, Double)] ]) {
             destinationMapCoordinates.forEach { coordinate in
                 for (key, value) in coordinate {
                     let annotation = MKPointAnnotation()

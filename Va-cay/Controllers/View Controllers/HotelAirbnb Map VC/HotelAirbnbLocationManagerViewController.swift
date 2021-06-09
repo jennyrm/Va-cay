@@ -19,7 +19,7 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
     let locationManager = CLLocationManager()
     var resultSearchController: UISearchController?
     var selectedPin: MKPlacemark?
-    var coordinates = [ [String?? : (Double, Double)] ]()
+    var coordinates = [[String?? : (Double, Double)]]()
     weak var mapPinDelegate: MapPinDropped?
     
     //MARK: - Lifecycle
@@ -34,7 +34,7 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        let locationSearchTableVC = storyboard!.instantiateViewController(withIdentifier: "HoteAirbnbLocationSearchTableVC") as! HotelAirbnbLocationSearchTableViewController
+        let locationSearchTableVC = storyboard!.instantiateViewController(withIdentifier: "HotelAirbnbLocationSearchTableVC") as! HotelAirbnbLocationSearchTableViewController
         resultSearchController = UISearchController(searchResultsController: locationSearchTableVC)
         resultSearchController?.searchResultsUpdater = locationSearchTableVC
         
@@ -99,12 +99,13 @@ extension HotelAirbnbLocationManagerViewController: HandleMapSearch {
         let title = (mapView.annotations[0].title) as? String
         mapPinDelegate?.droppedPin(title: title ?? "")
         if !coordinates.isEmpty {
-            ItineraryController.sharedInstance.itineraryPlaceholder["hotelAirbnbMapCoordinates"] = coordinates
+            ItineraryController.sharedInstance.itineraryData["hotelAirbnbMapCoordinates"] = coordinates
+            print(coordinates)
         }
     }
     
     func loadMapPins() {
-        if let hotelAirbnbCoordinates = ItineraryController.sharedInstance.itineraryPlaceholder["hotelAirbnbMapCoordinates"] as? [ [String?? : (Double, Double)] ] {
+        if let hotelAirbnbCoordinates = ItineraryController.sharedInstance.itineraryData["hotelAirbnbMapCoordinates"] as? [ [String?? : (Double, Double)] ] {
             hotelAirbnbCoordinates.forEach { coordinate in
                 for (key, value) in coordinate {
                     let annotation = MKPointAnnotation()

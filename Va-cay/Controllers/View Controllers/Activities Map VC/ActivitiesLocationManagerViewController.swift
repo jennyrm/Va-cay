@@ -19,7 +19,7 @@ class ActivitiesLocationManagerViewController: UIViewController {
     let locationManager = CLLocationManager()
     var resultSearchController: UISearchController?
     var selectedPin: MKPlacemark?
-    var coordinates = [ [String?? : (Double, Double)] ]()
+    var coordinates = [[String?? : (Double, Double)]]()
     weak var mapPinDelegate: MapPinDropped?
     var arrayOfMapPinTitles = [String]()
     
@@ -99,11 +99,11 @@ extension ActivitiesLocationManagerViewController: HandleMapSearch {
         for annotation in mapView.annotations {
             coordinates.append( [annotation.title : (annotation.coordinate.latitude, annotation.coordinate.longitude)] )
         }
-        ItineraryController.sharedInstance.itineraryPlaceholder["activitiesCoordinates"] = coordinates
+        ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] = coordinates
     }
     
     func loadMapPins() {
-        if let activitiesCoordinates = ItineraryController.sharedInstance.itineraryPlaceholder["activitiesCoordinates"] as? [ [String?? : (Double, Double)] ] {
+        if let activitiesCoordinates = ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] as? [ [String?? : (Double, Double)] ] {
             activitiesCoordinates.forEach { coordinate in
                 for (key, value) in coordinate {
                     let annotation = MKPointAnnotation()

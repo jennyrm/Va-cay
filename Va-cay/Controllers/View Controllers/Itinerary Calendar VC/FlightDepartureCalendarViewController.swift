@@ -26,12 +26,12 @@ class FlightDepartureCalendarViewController: UIViewController {
     @IBAction func flightDepartureDatePickerChanged(_ sender: UIDatePicker) {
         flightDeparture = flightDepartureDatePicker.date
         delegate?.dateSelected(flightDeparture)
-        ItineraryController.sharedInstance.itineraryPlaceholder["flightDeparture"] = flightDeparture
+        ItineraryController.sharedInstance.itineraryData["flightDeparture"] = flightDeparture
     }
     
     //MARK: - Functions
     func updateView() {
-        if let flightDeparture = ItineraryController.sharedInstance.itineraryPlaceholder["flightDeparture"] as? Date {
+        if let flightDeparture = ItineraryController.sharedInstance.itineraryData["flightDeparture"] as? Date {
             flightDepartureDatePicker.date = flightDeparture
         }
     }

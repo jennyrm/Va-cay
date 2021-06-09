@@ -27,12 +27,12 @@ class TripCalendarViewController: UIViewController {
         tripDate = tripDatePicker.date
         delegate?.dateSelected(tripDate)
         
-        ItineraryController.sharedInstance.itineraryPlaceholder["tripDate"] = tripDate
+        ItineraryController.sharedInstance.itineraryData["tripDate"] = tripDate
     }
     
     //MARK: - Functions
     func updateView() {
-        if let tripDate = ItineraryController.sharedInstance.itineraryPlaceholder["tripDate"] as? Date {
+        if let tripDate = ItineraryController.sharedInstance.itineraryData["tripDate"] as? Date {
             tripDatePicker.date = tripDate
         }
     }

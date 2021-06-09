@@ -30,13 +30,13 @@ class TripDetailsViewController: UIViewController {
     
     //MARK: - Functions
     func updateView() {
-        if let tripName = ItineraryController.sharedInstance.itineraryPlaceholder["tripName"] as? String {
+        if let tripName = ItineraryController.sharedInstance.itineraryData["tripName"] as? String {
             tripNameTextField.text = tripName
         }
-        if let tripDate = ItineraryController.sharedInstance.itineraryPlaceholder["tripDate"] as? Date {
+        if let tripDate = ItineraryController.sharedInstance.itineraryData["tripDate"] as? Date {
             tripDateLabel.text = tripDate.formatToString()
         }
-        if let tripImage = ItineraryController.sharedInstance.itineraryPlaceholder["tripImage"] as? UIImage {
+        if let tripImage = ItineraryController.sharedInstance.itineraryData["tripImage"] as? UIImage {
             self.tripImage = tripImage
         }
     }
@@ -60,10 +60,11 @@ class TripDetailsViewController: UIViewController {
     
     func saveTextFieldInputs() {
         if tripNameTextField.text != "" {
-            ItineraryController.sharedInstance.itineraryPlaceholder["tripName"] = tripNameTextField.text
+            ItineraryController.sharedInstance.itineraryData["tripName"] = tripNameTextField.text
         }
         if tripImage != nil {
-            ItineraryController.sharedInstance.itineraryPlaceholder["tripImage"] = tripImage
+            let imageData = tripImage?.jpegData(compressionQuality: 0.5)
+            ItineraryController.sharedInstance.itineraryData["tripImage"] = imageData
         }
     }
     
