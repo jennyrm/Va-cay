@@ -11,7 +11,7 @@ class Itinerary {
     
     //MARK: - Properties
     ///tripDetailsVC
-    let destinationCoordinates: [[String?? : (Double, Double)]]?
+    let destinationCoordinates: [ [String?? : [Double] ] ]?
     let tripName: String?
     let tripDate: Date?
     let tripImage: Data?
@@ -19,18 +19,19 @@ class Itinerary {
     let flightArrival: Date?
     let flightDeparture: Date?
     let hotelAirbnb: String?
-    let hotelAirbnbCoordinates: [[String?? : (Double, Double)]]?
+    let hotelAirbnbCoordinates: [ [String?? : [Double] ] ]?
     let budget: String?
     let checklist: [String]?
     ///activityDetailsVC
     let day: Date?
+    let days: [ [ String : [ [String : Any] ] ] ]?
     let activities: [String]?
-    let activitiesCoordinates: [[String?? : (Double, Double)]]?
+    let activitiesCoordinates: [ [String?? : [Double] ] ]?
     let costOfActivities: String?
     ///ID
     let id: String
 
-    init(destinationCoordinates: [[String?? : (Double, Double)]]?,
+    init(destinationCoordinates: [ [String?? : [Double] ] ]?,
         tripName: String?,
         tripDate: Date?,
         tripImage: Data?,
@@ -38,13 +39,14 @@ class Itinerary {
         flightArrival: Date?,
         flightDeparture: Date?,
         hotelAirbnb: String?,
-        hotelAirbnbCoordinates: [[String?? : (Double, Double)]]?,
+        hotelAirbnbCoordinates: [ [String?? : [Double] ] ]?,
         budget: String?,
         checklist: [String]?,
         
         day: Date?,
+        days: [ [ String : [ [String : Any] ] ] ]?,
         activities: [String]?,
-        activitiesCoordinates: [[String?? : (Double, Double)]]?,
+        activitiesCoordinates: [ [String?? : [Double] ] ]?,
         costOfActivities: String?,
     
         id: String)
@@ -62,6 +64,7 @@ class Itinerary {
         self.checklist = checklist
         
         self.day = day
+        self.days = days
         self.activities = activities
         self.activitiesCoordinates = activitiesCoordinates
         self.costOfActivities = costOfActivities

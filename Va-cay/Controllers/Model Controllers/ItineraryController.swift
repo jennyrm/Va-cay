@@ -37,7 +37,7 @@ class ItineraryController {
                 for doc in snapshot.documents {
                     let itineraryData = doc.data()
                     
-                    let destinationCoordinates = itineraryData["destinationCoordinate"] as? [[String?? : (Double, Double)]]? ?? []
+                    let destinationCoordinates = itineraryData["destinationCoordinate"] as? [ [String?? : [Double] ] ]? ?? []
                     let tripName = itineraryData["tripName"] as? String ?? ""
                     let tripDate = itineraryData["tripDate"] as? Date ?? Date()
                     let tripImage = itineraryData["tripImage"] as? Data? ?? Data()
@@ -46,18 +46,19 @@ class ItineraryController {
                     let flightDeparture = itineraryData["flightDeparture"] as? Date ?? Date()
                    
                     let hotelAirbnb = itineraryData["hotelAirbnb"] as? String ?? ""
-                    let hotelAirbnbCoordinates = itineraryData["hotelAirbnbCoordinates"] as? [[String?? : (Double, Double)]]? ?? []
+                    let hotelAirbnbCoordinates = itineraryData["hotelAirbnbCoordinates"] as? [ [String?? : [Double] ] ]? ?? []
                     let budget = itineraryData["budget"] as? String ?? ""
                     let checklist = itineraryData["checklist"] as? [String] ?? []
                     
                     let day = itineraryData["day"] as? Date ?? Date()
+                    let days = itineraryData["days"] as? [ [ String : [ [String : Any] ] ] ] ?? []
                     let activities = itineraryData["activities"] as? [String] ?? []
-                    let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [[String?? : (Double, Double)]]? ?? []
+                    let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String?? : [Double] ] ]? ?? []
                     let costOfActivities = itineraryData["costOfActivities"] as? String ?? ""
                     
                     let id = doc.documentID
                     
-                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate, tripImage: tripImage, flightArrival: flightArrival, flightDeparture: flightDeparture, hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, day: day, activities: activities, activitiesCoordinates: activitiesCoordinates, costOfActivities: costOfActivities, id: id)
+                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate, tripImage: tripImage, flightArrival: flightArrival, flightDeparture: flightDeparture, hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, day: day, days: days, activities: activities, activitiesCoordinates: activitiesCoordinates, costOfActivities: costOfActivities, id: id)
 
                     self.itineraries.append(retrievedItinerary)
                 }

@@ -13,12 +13,12 @@ class ActivityDetailsViewController: UIViewController {
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
     }
-    var dayCounter = 1
     var dayDateLabel: UILabel?
     var activities = [String]()
     var activitiesTextFieldItems = [UITextField]()
     var costOfActivitiesTextField: UITextField?
-    var daysArray = [ [String : Any?] ]()
+    var days = [ [ String : [ [String : Any] ] ] ]()
+    var dayCounter = 1
     
     //MARK: - Lifecycle
     override func loadView() {
@@ -50,14 +50,20 @@ class ActivityDetailsViewController: UIViewController {
         if let costOfActivities = ItineraryController.sharedInstance.itineraryData["costOfActivities"] as? String {
             costOfActivitiesTextField?.text = costOfActivities
         }
+        if let dayCounter = ItineraryController.sharedInstance.itineraryData["dayCounter"] as? Int {
+            self.dayCounter = dayCounter
+            dayLabel.text = "Day \(dayCounter)"
+        }
     }
     
     func saveTextFieldInputs() {
-        if activitiesTextFieldItems[0].text != "" {
-            activitiesTextFieldItems.forEach { if !$0.text!.isEmpty { activities.append($0.text!) } }
-            ItineraryController.sharedInstance.itineraryData["activities"] = activities
-            activities = []
+        activitiesTextFieldItems.forEach {
+            if !$0.text!.isEmpty {
+                activities.append($0.text!)
+                ItineraryController.sharedInstance.itineraryData["activities"] = activities
+            }
         }
+        activities = []
         if costOfActivitiesTextField?.text != "" {
             ItineraryController.sharedInstance.itineraryData["costOfActivities"] = costOfActivitiesTextField?.text
         }
@@ -69,11 +75,16 @@ class ActivityDetailsViewController: UIViewController {
         
         ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "activities")
         activitiesTextFieldItems.forEach { $0.text = "" }
+        removeTextFields()
         
         ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "costOfActivities")
         costOfActivitiesTextField?.text = ""
         
         updateView()
+    }
+    
+    func removeTextFields() {
+       
     }
     
     func createCalendarStackView() {
@@ -208,14 +219,17 @@ class ActivityDetailsViewController: UIViewController {
         let day = ItineraryController.sharedInstance.itineraryData["day"] as? Date
         let activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [String]
         let costOfActivities = ItineraryController.sharedInstance.itineraryData["costOfActivities"] as? String
+        let dayCount = ItineraryController.sharedInstance.itineraryData["dayCounter"] as? Int
         
         if day != nil || activities != nil || costOfActivities != nil {
-            daysArray.append( ["Day \(dayCounter)" : day] )
-            daysArray.append( ["Day \(dayCounter)" : activities] )
-            daysArray.append( ["Day \(dayCounter)" : costOfActivities] )
-            ItineraryController.sharedInstance.itineraryData["days"] = daysArray
+            dayCounter = dayCount ?? 1
             dayCounter += 1
+            days.append(["Day \(dayCounter)" : [  ["day" : day], ["activities" : activities], ["costOfActivities" : costOfActivities] ] ])
+            ItineraryController.sharedInstance.itineraryData["days"] = days
+            ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
             clearTextFieldInputs()
+            
+            print(ItineraryController.sharedInstance.itineraryData)
         }
         
         dayLabel.text = "Day \(dayCounter)"
@@ -223,8 +237,8 @@ class ActivityDetailsViewController: UIViewController {
     
     @objc func createItineraryObject() {
         print("placeholder:", ItineraryController.sharedInstance.itineraryData)
-        ItineraryController.sharedInstance.itineraries = []
         ItineraryController.sharedInstance.createItinerary()
+        ItineraryController.sharedInstance.itineraries = []
         self.navigationController?.popToRootViewController(animated: true)
     }
     
