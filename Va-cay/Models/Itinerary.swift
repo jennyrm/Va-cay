@@ -12,7 +12,7 @@ class Itinerary {
     //MARK: - Properties
     ///tripDetailsVC
     let destinationCoordinates: [ [String?? : [Double] ] ]?
-    let tripName: String?
+    let tripName: String
     let tripDate: Date?
     let tripImage: Data?
     ///itineraryDetailsVC
@@ -30,9 +30,10 @@ class Itinerary {
     let costOfActivities: String?
     ///ID
     let id: String
+    let createdAt: Date
 
     init(destinationCoordinates: [ [String?? : [Double] ] ]?,
-        tripName: String?,
+        tripName: String,
         tripDate: Date?,
         tripImage: Data?,
         
@@ -49,7 +50,8 @@ class Itinerary {
         activitiesCoordinates: [ [String?? : [Double] ] ]?,
         costOfActivities: String?,
     
-        id: String)
+        id: String,
+        createdAt: Date)
     {
         self.destinationCoordinates = destinationCoordinates
         self.tripName = tripName
@@ -70,6 +72,7 @@ class Itinerary {
         self.costOfActivities = costOfActivities
         
         self.id = id
+        self.createdAt = createdAt
     }
     
 }//End of class

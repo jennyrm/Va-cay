@@ -1,5 +1,5 @@
 //
-//  ItineraryDetailsViewController.swift
+//  TripQuestionnairePartOneViewController.swift
 //  Va-cay
 //
 //  Created by Jenny Morales on 5/27/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TripDetailsViewController: UIViewController {
+class TripQuestionnairePartOneViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var mediaContainerView: UIView!
@@ -48,8 +48,8 @@ class TripDetailsViewController: UIViewController {
             destinationVC.tripImage = tripImage
             destinationVC.delegate = self
         }
-        if segue.identifier == "toItineraryDetailsVC" {
-            guard let _ = segue.destination as? ItineraryDetailsViewController else { return }
+        if segue.identifier == "toTripQuestionnairePartTwoVC" {
+            guard let _ = segue.destination as? TripQuestionnairePartTwoViewController else { return }
             saveTextFieldInputs()
         }
         if segue.identifier == "toTripCalendarVC" {
@@ -59,9 +59,8 @@ class TripDetailsViewController: UIViewController {
     }
     
     func saveTextFieldInputs() {
-        if tripNameTextField.text != "" {
-            ItineraryController.sharedInstance.itineraryData["tripName"] = tripNameTextField.text
-        }
+        guard let tripName = tripNameTextField.text, !tripName.isEmpty else { return presentErrorAlert(title: "Error", message: "Name of Trip field must not be empty.") }
+        ItineraryController.sharedInstance.itineraryData["tripName"] = tripNameTextField.text
         if tripImage != nil {
             let imageData = tripImage?.jpegData(compressionQuality: 0.5)
             ItineraryController.sharedInstance.itineraryData["tripImage"] = imageData
@@ -71,13 +70,13 @@ class TripDetailsViewController: UIViewController {
 }//End of class
 
 //MARK: - Extensions
-extension TripDetailsViewController: MediaSelectorDelegate {
+extension TripQuestionnairePartOneViewController: MediaSelectorDelegate {
     func mediaPickerSelected(image: UIImage) {
         self.tripImage = image
     }
 }//End of extension
 
-extension TripDetailsViewController: DatePickerDelegate {
+extension TripQuestionnairePartOneViewController: DatePickerDelegate {
     func dateSelected(_ date: Date?) {
         tripDateLabel.text = date?.formatToString()
     }

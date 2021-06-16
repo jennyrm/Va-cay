@@ -16,13 +16,13 @@ class ItineraryController {
     //MARK: - Source of Truth
     var itineraryData = [String : Any]()
     var itineraries = [Itinerary]()
-    var id = UUID().uuidString
     
     //MARK: - Reference to DB
     let db = Firestore.firestore()
     
     //MARK: - CRUD Functions
     func createItinerary() {
+        let id = UUID().uuidString
         let itineraryReference = db.collection("itineraries").document(id)
         itineraryReference.setData(itineraryData)
     }
@@ -37,38 +37,40 @@ class ItineraryController {
                 for doc in snapshot.documents {
                     let itineraryData = doc.data()
                     
-                    let destinationCoordinates = itineraryData["destinationCoordinate"] as? [ [String?? : [Double] ] ]? ?? []
+                    let destinationCoordinates = itineraryData["destinationCoordinates"] as? [ [String?? : [Double] ] ] ?? []
                     let tripName = itineraryData["tripName"] as? String ?? ""
                     let tripDate = itineraryData["tripDate"] as? Date ?? Date()
-                    let tripImage = itineraryData["tripImage"] as? Data? ?? Data()
+                    let tripImage = itineraryData["tripImage"] as? Data ?? Data()
                     
                     let flightArrival = itineraryData["flightArrival"] as? Date ?? Date()
                     let flightDeparture = itineraryData["flightDeparture"] as? Date ?? Date()
-                   
+                    
                     let hotelAirbnb = itineraryData["hotelAirbnb"] as? String ?? ""
-                    let hotelAirbnbCoordinates = itineraryData["hotelAirbnbCoordinates"] as? [ [String?? : [Double] ] ]? ?? []
+                    let hotelAirbnbCoordinates = itineraryData["hotelAirbnbCoordinates"] as? [ [String?? : [Double] ] ] ?? []
                     let budget = itineraryData["budget"] as? String ?? ""
                     let checklist = itineraryData["checklist"] as? [String] ?? []
                     
                     let day = itineraryData["day"] as? Date ?? Date()
                     let days = itineraryData["days"] as? [ [ String : [ [String : Any] ] ] ] ?? []
                     let activities = itineraryData["activities"] as? [String] ?? []
-                    let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String?? : [Double] ] ]? ?? []
+                    let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String?? : [Double] ] ] ?? []
                     let costOfActivities = itineraryData["costOfActivities"] as? String ?? ""
                     
                     let id = doc.documentID
+                    let createdAtString = itineraryData["createdAt"] as? String ?? ""
                     
-                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate, tripImage: tripImage, flightArrival: flightArrival, flightDeparture: flightDeparture, hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, day: day, days: days, activities: activities, activitiesCoordinates: activitiesCoordinates, costOfActivities: costOfActivities, id: id)
-
+                    let dateformatter = ISO8601DateFormatter()
+                    let createdAt = dateformatter.date(from: createdAtString)
+                    
+                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate, tripImage: tripImage, flightArrival: flightArrival, flightDeparture: flightDeparture, hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, day: day, days: days, activities: activities, activitiesCoordinates: activitiesCoordinates, costOfActivities: costOfActivities, id: id, createdAt: createdAt ?? Date())
+                    
                     self.itineraries.append(retrievedItinerary)
                 }
+//                let sortItineraryObjectsByDate = self.itineraries.sorted(by: { $0.createdAt < $1.createdAt })
+//                self.itineraries = sortItineraryObjectsByDate
                 completion(true)
             }
         }
     }
     
-    func uploadImageToFirebase(with imageName: String) {
-        
-    }
-
 }//End of class

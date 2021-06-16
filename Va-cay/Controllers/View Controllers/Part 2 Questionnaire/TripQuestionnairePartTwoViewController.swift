@@ -1,5 +1,5 @@
 //
-//  ItineraryDetailsViewController.swift
+//  TripQuestionnairePartTwoViewController.swift
 //  Va-cay
 //
 //  Created by Jenny Morales on 5/30/21.
@@ -7,12 +7,13 @@
 
 import UIKit
 
-class ItineraryDetailsViewController: UIViewController {
+class TripQuestionnairePartTwoViewController: UIViewController {
     
     //MARK: - Properties
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
     }
+    var calendarCounter = 0
     var flightArrivalDateLabel = UILabel()
     var flightDepartureDateLabel = UILabel()
     var flightArrivalOrDeparture: String?
@@ -88,6 +89,8 @@ class ItineraryDetailsViewController: UIViewController {
         button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
         button.tintColor = .systemBlue
         button.backgroundColor = .systemGray6
+        button.tag = calendarCounter
+        calendarCounter += 1
         button.addTarget(self, action: #selector(showCalendarButtonAction), for: .touchUpInside)
         
         let labelButtonStackView = UIStackView()
@@ -240,7 +243,6 @@ class ItineraryDetailsViewController: UIViewController {
         scrollableStackView.addArrangedSubview(textFieldButtonStackView)
         scrollView.addSubview(scrollableStackView)
     }
-    
     //    func createScrollableStackView() {
     //        self.view.addSubview(scrollView)
     //
@@ -409,7 +411,7 @@ class ItineraryDetailsViewController: UIViewController {
 }//End of class
 
 //MARK: - Extensions
-extension ItineraryDetailsViewController: DatePickerDelegate {
+extension TripQuestionnairePartTwoViewController: DatePickerDelegate {
     func dateSelected(_ date: Date?) {
         if flightArrivalOrDeparture == "flightArrival" {
             flightArrivalDateLabel.text = date?.formatToStringWithShortDateAndTime()
@@ -420,7 +422,7 @@ extension ItineraryDetailsViewController: DatePickerDelegate {
     }
 }//End of extension
 
-extension ItineraryDetailsViewController: MapPinDropped {
+extension TripQuestionnairePartTwoViewController: MapPinDropped {
     func droppedPin(title: String) {
         hotelAirbnbTextField?.text = title
     }

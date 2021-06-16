@@ -30,7 +30,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DDW-h3-aWU" kind="show" id="znz-mM-Txb"/>
+                                    <segue destination="DDW-h3-aWU" kind="show" identifier="" id="znz-mM-Txb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where is your next destination?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrQ-R0-jfb">
@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="828.98550724637687" y="125.89285714285714"/>
         </scene>
-        <!--Trip Details View Controller-->
+        <!--Trip Questionnaire Part One View Controller-->
         <scene sceneID="IHX-hT-bwC">
             <objects>
-                <viewController id="DDW-h3-aWU" customClass="TripDetailsViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DDW-h3-aWU" customClass="TripQuestionnairePartOneViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7l7-wW-TbP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="ewc-Yv-uN5" kind="show" identifier="toItineraryDetailsVC" id="K1E-fa-56i"/>
+                                    <segue destination="ewc-Yv-uN5" kind="show" identifier="toTripQuestionnairePartTwoVC" id="K1E-fa-56i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -392,6 +392,50 @@
             </objects>
             <point key="canvasLocation" x="1553.6231884057972" y="-579.24107142857144"/>
         </scene>
+        <!--Itinerary Map Pins Location Search Table View Controller-->
+        <scene sceneID="ULK-K0-XO5">
+            <objects>
+                <tableViewController storyboardIdentifier="ItineraryMapPinsLocationSearchTableVC" id="99T-mJ-4Dr" customClass="ItineraryMapPinsLocationSearchTableViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uT5-wE-YME">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itineraryMapPinsLocationCell" textLabel="osD-E2-PTq" detailTextLabel="gST-bb-dU1" rowHeight="81" style="IBUITableViewCellStyleSubtitle" id="vXy-P3-sWe">
+                                <rect key="frame" x="0.0" y="28" width="414" height="81"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vXy-P3-sWe" id="xZU-Zn-E6K">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="osD-E2-PTq">
+                                            <rect key="frame" x="20" y="20" width="33" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gST-bb-dU1">
+                                            <rect key="frame" x="20" y="43.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="99T-mJ-4Dr" id="NqA-q6-abc"/>
+                            <outlet property="delegate" destination="99T-mJ-4Dr" id="IdR-XU-g3u"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVs-kN-NDn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="-1229.4642857142856"/>
+        </scene>
         <!--Destination Location Search Table View Controller-->
         <scene sceneID="E7Q-4X-NkV">
             <objects>
@@ -436,7 +480,7 @@
             </objects>
             <point key="canvasLocation" x="829" y="-1229"/>
         </scene>
-        <!--User Feed View Controller-->
+        <!--Itineraries-->
         <scene sceneID="AFp-Ut-etM">
             <objects>
                 <viewController id="m1P-Ch-jBs" customClass="UserFeedViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
@@ -449,48 +493,55 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itineraryCell" id="Hf2-aO-9K2" customClass="ItineraryTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="264.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="283"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hf2-aO-9K2" id="QPu-e8-g1F">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="264.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="283"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="nN1-zn-d8x">
-                                                    <rect key="frame" x="70" y="11" width="274" height="242.5"/>
+                                                    <rect key="frame" x="70" y="11" width="274" height="261"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qNH-IS-HKg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="274" height="17.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="274" height="31.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(destinationLabel)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkU-tw-SCw">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="230.5" height="17.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="203" height="31.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJO-Mb-1gf">
-                                                                    <rect key="frame" x="234.5" y="0.0" width="18" height="17.5"/>
+                                                                    <rect key="frame" x="207" y="0.0" width="31.5" height="31.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="yJO-Mb-1gf" secondAttribute="height" multiplier="1:1" id="X1N-PY-cZD"/>
                                                                     </constraints>
                                                                     <color key="tintColor" systemColor="systemRedColor"/>
                                                                     <state key="normal" image="mappin.and.ellipse" catalog="system">
-                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="mapPinButtonTapped:" destination="Hf2-aO-9K2" eventType="touchUpInside" id="j4G-QX-7xt"/>
+                                                                        <segue destination="s9D-1W-1TA" kind="show" identifier="toMapVC" id="sUL-gB-KDv"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODo-JB-36o">
-                                                                    <rect key="frame" x="256.5" y="0.0" width="17.5" height="17.5"/>
+                                                                    <rect key="frame" x="242.5" y="0.0" width="31.5" height="31.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="ODo-JB-36o" secondAttribute="height" multiplier="1:1" id="ySa-qh-S7d"/>
                                                                     </constraints>
                                                                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <state key="normal" image="book.closed" catalog="system">
-                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <segue destination="Z3t-xR-Tbt" kind="show" identifier="toItineraryDetailVC" id="Uu8-2r-2Ae"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4NX-qG-XJ4">
-                                                            <rect key="frame" x="36.5" y="41.5" width="201" height="201"/>
+                                                            <rect key="frame" x="34" y="55.5" width="206" height="205.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="4NX-qG-XJ4" secondAttribute="height" multiplier="1:1" id="BOK-xr-KxP"/>
                                                             </constraints>
@@ -529,7 +580,8 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="96"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FcE-YC-VHs" kind="show" id="vyA-Kq-Mcy"/>
+                                    <action selector="addItineraryButtonTapped:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="lBo-Sc-6fw"/>
+                                    <segue destination="FcE-YC-VHs" kind="show" identifier="toCreateItineraryVC" id="vyA-Kq-Mcy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -549,7 +601,7 @@
                             <constraint firstItem="xze-mH-ucy" firstAttribute="trailing" secondItem="4yy-J3-xVb" secondAttribute="trailing" id="zlE-oS-nqY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CAq-3m-DlV">
+                    <navigationItem key="navigationItem" title="Itineraries" id="CAq-3m-DlV">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="9Sm-Gf-l8y">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
@@ -561,6 +613,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMq-tx-EfR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="125.89285714285714"/>
+        </scene>
+        <!--Itinerary Detail Table View Controller-->
+        <scene sceneID="GyP-gQ-MMy">
+            <objects>
+                <tableViewController id="Z3t-xR-Tbt" customClass="ItineraryDetailTableViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bEP-nF-7wQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Vtv-in-hn9">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="228"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="123" id="ep0-5l-GDs">
+                                <rect key="frame" x="0.0" y="256" width="414" height="123"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ep0-5l-GDs" id="g52-u7-b11">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Z3t-xR-Tbt" id="oTr-ne-lFs"/>
+                            <outlet property="delegate" destination="Z3t-xR-Tbt" id="v9r-zi-Ehh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7Ie-xS-lkR"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4qj-Ck-p5a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="812"/>
+        </scene>
+        <!--Itinerary Map Pins Location Manager View Controller-->
+        <scene sceneID="BGQ-Po-3Xf">
+            <objects>
+                <viewController id="s9D-1W-1TA" customClass="ItineraryMapPinsLocationManagerViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EYE-rh-2lg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uLm-En-gCV">
+                                <rect key="frame" x="0.0" y="88" width="414" height="688"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyN-eo-R2a">
+                                <rect key="frame" x="135" y="800" width="144" height="30"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <state key="normal" title="Get Current Location">
+                                    <color key="titleShadowColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="getCurrentLocationButtonTapped:" destination="s9D-1W-1TA" eventType="touchUpInside" id="gxj-mh-MZz"/>
+                                    <action selector="getCurrentLocationButtonTapped:" destination="FcE-YC-VHs" eventType="touchUpInside" id="o8t-jG-kPY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FUN-VV-O7q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uLm-En-gCV" firstAttribute="trailing" secondItem="FUN-VV-O7q" secondAttribute="trailing" id="0Qx-KO-XrZ"/>
+                            <constraint firstItem="uLm-En-gCV" firstAttribute="top" secondItem="FUN-VV-O7q" secondAttribute="top" id="8fm-5d-Gx2"/>
+                            <constraint firstItem="TyN-eo-R2a" firstAttribute="leading" secondItem="FUN-VV-O7q" secondAttribute="leading" constant="135" id="cTS-We-c62"/>
+                            <constraint firstItem="FUN-VV-O7q" firstAttribute="trailing" secondItem="TyN-eo-R2a" secondAttribute="trailing" constant="135" id="igd-S9-GDn"/>
+                            <constraint firstItem="uLm-En-gCV" firstAttribute="leading" secondItem="FUN-VV-O7q" secondAttribute="leading" id="nLz-DI-Gc4"/>
+                            <constraint firstItem="TyN-eo-R2a" firstAttribute="top" secondItem="uLm-En-gCV" secondAttribute="bottom" constant="24" id="ueN-Nb-XKz"/>
+                            <constraint firstItem="FUN-VV-O7q" firstAttribute="bottom" secondItem="TyN-eo-R2a" secondAttribute="bottom" constant="32" id="wWP-sw-J3Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jD4-CM-mJj"/>
+                    <connections>
+                        <outlet property="mapView" destination="uLm-En-gCV" id="bg7-3K-QsS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PaF-fy-jCy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="-579.24107142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fcG-QO-DFI">
@@ -771,10 +901,10 @@
             </objects>
             <point key="canvasLocation" x="2903" y="-579"/>
         </scene>
-        <!--Itinerary Details View Controller-->
+        <!--Trip Questionnaire Part Two View Controller-->
         <scene sceneID="9Td-d3-zsL">
             <objects>
-                <viewController id="ewc-Yv-uN5" customClass="ItineraryDetailsViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ewc-Yv-uN5" customClass="TripQuestionnairePartTwoViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CeB-BQ-K5u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -793,10 +923,10 @@
             </objects>
             <point key="canvasLocation" x="2228" y="126"/>
         </scene>
-        <!--Activity Details View Controller-->
+        <!--Trip Questionnaire Part Three View Controller-->
         <scene sceneID="Zzc-d5-az1">
             <objects>
-                <viewController id="vkf-yf-Buo" customClass="ActivityDetailsViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vkf-yf-Buo" customClass="TripQuestionnairePartThreeViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gL2-zI-6Zb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -895,10 +1025,29 @@
             </objects>
             <point key="canvasLocation" x="4273.913043478261" y="1153.7946428571429"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Kgd-TN-QjH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Mw-Ly-AcS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0BS-Sd-H59">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="s9D-1W-1TA" kind="relationship" relationship="rootViewController" id="FYC-gM-gRA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="svE-t2-EBD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-533" y="-579"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="sUL-gB-KDv"/>
         <segue reference="2ii-h4-v0S"/>
-        <segue reference="noC-Nr-Z4w"/>
+        <segue reference="lQq-R3-EKe"/>
         <segue reference="vyA-Kq-Mcy"/>
     </inferredMetricsTieBreakers>
     <resources>

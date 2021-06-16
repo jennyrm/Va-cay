@@ -11,7 +11,6 @@ extension Date {
     func formatToString() -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
-//        formatter.timeStyle = .short
         return formatter.string(from: self)
     }
     
@@ -29,4 +28,3 @@ extension Date {
         return formatter.string(from: self)
     }
 }//End of extension
-

@@ -1,5 +1,5 @@
 //
-//  ActivityDetailsViewController.swift
+//  TripQuestionnairePartThreeViewController.swift
 //  Va-cay
 //
 //  Created by Jenny Morales on 5/28/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ActivityDetailsViewController: UIViewController {
+class TripQuestionnairePartThreeViewController: UIViewController {
     
     //MARK: - Properties
     var safeArea: UILayoutGuide {
@@ -84,7 +84,11 @@ class ActivityDetailsViewController: UIViewController {
     }
     
     func removeTextFields() {
-       
+        let subviews = scrollableStackView.subviews
+        for textfield in subviews {
+            textfield.removeFromSuperview()
+        }
+        addActivityButtonAction()
     }
     
     func createCalendarStackView() {
@@ -228,17 +232,18 @@ class ActivityDetailsViewController: UIViewController {
             ItineraryController.sharedInstance.itineraryData["days"] = days
             ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
             clearTextFieldInputs()
-            
-            print(ItineraryController.sharedInstance.itineraryData)
         }
         
         dayLabel.text = "Day \(dayCounter)"
     }
     
     @objc func createItineraryObject() {
-        print("placeholder:", ItineraryController.sharedInstance.itineraryData)
+        let date = Date().formatToStringWithShortDateAndTime()
+//        print("placeholder:", ItineraryController.sharedInstance.itineraryData)
+        ItineraryController.sharedInstance.itineraryData["createdAt"] = date
         ItineraryController.sharedInstance.createItinerary()
-        ItineraryController.sharedInstance.itineraries = []
+        ItineraryController.sharedInstance.itineraryData = [:]
+        
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -367,13 +372,13 @@ class ActivityDetailsViewController: UIViewController {
 }//End of class
 
 //MARK: - Extensions
-extension ActivityDetailsViewController: DatePickerDelegate {
+extension TripQuestionnairePartThreeViewController: DatePickerDelegate {
     func dateSelected(_ date: Date?) {
         dayDateLabel?.text = date?.formatToStringWithLongDateAndTime()
     }
 }//End of extension
 
-extension ActivityDetailsViewController: MapPinDropped {
+extension TripQuestionnairePartThreeViewController: MapPinDropped {
     func droppedPin(title: String) {
         //        for index in 0..<arrayOfTitles.count {
         //            activitiesTextFieldItems[index].text = arrayOfTitles[index]
@@ -384,6 +389,7 @@ extension ActivityDetailsViewController: MapPinDropped {
         for textField in activitiesTextFieldItems {
             if textField.text == "" {
                 textField.text = title
+                return
             }
         }
         setupScrollableStackViewConstraints()

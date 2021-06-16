@@ -12,6 +12,9 @@ class UserFeedViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: - Properties
+    var indexPathRow: Int?
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +24,9 @@ class UserFeedViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    //MARK: - Actions
+    @IBAction func addItineraryButtonTapped(_ sender: UIButton) {
+        ItineraryController.sharedInstance.itineraries = []
+    }
     
     //MARK: - Functions
     func fetchData() {
@@ -29,7 +34,6 @@ class UserFeedViewController: UIViewController {
             ItineraryController.sharedInstance.fetchItineraries { (success) in
                 if success {
                     print("Successfully fetched data!!")
-                    print(ItineraryController.sharedInstance.itineraries)
                     self.tableView.reloadData()
                 } else {
                     print("Firebase didn't return shit")
@@ -41,6 +45,12 @@ class UserFeedViewController: UIViewController {
 }//End of class
 
 //MARK: - Extensions
+extension UserFeedViewController: getIndexPathRow {
+    func indexPath(row: Int) {
+        self.indexPathRow = row
+    }
+}//End of extension
+
 extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         ItineraryController.sharedInstance.itineraries.count
@@ -49,6 +59,8 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "itineraryCell", for: indexPath) as? ItineraryTableViewCell else { return UITableViewCell() }
         let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
+        cell.row = indexPath.row
+        cell.delegate = self
         cell.itinerary = itinerary
         return cell
     }
@@ -57,4 +69,15 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
         return 225
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMapVC" {
+            print(indexPathRow)
+            guard let indexPathRow = self.indexPathRow,
+                let destinationVC = segue.destination as? ItineraryMapPinsLocationManagerViewController else { return }
+            let itineraryToSend = ItineraryController.sharedInstance.itineraries[indexPathRow]
+            destinationVC.itinerary = itineraryToSend
+        }
+    }
+    
 }//End of extension
+

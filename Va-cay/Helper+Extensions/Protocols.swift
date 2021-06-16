@@ -19,3 +19,7 @@ protocol HandleMapSearch: AnyObject {
 protocol MapPinDropped: AnyObject {
     func droppedPin(title: String)
 }
+
+protocol getIndexPathRow: AnyObject {
+    func indexPath(row: Int)
+}
