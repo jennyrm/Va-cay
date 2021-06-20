@@ -227,8 +227,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         
         if day != nil || activities != nil || costOfActivities != nil {
             dayCounter = dayCount ?? 1
+            days.append([ "Day \(dayCounter)" : [  ["day" : day], ["activities" : activities ] ] ])
             dayCounter += 1
-            days.append(["Day \(dayCounter)" : [  ["day" : day], ["activities" : activities], ["costOfActivities" : costOfActivities] ] ])
             ItineraryController.sharedInstance.itineraryData["days"] = days
             ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
             clearTextFieldInputs()

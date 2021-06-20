@@ -27,6 +27,10 @@ class ItineraryTableViewCell: UITableViewCell {
         guard let row = row else { return }
         delegate?.indexPath(row: row)
     }
+    @IBAction func itineraryButtonTapped(_ sender: UIButton) {
+        guard let row = row else { return }
+        delegate?.indexPath(row: row)
+    }
     
     //MARK: - Functions
     func updateView() {

@@ -71,9 +71,14 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMapVC" {
-            print(indexPathRow)
             guard let indexPathRow = self.indexPathRow,
                 let destinationVC = segue.destination as? ItineraryMapPinsLocationManagerViewController else { return }
+            let itineraryToSend = ItineraryController.sharedInstance.itineraries[indexPathRow]
+            destinationVC.itinerary = itineraryToSend
+        }
+        if segue.identifier == "toItineraryDetailVC" {
+            guard let indexPathRow = self.indexPathRow,
+                let destinationVC = segue.destination as? ItineraryDetailViewController else { return }
             let itineraryToSend = ItineraryController.sharedInstance.itineraries[indexPathRow]
             destinationVC.itinerary = itineraryToSend
         }

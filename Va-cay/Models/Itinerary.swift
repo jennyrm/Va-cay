@@ -10,19 +10,19 @@ import UIKit
 class Itinerary {
     
     //MARK: - Properties
-    ///tripDetailsVC
+    ///TripQuestionnairePart1
     let destinationCoordinates: [ [String?? : [Double] ] ]?
     let tripName: String
     let tripDate: Date?
     let tripImage: Data?
-    ///itineraryDetailsVC
+    ///TripQuestionnairePart2
     let flightArrival: Date?
     let flightDeparture: Date?
     let hotelAirbnb: String?
     let hotelAirbnbCoordinates: [ [String?? : [Double] ] ]?
     let budget: String?
     let checklist: [String]?
-    ///activityDetailsVC
+    ///TripQuestionnairePart3
     let day: Date?
     let days: [ [ String : [ [String : Any] ] ] ]?
     let activities: [String]?

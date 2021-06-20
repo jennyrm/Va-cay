@@ -39,19 +39,29 @@ class ItineraryController {
                     
                     let destinationCoordinates = itineraryData["destinationCoordinates"] as? [ [String?? : [Double] ] ] ?? []
                     let tripName = itineraryData["tripName"] as? String ?? ""
-                    let tripDate = itineraryData["tripDate"] as? Date ?? Date()
+                    let tripDate = itineraryData["tripDate"] as? Timestamp ?? nil
                     let tripImage = itineraryData["tripImage"] as? Data ?? Data()
                     
-                    let flightArrival = itineraryData["flightArrival"] as? Date ?? Date()
-                    let flightDeparture = itineraryData["flightDeparture"] as? Date ?? Date()
+                    let flightArrival = itineraryData["flightArrival"] as? Timestamp ?? nil
+                    let flightDeparture = itineraryData["flightDeparture"] as? Timestamp ?? nil
                     
                     let hotelAirbnb = itineraryData["hotelAirbnb"] as? String ?? ""
                     let hotelAirbnbCoordinates = itineraryData["hotelAirbnbCoordinates"] as? [ [String?? : [Double] ] ] ?? []
                     let budget = itineraryData["budget"] as? String ?? ""
                     let checklist = itineraryData["checklist"] as? [String] ?? []
                     
-                    let day = itineraryData["day"] as? Date ?? Date()
-                    let days = itineraryData["days"] as? [ [ String : [ [String : Any] ] ] ] ?? []
+                    let day = itineraryData["day"] as? Timestamp ?? nil
+//                    let days = itineraryData["days"] as? [ [ String : [ [String : Any] ] ] ] ?? []
+                    if let days = itineraryData["days"] as? [ [ String : [ [String : Any] ] ] ] {
+                        for day in days {
+                            for index in day {
+                                for key in index.value {
+                                    key.values as? Timestamp
+                                    print(key.values)
+                                }
+                            }
+                        }
+                    }
                     let activities = itineraryData["activities"] as? [String] ?? []
                     let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String?? : [Double] ] ] ?? []
                     let costOfActivities = itineraryData["costOfActivities"] as? String ?? ""
@@ -62,7 +72,7 @@ class ItineraryController {
                     let dateformatter = ISO8601DateFormatter()
                     let createdAt = dateformatter.date(from: createdAtString)
                     
-                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate, tripImage: tripImage, flightArrival: flightArrival, flightDeparture: flightDeparture, hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, day: day, days: days, activities: activities, activitiesCoordinates: activitiesCoordinates, costOfActivities: costOfActivities, id: id, createdAt: createdAt ?? Date())
+                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate?.dateValue(), tripImage: tripImage, flightArrival: flightArrival?.dateValue(), flightDeparture: flightDeparture?.dateValue(), hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, day: day?.dateValue(), days: nil, activities: activities, activitiesCoordinates: activitiesCoordinates, costOfActivities: costOfActivities, id: id, createdAt: createdAt ?? Date())
                     
                     self.itineraries.append(retrievedItinerary)
                 }
