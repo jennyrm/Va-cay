@@ -18,10 +18,14 @@ class UserFeedViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
-        
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        ItineraryController.sharedInstance.itineraries = []
+        fetchData()
     }
     
     @IBAction func addItineraryButtonTapped(_ sender: UIButton) {

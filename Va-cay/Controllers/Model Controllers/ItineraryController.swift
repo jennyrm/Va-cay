@@ -24,7 +24,7 @@ class ItineraryController {
     func createItinerary() {
         let id = UUID().uuidString
         let itineraryReference = db.collection("itineraries").document(id)
-        itineraryReference.setData(itineraryData)
+        itineraryReference.setData(itineraryData, merge: true)
     }
     
     func fetchItineraries(completion: @escaping (Bool) -> Void) {
@@ -50,21 +50,11 @@ class ItineraryController {
                     let budget = itineraryData["budget"] as? String ?? ""
                     let checklist = itineraryData["checklist"] as? [String] ?? []
                     
-                    let day = itineraryData["day"] as? Timestamp ?? nil
-//                    let days = itineraryData["days"] as? [ [ String : [ [String : Any] ] ] ] ?? []
-                    if let days = itineraryData["days"] as? [ [ String : [ [String : Any] ] ] ] {
-                        for day in days {
-                            for index in day {
-                                for key in index.value {
-                                    key.values as? Timestamp
-                                    print(key.values)
-                                }
-                            }
-                        }
-                    }
-                    let activities = itineraryData["activities"] as? [String] ?? []
+                    let dayCounter = itineraryData["dayCounter"] as? Int ?? 1
+                    let days = itineraryData["days"] as? [ [String : Date?] ] ?? nil
+                    let activities = itineraryData["activities"] as? [ [ String : [String] ] ] ?? nil
                     let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String?? : [Double] ] ] ?? []
-                    let costOfActivities = itineraryData["costOfActivities"] as? String ?? ""
+                    let costOfActivities = itineraryData["costOfActivities"] as? [String] ?? []
                     
                     let id = doc.documentID
                     let createdAtString = itineraryData["createdAt"] as? String ?? ""
@@ -72,7 +62,7 @@ class ItineraryController {
                     let dateformatter = ISO8601DateFormatter()
                     let createdAt = dateformatter.date(from: createdAtString)
                     
-                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate?.dateValue(), tripImage: tripImage, flightArrival: flightArrival?.dateValue(), flightDeparture: flightDeparture?.dateValue(), hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, day: day?.dateValue(), days: nil, activities: activities, activitiesCoordinates: activitiesCoordinates, costOfActivities: costOfActivities, id: id, createdAt: createdAt ?? Date())
+                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate?.dateValue(), tripImage: tripImage, flightArrival: flightArrival?.dateValue(), flightDeparture: flightDeparture?.dateValue(), hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, dayCounter: dayCounter, days: nil, activities: activities, activitiesCoordinates: activitiesCoordinates, costOfActivities: costOfActivities, id: id, createdAt: createdAt ?? Date())
                     
                     self.itineraries.append(retrievedItinerary)
                 }

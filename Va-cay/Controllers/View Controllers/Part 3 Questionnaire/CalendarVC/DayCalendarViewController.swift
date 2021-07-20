@@ -26,7 +26,6 @@ class DayCalendarViewController: UIViewController {
     @IBAction func dayDatePickerChanged(_ sender: UIDatePicker) {
         day = dayDatePicker.date
         delegate?.dateSelected(day)
-        ItineraryController.sharedInstance.itineraryData["day"] = day
     }
     
     //MARK: - Functions

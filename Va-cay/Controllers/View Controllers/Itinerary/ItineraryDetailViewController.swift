@@ -20,19 +20,21 @@ class ItineraryDetailViewController: UIViewController {
     
     //MARK: - Properties
     var checklist = ""
+    var days = [String]()
+    var activities = [[String]]()
     var itinerary: Itinerary? {
         didSet {
             loadViewIfNeeded()
             updateView()
         }
     }
-
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     //MARK: -  Actions
@@ -49,33 +51,27 @@ class ItineraryDetailViewController: UIViewController {
             checklist.append("•\($0)\n")
         })
         checklistLabel.text = checklist
-//        itinerary.days?.forEach({ key in
-//            print(key.values.first?[0].keys)
-//            print(key.values.first?[0]["day"])
-//        })
-//        print(itinerary.days)
+        itinerary.activities?.forEach({ (day) in
+            for (key, value) in day {
+                days.append(key)
+                activities.append(value)
+            }
+        })
     }
-
+    
 }//End of class
 
 //MARK: - Extensions
-//extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if let itinerary = itinerary {
-//            return itinerary.days!.count
-//        } else {
-//            return 1
-//        }
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let itinerary = itinerary {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "dayActivityCell")
-//            cell?.textLabel?.text = itinerary
-//            cell.detailTextLabel.text = itinerar
-//            return cell!
-//        } else {
-//             return UITableViewCell()
-//        }
-//    }
-//}//End of extension
+extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return itinerary?.activities?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let itinerary = itinerary,
+              let cell = tableView.dequeueReusableCell(withIdentifier: "dayActivityCell") else { return UITableViewCell() }
+        cell.textLabel?.text = days[indexPath.row]
+//        cell.detailTextLabel?.text =
+        return cell
+    }
+}//End of extension

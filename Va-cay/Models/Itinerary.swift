@@ -23,11 +23,11 @@ class Itinerary {
     let budget: String?
     let checklist: [String]?
     ///TripQuestionnairePart3
-    let day: Date?
-    let days: [ [ String : [ [String : Any] ] ] ]?
-    let activities: [String]?
+    let dayCounter: Int
+    let days: [ [String : Date?] ]?
+    let activities: [ [ String : [String] ] ]?
     let activitiesCoordinates: [ [String?? : [Double] ] ]?
-    let costOfActivities: String?
+    let costOfActivities: [String]?
     ///ID
     let id: String
     let createdAt: Date
@@ -44,11 +44,11 @@ class Itinerary {
         budget: String?,
         checklist: [String]?,
         
-        day: Date?,
-        days: [ [ String : [ [String : Any] ] ] ]?,
-        activities: [String]?,
+        dayCounter: Int,
+        days: [ [String : Date?] ]?,
+        activities: [ [ String : [String] ] ]?,
         activitiesCoordinates: [ [String?? : [Double] ] ]?,
-        costOfActivities: String?,
+        costOfActivities: [String]?,
     
         id: String,
         createdAt: Date)
@@ -65,7 +65,7 @@ class Itinerary {
         self.budget = budget
         self.checklist = checklist
         
-        self.day = day
+        self.dayCounter = dayCounter
         self.days = days
         self.activities = activities
         self.activitiesCoordinates = activitiesCoordinates

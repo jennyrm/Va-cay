@@ -13,12 +13,15 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
     }
+    var dayCounter = 1
     var dayDateLabel: UILabel?
-    var activities = [String]()
+    var days = [ [String : Date?] ]()
+    var activities = [ [ String : [String] ] ]()
+    var currentDay: Date?
+    var currentActivities = [String]()
+    var costOfActivities = [String]()
     var activitiesTextFieldItems = [UITextField]()
     var costOfActivitiesTextField: UITextField?
-    var days = [ [ String : [ [String : Any] ] ] ]()
-    var dayCounter = 1
     
     //MARK: - Lifecycle
     override func loadView() {
@@ -38,13 +41,13 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     //MARK: - Functions
     func updateView() {
-        if let day = ItineraryController.sharedInstance.itineraryData["day"] as? Date {
-            dayDateLabel?.text = day.formatToStringWithLongDateAndTime()
+        if let currentDay = ItineraryController.sharedInstance.itineraryData["currentDay"] as? Date {
+            dayDateLabel?.text = currentDay.formatToStringWithLongDateAndTime()
         }
-        if let activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [String] {
-            for index in 0..<activities.count {
+        if let currentActivities = ItineraryController.sharedInstance.itineraryData["currentActivities"] as? [String] {
+            for index in 0..<currentActivities.count {
                 setupScrollableStackViewConstraints()
-                activitiesTextFieldItems[index].text = activities[index]
+                activitiesTextFieldItems[index].text = currentActivities[index]
             }
         }
         if let costOfActivities = ItineraryController.sharedInstance.itineraryData["costOfActivities"] as? String {
@@ -59,21 +62,32 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     func saveTextFieldInputs() {
         activitiesTextFieldItems.forEach {
             if !$0.text!.isEmpty {
-                activities.append($0.text!)
-                ItineraryController.sharedInstance.itineraryData["activities"] = activities
+                currentActivities.append($0.text!)
             }
         }
-        activities = []
-        if costOfActivitiesTextField?.text != "" {
-            ItineraryController.sharedInstance.itineraryData["costOfActivities"] = costOfActivitiesTextField?.text
+        ItineraryController.sharedInstance.itineraryData["currentActivities"] = currentActivities
+        if !currentActivities.isEmpty {
+            activities.append(["Day \(dayCounter)" : currentActivities])
         }
+        currentActivities = []
+        
+        ItineraryController.sharedInstance.itineraryData["currentDay"] = currentDay
+        currentDay = nil
+        
+        ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
+        
+        
+        ItineraryController.sharedInstance.itineraryData["activities"] = activities
+        //        if costOfActivitiesTextField?.text != "" {
+        //            ItineraryController.sharedInstance.itineraryData["costOfActivities"] = costOfActivitiesTextField?.text
+        //        }
     }
     
     func clearTextFieldInputs() {
-        ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "day")
+        ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "currentDay")
         dayDateLabel?.text = ""
         
-        ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "activities")
+        ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "currentActivities")
         activitiesTextFieldItems.forEach { $0.text = "" }
         removeTextFields()
         
@@ -175,7 +189,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         textField.borderStyle = .line
         costOfActivitiesTextField = textField
         
-        
         self.view.addSubview(label)
         self.view.addSubview(textField)
         self.view.addSubview(estimatedCostStackView)
@@ -219,30 +232,30 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     @objc func addNewDay() {
         saveTextFieldInputs()
-        
-        let day = ItineraryController.sharedInstance.itineraryData["day"] as? Date
-        let activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [String]
-        let costOfActivities = ItineraryController.sharedInstance.itineraryData["costOfActivities"] as? String
-        let dayCount = ItineraryController.sharedInstance.itineraryData["dayCounter"] as? Int
-        
-        if day != nil || activities != nil || costOfActivities != nil {
-            dayCounter = dayCount ?? 1
-            days.append([ "Day \(dayCounter)" : [  ["day" : day], ["activities" : activities ] ] ])
+
+        let currentActivities = ItineraryController.sharedInstance.itineraryData["currentActivities"] as? [String]
+//        let costOfActivities = ItineraryController.sharedInstance.itineraryData["costOfActivities"] as? [String]
+
+        if currentActivities != [] {
+            days.append(["Day \(self.dayCounter)" : currentDay ?? nil ])
             dayCounter += 1
             ItineraryController.sharedInstance.itineraryData["days"] = days
             ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
+            ItineraryController.sharedInstance.itineraryData["activities"] = activities
+//            ItineraryController.sharedInstance.itineraryData["costOfActivities"] = costOfActivities
             clearTextFieldInputs()
+            dayLabel.text = "Day \(dayCounter)"
         }
         
-        dayLabel.text = "Day \(dayCounter)"
     }
     
     @objc func createItineraryObject() {
-        let date = Date().formatToStringWithShortDateAndTime()
-//        print("placeholder:", ItineraryController.sharedInstance.itineraryData)
-        ItineraryController.sharedInstance.itineraryData["createdAt"] = date
+//        let date = Date().formatToStringWithShortDateAndTime()
+//        ItineraryController.sharedInstance.itineraryData["createdAt"] = date
         ItineraryController.sharedInstance.createItinerary()
         ItineraryController.sharedInstance.itineraryData = [:]
+//        ItineraryController.sharedInstance.itineraries = []
+        dayCounter = 1
         
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -375,17 +388,12 @@ class TripQuestionnairePartThreeViewController: UIViewController {
 extension TripQuestionnairePartThreeViewController: DatePickerDelegate {
     func dateSelected(_ date: Date?) {
         dayDateLabel?.text = date?.formatToStringWithLongDateAndTime()
+        ItineraryController.sharedInstance.itineraryData["currentDay"] = date
     }
 }//End of extension
 
 extension TripQuestionnairePartThreeViewController: MapPinDropped {
     func droppedPin(title: String) {
-        //        for index in 0..<arrayOfTitles.count {
-        //            activitiesTextFieldItems[index].text = arrayOfTitles[index]
-        //            if (activitiesTextFieldItems.count == index + 1) {
-        //                setupScrollableStackViewConstraints()
-        //            }
-        //        }
         for textField in activitiesTextFieldItems {
             if textField.text == "" {
                 textField.text = title
