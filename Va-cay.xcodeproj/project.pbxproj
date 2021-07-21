@@ -38,6 +38,7 @@
 		9BE03A832672DF1E00D97F76 /* ItineraryMapPinsLocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE03A822672DF1E00D97F76 /* ItineraryMapPinsLocationManagerViewController.swift */; };
 		9BE03A862672DF4000D97F76 /* ItineraryMapPinsLocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE03A852672DF4000D97F76 /* ItineraryMapPinsLocationSearchTableViewController.swift */; };
 		9BE480EF266169800079DDBF /* TripQuestionnairePartThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE480EE266169800079DDBF /* TripQuestionnairePartThreeViewController.swift */; };
+		9BEFE51926A79012003DDD1D /* dayActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEFE51826A79012003DDD1D /* dayActivitiesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		9BE03A822672DF1E00D97F76 /* ItineraryMapPinsLocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapPinsLocationManagerViewController.swift; sourceTree = "<group>"; };
 		9BE03A852672DF4000D97F76 /* ItineraryMapPinsLocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapPinsLocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		9BE480EE266169800079DDBF /* TripQuestionnairePartThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripQuestionnairePartThreeViewController.swift; sourceTree = "<group>"; };
+		9BEFE51826A79012003DDD1D /* dayActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayActivitiesTableViewCell.swift; sourceTree = "<group>"; };
 		A8DD421D3AC2E0A9378B7C84 /* Pods_Va_cay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Va_cay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADD31EF13CC4EA801DC69E5 /* Pods-Va-cay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.debug.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				9B4EE8BF266FFA6D007EB937 /* ItineraryTableViewCell.swift */,
+				9BEFE51826A79012003DDD1D /* dayActivitiesTableViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				9B543C6F265F35AD00F5353A /* DestinationLocationManagerViewController.swift in Sources */,
 				9B324800267DD85600C16040 /* ItineraryDetailViewController.swift in Sources */,
 				9BE480EF266169800079DDBF /* TripQuestionnairePartThreeViewController.swift in Sources */,
+				9BEFE51926A79012003DDD1D /* dayActivitiesTableViewCell.swift in Sources */,
 				9BB77719266B3A7E008D3645 /* FlightDepartureCalendarViewController.swift in Sources */,
 				9B335CED2660193300FC202B /* MediaSelectorViewController.swift in Sources */,
 				9B543C05265F309500F5353A /* AppDelegate.swift in Sources */,

@@ -68,10 +68,9 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let itinerary = itinerary,
-              let cell = tableView.dequeueReusableCell(withIdentifier: "dayActivityCell") else { return UITableViewCell() }
-        cell.textLabel?.text = days[indexPath.row]
-//        cell.detailTextLabel?.text =
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "dayActivityCell") as? dayActivitiesTableViewCell else { return UITableViewCell() }
+        cell.day = days[indexPath.row]
+        cell.activities = activities[indexPath.row]
         return cell
     }
 }//End of extension
