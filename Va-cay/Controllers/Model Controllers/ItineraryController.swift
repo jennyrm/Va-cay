@@ -24,7 +24,7 @@ class ItineraryController {
     func createItinerary() {
         let id = UUID().uuidString
         let itineraryReference = db.collection("itineraries").document(id)
-        itineraryReference.setData(itineraryData, merge: true)
+        itineraryReference.setData(itineraryData)
     }
     
     func fetchItineraries(completion: @escaping (Bool) -> Void) {

@@ -37,8 +37,6 @@ class ItineraryDetailViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    //MARK: -  Actions
-    
     //MARK: - Functions
     func updateView() {
         guard let itinerary = itinerary else { return }
@@ -57,6 +55,12 @@ class ItineraryDetailViewController: UIViewController {
                 activities.append(value)
             }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let itinerary = itinerary,
+            let destinationVC = segue.destination as? TripQuestionnairePartOneViewController else { return }
+        destinationVC.itinerary = itinerary
     }
     
 }//End of class

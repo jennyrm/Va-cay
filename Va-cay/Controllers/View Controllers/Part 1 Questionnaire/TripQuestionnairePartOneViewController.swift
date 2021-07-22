@@ -16,6 +16,12 @@ class TripQuestionnairePartOneViewController: UIViewController {
     
     //MARK: - Properties
     var tripImage: UIImage?
+    var itinerary: Itinerary? {
+        didSet {
+            loadViewIfNeeded()
+            editItinerary()
+        }
+    }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -41,6 +47,12 @@ class TripQuestionnairePartOneViewController: UIViewController {
         }
     }
     
+    func editItinerary() {
+        guard let itinerary = itinerary else { return }
+        tripNameTextField.text = itinerary.tripName
+        tripDateLabel.text = itinerary.tripDate?.formatToString()
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMediaSelectorVC" {
@@ -49,7 +61,8 @@ class TripQuestionnairePartOneViewController: UIViewController {
             destinationVC.delegate = self
         }
         if segue.identifier == "toTripQuestionnairePartTwoVC" {
-            guard let _ = segue.destination as? TripQuestionnairePartTwoViewController else { return }
+            guard let destinationVC = segue.destination as? TripQuestionnairePartTwoViewController else { return }
+            destinationVC.itinerary = itinerary
             saveTextFieldInputs()
         }
         if segue.identifier == "toTripCalendarVC" {

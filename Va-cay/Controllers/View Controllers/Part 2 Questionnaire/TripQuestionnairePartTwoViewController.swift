@@ -21,6 +21,12 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     var budgetTextField: UITextField?
     var checklistTextFieldItems = [UITextField]()
     var checklist = [String]()
+    var itinerary: Itinerary? {
+        didSet {
+            loadViewIfNeeded()
+            editItinerary()
+        }
+    }
     
     //MARK: - Lifecyle
     override func loadView() {
@@ -61,6 +67,18 @@ class TripQuestionnairePartTwoViewController: UIViewController {
                 setupScrollableStackViewConstraints()
                 checklistTextFieldItems[index].text = checklist[index]
             }
+        }
+    }
+    
+    func editItinerary() {
+        guard let itinerary = itinerary,
+              let checklist = itinerary.checklist else { return }
+        flightArrivalDateLabel.text = itinerary.flightArrival?.formatToString()
+        flightDepartureDateLabel.text = itinerary.flightDeparture?.formatToString()
+        hotelAirbnbTextField?.text = itinerary.hotelAirbnb
+        for index in 0..<checklist.count {
+            setupScrollableStackViewConstraints()
+            checklistTextFieldItems[index].text = checklist[index]
         }
     }
     
