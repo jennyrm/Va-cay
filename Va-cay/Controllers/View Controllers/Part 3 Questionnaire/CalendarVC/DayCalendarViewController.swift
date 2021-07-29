@@ -8,7 +8,6 @@
 import UIKit
 
 class DayCalendarViewController: UIViewController {
-
     //MARK: - Outlets
     @IBOutlet weak var dayDatePicker: UIDatePicker!
     
