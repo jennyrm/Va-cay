@@ -51,7 +51,7 @@ class ItineraryController {
                     let checklist = itineraryData["checklist"] as? [String] ?? []
                     
                     let dayCounter = itineraryData["dayCounter"] as? Int ?? 1
-                    let days = itineraryData["days"] as? [ [String : Date?] ] ?? nil
+                    _ = itineraryData["days"] as? [ [String : Date?] ] ?? nil
                     let activities = itineraryData["activities"] as? [ [ String : [String] ] ] ?? nil
                     let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String?? : [Double] ] ] ?? []
                     let costOfActivities = itineraryData["costOfActivities"] as? [String] ?? []

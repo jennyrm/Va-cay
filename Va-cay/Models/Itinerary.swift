@@ -12,16 +12,16 @@ class Itinerary {
     //MARK: - Properties
     ///TripQuestionnairePart1
     let destinationCoordinates: [ [String?? : [Double] ] ]?
-    let tripName: String
+    var tripName: String
     let tripDate: Date?
     let tripImage: Data?
     ///TripQuestionnairePart2
     let flightArrival: Date?
     let flightDeparture: Date?
-    let hotelAirbnb: String?
+    var hotelAirbnb: String?
     let hotelAirbnbCoordinates: [ [String?? : [Double] ] ]?
     let budget: String?
-    let checklist: [String]?
+    var checklist: [String]?
     ///TripQuestionnairePart3
     let dayCounter: Int
     let days: [ [String : Date?] ]?

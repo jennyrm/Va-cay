@@ -42,6 +42,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveTextFieldInputs()
+        saveEditedItinerary()
     }
     
     //MARK: - Functions
@@ -70,6 +71,23 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         }
     }
     
+    func saveTextFieldInputs() {
+        if hotelAirbnbTextField?.text != "" {
+            ItineraryController.sharedInstance.itineraryData["hotelAirbnb"] = hotelAirbnbTextField?.text
+        }
+        if budgetTextField?.text != "" {
+            ItineraryController.sharedInstance.itineraryData["budget"] = budgetTextField?.text
+        }
+        if checklistTextFieldItems[0].text != "" {
+            //if checklist textfield is empty, dont append to local checklist variable
+            checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
+            print(checklist)
+            //add
+            ItineraryController.sharedInstance.itineraryData["checklist"] = checklist
+            checklist = []
+        }
+    }
+    
     func editItinerary() {
         guard let itinerary = itinerary,
               let checklist = itinerary.checklist else { return }
@@ -82,20 +100,9 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         }
     }
     
-    func saveTextFieldInputs() {
-        if hotelAirbnbTextField?.text != "" {
-            ItineraryController.sharedInstance.itineraryData["hotelAirbnb"] = hotelAirbnbTextField?.text
-        }
-        if budgetTextField?.text != "" {
-            ItineraryController.sharedInstance.itineraryData["budget"] = budgetTextField?.text
-        }
-        if checklistTextFieldItems[0].text != "" {
-            //if checklist textfield is empty, dont append to local checklist variable
-            checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
-            //add
-            ItineraryController.sharedInstance.itineraryData["checklist"] = checklist
-            checklist = []
-        }
+    func saveEditedItinerary() {
+        itinerary?.hotelAirbnb = hotelAirbnbTextField?.text
+        itinerary?.checklist = self.checklist
     }
     
     func createLabelCalendarButton(with flightLabel: UILabel) -> UIStackView {
@@ -423,6 +430,10 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         if segue.identifier == "toHotelAirbnbMapVC" {
             guard let destinationVC = segue.destination as? HotelAirbnbLocationManagerViewController else { return }
             destinationVC.mapPinDelegate = self
+        }
+        if segue.identifier == "toAddActivityVC" {
+            guard let destinationVC = segue.destination as? TripQuestionnairePartThreeViewController else { return }
+            destinationVC.itinerary = itinerary
         }
     }
     

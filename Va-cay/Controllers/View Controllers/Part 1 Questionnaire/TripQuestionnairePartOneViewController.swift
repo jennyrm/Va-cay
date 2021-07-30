@@ -32,6 +32,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveTextFieldInputs()
+        saveEditedItinerary()
     }
     
     //MARK: - Functions
@@ -53,6 +54,10 @@ class TripQuestionnairePartOneViewController: UIViewController {
         tripDateLabel.text = itinerary.tripDate?.formatToString()
     }
     
+    func saveEditedItinerary() {
+        itinerary?.tripName = tripNameTextField.text ?? "Trip"
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMediaSelectorVC" {
@@ -63,6 +68,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
         if segue.identifier == "toTripQuestionnairePartTwoVC" {
             guard let destinationVC = segue.destination as? TripQuestionnairePartTwoViewController else { return }
             destinationVC.itinerary = itinerary
+            print(itinerary?.hotelAirbnb as Any )
             saveTextFieldInputs()
         }
         if segue.identifier == "toTripCalendarVC" {

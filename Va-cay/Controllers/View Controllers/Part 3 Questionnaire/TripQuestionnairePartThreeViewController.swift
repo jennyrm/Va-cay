@@ -18,17 +18,25 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var days = [ [String : Date?] ]()
     var activities = [ [ String : [String] ] ]()
     var currentDay: Date?
+    var addOrEditDay = "Add Day"
     var currentActivities = [String]()
     var costOfActivities = [String]()
     var activitiesTextFieldItems = [UITextField]()
     var costOfActivitiesTextField: UITextField?
+    var itinerary: Itinerary? {
+        didSet {
+            addOrEditDay = "Next Day"
+            loadViewIfNeeded()
+            editItinerary()
+        }
+    }
     
-    //MARK: - Lifecycle
+    //MARK: - Lifecycles
     override func loadView() {
         super.loadView()
         setupConstraints()
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
@@ -37,6 +45,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveTextFieldInputs()
+        saveEditedItinerary()
     }
     
     //MARK: - Functions
@@ -76,11 +85,20 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         
         ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
         
-        
         ItineraryController.sharedInstance.itineraryData["activities"] = activities
         //        if costOfActivitiesTextField?.text != "" {
         //            ItineraryController.sharedInstance.itineraryData["costOfActivities"] = costOfActivitiesTextField?.text
         //        }
+    }
+    
+    func editItinerary() {
+        guard let itinerary = itinerary,
+              let activities = itinerary.activities else { return }
+        
+    }
+    
+    func saveEditedItinerary() {
+        
     }
     
     func clearTextFieldInputs() {
@@ -199,7 +217,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     func createFooterButtonsStackView() {
         let addDayButton = UIButton()
-        addDayButton.setTitle("Add Day", for: .normal)
+        addDayButton.setTitle(addOrEditDay, for: .normal)
         addDayButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         addDayButton.layer.cornerRadius = 30.0
         addDayButton.addTarget(self, action: #selector(addNewDay), for: .touchUpInside)
