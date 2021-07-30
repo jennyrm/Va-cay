@@ -9,11 +9,9 @@ import Foundation
 
 class User {
     let email: String
-    let name: String
     let userId: String
-    init(email: String, name: String, userId: String) {
+    init(email: String, userId: String) {
         self.email = email
-        self.name = name
         self.userId = userId
     }
     

@@ -18,7 +18,6 @@ class UserController {
     func createUser(user: User){
         db.collection("users").document(user.userId).setData([
             "email" : user.email,
-            "first" : user.name,
             "userId" : user.userId
         ])
         self.user = user
@@ -38,10 +37,9 @@ class UserController {
                 let userData = snap.documents[0].data()
                 
                 let email = userData["email"] as? String ?? ""
-                let name = userData["name"] as? String ?? ""
                 let userId = userData["userId"] as? String ?? ""
             
-            let userToReturn = User(email: email, name: name, userId: userId)
+            let userToReturn = User(email: email, userId: userId)
                 completion(.success(userToReturn))
             } else {
                 completion(.failure(.noData))
