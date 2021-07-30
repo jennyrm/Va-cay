@@ -11,6 +11,7 @@
 		0D5A963226B2121900CD5707 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A963126B2121900CD5707 /* UserController.swift */; };
 		0D5A963426B215E900CD5707 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A963326B215E900CD5707 /* UserError.swift */; };
 		0D5A963726B2287000CD5707 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A963626B2287000CD5707 /* AuthViewController.swift */; };
+		0D60FCC926B34D2500F75732 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D60FCC826B34D2500F75732 /* AuthViewModel.swift */; };
 		645865D8133CD9789C54A4C6 /* Pods_Va_cay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DD421D3AC2E0A9378B7C84 /* Pods_Va_cay.framework */; };
 		9B1C572726648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C572626648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift */; };
 		9B324800267DD85600C16040 /* ItineraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3247FF267DD85600C16040 /* ItineraryDetailViewController.swift */; };
@@ -50,6 +51,7 @@
 		0D5A963126B2121900CD5707 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		0D5A963326B215E900CD5707 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		0D5A963626B2287000CD5707 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		0D60FCC826B34D2500F75732 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		291561126532659012BB1D3B /* Pods-Va-cay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.release.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.release.xcconfig"; sourceTree = "<group>"; };
 		9B1C572626648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripQuestionnairePartTwoViewController.swift; sourceTree = "<group>"; };
 		9B3247FF267DD85600C16040 /* ItineraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryDetailViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				0D5A963626B2287000CD5707 /* AuthViewController.swift */,
+				0D60FCC826B34D2500F75732 /* AuthViewModel.swift */,
 			);
 			path = AuthVC;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */,
 				9B335CEA265F493400FC202B /* ItineraryController.swift in Sources */,
 				9BB77724266DDFE1008D3645 /* HotelAirbnbLocationManagerViewController.swift in Sources */,
+				0D60FCC926B34D2500F75732 /* AuthViewModel.swift in Sources */,
 				9B4EE8A9266E0CB8007EB937 /* ActivitiesLocationManagerViewController.swift in Sources */,
 				9B4EE8C0266FFA6E007EB937 /* ItineraryTableViewCell.swift in Sources */,
 				9B4EE8A6266E0C9E007EB937 /* ActivitiesLocationSearchTableViewController.swift in Sources */,
