@@ -268,9 +268,10 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     @objc func createItineraryObject() {
+        guard let user = UserController.shared.user else {return}
 //        let date = Date().formatToStringWithShortDateAndTime()
 //        ItineraryController.sharedInstance.itineraryData["createdAt"] = date
-        ItineraryController.sharedInstance.createItinerary()
+        ItineraryController.sharedInstance.createItinerary(userId: user.userId)
         ItineraryController.sharedInstance.itineraryData = [:]
 //        ItineraryController.sharedInstance.itineraries = []
         dayCounter = 1
