@@ -18,14 +18,14 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var days = [ [String : Date?] ]()
     var activities = [ [ String : [String] ] ]()
     var currentDay: Date?
-    var addOrEditDay = "Add Day"
+    var addOrEditDayText = "Add Day"
     var currentActivities = [String]()
     var costOfActivities = [String]()
     var activitiesTextFieldItems = [UITextField]()
     var costOfActivitiesTextField: UITextField?
     var itinerary: Itinerary? {
         didSet {
-            addOrEditDay = "Next Day"
+            addOrEditDayText = "Next Day"
             loadViewIfNeeded()
             editItinerary()
         }
@@ -94,7 +94,18 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     func editItinerary() {
         guard let itinerary = itinerary,
               let activities = itinerary.activities else { return }
-        
+        for (index, activity) in activities.enumerated() {
+            if index + 1 == dayCounter {
+                print(index + 1)
+                for (key, value) in activity {
+                    dayLabel.text = key
+                    for i in 0..<value.count {
+                        setupScrollableStackViewConstraints()
+                        activitiesTextFieldItems[i].text = value[i]
+                    }
+                }
+            }
+        }
     }
     
     func saveEditedItinerary() {
@@ -216,11 +227,11 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     func createFooterButtonsStackView() {
-        let addDayButton = UIButton()
-        addDayButton.setTitle(addOrEditDay, for: .normal)
-        addDayButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        addDayButton.layer.cornerRadius = 30.0
-        addDayButton.addTarget(self, action: #selector(addNewDay), for: .touchUpInside)
+        let addEditDayButton = UIButton()
+        addEditDayButton.setTitle(addOrEditDayText, for: .normal)
+        addEditDayButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        addEditDayButton.layer.cornerRadius = 30.0
+        addEditDayButton.addTarget(self, action: #selector(addOrEditDay), for: .touchUpInside)
         
         let submitButton = UIButton()
         submitButton.setTitle("Submit", for: .normal)
@@ -228,11 +239,11 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         submitButton.layer.cornerRadius = 30.0
         submitButton.addTarget(self, action: #selector(createItineraryObject), for: .touchUpInside)
         
-        self.view.addSubview(addDayButton)
+        self.view.addSubview(addEditDayButton)
         self.view.addSubview(submitButton)
         self.view.addSubview(footerButtonsStackView)
         
-        footerButtonsStackView.addArrangedSubview(addDayButton)
+        footerButtonsStackView.addArrangedSubview(addEditDayButton)
         footerButtonsStackView.addArrangedSubview(submitButton)
     }
     
@@ -248,24 +259,28 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         self.performSegue(withIdentifier: "toActivitiesMapVC", sender: sender)
     }
     
-    @objc func addNewDay() {
-        
-        saveTextFieldInputs()
 
-        let currentActivities = ItineraryController.sharedInstance.itineraryData["currentActivities"] as? [String]
-//        let costOfActivities = ItineraryController.sharedInstance.itineraryData["costOfActivities"] as? [String]
+    @objc func addOrEditDay() {
+        if addOrEditDayText == "Add Day" {
+            saveTextFieldInputs()
 
-        if currentActivities != [] {
-            days.append(["Day \(self.dayCounter)" : currentDay ?? nil ])
+            let currentActivities = ItineraryController.sharedInstance.itineraryData["currentActivities"] as? [String]
+    //        let costOfActivities = ItineraryController.sharedInstance.itineraryData["costOfActivities"] as? [String]
+
+            if currentActivities != [] {
+                days.append(["Day \(self.dayCounter)" : currentDay ?? nil ])
+                dayCounter += 1
+                ItineraryController.sharedInstance.itineraryData["days"] = days
+                ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
+                ItineraryController.sharedInstance.itineraryData["activities"] = activities
+    //            ItineraryController.sharedInstance.itineraryData["costOfActivities"] = costOfActivities
+                clearTextFieldInputs()
+                dayLabel.text = "Day \(dayCounter)"
+            }
+        } else {
             dayCounter += 1
-            ItineraryController.sharedInstance.itineraryData["days"] = days
-            ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
-            ItineraryController.sharedInstance.itineraryData["activities"] = activities
-//            ItineraryController.sharedInstance.itineraryData["costOfActivities"] = costOfActivities
-            clearTextFieldInputs()
-            dayLabel.text = "Day \(dayCounter)"
+            editItinerary()
         }
-        
     }
     
     @objc func createItineraryObject() {
