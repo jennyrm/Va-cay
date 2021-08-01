@@ -249,6 +249,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     @objc func addNewDay() {
+        
         saveTextFieldInputs()
 
         let currentActivities = ItineraryController.sharedInstance.itineraryData["currentActivities"] as? [String]
@@ -268,6 +269,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     @objc func createItineraryObject() {
+        
         guard let user = UserController.shared.user else {return}
 //        let date = Date().formatToStringWithShortDateAndTime()
 //        ItineraryController.sharedInstance.itineraryData["createdAt"] = date
