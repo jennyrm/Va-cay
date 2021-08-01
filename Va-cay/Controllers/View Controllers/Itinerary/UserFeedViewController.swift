@@ -19,11 +19,11 @@ class UserFeedViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print("Error signing out: %@")
-        }
+//        do {
+//            try Auth.auth().signOut()
+//        } catch {
+//            print("Error signing out: %@")
+//        }
         if Auth.auth().currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let VC = storyboard.instantiateViewController(identifier: "AuthVC")
@@ -46,8 +46,9 @@ class UserFeedViewController: UIViewController {
     
     //MARK: - Functions
     func fetchData() {
+        guard let user = Auth.auth().currentUser else {return}
         DispatchQueue.main.async {
-            ItineraryController.sharedInstance.fetchItineraries { (success) in
+            ItineraryController.sharedInstance.fetchItineraries(userId: user.uid) { (success) in
                 if success {
                     print("Successfully fetched data!!")
                     self.tableView.reloadData()
