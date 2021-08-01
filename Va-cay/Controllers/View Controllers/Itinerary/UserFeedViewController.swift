@@ -30,6 +30,15 @@ class UserFeedViewController: UIViewController {
             VC.modalPresentationStyle = .fullScreen
             self.present(VC, animated: true, completion: nil)
         }
+        guard let user = Auth.auth().currentUser else {return}
+        UserController.shared.fetchUser(userId: user.uid) { result in
+            switch result {
+            case .success(let user):
+                UserController.shared.user = user
+            case .failure(let error):
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+            }
+        }
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -37,6 +46,7 @@ class UserFeedViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         ItineraryController.sharedInstance.itineraries = []
+        ItineraryController.sharedInstance.itineraryData = [:]
         fetchData()
     }
     

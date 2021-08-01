@@ -259,6 +259,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         self.performSegue(withIdentifier: "toActivitiesMapVC", sender: sender)
     }
     
+
     @objc func addOrEditDay() {
         if addOrEditDayText == "Add Day" {
             saveTextFieldInputs()
@@ -283,6 +284,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     @objc func createItineraryObject() {
+        
         guard let user = UserController.shared.user else {return}
 //        let date = Date().formatToStringWithShortDateAndTime()
 //        ItineraryController.sharedInstance.itineraryData["createdAt"] = date

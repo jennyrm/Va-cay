@@ -23,9 +23,12 @@ class ItineraryController {
     //MARK: - CRUD Functions
     func createItinerary(userId: String) {
         let id = UUID().uuidString
+        itineraryData["id"] = id
         let itineraryReference = db.collection("users").document(userId).collection("itineraries").document(id)
         itineraryReference.setData(itineraryData)
     }
+    
+//    func editItinerary(userId: String, ItineraryId)
     
     func fetchItineraries(userId: String, completion: @escaping (Bool) -> Void) {
         db.collection("users").document(userId).collection("itineraries").addSnapshotListener { (snapshot, error) in
