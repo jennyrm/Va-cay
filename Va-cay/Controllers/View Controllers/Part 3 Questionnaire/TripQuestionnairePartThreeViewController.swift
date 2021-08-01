@@ -25,9 +25,13 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var costOfActivitiesTextField: UITextField?
     var itinerary: Itinerary? {
         didSet {
-            addOrEditDay = "Next Day"
-            loadViewIfNeeded()
-            editItinerary()
+            if itinerary == nil {
+                return
+            } else {
+                addOrEditDay = "Next Day"
+                loadViewIfNeeded()
+                editItinerary()
+            }
         }
     }
     
@@ -269,7 +273,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     @objc func createItineraryObject() {
-        
         guard let user = UserController.shared.user else {return}
 //        let date = Date().formatToStringWithShortDateAndTime()
 //        ItineraryController.sharedInstance.itineraryData["createdAt"] = date

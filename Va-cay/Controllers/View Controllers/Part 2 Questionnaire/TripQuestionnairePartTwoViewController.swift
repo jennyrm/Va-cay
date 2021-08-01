@@ -432,7 +432,9 @@ class TripQuestionnairePartTwoViewController: UIViewController {
             destinationVC.mapPinDelegate = self
         }
         if segue.identifier == "toAddActivityVC" {
+            
             guard let destinationVC = segue.destination as? TripQuestionnairePartThreeViewController else { return }
+            
             destinationVC.itinerary = itinerary
         }
     }
