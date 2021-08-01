@@ -21,14 +21,14 @@ class ItineraryController {
     let db = Firestore.firestore()
     
     //MARK: - CRUD Functions
-    func createItinerary() {
+    func createItinerary(userId: String) {
         let id = UUID().uuidString
-        let itineraryReference = db.collection("itineraries").document(id)
+        let itineraryReference = db.collection("users").document(userId).collection("itineraries").document(id)
         itineraryReference.setData(itineraryData)
     }
     
-    func fetchItineraries(completion: @escaping (Bool) -> Void) {
-        db.collection("itineraries").addSnapshotListener { (snapshot, error) in
+    func fetchItineraries(userId: String, completion: @escaping (Bool) -> Void) {
+        db.collection("users").document(userId).collection("itineraries").addSnapshotListener { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function): on line \(#line) : \(error.localizedDescription) \n---\n \(error)")
                 return completion(false)
