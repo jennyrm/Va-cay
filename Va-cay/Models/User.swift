@@ -14,5 +14,4 @@ class User {
         self.email = email
         self.userId = userId
     }
-    
 }//End of class
