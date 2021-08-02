@@ -25,19 +25,13 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var costOfActivitiesTextField: UITextField?
     var itinerary: Itinerary? {
         didSet {
-<<<<<<< HEAD
             if itinerary == nil {
                 return
             } else {
-                addOrEditDay = "Next Day"
+                addOrEditDayText = "Next Day"
                 loadViewIfNeeded()
                 editItinerary()
             }
-=======
-            addOrEditDayText = "Next Day"
-            loadViewIfNeeded()
-            editItinerary()
->>>>>>> bed50d4bf6847a343d2e4cfb8d149170244fe6b7
         }
     }
     
@@ -58,7 +52,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         saveEditedItinerary()
     }
     
-    //MARK: - Functions
+    //MARK: - Create Itinerary Functions
     func updateView() {
         if let currentDay = ItineraryController.sharedInstance.itineraryData["currentDay"] as? Date {
             dayDateLabel?.text = currentDay.formatToStringWithLongDateAndTime()
@@ -101,27 +95,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         //        }
     }
     
-    func editItinerary() {
-        guard let itinerary = itinerary,
-              let activities = itinerary.activities else { return }
-        for (index, activity) in activities.enumerated() {
-            if index + 1 == dayCounter {
-                print(index + 1)
-                for (key, value) in activity {
-                    dayLabel.text = key
-                    for i in 0..<value.count {
-                        setupScrollableStackViewConstraints()
-                        activitiesTextFieldItems[i].text = value[i]
-                    }
-                }
-            }
-        }
-    }
-    
-    func saveEditedItinerary() {
-        
-    }
-    
     func clearTextFieldInputs() {
         ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "currentDay")
         dayDateLabel?.text = ""
@@ -144,6 +117,40 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         addActivityButtonAction()
     }
     
+    //MARK: - Edit Itinerary Functions
+    func editItinerary() {
+        guard let itinerary = itinerary,
+              let activities = itinerary.activities else { return }
+        for (index, activity) in activities.enumerated() {
+            if index + 1 == dayCounter {
+                for (key, value) in activity {
+                    dayLabel.text = key
+                    for i in 0..<value.count {
+                        activitiesTextFieldItems[i].text = value[i]
+                    }
+                }
+            }
+        }
+        if dayCounter > activities.count {
+            dayLabel.text = "Day \(dayCounter)"
+            clearTextFieldInputs()
+        }
+    }
+    
+    func saveEditedItinerary() {
+        for (index, activity) in activities.enumerated() {
+            if index + 1 == dayCounter {
+                for (key, value) in activity {
+
+                    for i in 0..<value.count {
+                        activitiesTextFieldItems[i].text = value[i]
+                    }
+                }
+            }
+        }
+    }
+    
+    //MARK: - Programmatic Constraint Functions
     func createCalendarStackView() {
         let label = UILabel()
         label.textColor = .black
@@ -165,8 +172,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         calendarStackView.addArrangedSubview(label)
         calendarStackView.addArrangedSubview(button)
     }
-    
-    
+
     func createAddActivityStackView() {
         let label = UILabel()
         label.text = "Add Activity"
@@ -257,6 +263,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         footerButtonsStackView.addArrangedSubview(submitButton)
     }
     
+    //MARK: - @obj Action Functions
     @objc func showCalendarButtonAction(sender: UIButton) {
         self.performSegue(withIdentifier: "toDayCalendarVC", sender: sender)
     }
@@ -290,6 +297,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         } else {
             dayCounter += 1
             editItinerary()
+            saveEditedItinerary()
         }
     }
     
@@ -305,7 +313,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    //MARK: - Constraints
+    //MARK: - Programmatic Constraints
     func setupConstraints() {
         self.view.addSubview(dayLabel)
         createCalendarStackView()

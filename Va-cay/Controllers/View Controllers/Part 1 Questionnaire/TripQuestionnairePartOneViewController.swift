@@ -69,7 +69,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
         if segue.identifier == "toTripQuestionnairePartTwoVC" {
             guard let destinationVC = segue.destination as? TripQuestionnairePartTwoViewController else { return }
             destinationVC.itinerary = itinerary
-            print(itinerary?.hotelAirbnb as Any )
+            print("JAMES IS AN IDIOT:", itinerary?.id as Any )
             saveTextFieldInputs()
         }
         if segue.identifier == "toTripCalendarVC" {
