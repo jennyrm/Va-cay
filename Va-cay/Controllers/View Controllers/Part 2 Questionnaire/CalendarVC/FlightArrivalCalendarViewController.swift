@@ -28,6 +28,9 @@ class FlightArrivalCalendarViewController: UIViewController {
         delegate?.dateSelected(flightArrival)
         ItineraryController.sharedInstance.itineraryData["flightArrival"] = flightArrival
     }
+    @IBAction func dismissModalView(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     
     //MARK: - Functions
     func updateView() {
@@ -35,5 +38,5 @@ class FlightArrivalCalendarViewController: UIViewController {
             flightArrivalDatePicker.date = flightArrival
         }
     }
-
+    
 }//End of class

@@ -13,20 +13,24 @@ protocol MediaSelectorDelegate: AnyObject {
 }
 
 class MediaSelectorViewController: UIViewController {
-    
     //MARK: - Outlets
     @IBOutlet weak var uploadMediaButton: UIButton!
     @IBOutlet weak var uploadedMediaImageView: UIImageView!
     
     //MARK: - Properties
     let imagePicker = UIImagePickerController()
-    var tripImage: UIImage?
+    var tripImage: UIImage? {
+        didSet {
+            
+        }
+    }
     weak var delegate: MediaSelectorDelegate?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        
     }
     
     //MARK: - Actions
@@ -88,6 +92,7 @@ extension MediaSelectorViewController: UIImagePickerControllerDelegate, UINaviga
             guard let delegate = delegate else { return }
             delegate.mediaPickerSelected(image: pickedImage)
             uploadedMediaImageView.image = pickedImage
+            uploadMediaButton.isHidden = true
         }
         picker.dismiss(animated: true, completion: nil)
     }

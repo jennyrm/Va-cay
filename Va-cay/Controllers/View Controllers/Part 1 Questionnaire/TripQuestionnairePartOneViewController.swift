@@ -15,11 +15,15 @@ class TripQuestionnairePartOneViewController: UIViewController {
     @IBOutlet weak var tripDateLabel: UILabel!
     
     //MARK: - Properties
-    var tripImage: UIImage?
+    var tripImage: UIImage? 
     var itinerary: Itinerary? {
         didSet {
             loadViewIfNeeded()
             editItinerary()
+            if itinerary?.tripImage != nil {
+                let imageData = itinerary?.tripImage
+                tripImage = UIImage(data: imageData ?? Data())
+            }
         }
     }
     
@@ -69,10 +73,6 @@ class TripQuestionnairePartOneViewController: UIViewController {
         if segue.identifier == "toTripQuestionnairePartTwoVC" {
             guard let destinationVC = segue.destination as? TripQuestionnairePartTwoViewController else { return }
             destinationVC.itinerary = itinerary
-<<<<<<< Updated upstream
-            print("JAMES IS AN IDIOT:", itinerary?.id as Any )
-=======
->>>>>>> Stashed changes
             saveTextFieldInputs()
         }
         if segue.identifier == "toTripCalendarVC" {
