@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "357C46FC-703F-4C08-B033-25DADCF3212C"
+            uuid = "3CBC1E11-73DE-4BD2-A20D-BAFF8C64445D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Va-cay/Controllers/View Controllers/Itinerary/UserFeedViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F961A58C-ED16-4B41-A166-08AA0D9D541A"
+            uuid = "167FD54C-E476-4425-A7DD-E17A3D747C95"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Va-cay/Controllers/View Controllers/Part 2 Questionnaire/TripQuestionnairePartTwoViewController.swift"
+            filePath = "Va-cay/Controllers/Model Controllers/ItineraryController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "435"
-            endingLineNumber = "435"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "deleteItinerary(userId:itinerary:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

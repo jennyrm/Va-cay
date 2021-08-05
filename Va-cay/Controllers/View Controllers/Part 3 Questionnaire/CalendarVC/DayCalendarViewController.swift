@@ -27,6 +27,11 @@ class DayCalendarViewController: UIViewController {
         delegate?.dateSelected(day)
     }
     
+    @IBAction func dismissModalView(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    
     //MARK: - Functions
     func updateView() {
         if let day = ItineraryController.sharedInstance.itineraryData["day"] as? Date {

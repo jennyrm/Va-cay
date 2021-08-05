@@ -29,6 +29,9 @@ class TripCalendarViewController: UIViewController {
         
         ItineraryController.sharedInstance.itineraryData["tripDate"] = tripDate
     }
+    @IBAction func closeModalCalendarButtonTapped(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     
     //MARK: - Functions
     func updateView() {

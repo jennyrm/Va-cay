@@ -29,6 +29,10 @@ class FlightDepartureCalendarViewController: UIViewController {
         ItineraryController.sharedInstance.itineraryData["flightDeparture"] = flightDeparture
     }
     
+    @IBAction func dismissModalView(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     //MARK: - Functions
     func updateView() {
         if let flightDeparture = ItineraryController.sharedInstance.itineraryData["flightDeparture"] as? Date {
