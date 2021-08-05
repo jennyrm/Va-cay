@@ -126,6 +126,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                 for (key, value) in activity {
                     dayLabel.text = key
                     for i in 0..<value.count {
+                        print(activitiesTextFieldItems)
                         activitiesTextFieldItems[i].text = value[i]
                     }
                 }

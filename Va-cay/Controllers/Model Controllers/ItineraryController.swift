@@ -84,9 +84,27 @@ class ItineraryController {
         
         guard let index = itineraries.firstIndex(of: itinerary) else {return}
         
-        let itinRef = db.collection("users").document(userId).collection("itineraries").document(itinerary.id)
-        
-        itinRef.setData(itineraryData)
+        let itineraryReference = db.collection("users").document(userId).collection("itineraries").document(itinerary.id)
+        itineraryReference.setData([
+            "destinationCoordinates" : itinerary.destinationCoordinates,
+            "tripName" : itinerary.tripName,
+            "tripDate" : itinerary.tripDate,
+            "tripImage" : itinerary.tripImage,
+            "flightArrival" : itinerary.flightArrival,
+            "flightDeparture" : itinerary.flightDeparture,
+            "hotelAirbnb" : itinerary.hotelAirbnb,
+            "hotelAirbnbCoordinates" : itinerary.hotelAirbnbCoordinates,
+            "budget" : itinerary.budget,
+            "checklist" : itinerary.checklist,
+            "dayCounter" : itinerary.dayCounter,
+            "days" : itinerary.days,
+            "activities" : itinerary.activities,
+            "activitiesCoordinates" : itinerary.activitiesCoordinates,
+            "costOfActivities" : itinerary.costOfActivities,
+            "id" : itinerary.id,
+            "createdAt" : itinerary.createdAt
+        ])
+    
         completion(true)
     }
     
