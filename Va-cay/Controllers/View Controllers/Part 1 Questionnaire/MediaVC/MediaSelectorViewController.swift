@@ -31,6 +31,7 @@ class MediaSelectorViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         
+        TripQuestionnairePartOneViewController.delegate = self
     }
     
     //MARK: - Actions
@@ -64,6 +65,10 @@ class MediaSelectorViewController: UIViewController {
         imagePicker.delegate = self
     }
     
+    func updateImageView(image: UIImage){
+        
+    }
+    
 }//End of class
 
 //MARK: - Extensions
@@ -95,5 +100,11 @@ extension MediaSelectorViewController: UIImagePickerControllerDelegate, UINaviga
             uploadMediaButton.isHidden = true
         }
         picker.dismiss(animated: true, completion: nil)
+    }
+}//End of extension
+
+extension MediaSelectorViewController: updateImageView {
+    func updateImage(image: UIImage){
+        updateImageView(image: image)
     }
 }//End of extension
