@@ -131,8 +131,10 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                 }
             }
         }
+        
         if dayCounter > activities.count {
             dayLabel.text = "Day \(dayCounter)"
+//            removeTextFields()
             clearTextFieldInputs()
         }
     }
@@ -142,22 +144,30 @@ class TripQuestionnairePartThreeViewController: UIViewController {
               var activities = itinerary.activities else { return }
         
         let key = "Day \(dayCounter)"
+        var changedValues = [String]()
         
         for (index, _) in activities.enumerated() {
-            var changedValues = [String]()
             if index + 1 == dayCounter {
                 activitiesTextFieldItems.forEach {
                     if !$0.text!.isEmpty {
                         changedValues.append($0.text!)
                     }
                 }
-//                print(key)
                 activities[index].updateValue(changedValues, forKey: key)
-                print(activities)
-                changedValues = []
-            } else {
-                
+                itinerary.activities = activities
             }
+            changedValues = []
+        }
+        
+        if dayCounter > activities.count {
+            activitiesTextFieldItems.forEach {
+                if !$0.text!.isEmpty {
+                    changedValues.append($0.text!)
+                }
+            }
+            itinerary.activities?.append([key : changedValues])
+            print(itinerary.activities)
+            changedValues = []
         }
     }
 
@@ -307,7 +317,6 @@ func createFooterButtonsStackView() {
         }
     } else {
         saveEditedItinerary()
-//        removeTextFields()
         dayCounter += 1
         editItinerary()
     }
