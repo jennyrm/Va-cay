@@ -47,6 +47,7 @@ class UserFeedViewController: UIViewController {
         super.viewDidAppear(animated)
         ItineraryController.sharedInstance.itineraries = []
         ItineraryController.sharedInstance.itineraryData = [:]
+        ItineraryController.sharedInstance.isEditing = false
         fetchData()
     }
     

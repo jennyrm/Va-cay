@@ -324,14 +324,20 @@ func createFooterButtonsStackView() {
 
 @objc func createItineraryObject() {
     guard let user = UserController.shared.user else {return}
-    //        let date = Date().formatToStringWithShortDateAndTime()
-    //        ItineraryController.sharedInstance.itineraryData["createdAt"] = date
-    ItineraryController.sharedInstance.createItinerary(userId: user.userId)
-    ItineraryController.sharedInstance.itineraryData = [:]
-    //        ItineraryController.sharedInstance.itineraries = []
-    dayCounter = 1
-    
-    self.navigationController?.popToRootViewController(animated: true)
+    if ItineraryController.sharedInstance.isEditing {
+        guard let itineraryToEdit = ItineraryController.sharedInstance.itinToEdit else {return}
+        ItineraryController.sharedInstance.editItinerary(userId: user.userId, itinerary: itineraryToEdit) { result in
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    } else {
+        //        let date = Date().formatToStringWithShortDateAndTime()
+        //        ItineraryController.sharedInstance.itineraryData["createdAt"] = date
+        ItineraryController.sharedInstance.createItinerary(userId: user.userId)
+        ItineraryController.sharedInstance.itineraryData = [:]
+        //        ItineraryController.sharedInstance.itineraries = []
+        dayCounter = 1
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 }
 
 //MARK: - Programmatic Constraints
