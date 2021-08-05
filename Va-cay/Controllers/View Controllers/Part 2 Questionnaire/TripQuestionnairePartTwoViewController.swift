@@ -81,7 +81,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         if checklistTextFieldItems[0].text != "" {
             //if checklist textfield is empty, dont append to local checklist variable
             checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
-            print(checklist)
             //add
             ItineraryController.sharedInstance.itineraryData["checklist"] = checklist
             checklist = []

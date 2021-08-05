@@ -25,8 +25,8 @@ class Itinerary {
     ///TripQuestionnairePart3
     let dayCounter: Int
     let days: [ [String : Date?] ]?
-    let activities: [ [ String : [String] ] ]?
     let activitiesCoordinates: [ [String?? : [Double] ] ]?
+    var activities: [ [ String : [String] ] ]?
     let costOfActivities: [String]?
     ///ID
     let id: String
