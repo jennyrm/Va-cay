@@ -60,6 +60,8 @@ class ItineraryDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let itinerary = itinerary,
             let destinationVC = segue.destination as? TripQuestionnairePartOneViewController else { return }
+        ItineraryController.sharedInstance.isEditing = true
+        ItineraryController.sharedInstance.itinToEdit = itinerary
         destinationVC.itinerary = itinerary
     }
     

@@ -16,6 +16,8 @@ class ItineraryController {
     //MARK: - Source of Truth
     var itineraryData = [String : Any]()
     var itineraries = [Itinerary]()
+    var itinToEdit: Itinerary?
+    var isEditing = false
     
     //MARK: - Reference to DB
     let db = Firestore.firestore()
@@ -79,12 +81,13 @@ class ItineraryController {
     }
     
     func editItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void){
+        
         guard let index = itineraries.firstIndex(of: itinerary) else {return}
         
         let itinRef = db.collection("users").document(userId).collection("itineraries").document(itinerary.id)
         
         itinRef.setData(itineraryData)
-        itineraries.remove(at: index)
+        completion(true)
     }
     
     func deleteItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void){
