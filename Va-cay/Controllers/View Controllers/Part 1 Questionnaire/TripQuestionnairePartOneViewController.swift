@@ -7,15 +7,18 @@
 
 import UIKit
 
+protocol updateImageView: AnyObject {
+    func updateImage(image: UIImage)
+}
+
 class TripQuestionnairePartOneViewController: UIViewController {
-    
     //MARK: - Outlets
     @IBOutlet weak var mediaContainerView: UIView!
     @IBOutlet weak var tripNameTextField: UITextField!
     @IBOutlet weak var tripDateLabel: UILabel!
     
     //MARK: - Properties
-    var tripImage: UIImage? 
+    var tripImage: UIImage?
     var itinerary: Itinerary? {
         didSet {
             loadViewIfNeeded()
@@ -26,6 +29,8 @@ class TripQuestionnairePartOneViewController: UIViewController {
             }
         }
     }
+    
+    static weak var delegate: updateImageView?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -104,3 +109,4 @@ extension TripQuestionnairePartOneViewController: DatePickerDelegate {
         tripDateLabel.text = date?.formatToString()
     }
 }//End of extension
+

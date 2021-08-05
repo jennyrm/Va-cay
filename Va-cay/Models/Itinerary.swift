@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Itinerary {
+class Itinerary: Codable {
     
     //MARK: - Properties
     ///TripQuestionnairePart1
@@ -36,7 +36,6 @@ class Itinerary {
         tripName: String,
         tripDate: Date?,
         tripImage: Data?,
-        
         flightArrival: Date?,
         flightDeparture: Date?,
         hotelAirbnb: String?,
@@ -49,7 +48,6 @@ class Itinerary {
         activities: [ [ String : [String] ] ]?,
         activitiesCoordinates: [ [String?? : [Double] ] ]?,
         costOfActivities: [String]?,
-    
         id: String,
         createdAt: Date)
     {
@@ -76,3 +74,9 @@ class Itinerary {
     }
     
 }//End of class
+
+extension Itinerary: Equatable {
+    static func == (lhs: Itinerary, rhs: Itinerary) -> Bool {
+        lhs.id == rhs.id
+    }
+}//End of extension

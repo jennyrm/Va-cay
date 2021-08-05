@@ -79,6 +79,40 @@ extension UserFeedViewController: getIndexPathRow {
 }//End of extension
 
 extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { action, indexPath in
+            let confirmDeleteController = UIAlertController(title: "Delete Itinerary", message: "Are you sure you want to delete this itinerary", preferredStyle: .alert)
+            
+            let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
+            
+            let confirmAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+                DispatchQueue.main.async {
+                    ItineraryController.sharedInstance.deleteItinerary(userId: UserController.shared.user!.userId, itinerary: itinerary) { result in
+                        switch result {
+                        case true:
+                            self.tableView.deleteRows(at: [indexPath], with: .fade)
+                            self.tableView.reloadData()
+                        case false:
+                            print("error deleting itinerary")
+                        }
+                    }
+                }
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            
+            confirmDeleteController.addAction(confirmAction)
+            confirmDeleteController.addAction(cancelAction)
+            
+            self.present(confirmDeleteController, animated: true)
+        }
+        return [deleteAction]
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         ItineraryController.sharedInstance.itineraries.count
     }
