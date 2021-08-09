@@ -288,13 +288,11 @@ func createFooterButtonsStackView() {
 
 @objc func addActivityButtonAction() {
     setupScrollableStackViewConstraints()
-    
 }
 
 @objc func showMapButtonAction(sender: UIButton) {
     self.performSegue(withIdentifier: "toActivitiesMapVC", sender: sender)
 }
-
 
 @objc func addOrEditDay() {
     if addOrEditDayText == "Add Day" {
@@ -320,6 +318,7 @@ func createFooterButtonsStackView() {
     guard let user = UserController.shared.user else {return}
     if ItineraryController.sharedInstance.isEditing {
         guard let itineraryToEdit = ItineraryController.sharedInstance.itinToEdit else {return}
+        ItineraryController.sharedInstance.itineraryData["activities"] = activities
         ItineraryController.sharedInstance.editItinerary(userId: user.userId, itinerary: itineraryToEdit) { result in
             self.navigationController?.popToRootViewController(animated: true)
         }
