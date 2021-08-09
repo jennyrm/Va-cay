@@ -63,6 +63,23 @@ class ItineraryDetailViewController: UIViewController {
         ItineraryController.sharedInstance.isEditing = true
         ItineraryController.sharedInstance.itinToEdit = itinerary
         destinationVC.itinerary = itinerary
+        ItineraryController.sharedInstance.itineraryData["destinationCoordinates"] = itinerary.destinationCoordinates
+        ItineraryController.sharedInstance.itineraryData["tripName"] = itinerary.tripName
+        ItineraryController.sharedInstance.itineraryData["tripDate"] = itinerary.tripDate
+        ItineraryController.sharedInstance.itineraryData["tripImage"] = itinerary.tripImage
+        ItineraryController.sharedInstance.itineraryData["flightArrival"] = itinerary.flightArrival
+        ItineraryController.sharedInstance.itineraryData["flightDeparture"] = itinerary.flightDeparture
+        ItineraryController.sharedInstance.itineraryData["hotelAirbnb"] = itinerary.hotelAirbnb
+        ItineraryController.sharedInstance.itineraryData["hotelAirbnbCoordinates"] = itinerary.hotelAirbnbCoordinates
+        ItineraryController.sharedInstance.itineraryData["budget"] = itinerary.budget
+        ItineraryController.sharedInstance.itineraryData["checklist"] = itinerary.checklist
+        ItineraryController.sharedInstance.itineraryData["dayCounter"] = itinerary.dayCounter
+        ItineraryController.sharedInstance.itineraryData["days"] = itinerary.days
+        ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] = itinerary.activitiesCoordinates
+        ItineraryController.sharedInstance.itineraryData["activities"] = itinerary.activities
+        ItineraryController.sharedInstance.itineraryData["costOfActivities"] = itinerary.costOfActivities
+        ItineraryController.sharedInstance.itineraryData["id"] = itinerary.id
+        ItineraryController.sharedInstance.itineraryData["createdAt"] = itinerary.createdAt
     }
     
 }//End of class

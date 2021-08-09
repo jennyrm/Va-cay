@@ -429,6 +429,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         if segue.identifier == "toHotelAirbnbMapVC" {
             guard let destinationVC = segue.destination as? HotelAirbnbLocationManagerViewController else { return }
             destinationVC.mapPinDelegate = self
+            
         }
         if segue.identifier == "toAddActivityVC" {
             

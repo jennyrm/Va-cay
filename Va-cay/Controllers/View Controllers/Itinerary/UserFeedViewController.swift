@@ -9,7 +9,6 @@ import UIKit
 import FirebaseAuth
 
 class UserFeedViewController: UIViewController {
-    
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,6 +29,8 @@ class UserFeedViewController: UIViewController {
             VC.modalPresentationStyle = .fullScreen
             self.present(VC, animated: true, completion: nil)
         }
+        tableView.delegate = self
+        tableView.dataSource = self
         guard let user = Auth.auth().currentUser else {return}
         UserController.shared.fetchUser(userId: user.uid) { result in
             switch result {
@@ -39,8 +40,10 @@ class UserFeedViewController: UIViewController {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
             }
         }
-        tableView.delegate = self
-        tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,7 +98,8 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
                     ItineraryController.sharedInstance.deleteItinerary(userId: UserController.shared.user!.userId, itinerary: itinerary) { result in
                         switch result {
                         case true:
-                            self.tableView.deleteRows(at: [indexPath], with: .fade)
+                            
+//                            self.tableView.deleteRows(at: [indexPath], with: .fade)
                             self.tableView.reloadData()
                         case false:
                             print("error deleting itinerary")
@@ -143,6 +147,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
                   let destinationVC = segue.destination as? ItineraryDetailViewController else { return }
             let itineraryToSend = ItineraryController.sharedInstance.itineraries[indexPathRow]
             destinationVC.itinerary = itineraryToSend
+//            ItineraryController.sharedInstance.itineraryData
         }
     }
     

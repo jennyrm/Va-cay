@@ -10,10 +10,8 @@ import MapKit
 
 
 class HotelAirbnbLocationManagerViewController: UIViewController {
-    
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
-    
     
     //MARK: - Properties
     let locationManager = CLLocationManager()
@@ -27,7 +25,7 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
         super.viewWillDisappear(animated)
         saveMapAnnotations()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,14 +58,16 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
     
     //MARK: - Functions
     func saveMapAnnotations() {
-        for annotation in mapView.annotations {
-            coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude]])
-        }
-        let title = (mapView.annotations[0].title) as? String
-        mapPinDelegate?.droppedPin(title: title ?? "")
-        if !coordinates.isEmpty {
-            ItineraryController.sharedInstance.itineraryData["hotelAirbnbCoordinates"] = coordinates
-            print(coordinates)
+        if selectedPin != nil {
+            for annotation in mapView.annotations {
+                coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude]])
+            }
+            let title = (mapView.annotations[0].title) as? String
+            mapPinDelegate?.droppedPin(title: title ?? "")
+            if !coordinates.isEmpty {
+                ItineraryController.sharedInstance.itineraryData["hotelAirbnbCoordinates"] = coordinates
+                print(coordinates)
+            }
         }
     }
     
@@ -125,5 +125,4 @@ extension HotelAirbnbLocationManagerViewController: HandleMapSearch {
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)
     }
-
 }//End of extension

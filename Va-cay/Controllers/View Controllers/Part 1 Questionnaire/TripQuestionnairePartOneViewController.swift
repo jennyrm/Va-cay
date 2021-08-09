@@ -83,6 +83,9 @@ class TripQuestionnairePartOneViewController: UIViewController {
         if segue.identifier == "toTripCalendarVC" {
             guard let destinationVC = segue.destination as? TripCalendarViewController else { return }
             destinationVC.delegate = self
+            if ItineraryController.sharedInstance.isEditing {
+                
+            }
         }
     }
     

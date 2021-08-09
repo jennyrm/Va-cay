@@ -81,9 +81,6 @@ class ItineraryController {
     }
     
     func editItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void){
-        
-        guard let index = itineraries.firstIndex(of: itinerary) else {return}
-        
         let itinRef = db.collection("users").document(userId).collection("itineraries").document(itinerary.id)
         
         itinRef.setData(itineraryData)
@@ -91,14 +88,12 @@ class ItineraryController {
     }
     
     func deleteItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void){
-        guard let index = itineraries.firstIndex(of: itinerary) else {return}
         
         db.collection("users").document(userId).collection("itineraries").document(itinerary.id).delete() { error in
             if let error = error {
                 print(error.localizedDescription)
             } else {
                 print("\(itinerary.tripName) has been removed")
-                self.itineraries.remove(at: index)
                 completion(true)
             }
         }
