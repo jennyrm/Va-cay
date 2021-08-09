@@ -26,7 +26,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
             } else {
                 addOrEditDayText = "Next Day"
                 loadViewIfNeeded()
-                updateEditedItineraryView()
+                updateEditItineraryView()
             }
         }
     }
@@ -44,7 +44,9 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        saveTextFieldInputs()
+        if addOrEditDayText == "Add Day" {
+            saveTextFieldInputs()
+        }
     }
     
     //MARK: - Create Itinerary Functions
@@ -101,7 +103,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     //MARK: - Edit Itinerary Functions
-    func updateEditedItineraryView() {
+    func updateEditItineraryView() {
         guard let itinerary = itinerary,
               let itineraryActivities = itinerary.activities else { return }
         
@@ -304,7 +306,7 @@ func createFooterButtonsStackView() {
     } else {
         saveEditedItinerary()
         dayCounter += 1
-        updateEditedItineraryView()
+        updateEditItineraryView()
     }
 }
 
