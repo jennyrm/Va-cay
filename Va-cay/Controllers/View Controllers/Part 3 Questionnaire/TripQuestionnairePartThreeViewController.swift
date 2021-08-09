@@ -42,6 +42,12 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         updateView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveTextFieldInputs()
@@ -88,7 +94,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "currentActivities")
         activitiesTextFieldItems.forEach { $0.text = "" }
         removeTextFields()
-            
+        
         updateView()
     }
     
@@ -106,7 +112,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
               let itineraryActivities = itinerary.activities else { return }
         
         self.activities = itineraryActivities
-
         for (index, activity) in activities.enumerated() {
             if index + 1 == dayCounter {
                 for (key, value) in activity {
@@ -281,6 +286,7 @@ func createFooterButtonsStackView() {
 
 @objc func addActivityButtonAction() {
     setupScrollableStackViewConstraints()
+    
 }
 
 @objc func showMapButtonAction(sender: UIButton) {

@@ -9,7 +9,6 @@ import Foundation
 import FirebaseFirestore
 
 class ItineraryController {
-    
     //MARK: - Shared Instance
     static let sharedInstance = ItineraryController()
     
@@ -71,40 +70,20 @@ class ItineraryController {
     }
     
     func editItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void){
+        let itinRef = db.collection("users").document(userId).collection("itineraries").document(itinerary.id)
         
-        guard let index = itineraries.firstIndex(of: itinerary) else {return}
-        
-        let itineraryReference = db.collection("users").document(userId).collection("itineraries").document(itinerary.id)
-        itineraryReference.setData([
-            "destinationCoordinates" : itinerary.destinationCoordinates,
-            "tripName" : itinerary.tripName,
-            "tripDate" : itinerary.tripDate,
-            "tripImage" : itinerary.tripImage,
-            "flightArrival" : itinerary.flightArrival,
-            "flightDeparture" : itinerary.flightDeparture,
-            "hotelAirbnb" : itinerary.hotelAirbnb,
-            "hotelAirbnbCoordinates" : itinerary.hotelAirbnbCoordinates,
-            "budget" : itinerary.budget,
-            "checklist" : itinerary.checklist,
-            "dayCounter" : itinerary.dayCounter,
-            "activities" : itinerary.activities,
-            "activitiesCoordinates" : itinerary.activitiesCoordinates,
-//            "costOfActivities" : itinerary.costOfActivities,
-            "id" : itinerary.id,
-        ])
-    
+        itinRef.setData(itineraryData)
+
         completion(true)
     }
     
     func deleteItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void){
-        guard let index = itineraries.firstIndex(of: itinerary) else {return}
         
         db.collection("users").document(userId).collection("itineraries").document(itinerary.id).delete() { error in
             if let error = error {
                 print(error.localizedDescription)
             } else {
                 print("\(itinerary.tripName) has been removed")
-                self.itineraries.remove(at: index)
                 completion(true)
             }
         }

@@ -14,6 +14,11 @@ class TripCalendarViewController: UIViewController {
     
     //MARK: - Properties
     var tripDate: Date?
+    var dateToEdit: Date? {
+        didSet {
+            
+        }
+    }
     weak var delegate: DatePickerDelegate?
     
     //MARK: - Lifecycle

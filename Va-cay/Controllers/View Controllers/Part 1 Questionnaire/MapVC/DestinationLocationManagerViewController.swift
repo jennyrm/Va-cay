@@ -131,6 +131,5 @@ extension DestinationLocationManagerViewController: HandleMapSearch {
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)
     }
-
 }//End of extension
 
