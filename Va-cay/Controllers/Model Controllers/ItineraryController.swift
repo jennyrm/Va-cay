@@ -9,7 +9,6 @@ import Foundation
 import FirebaseFirestore
 
 class ItineraryController {
-    
     //MARK: - Shared Instance
     static let sharedInstance = ItineraryController()
     
@@ -35,10 +34,6 @@ class ItineraryController {
     func fetchItineraries(userId: String, completion: @escaping (Bool) -> Void) {
         var itinerariesPlaceholder: [Itinerary] = []
         db.collection("users").document(userId).collection("itineraries").addSnapshotListener { (snapshot, error) in
-//            if let error = error {
-//                print("Error in \(#function): on line \(#line) : \(error.localizedDescription) \n---\n \(error)")
-//                return completion(false)
-//            }
             if let snapshot = snapshot {
                 for doc in snapshot.documents {
                     let itineraryData = doc.data()
@@ -57,22 +52,16 @@ class ItineraryController {
                     let checklist = itineraryData["checklist"] as? [String] ?? []
                     
                     let dayCounter = itineraryData["dayCounter"] as? Int ?? 1
-                    _ = itineraryData["days"] as? [ [String : Date?] ] ?? nil
                     let activities = itineraryData["activities"] as? [ [ String : [String] ] ] ?? nil
                     let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String?? : [Double] ] ] ?? []
-                    let costOfActivities = itineraryData["costOfActivities"] as? [String] ?? []
+//                    let costOfActivities = itineraryData["costOfActivities"] as? [String] ?? []
                     
                     let id = doc.documentID
-                    let createdAtString = itineraryData["createdAt"] as? String ?? ""
-                    let dateformatter = ISO8601DateFormatter()
-                    let createdAt = dateformatter.date(from: createdAtString)
-                    
-                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate?.dateValue(), tripImage: tripImage, flightArrival: flightArrival?.dateValue(), flightDeparture: flightDeparture?.dateValue(), hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, dayCounter: dayCounter, days: nil, activities: activities, activitiesCoordinates: activitiesCoordinates, costOfActivities: costOfActivities, id: id, createdAt: createdAt ?? Date())
+                   
+                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate?.dateValue(), tripImage: tripImage, flightArrival: flightArrival?.dateValue(), flightDeparture: flightDeparture?.dateValue(), hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, dayCounter: dayCounter, activities: activities, activitiesCoordinates: activitiesCoordinates, id: id)
                     
                     itinerariesPlaceholder.append(retrievedItinerary)
                 }
-//                let sortItineraryObjectsByDate = self.itineraries.sorted(by: { $0.createdAt < $1.createdAt })
-//                self.itineraries = sortItineraryObjectsByDate
                 self.itineraries = itinerariesPlaceholder
                 itinerariesPlaceholder = []
                 completion(true)
@@ -84,6 +73,7 @@ class ItineraryController {
         let itinRef = db.collection("users").document(userId).collection("itineraries").document(itinerary.id)
         
         itinRef.setData(itineraryData)
+
         completion(true)
     }
     

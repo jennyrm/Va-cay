@@ -74,12 +74,9 @@ class ItineraryDetailViewController: UIViewController {
         ItineraryController.sharedInstance.itineraryData["budget"] = itinerary.budget
         ItineraryController.sharedInstance.itineraryData["checklist"] = itinerary.checklist
         ItineraryController.sharedInstance.itineraryData["dayCounter"] = itinerary.dayCounter
-        ItineraryController.sharedInstance.itineraryData["days"] = itinerary.days
         ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] = itinerary.activitiesCoordinates
         ItineraryController.sharedInstance.itineraryData["activities"] = itinerary.activities
-        ItineraryController.sharedInstance.itineraryData["costOfActivities"] = itinerary.costOfActivities
         ItineraryController.sharedInstance.itineraryData["id"] = itinerary.id
-        ItineraryController.sharedInstance.itineraryData["createdAt"] = itinerary.createdAt
     }
     
 }//End of class

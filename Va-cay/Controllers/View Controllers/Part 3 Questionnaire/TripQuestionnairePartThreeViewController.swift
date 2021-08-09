@@ -15,14 +15,10 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     var dayCounter = 1
     var dayDateLabel: UILabel?
-    var days = [ [String : Date?] ]()
-    var activities = [ [ String : [String] ] ]()
-    var currentDay: Date?
     var addOrEditDayText = "Add Day"
+    var activities = [ [ String : [String] ] ]()
     var currentActivities = [String]()
-    var costOfActivities = [String]()
     var activitiesTextFieldItems = [UITextField]()
-    var costOfActivitiesTextField: UITextField?
     var itinerary: Itinerary? {
         didSet {
             if itinerary == nil {
@@ -30,7 +26,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
             } else {
                 addOrEditDayText = "Next Day"
                 loadViewIfNeeded()
-                editItinerary()
+                updateEditedItineraryView()
             }
         }
     }
@@ -46,10 +42,15 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         updateView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveTextFieldInputs()
-        saveEditedItinerary()
     }
     
     //MARK: - Create Itinerary Functions
@@ -62,9 +63,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                 setupScrollableStackViewConstraints()
                 activitiesTextFieldItems[index].text = currentActivities[index]
             }
-        }
-        if let costOfActivities = ItineraryController.sharedInstance.itineraryData["costOfActivities"] as? String {
-            costOfActivitiesTextField?.text = costOfActivities
         }
         if let dayCounter = ItineraryController.sharedInstance.itineraryData["dayCounter"] as? Int {
             self.dayCounter = dayCounter
@@ -84,15 +82,9 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         }
         currentActivities = []
         
-        ItineraryController.sharedInstance.itineraryData["currentDay"] = currentDay
-        currentDay = nil
-        
         ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
         
         ItineraryController.sharedInstance.itineraryData["activities"] = activities
-        //        if costOfActivitiesTextField?.text != "" {
-        //            ItineraryController.sharedInstance.itineraryData["costOfActivities"] = costOfActivitiesTextField?.text
-        //        }
     }
     
     func clearTextFieldInputs() {
@@ -103,9 +95,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         activitiesTextFieldItems.forEach { $0.text = "" }
         removeTextFields()
         
-        ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "costOfActivities")
-        costOfActivitiesTextField?.text = ""
-        
         updateView()
     }
     
@@ -114,51 +103,84 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         for textfield in subviews {
             textfield.removeFromSuperview()
         }
-        addActivityButtonAction()
+//        addActivityButtonAction()
     }
     
     //MARK: - Edit Itinerary Functions
-    func editItinerary() {
+    func updateEditedItineraryView() {
         guard let itinerary = itinerary,
-              let activities = itinerary.activities else { return }
+              let itineraryActivities = itinerary.activities else { return }
+        
+        self.activities = itineraryActivities
         for (index, activity) in activities.enumerated() {
             if index + 1 == dayCounter {
                 for (key, value) in activity {
-                    dayLabel.text = key
-                    for i in 0..<value.count {
-                        activitiesTextFieldItems[i].text = value[i]
+                    if value.isEmpty {
+                        updateDay()
+                    } else {
+                        clearEditedTextFields()
+                        value.forEach { currentActivities.append($0) }
+                        displayItinerary(for: key)
                     }
                 }
             }
         }
+        
         if dayCounter > activities.count {
-            dayLabel.text = "Day \(dayCounter)"
-            clearTextFieldInputs()
+            updateDay()
+        }
+    
+        currentActivities = []
+    }
+    
+    func displayItinerary(for day: String) {
+        dayLabel.text = day
+        for index in 0..<currentActivities.count {
+            setupScrollableStackViewConstraints()
+            activitiesTextFieldItems[index].text = currentActivities[index]
         }
     }
     
     func saveEditedItinerary() {
-        guard let itinerary = itinerary,
-              var activities = itinerary.activities else { return }
-        
         let key = "Day \(dayCounter)"
         
         for (index, _) in activities.enumerated() {
-            var changedValues = [String]()
             if index + 1 == dayCounter {
                 activitiesTextFieldItems.forEach {
                     if !$0.text!.isEmpty {
-                        changedValues.append($0.text!)
+                        currentActivities.append($0.text!)
                     }
                 }
-//                print(key)
-                activities[index].updateValue(changedValues, forKey: key)
-                print(activities)
-                changedValues = []
-            } else {
-                
+                activities[index].updateValue(currentActivities, forKey: key)
+                itinerary?.activities = self.activities
+                print(itinerary?.activities as Any)
             }
         }
+        
+        if dayCounter > activities.count {
+            activitiesTextFieldItems.forEach {
+                if !$0.text!.isEmpty {
+                    currentActivities.append($0.text!)
+                }
+            }
+            
+            itinerary?.activities?.append([key : currentActivities])
+            print(itinerary?.activities as Any)
+        }
+
+        removeTextFields()
+        activitiesTextFieldItems = []
+        currentActivities = []
+    }
+    
+    func clearEditedTextFields() {
+        activitiesTextFieldItems.forEach { $0.text = "" }
+    }
+    
+    func updateDay() {
+        dayLabel.text = "Day \(dayCounter)"
+        clearEditedTextFields()
+        removeTextFields()
     }
 
 //MARK: - Programmatic Constraint Functions
@@ -236,23 +258,6 @@ func createScrollableStackView() {
     scrollView.addSubview(scrollableStackView)
 }
 
-func createEstimatedCostStackView() {
-    let label = UILabel()
-    label.text = "Estimated Cost of Activities"
-    label.textAlignment = .center
-    
-    let textField = UITextField()
-    textField.borderStyle = .line
-    costOfActivitiesTextField = textField
-    
-    self.view.addSubview(label)
-    self.view.addSubview(textField)
-    self.view.addSubview(estimatedCostStackView)
-    
-    estimatedCostStackView.addArrangedSubview(label)
-    estimatedCostStackView.addArrangedSubview(textField)
-}
-
 func createFooterButtonsStackView() {
     let addEditDayButton = UIButton()
     addEditDayButton.setTitle(addOrEditDayText, for: .normal)
@@ -281,6 +286,7 @@ func createFooterButtonsStackView() {
 
 @objc func addActivityButtonAction() {
     setupScrollableStackViewConstraints()
+    
 }
 
 @objc func showMapButtonAction(sender: UIButton) {
@@ -293,23 +299,18 @@ func createFooterButtonsStackView() {
         saveTextFieldInputs()
         
         let currentActivities = ItineraryController.sharedInstance.itineraryData["currentActivities"] as? [String]
-        //        let costOfActivities = ItineraryController.sharedInstance.itineraryData["costOfActivities"] as? [String]
-        
+      
         if currentActivities != [] {
-            days.append(["Day \(self.dayCounter)" : currentDay ?? nil ])
             dayCounter += 1
-            ItineraryController.sharedInstance.itineraryData["days"] = days
             ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
             ItineraryController.sharedInstance.itineraryData["activities"] = activities
-            //            ItineraryController.sharedInstance.itineraryData["costOfActivities"] = costOfActivities
             clearTextFieldInputs()
             dayLabel.text = "Day \(dayCounter)"
         }
     } else {
         saveEditedItinerary()
-//        removeTextFields()
         dayCounter += 1
-        editItinerary()
+        updateEditedItineraryView()
     }
 }
 
@@ -321,11 +322,8 @@ func createFooterButtonsStackView() {
             self.navigationController?.popToRootViewController(animated: true)
         }
     } else {
-        //        let date = Date().formatToStringWithShortDateAndTime()
-        //        ItineraryController.sharedInstance.itineraryData["createdAt"] = date
         ItineraryController.sharedInstance.createItinerary(userId: user.userId)
         ItineraryController.sharedInstance.itineraryData = [:]
-        //        ItineraryController.sharedInstance.itineraries = []
         dayCounter = 1
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -336,7 +334,6 @@ func setupConstraints() {
     self.view.addSubview(dayLabel)
     createCalendarStackView()
     createAddActivityStackView()
-    createEstimatedCostStackView()
     createFooterButtonsStackView()
     
     dayLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 100).isActive = true
@@ -352,12 +349,8 @@ func setupConstraints() {
     addActivityStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -100).isActive = true
     
     setupScrollableStackViewConstraints()
-    
-    estimatedCostStackView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 32).isActive = true
-    estimatedCostStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
-    estimatedCostStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
-    
-    footerButtonsStackView.topAnchor.constraint(equalTo: estimatedCostStackView.bottomAnchor, constant: 32).isActive = true
+  
+    footerButtonsStackView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 32).isActive = true
     footerButtonsStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 140).isActive = true
     footerButtonsStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -140).isActive = true
     footerButtonsStackView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -32).isActive = true
@@ -369,7 +362,7 @@ func setupScrollableStackViewConstraints() {
     scrollView.topAnchor.constraint(equalTo: addActivityStackView.bottomAnchor).isActive = true
     scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
     scrollView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
-    scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -300).isActive = true
+    scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -210).isActive = true
     
     scrollableStackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
     scrollableStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
@@ -417,15 +410,6 @@ var scrollableStackView: UIStackView = {
     stackView.axis = .vertical
     stackView.alignment = .fill
     stackView.distribution = .fillEqually
-    stackView.spacing = 10
-    stackView.translatesAutoresizingMaskIntoConstraints = false
-    return stackView
-}()
-
-var estimatedCostStackView: UIStackView = {
-    let stackView = UIStackView()
-    stackView.axis = .vertical
-    stackView.alignment = .fill
     stackView.spacing = 10
     stackView.translatesAutoresizingMaskIntoConstraints = false
     return stackView

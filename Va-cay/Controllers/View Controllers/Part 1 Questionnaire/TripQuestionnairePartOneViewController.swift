@@ -26,6 +26,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
             if itinerary?.tripImage != nil {
                 let imageData = itinerary?.tripImage
                 tripImage = UIImage(data: imageData ?? Data())
+                
             }
         }
     }
