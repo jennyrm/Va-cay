@@ -24,13 +24,11 @@ class Itinerary: Codable {
     var checklist: [String]?
     ///TripQuestionnairePart3
     let dayCounter: Int
-    let days: [ [String : Date?] ]?
     let activitiesCoordinates: [ [String?? : [Double] ] ]?
     var activities: [ [ String : [String] ] ]?
-    let costOfActivities: [String]?
+//    let costOfActivities: [String]?
     ///ID
     let id: String
-    let createdAt: Date
 
     init(destinationCoordinates: [ [String?? : [Double] ] ]?,
         tripName: String,
@@ -44,12 +42,10 @@ class Itinerary: Codable {
         checklist: [String]?,
         
         dayCounter: Int,
-        days: [ [String : Date?] ]?,
         activities: [ [ String : [String] ] ]?,
         activitiesCoordinates: [ [String?? : [Double] ] ]?,
-        costOfActivities: [String]?,
-        id: String,
-        createdAt: Date)
+//        costOfActivities: [String]?,
+        id: String)
     {
         self.destinationCoordinates = destinationCoordinates
         self.tripName = tripName
@@ -64,13 +60,12 @@ class Itinerary: Codable {
         self.checklist = checklist
         
         self.dayCounter = dayCounter
-        self.days = days
+
         self.activities = activities
         self.activitiesCoordinates = activitiesCoordinates
-        self.costOfActivities = costOfActivities
+//        self.costOfActivities = costOfActivities
         
         self.id = id
-        self.createdAt = createdAt
     }
     
 }//End of class
