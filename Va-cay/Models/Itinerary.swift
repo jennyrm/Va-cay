@@ -11,7 +11,7 @@ class Itinerary: Codable {
     
     //MARK: - Properties
     ///TripQuestionnairePart1
-    let destinationCoordinates: [ [String?? : [Double] ] ]?
+    var destinationCoordinates: [ [String?? : [Double] ] ]?
     var tripName: String
     let tripDate: Date?
     let tripImage: Data?

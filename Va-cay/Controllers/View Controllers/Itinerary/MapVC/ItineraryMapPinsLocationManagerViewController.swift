@@ -52,6 +52,10 @@ class ItineraryMapPinsLocationManagerViewController: UIViewController {
         loadMapPins()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        saveMapAnnotations()
+    }
+    
     //MARK: - Actions
     @IBAction func getCurrentLocationButtonTapped(_ sender: UIButton) {
         locationManager.requestLocation()
@@ -81,6 +85,19 @@ class ItineraryMapPinsLocationManagerViewController: UIViewController {
             let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             let region = MKCoordinateRegion(center: center, span: span)
             mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    func saveMapAnnotations() {
+        for annotation in mapView.annotations {
+            coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] )
+        }
+        if !coordinates.isEmpty {
+            guard let user = UserController.shared.user,
+                  let itinerary = itinerary else {return}
+            ItineraryController.sharedInstance.editDestinationCoordinates(userId: user.userId, itinerary: itinerary, coords: coordinates) { result in
+                
+            }
         }
     }
     

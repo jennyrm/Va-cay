@@ -24,7 +24,7 @@ class MediaSelectorViewController: UIViewController {
             
         }
     }
-    weak var delegate: MediaSelectorDelegate?
+    static weak var delegate: MediaSelectorDelegate?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -66,7 +66,8 @@ class MediaSelectorViewController: UIViewController {
     }
     
     func updateImageView(image: UIImage){
-        
+        guard let imageView = uploadedMediaImageView else {return}
+        imageView.image = image
     }
     
 }//End of class
@@ -94,7 +95,7 @@ extension MediaSelectorViewController: UIImagePickerControllerDelegate, UINaviga
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.originalImage] as? UIImage {
-            guard let delegate = delegate else { return }
+            guard let delegate = MediaSelectorViewController.delegate else { return }
             delegate.mediaPickerSelected(image: pickedImage)
             uploadedMediaImageView.image = pickedImage
             uploadMediaButton.isHidden = true
@@ -103,7 +104,7 @@ extension MediaSelectorViewController: UIImagePickerControllerDelegate, UINaviga
     }
 }//End of extension
 
-extension MediaSelectorViewController: updateImageView {
+extension MediaSelectorViewController: updateImageDelegate {
     func updateImage(image: UIImage){
         updateImageView(image: image)
     }

@@ -8,7 +8,6 @@
 import UIKit
 
 class TripQuestionnairePartThreeViewController: UIViewController {
-    
     //MARK: - Properties
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
@@ -40,12 +39,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
