@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol updateImageView: AnyObject {
+protocol updateImageDelegate: AnyObject {
     func updateImage(image: UIImage)
 }
 
@@ -31,14 +31,23 @@ class TripQuestionnairePartOneViewController: UIViewController {
 //        }
 //    }
     
-    static weak var delegate: updateImageView?
+    
+    static weak var delegate: updateImageDelegate?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        MediaSelectorViewController.delegate = self
         updateView()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        if ItineraryController.sharedInstance.isEditing {
+//            guard let imageStr = ItineraryController.sharedInstance.itineraryData["tripImage"] else {return}
+//            MediaSelectorViewController.delegate?.mediaPickerSelected(image: UIImage(data: imageStr as! Data)!)
+//        }
+//    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -74,7 +83,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
         if segue.identifier == "toMediaSelectorVC" {
             guard let destinationVC = segue.destination as? MediaSelectorViewController else { return }
             destinationVC.tripImage = tripImage
-            destinationVC.delegate = self
+            MediaSelectorViewController.delegate = self
         }
         if segue.identifier == "toTripQuestionnairePartTwoVC" {
             guard let destinationVC = segue.destination as? TripQuestionnairePartTwoViewController else { return }
@@ -113,4 +122,3 @@ extension TripQuestionnairePartOneViewController: DatePickerDelegate {
         tripDateLabel.text = date?.formatToString()
     }
 }//End of extension
-

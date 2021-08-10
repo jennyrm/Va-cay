@@ -8,7 +8,6 @@
 import UIKit
 
 class TripQuestionnairePartThreeViewController: UIViewController {
-    
     //MARK: - Properties
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
