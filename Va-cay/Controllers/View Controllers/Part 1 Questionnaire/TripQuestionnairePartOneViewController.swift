@@ -19,17 +19,17 @@ class TripQuestionnairePartOneViewController: UIViewController {
     
     //MARK: - Properties
     var tripImage: UIImage?
-    var itinerary: Itinerary? {
-        didSet {
-            loadViewIfNeeded()
-            editItinerary()
-            if itinerary?.tripImage != nil {
-                let imageData = itinerary?.tripImage
-                tripImage = UIImage(data: imageData ?? Data())
-                
-            }
-        }
-    }
+//    var itinerary: Itinerary? {
+//        didSet {
+//            loadViewIfNeeded()
+//            editItinerary()
+//            if itinerary?.tripImage != nil {
+//                let imageData = itinerary?.tripImage
+//                tripImage = UIImage(data: imageData ?? Data())
+//
+//            }
+//        }
+//    }
     
     static weak var delegate: updateImageView?
     
@@ -43,7 +43,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveTextFieldInputs()
-        saveEditedItinerary()
+//        saveEditedItinerary()
     }
     
     //MARK: - Functions
@@ -59,15 +59,15 @@ class TripQuestionnairePartOneViewController: UIViewController {
         }
     }
     
-    func editItinerary() {
-        guard let itinerary = itinerary else { return }
-        tripNameTextField.text = itinerary.tripName
-        tripDateLabel.text = itinerary.tripDate?.formatToString()
-    }
-    
-    func saveEditedItinerary() {
-        itinerary?.tripName = tripNameTextField.text ?? "Trip"
-    }
+//    func editItinerary() {
+//        guard let itinerary = itinerary else { return }
+//        tripNameTextField.text = itinerary.tripName
+//        tripDateLabel.text = itinerary.tripDate?.formatToString()
+//    }
+//
+//    func saveEditedItinerary() {
+//        itinerary?.tripName = tripNameTextField.text ?? "Trip"
+//    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,7 +78,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
         }
         if segue.identifier == "toTripQuestionnairePartTwoVC" {
             guard let destinationVC = segue.destination as? TripQuestionnairePartTwoViewController else { return }
-            destinationVC.itinerary = itinerary
+//            destinationVC.itinerary = itinerary
             saveTextFieldInputs()
         }
         if segue.identifier == "toTripCalendarVC" {

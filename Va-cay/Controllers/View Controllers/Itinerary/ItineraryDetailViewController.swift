@@ -62,7 +62,7 @@ class ItineraryDetailViewController: UIViewController {
             let destinationVC = segue.destination as? TripQuestionnairePartOneViewController else { return }
         ItineraryController.sharedInstance.isEditing = true
         ItineraryController.sharedInstance.itinToEdit = itinerary
-        destinationVC.itinerary = itinerary
+//        destinationVC.itinerary = itinerary
         ItineraryController.sharedInstance.itineraryData["destinationCoordinates"] = itinerary.destinationCoordinates
         ItineraryController.sharedInstance.itineraryData["tripName"] = itinerary.tripName
         ItineraryController.sharedInstance.itineraryData["tripDate"] = itinerary.tripDate
