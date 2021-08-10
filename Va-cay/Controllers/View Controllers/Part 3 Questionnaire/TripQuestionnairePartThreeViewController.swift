@@ -39,13 +39,9 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
+        if addOrEditDayText == "Add Day" {
+            updateView()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
