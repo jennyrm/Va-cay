@@ -13,19 +13,20 @@ class AuthViewModel {
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false)
             }
             print("userLoggedIn")
             if result != nil {
                 guard let result = result else {return}
                 DispatchQueue.main.async {
-                    
                     UserController.shared.fetchUser(userId: result.user.uid) { result in
                         switch result {
-                            case .success(let user):
-                                UserController.shared.user = user
-                                completion(true)
+                        case .success(let user):
+                            UserController.shared.user = user
+                            completion(true)
                         case .failure(let error):
                             print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                            completion(false)
                         }
                     }
                 }
@@ -38,6 +39,7 @@ class AuthViewModel {
             FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if let error = error {
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                    completion(false)
                 }
                 if result != nil {
                     print("Succesfully created account")
@@ -46,6 +48,8 @@ class AuthViewModel {
                     completion(true)
                 }
             }
+        } else {
+            completion(false)
         }
     }
     

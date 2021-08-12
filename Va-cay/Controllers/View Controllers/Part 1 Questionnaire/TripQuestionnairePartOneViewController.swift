@@ -41,13 +41,13 @@ class TripQuestionnairePartOneViewController: UIViewController {
         updateView()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        if ItineraryController.sharedInstance.isEditing {
-//            guard let imageStr = ItineraryController.sharedInstance.itineraryData["tripImage"] else {return}
-//            MediaSelectorViewController.delegate?.mediaPickerSelected(image: UIImage(data: imageStr as! Data)!)
-//        }
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if ItineraryController.sharedInstance.isEditing {
+            guard let imageStr = ItineraryController.sharedInstance.itineraryData["tripImage"] else {return}
+            TripQuestionnairePartOneViewController.delegate?.updateImage(image: UIImage(data: imageStr as! Data)!)
+        }
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
