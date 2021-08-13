@@ -13,10 +13,10 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         return self.view.safeAreaLayoutGuide
     }
     var dayCounter = 1
-    var dayDateLabel: UILabel?
+    var dateOfActivityLabel: UILabel?
+    var activitiesTextFieldItems = [UITextField]()
     var activities = [ [ String : [String] ] ]()
     var placeholderActivities = [String]()
-    var activitiesTextFieldItems = [UITextField]()
     
     //MARK: - Lifecycles
     override func loadView() {
@@ -29,11 +29,11 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         updateView()
     }
     
-    //MARK: - Create Itinerary Functions
+    //MARK: - Functions
     func updateView() {
-//        if let currentDay = ItineraryController.sharedInstance.itineraryData["currentDay"] as? Date {
-//            dayDateLabel?.text = currentDay.formatToStringWithLongDateAndTime()
-//        }
+        if let currentDay = ItineraryController.sharedInstance.itineraryData["dateOfActivity"] as? Date {
+            dateOfActivityLabel?.text = currentDay.formatToStringWithLongDateAndTime()
+        }
         
         if let activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [ [ String : [String] ] ] {
             self.activities = activities
@@ -119,7 +119,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         for textfield in subviews {
             textfield.removeFromSuperview()
         }
-        addActivityButtonAction()
+//        addActivityButtonAction()
     }
     
     //MARK: - Programmatic Constraint Functions
@@ -130,7 +130,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         label.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         label.backgroundColor = .systemGray6
         label.textAlignment = .center
-        dayDateLabel = label
+        dateOfActivityLabel = label
         
         let button = UIButton()
         button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
@@ -322,7 +322,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .fill
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
         stackView.spacing = 0
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -391,8 +391,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
 //MARK: - Extensions
 extension TripQuestionnairePartThreeViewController: DatePickerDelegate {
     func dateSelected(_ date: Date?) {
-        dayDateLabel?.text = date?.formatToStringWithLongDateAndTime()
-        ItineraryController.sharedInstance.itineraryData["currentDay"] = date
+        dateOfActivityLabel?.text = date?.formatToStringWithLongDateAndTime()
+        ItineraryController.sharedInstance.itineraryData["dateOfActivity"] = date
     }
 }//End of extension
 

@@ -34,7 +34,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
         super.viewWillAppear(animated)
         if ItineraryController.sharedInstance.isEditing {
             guard let imageStr = ItineraryController.sharedInstance.itineraryData["tripImage"] else {return}
-            TripQuestionnairePartOneViewController.delegate?.updateImage(image: UIImage(data: imageStr as! Data)!)
+            TripQuestionnairePartOneViewController.delegate?.updateImage(image: UIImage(data: imageStr as? Data ?? Data())!)
         }
     }
     
@@ -65,7 +65,6 @@ class TripQuestionnairePartOneViewController: UIViewController {
         }
         if segue.identifier == "toTripQuestionnairePartTwoVC" {
             guard let destinationVC = segue.destination as? TripQuestionnairePartTwoViewController else { return }
-//            destinationVC.itinerary = itinerary
             saveTextFieldInputs()
         }
         if segue.identifier == "toTripCalendarVC" {

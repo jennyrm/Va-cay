@@ -12,6 +12,7 @@ class UserFeedViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    
     //MARK: - Properties
     var indexPathRow: Int?
     
