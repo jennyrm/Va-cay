@@ -21,12 +21,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     var budgetTextField: UITextField?
     var checklistTextFieldItems = [UITextField]()
     var checklist = [String]()
-//    var itinerary: Itinerary? {
-//        didSet {
-//            loadViewIfNeeded()
-//            editItinerary()
-//        }
-//    }
     
     //MARK: - Lifecyle
     override func loadView() {
@@ -42,7 +36,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveTextFieldInputs()
-//        saveEditedItinerary()
     }
     
     //MARK: - Functions
@@ -56,10 +49,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         if let hotelAirbnb = ItineraryController.sharedInstance.itineraryData["hotelAirbnb"] as? String {
             hotelAirbnbTextField?.text = hotelAirbnb
         }
-//        if let hotelAirbnbCoordinates = ItineraryController.sharedInstance.itineraryPlaceholder["hotelAirbnbMapCoordinates"] as? [ [String?? : (Double, Double)] ] {
-//            let title = hotelAirbnbCoordinates[0].keys
-//            hotelAirbnbTextField?.text = "\(title)"
-//        }
         if let budget = ItineraryController.sharedInstance.itineraryData["budget"] as? String {
             budgetTextField?.text = budget
         }
@@ -86,23 +75,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
             checklist = []
         }
     }
-    
-//    func editItinerary() {
-//        guard let itinerary = itinerary,
-//              let checklist = itinerary.checklist else { return }
-//        flightArrivalDateLabel.text = itinerary.flightArrival?.formatToString()
-//        flightDepartureDateLabel.text = itinerary.flightDeparture?.formatToString()
-//        hotelAirbnbTextField?.text = itinerary.hotelAirbnb
-//        for index in 0..<checklist.count {
-//            setupScrollableStackViewConstraints()
-//            checklistTextFieldItems[index].text = checklist[index]
-//        }
-//    }
-//
-//    func saveEditedItinerary() {
-//        itinerary?.hotelAirbnb = hotelAirbnbTextField?.text
-//        itinerary?.checklist = self.checklist
-//    }
     
     func createLabelCalendarButton(with flightLabel: UILabel) -> UIStackView {
         flightLabel.textColor = .black
@@ -267,20 +239,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         scrollableStackView.addArrangedSubview(textFieldButtonStackView)
         scrollView.addSubview(scrollableStackView)
     }
-    //    func createScrollableStackView() {
-    //        self.view.addSubview(scrollView)
-    //
-    //        let textField = UITextField()
-    //        textField.borderStyle = .line
-    //        textField.backgroundColor = .white
-    //        textFieldArr.append(textField)
-    //
-    //        self.view.addSubview(textField)
-    //        self.view.addSubview(scrollableStackView)
-    //
-    //        scrollableStackView.addArrangedSubview(textField)
-    //        scrollView.addSubview(scrollableStackView)
-    //    }
+
     @objc func showCalendarButtonAction(sender: UIButton) {
         switch (sender.tag) {
         case 0:

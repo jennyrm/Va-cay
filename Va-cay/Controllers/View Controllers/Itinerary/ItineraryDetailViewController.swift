@@ -58,8 +58,8 @@ class ItineraryDetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let itinerary = itinerary,
-            let destinationVC = segue.destination as? TripQuestionnairePartOneViewController else { return }
+        guard let itinerary = itinerary else { return }
+//            let destinationVC = segue.destination as? TripQuestionnairePartOneViewController else { return }
         ItineraryController.sharedInstance.isEditing = true
         ItineraryController.sharedInstance.itinToEdit = itinerary
 //        destinationVC.itinerary = itinerary
@@ -73,7 +73,6 @@ class ItineraryDetailViewController: UIViewController {
         ItineraryController.sharedInstance.itineraryData["hotelAirbnbCoordinates"] = itinerary.hotelAirbnbCoordinates
         ItineraryController.sharedInstance.itineraryData["budget"] = itinerary.budget
         ItineraryController.sharedInstance.itineraryData["checklist"] = itinerary.checklist
-        ItineraryController.sharedInstance.itineraryData["dayCounter"] = itinerary.dayCounter
         ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] = itinerary.activitiesCoordinates
         ItineraryController.sharedInstance.itineraryData["activities"] = itinerary.activities
         ItineraryController.sharedInstance.itineraryData["id"] = itinerary.id
