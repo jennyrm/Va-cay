@@ -7,81 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AD590C18-702B-48B1-8954-0826E64079A4"
+            uuid = "4D5B3B60-D35E-4339-8184-EB763B07F582"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Va-cay/Controllers/View Controllers/Part 1 Questionnaire/TripQuestionnairePartOneViewController.swift"
+            filePath = "Va-cay/Controllers/View Controllers/Part 1 Questionnaire/MediaVC/MediaSelectorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "itinerary"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "26A50C96-2B60-43B8-986A-B278924CD623"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "saveTextFieldInputs()"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "updateImageView(image:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "07C1C457-8065-411B-A0EB-83567D0820CF"
-            shouldBeEnabled = "Yes"
+            uuid = "6023B192-9FF0-45CC-8D78-91AA7D1FE990"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
+            filePath = "Va-cay/Controllers/View Controllers/Itinerary/ItineraryDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322"
-            landmarkName = "createItineraryObject()"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "07C1C457-8065-411B-A0EB-83567D0820CF - aca9ee3241ad4af4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Va_cay.TripQuestionnairePartThreeViewController.createItineraryObject() -&gt; ()"
-                  moduleName = "Va-cay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jameslea/Desktop/Code/Swift/Va-cay/Va-cay/Controllers/View%20Controllers/Part%203%20Questionnaire/TripQuestionnairePartThreeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "322"
-                  endingLineNumber = "322"
-                  offsetFromSymbolStart = "705">
-               </Location>
-               <Location
-                  uuid = "07C1C457-8065-411B-A0EB-83567D0820CF - 664cf7faa2fe1b5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Va_cay.TripQuestionnairePartThreeViewController.createItineraryObject() -&gt; ()"
-                  moduleName = "Va-cay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jameslea/Desktop/Code/Swift/Va-cay/Va-cay/Controllers/View%20Controllers/Part%203%20Questionnaire/TripQuestionnairePartThreeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "323"
-                  endingLineNumber = "323"
-                  offsetFromSymbolStart = "83">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

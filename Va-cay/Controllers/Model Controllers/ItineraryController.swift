@@ -73,6 +73,16 @@ class ItineraryController {
         completion(true)
     }
     
+    
+    func editDestinationCoordinates(userId: String, itinerary: Itinerary, coords: [[String?? : [Double]]], completion: @escaping (Bool) -> Void){
+        guard let index = itineraries.firstIndex(of: itinerary) else {return}
+        db.collection("users").document(userId).collection("itineraries").document(itinerary.id).setData([
+            "destinationCoordinates" : coords
+        ], merge: true)
+        itineraries[index].destinationCoordinates = coords
+        completion(true)
+    }
+    
     func deleteItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void){
         db.collection("users").document(userId).collection("itineraries").document(itinerary.id).delete() { error in
             if let error = error {
