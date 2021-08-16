@@ -242,6 +242,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         guard let user = UserController.shared.user else {return}
         
         if ItineraryController.sharedInstance.isEditing {
+            saveActivities()
             guard let itineraryToEdit = ItineraryController.sharedInstance.itinToEdit else {return}
             ItineraryController.sharedInstance.itineraryData["activities"] = activities
             ItineraryController.sharedInstance.editItinerary(userId: user.userId, itinerary: itineraryToEdit) { result in
@@ -366,10 +367,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toDayCalendarVC" {
-//            guard let destinationVC = segue.destination as? DayCalendarViewController else { return }
-//            destinationVC.delegate = self
-//        }
         if segue.identifier == "toActivitiesMapVC" {
             guard let destinationVC = segue.destination as? ActivitiesLocationManagerViewController else { return }
             destinationVC.day = "Day \(dayCounter)"
