@@ -23,7 +23,7 @@ class Itinerary: Codable {
     let budget: String?
     var checklist: [String]?
     ///TripQuestionnairePart3
-    let activitiesCoordinates: [ [String?? : [Double] ] ]?
+    let activitiesCoordinates: [ [String : [String?? : [Double] ] ] ]?
     var activities: [ [ String : [String] ] ]?
     ///ID
     let id: String
@@ -40,7 +40,7 @@ class Itinerary: Codable {
         checklist: [String]?,
 
         activities: [ [ String : [String] ] ]?,
-        activitiesCoordinates: [ [String?? : [Double] ] ]?,
+        activitiesCoordinates: [ [String : [String?? : [Double] ] ] ]?,
         id: String)
     {
         self.destinationCoordinates = destinationCoordinates

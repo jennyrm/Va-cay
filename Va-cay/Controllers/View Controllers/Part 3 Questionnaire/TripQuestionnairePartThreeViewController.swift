@@ -13,10 +13,13 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         return self.view.safeAreaLayoutGuide
     }
     var dayCounter = 1
-    var dateOfActivityLabel: UILabel?
-    var activitiesTextFieldItems = [UITextField]()
+    var dayDateLabel: UILabel?
     var activities = [ [ String : [String] ] ]()
+//    var days = [ String : [ [String : Any] ] ]()
+//    ["Day \(dayCounter)" : [  ["activities" : [String], ["coordinates" : [ [String?? : [Double] ] ] ] ]
+//    var activitiesCoordinates = [ [ String : [String] ] ]()
     var placeholderActivities = [String]()
+    var activitiesTextFieldItems = [UITextField]()
     
     //MARK: - Lifecycles
     override func loadView() {
@@ -29,17 +32,16 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         updateView()
     }
     
-    //MARK: - Functions
+    //MARK: - Create Itinerary Functions
     func updateView() {
-        if let currentDay = ItineraryController.sharedInstance.itineraryData["dateOfActivity"] as? Date {
-            dateOfActivityLabel?.text = currentDay.formatToStringWithLongDateAndTime()
-        }
-        
         if let activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [ [ String : [String] ] ] {
             self.activities = activities
-            print("Self.activities:", self.activities)
+//            print("Self.activities:", self.activities)
             updateActivitiesView()
         }
+//        if let activitiesCoordinates = ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] as? [ [String?? : [Double] ] ] {
+//            print(activitiesCoordinates)
+//        }
     }
     
     func updateActivitiesView() {
@@ -81,17 +83,28 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     func saveActivities() {
         let day = "Day \(dayCounter)"
         
-        for (index, activity) in activities.enumerated() {
-            for (key, _) in activity {
-                if key == "Day \(dayCounter)" {
-                    activitiesTextFieldItems.forEach {
-                        if !$0.text!.isEmpty {
-                            placeholderActivities.append($0.text!)
+        //editing itinerary activities
+        if ItineraryController.sharedInstance.isEditing {
+            for (index, activity) in activities.enumerated() {
+                for (key, _) in activity {
+                    if key == "Day \(dayCounter)" {
+                        activitiesTextFieldItems.forEach {
+                            if !$0.text!.isEmpty {
+                                placeholderActivities.append($0.text!)
+                            }
                         }
+                        activities[index].updateValue(placeholderActivities, forKey: key)
                     }
-                    activities[index].updateValue(placeholderActivities, forKey: key)
                 }
             }
+        } else {
+            activitiesTextFieldItems.forEach {
+                if !$0.text!.isEmpty {
+                    placeholderActivities.append($0.text!)
+                }
+            }
+            
+            activities.append([day : placeholderActivities])
         }
         
         if dayCounter > activities.count {
@@ -103,10 +116,12 @@ class TripQuestionnairePartThreeViewController: UIViewController {
             
             activities.append([day : placeholderActivities])
         }
+        
         removeTextFields()
         activitiesTextFieldItems = []
         placeholderActivities = []
     
+        print(activities)
         ItineraryController.sharedInstance.itineraryData["activities"] = activities
     }
     
@@ -123,28 +138,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     //MARK: - Programmatic Constraint Functions
-    func createCalendarStackView() {
-        let label = UILabel()
-        label.textColor = .black
-        label.layer.borderWidth = 1.0
-        label.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        label.backgroundColor = .systemGray6
-        label.textAlignment = .center
-        dateOfActivityLabel = label
-        
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
-        button.tintColor = .systemBlue
-        button.addTarget(self, action: #selector(showCalendarButtonAction), for: .touchUpInside)
-        
-        self.view.addSubview(label)
-        self.view.addSubview(button)
-        self.view.addSubview(calendarStackView)
-        
-        calendarStackView.addArrangedSubview(label)
-        calendarStackView.addArrangedSubview(button)
-    }
-    
     func createAddActivityStackView() {
         let label = UILabel()
         label.text = "Add Activity"
@@ -170,7 +163,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         
         let textField = UITextField()
         textField.backgroundColor = .white
-        textField.placeholder = "Enter activity here or use the map"
+        textField.placeholder = "Enter activity here"
         textField.borderStyle = .line
         activitiesTextFieldItems.append(textField)
         
@@ -247,6 +240,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     @objc func submitItineraryObject() {
         guard let user = UserController.shared.user else {return}
+        
         if ItineraryController.sharedInstance.isEditing {
             guard let itineraryToEdit = ItineraryController.sharedInstance.itinToEdit else {return}
             ItineraryController.sharedInstance.itineraryData["activities"] = activities
@@ -254,6 +248,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                 self.navigationController?.popToRootViewController(animated: true)
             }
         } else {
+            saveActivities()
             ItineraryController.sharedInstance.createItinerary(userId: user.userId)
             ItineraryController.sharedInstance.itineraryData = [:]
             dayCounter = 1
@@ -264,7 +259,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     //MARK: - Programmatic Constraints
     func setupConstraints() {
         self.view.addSubview(dayLabel)
-        createCalendarStackView()
         createAddActivityStackView()
         createPreviousNextDayButtonStackView()
         self.view.addSubview(submitButton)
@@ -272,12 +266,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         dayLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 100).isActive = true
         dayLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 150).isActive = true
         dayLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -150).isActive = true
-        
-        calendarStackView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor).isActive = true
-        calendarStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
-        calendarStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
-        
-        addActivityStackView.topAnchor.constraint(equalTo: calendarStackView.bottomAnchor, constant: 32).isActive = true
+
+        addActivityStackView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 32).isActive = true
         addActivityStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 100).isActive = true
         addActivityStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -100).isActive = true
         
@@ -322,7 +312,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .fill
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         stackView.spacing = 0
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -376,12 +366,13 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDayCalendarVC" {
-            guard let destinationVC = segue.destination as? DayCalendarViewController else { return }
-            destinationVC.delegate = self
-        }
+//        if segue.identifier == "toDayCalendarVC" {
+//            guard let destinationVC = segue.destination as? DayCalendarViewController else { return }
+//            destinationVC.delegate = self
+//        }
         if segue.identifier == "toActivitiesMapVC" {
             guard let destinationVC = segue.destination as? ActivitiesLocationManagerViewController else { return }
+            destinationVC.day = "Day \(dayCounter)"
             destinationVC.mapPinDelegate = self
         }
     }
@@ -391,8 +382,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
 //MARK: - Extensions
 extension TripQuestionnairePartThreeViewController: DatePickerDelegate {
     func dateSelected(_ date: Date?) {
-        dateOfActivityLabel?.text = date?.formatToStringWithLongDateAndTime()
-        ItineraryController.sharedInstance.itineraryData["dateOfActivity"] = date
+        dayDateLabel?.text = date?.formatToStringWithLongDateAndTime()
+        ItineraryController.sharedInstance.itineraryData["currentDay"] = date
     }
 }//End of extension
 
