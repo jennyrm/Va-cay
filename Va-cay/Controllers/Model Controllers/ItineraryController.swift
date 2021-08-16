@@ -50,7 +50,7 @@ class ItineraryController {
                     let checklist = itineraryData["checklist"] as? [String] ?? []
 
                     let activities = itineraryData["activities"] as? [ [ String : [String] ] ] ?? nil
-                    let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String?? : [Double] ] ] ?? []
+                    let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String : [String?? : [Double] ] ] ] ?? []
                     
                     let id = doc.documentID
                    
