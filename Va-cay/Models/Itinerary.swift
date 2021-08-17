@@ -21,7 +21,7 @@ class Itinerary: Codable {
     var hotelAirbnb: String?
     let hotelAirbnbCoordinates: [ [String?? : [Double] ] ]?
     let budget: String?
-    var checklist: [String]?
+    var checklist: [ [String?? : Bool] ]?
     ///TripQuestionnairePart3
     let dayCounter: Int
     let activitiesCoordinates: [ [String?? : [Double] ] ]?
@@ -39,7 +39,7 @@ class Itinerary: Codable {
         hotelAirbnb: String?,
         hotelAirbnbCoordinates: [ [String?? : [Double] ] ]?,
         budget: String?,
-        checklist: [String]?,
+        checklist: [ [String?? : Bool] ]?,
         
         dayCounter: Int,
         activities: [ [ String : [String] ] ]?,

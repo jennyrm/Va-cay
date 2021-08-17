@@ -49,7 +49,7 @@ class ItineraryController {
                     let hotelAirbnb = itineraryData["hotelAirbnb"] as? String ?? ""
                     let hotelAirbnbCoordinates = itineraryData["hotelAirbnbCoordinates"] as? [ [String?? : [Double] ] ] ?? []
                     let budget = itineraryData["budget"] as? String ?? ""
-                    let checklist = itineraryData["checklist"] as? [String] ?? []
+                    let checklist = itineraryData["checklist"] as? [ [String?? : Bool] ] ?? []
                     
                     let dayCounter = itineraryData["dayCounter"] as? Int ?? 1
                     let activities = itineraryData["activities"] as? [ [ String : [String] ] ] ?? nil
