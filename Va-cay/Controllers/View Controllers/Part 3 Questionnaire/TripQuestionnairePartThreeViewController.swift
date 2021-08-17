@@ -8,6 +8,7 @@
 import UIKit
 
 class TripQuestionnairePartThreeViewController: UIViewController {
+    
     //MARK: - Properties
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
@@ -15,7 +16,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var dayCounter = 1
     var dayDateLabel: UILabel?
     var activities = [ [ String : [String] ] ]()
-    var placeholderActivities = [String]()
+    var dayActivities = [String]()
     var activitiesTextFieldItems = [UITextField]()
     
     //MARK: - Lifecycles
@@ -32,7 +33,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 //        saveActivities() - need for saving activity on current view if view gets deallocated from memory
-        ItineraryController.sharedInstance.isEditing = true
+//        ItineraryController.sharedInstance.isEditing = true
     }
     
     //MARK: - Create Itinerary Functions
@@ -52,7 +53,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                         updateDay()
                     } else {
                         clearEditedTextFields()
-                        value.forEach { placeholderActivities.append($0) }
+                        value.forEach { dayActivities.append($0) }
                         displayActivities(for: key)
                     }
                 }
@@ -63,7 +64,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
             updateDay()
         }
         
-        placeholderActivities = []
+        dayActivities = []
         addActivityButtonAction()
     }
     
@@ -75,9 +76,9 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     func displayActivities(for day: String) {
         dayLabel.text = day
-        for index in 0..<placeholderActivities.count {
+        for index in 0..<dayActivities.count {
             addActivityButtonAction()
-            activitiesTextFieldItems[index].text = placeholderActivities[index]
+            activitiesTextFieldItems[index].text = dayActivities[index]
         }
     }
     
@@ -85,46 +86,40 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         let day = "Day \(dayCounter)"
         
         //editing itinerary activities
-        if ItineraryController.sharedInstance.isEditing {
+        if ItineraryController.sharedInstance.isEditing || !activities.isEmpty {
             for (index, activity) in activities.enumerated() {
                 for (key, _) in activity {
                     if key == "Day \(dayCounter)" {
-                        activitiesTextFieldItems.forEach {
-                            if !$0.text!.isEmpty {
-                                placeholderActivities.append($0.text!)
-                            }
-                        }
-                        activities[index].updateValue(placeholderActivities, forKey: key)
+                        addActivitiesFromTextFields()
+                        activities[index].updateValue(dayActivities, forKey: key)
                     }
                 }
             }
         } else {
             //creating itinerary activities
-            activitiesTextFieldItems.forEach {
-                if !$0.text!.isEmpty {
-                    placeholderActivities.append($0.text!)
-                }
-            }
-
-            activities.append([day : placeholderActivities])
+            addActivitiesFromTextFields()
+            activities.append([day : dayActivities])
         }
         
+        //adding activities for a new day
         if dayCounter > activities.count {
-            activitiesTextFieldItems.forEach {
-                if !$0.text!.isEmpty {
-                    placeholderActivities.append($0.text!)
-                }
-            }
-
-            activities.append([day : placeholderActivities])
+            addActivitiesFromTextFields()
+            activities.append([day : dayActivities])
         }
         
         removeTextFields()
         activitiesTextFieldItems = []
-        placeholderActivities = []
-    
-        print(activities)
+        dayActivities = []
+
         ItineraryController.sharedInstance.itineraryData["activities"] = activities
+    }
+    
+    func addActivitiesFromTextFields() {
+        activitiesTextFieldItems.forEach {
+            if !$0.text!.isEmpty {
+                dayActivities.append($0.text!)
+            }
+        }
     }
     
     func clearEditedTextFields() {
@@ -242,15 +237,15 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     @objc func submitItineraryObject() {
         guard let user = UserController.shared.user else {return}
         
+        saveActivities()
+        
         if ItineraryController.sharedInstance.isEditing {
-            saveActivities()
             guard let itineraryToEdit = ItineraryController.sharedInstance.itinToEdit else {return}
             ItineraryController.sharedInstance.itineraryData["activities"] = activities
             ItineraryController.sharedInstance.editItinerary(userId: user.userId, itinerary: itineraryToEdit) { result in
                 self.navigationController?.popToRootViewController(animated: true)
             }
         } else {
-            saveActivities()
             ItineraryController.sharedInstance.createItinerary(userId: user.userId)
             ItineraryController.sharedInstance.itineraryData = [:]
             dayCounter = 1
@@ -378,13 +373,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
 }//End of class
 
 //MARK: - Extensions
-extension TripQuestionnairePartThreeViewController: DatePickerDelegate {
-    func dateSelected(_ date: Date?) {
-        dayDateLabel?.text = date?.formatToStringWithLongDateAndTime()
-        ItineraryController.sharedInstance.itineraryData["currentDay"] = date
-    }
-}//End of extension
-
 extension TripQuestionnairePartThreeViewController: MapPinDropped {
     func droppedPin(title: String) {
         for textField in activitiesTextFieldItems {

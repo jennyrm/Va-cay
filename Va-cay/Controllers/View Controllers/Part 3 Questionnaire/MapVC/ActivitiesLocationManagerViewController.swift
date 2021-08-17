@@ -76,14 +76,14 @@ class ActivitiesLocationManagerViewController: UIViewController {
     func loadMapPins() {
         guard let day = day else { return }
         
-        activitiesCoordinates.forEach { coordinate in
-            for (key, value) in coordinate {
+        activitiesCoordinates.forEach { activityCoordinates in
+            for (key, value) in activityCoordinates {
                 if key == day {
-                    for (key, value) in value {
+                    for (title, coordinate) in value {
                         let annotation = MKPointAnnotation()
-                        let latitude = value[0]
-                        let longitude = value[1]
-                        annotation.title = key as? String
+                        let latitude = coordinate[0]
+                        let longitude = coordinate[1]
+                        annotation.title = title as? String
                         annotation.coordinate.latitude = latitude
                         annotation.coordinate.longitude = longitude
                         mapView.addAnnotation(annotation)
