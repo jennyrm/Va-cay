@@ -20,7 +20,8 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     var hotelAirbnbTextField: UITextField?
     var budgetTextField: UITextField?
     var checklistTextFieldItems = [UITextField]()
-    var checklist = [String]()
+    var checklist = [ [String : Bool] ]()
+
     
     //MARK: - Lifecyle
     override func loadView() {
@@ -52,11 +53,11 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         if let budget = ItineraryController.sharedInstance.itineraryData["budget"] as? String {
             budgetTextField?.text = budget
         }
-        if let checklist = ItineraryController.sharedInstance.itineraryData["checklist"] as? [String] {
-            for index in 0..<checklist.count {
-                setupScrollableStackViewConstraints()
-                checklistTextFieldItems[index].text = checklist[index]
-            }
+        if let checklist = ItineraryController.sharedInstance.itineraryData["checklist"] as? [ [String?? : Bool] ] {
+            //            for index in 0..<checklist.count {
+            //                checklistTextFieldItems[index].text = checklist[index]
+            //                setupScrollableStackViewConstraints()
+            //            }
         }
     }
     
@@ -68,9 +69,9 @@ class TripQuestionnairePartTwoViewController: UIViewController {
             ItineraryController.sharedInstance.itineraryData["budget"] = budgetTextField?.text
         }
         if checklistTextFieldItems[0].text != "" {
-            //if checklist textfield is empty, dont append to local checklist variable
-            checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
-            //add
+            //            if checklist textfield is empty, dont append to local checklist variable
+            //            checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
+            //            add
             ItineraryController.sharedInstance.itineraryData["checklist"] = checklist
             checklist = []
         }
@@ -217,6 +218,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         button.setImage(UIImage(systemName: "square"), for: .normal)
         button.backgroundColor = .systemGray6
         button.tintColor = .black
+        button.addTarget(self, action: #selector(checklistButtonTapped), for: .touchUpInside)
         
         let textField = UITextField()
         textField.backgroundColor = .systemGray6
@@ -259,6 +261,14 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     
     @objc func addNewChecklistItem() {
         setupScrollableStackViewConstraints()
+    }
+    
+    @objc func checklistButtonTapped(sender: UIButton){
+        if sender.currentImage == UIImage(systemName: "square") {
+            sender.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        } else {
+            sender.setImage(UIImage(systemName: "square"), for: .normal)
+        }
     }
     
     @objc func nextVC(sender: UIButton) {

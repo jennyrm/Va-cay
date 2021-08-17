@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */; };
+		0D299F2D26CC40C200A5CE31 /* grey.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0D299F2C26CC40C200A5CE31 /* grey.jpeg */; };
 		0D5A963026B2072700CD5707 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A962F26B2072700CD5707 /* User.swift */; };
 		0D5A963226B2121900CD5707 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A963126B2121900CD5707 /* UserController.swift */; };
 		0D5A963426B215E900CD5707 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A963326B215E900CD5707 /* UserError.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistModalViewController.swift; sourceTree = "<group>"; };
+		0D299F2C26CC40C200A5CE31 /* grey.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grey.jpeg; sourceTree = "<group>"; };
 		0D5A962F26B2072700CD5707 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0D5A963126B2121900CD5707 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		0D5A963326B215E900CD5707 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 		9B543C30265F345700F5353A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0D299F2C26CC40C200A5CE31 /* grey.jpeg */,
 				0DBDB50426C492C6000D26DE /* plane5.json */,
 				9B543C04265F309500F5353A /* AppDelegate.swift */,
 				9B543C06265F309500F5353A /* SceneDelegate.swift */,
@@ -347,6 +352,7 @@
 		9BE03A882672DF4D00D97F76 /* Itinerary */ = {
 			isa = PBXGroup;
 			children = (
+				0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */,
 				9B335CB4265F3EF700FC202B /* UserFeedViewController.swift */,
 				9B3247FF267DD85600C16040 /* ItineraryDetailViewController.swift */,
 				9BE03A892672DF6100D97F76 /* MapVC */,
@@ -422,6 +428,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D299F2D26CC40C200A5CE31 /* grey.jpeg in Resources */,
 				9B543C11265F309800F5353A /* LaunchScreen.storyboard in Resources */,
 				9B335CE5265F476800FC202B /* GoogleService-Info.plist in Resources */,
 				9B543C0E265F309800F5353A /* Assets.xcassets in Resources */,
@@ -490,6 +497,7 @@
 				0D5A963226B2121900CD5707 /* UserController.swift in Sources */,
 				9BB77715266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift in Sources */,
 				9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */,
+				0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */,
 				9B335CEA265F493400FC202B /* ItineraryController.swift in Sources */,
 				9BB77724266DDFE1008D3645 /* HotelAirbnbLocationManagerViewController.swift in Sources */,
 				0D60FCC926B34D2500F75732 /* AuthViewModel.swift in Sources */,

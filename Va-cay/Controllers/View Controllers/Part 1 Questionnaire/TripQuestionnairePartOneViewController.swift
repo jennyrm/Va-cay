@@ -19,6 +19,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
     
     //MARK: - Properties
     var tripImage: UIImage?
+
     
     
     static weak var delegate: updateImageDelegate?
@@ -32,10 +33,10 @@ class TripQuestionnairePartOneViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if ItineraryController.sharedInstance.isEditing {
-            guard let imageStr = ItineraryController.sharedInstance.itineraryData["tripImage"] else {return}
-//            TripQuestionnairePartOneViewController.delegate?.updateImage(image: UIImage(data: imageStr as? Data ?? Data())!)
-        }
+        guard let imageStr = ItineraryController.sharedInstance.itineraryData["tripImage"] else {return}
+        
+        TripQuestionnairePartOneViewController.delegate?.updateImage(image: (UIImage(data: imageStr as! Data) ?? UIImage(named: "grey"))!)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,7 +56,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
             self.tripImage = tripImage
         }
     }
-    
+
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMediaSelectorVC" {
@@ -64,6 +65,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
             MediaSelectorViewController.delegate = self
         }
         if segue.identifier == "toTripQuestionnairePartTwoVC" {
+
             saveTextFieldInputs()
         }
         if segue.identifier == "toTripCalendarVC" {
