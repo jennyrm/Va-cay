@@ -8,6 +8,7 @@
 import UIKit
 
 class TripQuestionnairePartThreeViewController: UIViewController {
+    
     //MARK: - Properties
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
@@ -15,7 +16,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var dayCounter = 1
     var dayDateLabel: UILabel?
     var activities = [ [ String : [String] ] ]()
-    var currentActivities = [String]()
+    var dayActivities = [String]()
     var activitiesTextFieldItems = [UITextField]()
     
     //MARK: - Lifecycles
@@ -31,48 +32,98 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //            saveTextFieldInputs()
+//        saveActivities() - need for saving activity on current view if view gets deallocated from memory
+//        ItineraryController.sharedInstance.isEditing = true
     }
     
     //MARK: - Create Itinerary Functions
     func updateView() {
-        if let currentDay = ItineraryController.sharedInstance.itineraryData["currentDay"] as? Date {
-            dayDateLabel?.text = currentDay.formatToStringWithLongDateAndTime()
-        }
-        if let currentActivities = ItineraryController.sharedInstance.itineraryData["currentActivities"] as? [String] {
-            for index in 0..<currentActivities.count {
-                setupScrollableStackViewConstraints()
-                activitiesTextFieldItems[index].text = currentActivities[index]
-            }
+        if let activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [ [ String : [String] ] ] {
+            self.activities = activities
+            print("Self.activities:", self.activities)
+            updateActivitiesView()
         }
     }
     
-    func saveTextFieldInputs() {
-        activitiesTextFieldItems.forEach {
-            if !$0.text!.isEmpty {
-                currentActivities.append($0.text!)
+    func updateActivitiesView() {
+        activities.forEach { activity in
+            for (key, value) in activity {
+                if key == "Day \(dayCounter)" {
+                    if value.isEmpty {
+                        updateDay()
+                    } else {
+                        clearEditedTextFields()
+                        value.forEach { dayActivities.append($0) }
+                        displayActivities(for: key)
+                    }
+                }
             }
         }
-        ItineraryController.sharedInstance.itineraryData["currentActivities"] = currentActivities
-        if !currentActivities.isEmpty {
-            activities.append(["Day \(dayCounter)" : currentActivities])
+        
+        if dayCounter > activities.count {
+            updateDay()
         }
-        currentActivities = []
         
-        ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
+        dayActivities = []
+        addActivityButtonAction()
+    }
+    
+    func updateDay() {
+        dayLabel.text = "Day \(dayCounter)"
+        clearEditedTextFields()
+        removeTextFields()
+    }
+    
+    func displayActivities(for day: String) {
+        dayLabel.text = day
+        for index in 0..<dayActivities.count {
+            addActivityButtonAction()
+            activitiesTextFieldItems[index].text = dayActivities[index]
+        }
+    }
+    
+    func saveActivities() {
+        let day = "Day \(dayCounter)"
         
+        //editing itinerary activities
+        if ItineraryController.sharedInstance.isEditing || !activities.isEmpty {
+            for (index, activity) in activities.enumerated() {
+                for (key, _) in activity {
+                    if key == "Day \(dayCounter)" {
+                        addActivitiesFromTextFields()
+                        activities[index].updateValue(dayActivities, forKey: key)
+                    }
+                }
+            }
+        } else {
+            //creating itinerary activities
+            addActivitiesFromTextFields()
+            activities.append([day : dayActivities])
+        }
+        
+        //adding activities for a new day
+        if dayCounter > activities.count {
+            addActivitiesFromTextFields()
+            activities.append([day : dayActivities])
+        }
+        
+        removeTextFields()
+        activitiesTextFieldItems = []
+        dayActivities = []
+
         ItineraryController.sharedInstance.itineraryData["activities"] = activities
     }
     
-    func clearTextFieldInputs() {
-        ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "currentDay")
-        dayDateLabel?.text = ""
-        
-        ItineraryController.sharedInstance.itineraryData.removeValue(forKey: "currentActivities")
+    func addActivitiesFromTextFields() {
+        activitiesTextFieldItems.forEach {
+            if !$0.text!.isEmpty {
+                dayActivities.append($0.text!)
+            }
+        }
+    }
+    
+    func clearEditedTextFields() {
         activitiesTextFieldItems.forEach { $0.text = "" }
-        removeTextFields()
-        
-        updateView()
     }
     
     func removeTextFields() {
@@ -80,109 +131,9 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         for textfield in subviews {
             textfield.removeFromSuperview()
         }
-        addActivityButtonAction()
     }
-    
-    //    //MARK: - Edit Itinerary Functions
-    //    func updateEditItineraryView() {
-    //        guard let itinerary = itinerary,
-    //              let itineraryActivities = itinerary.activities else { return }
-    //
-    //        self.activities = itineraryActivities
-    //        for (index, activity) in activities.enumerated() {
-    //            if index + 1 == dayCounter {
-    //                for (key, value) in activity {
-    //                    if value.isEmpty {
-    //                        updateDay()
-    //                    } else {
-    //                        clearEditedTextFields()
-    //                        value.forEach { currentActivities.append($0) }
-    //                        displayItinerary(for: key)
-    //                    }
-    //                }
-    //            }
-    //        }
-    //
-    //        if dayCounter > activities.count {
-    //            updateDay()
-    //        }
-    //
-    //        currentActivities = []
-    //    }
-    //
-    //    func displayItinerary(for day: String) {
-    //        dayLabel.text = day
-    //        for index in 0..<currentActivities.count {
-    //            setupScrollableStackViewConstraints()
-    //            activitiesTextFieldItems[index].text = currentActivities[index]
-    //        }
-    //    }
-    //
-    //    func saveEditedItinerary() {
-    //        let key = "Day \(dayCounter)"
-    //
-    //        for (index, _) in activities.enumerated() {
-    //            if index + 1 == dayCounter {
-    //                activitiesTextFieldItems.forEach {
-    //                    if !$0.text!.isEmpty {
-    //                        currentActivities.append($0.text!)
-    //                    }
-    //                }
-    //                activities[index].updateValue(currentActivities, forKey: key)
-    //                itinerary?.activities = self.activities
-    //                print(itinerary?.activities as Any)
-    //            }
-    //        }
-    //
-    //        if dayCounter > activities.count {
-    //            activitiesTextFieldItems.forEach {
-    //                if !$0.text!.isEmpty {
-    //                    currentActivities.append($0.text!)
-    //                }
-    //            }
-    //
-    //            itinerary?.activities?.append([key : currentActivities])
-    //            print(itinerary?.activities as Any)
-    //        }
-    //
-    //        removeTextFields()
-    //        activitiesTextFieldItems = []
-    //        currentActivities = []
-    //    }
-    //
-    //    func clearEditedTextFields() {
-    //        activitiesTextFieldItems.forEach { $0.text = "" }
-    //    }
-    //
-    //    func updateDay() {
-    //        dayLabel.text = "Day \(dayCounter)"
-    //        clearEditedTextFields()
-    //        removeTextFields()
-    //    }
     
     //MARK: - Programmatic Constraint Functions
-    func createCalendarStackView() {
-        let label = UILabel()
-        label.textColor = .black
-        label.layer.borderWidth = 1.0
-        label.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        //label.backgroundColor = .systemGray6
-        label.textAlignment = .center
-        dayDateLabel = label
-        
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
-        button.tintColor = .systemBlue
-        button.addTarget(self, action: #selector(showCalendarButtonAction), for: .touchUpInside)
-        
-        self.view.addSubview(label)
-        self.view.addSubview(button)
-        self.view.addSubview(calendarStackView)
-        
-        calendarStackView.addArrangedSubview(label)
-        calendarStackView.addArrangedSubview(button)
-    }
-    
     func createAddActivityStackView() {
         let label = UILabel()
         label.text = "Add Activity"
@@ -208,7 +159,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         
         let textField = UITextField()
         textField.backgroundColor = .white
-        textField.placeholder = "Enter activity here or use the map"
+        textField.placeholder = "Enter activity here"
         textField.borderStyle = .line
         activitiesTextFieldItems.append(textField)
         
@@ -270,26 +221,24 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     @objc func nextDay() {
-        
-        //        saveTextFieldInputs()
-        
-//        let currentActivities = ItineraryController.sharedInstance.itineraryData["currentActivities"] as? [String]
-        
-//        if currentActivities != [] {
-            dayCounter += 1
-            //            ItineraryController.sharedInstance.itineraryData["dayCounter"] = dayCounter
-            ItineraryController.sharedInstance.itineraryData["activities"] = activities
-//            clearTextFieldInputs()
-            dayLabel.text = "Day \(dayCounter)"
-//        }
+        saveActivities()
+        dayCounter += 1
+        updateActivitiesView()
     }
     
     @objc func previousDay() {
-        
+        if dayCounter >= 2 {
+            saveActivities()
+            dayCounter -= 1
+            updateActivitiesView()
+        }
     }
     
     @objc func submitItineraryObject() {
         guard let user = UserController.shared.user else {return}
+        
+        saveActivities()
+        
         if ItineraryController.sharedInstance.isEditing {
             guard let itineraryToEdit = ItineraryController.sharedInstance.itinToEdit else {return}
             ItineraryController.sharedInstance.itineraryData["activities"] = activities
@@ -307,7 +256,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     //MARK: - Programmatic Constraints
     func setupConstraints() {
         self.view.addSubview(dayLabel)
-        createCalendarStackView()
         createAddActivityStackView()
         createPreviousNextDayButtonStackView()
         self.view.addSubview(submitButton)
@@ -315,18 +263,14 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         dayLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 100).isActive = true
         dayLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 150).isActive = true
         dayLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -150).isActive = true
-        
-        calendarStackView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor).isActive = true
-        calendarStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
-        calendarStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
-        
-        addActivityStackView.topAnchor.constraint(equalTo: calendarStackView.bottomAnchor, constant: 32).isActive = true
+
+        addActivityStackView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 32).isActive = true
         addActivityStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 100).isActive = true
         addActivityStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -100).isActive = true
         
         setupScrollableStackViewConstraints()
         
-//        previousNextDayButtonStackView.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        //        previousNextDayButtonStackView.heightAnchor.constraint(equalToConstant: 75).isActive = true
         previousNextDayButtonStackView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 32).isActive = true
         previousNextDayButtonStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 75).isActive = true
         previousNextDayButtonStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -75).isActive = true
@@ -406,7 +350,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-        
+    
     var submitButton: UIButton = {
         let button = UIButton()
         button.setTitle("Submit", for: .normal)
@@ -419,12 +363,9 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDayCalendarVC" {
-            guard let destinationVC = segue.destination as? DayCalendarViewController else { return }
-            destinationVC.delegate = self
-        }
         if segue.identifier == "toActivitiesMapVC" {
             guard let destinationVC = segue.destination as? ActivitiesLocationManagerViewController else { return }
+            destinationVC.day = "Day \(dayCounter)"
             destinationVC.mapPinDelegate = self
         }
     }
@@ -432,13 +373,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
 }//End of class
 
 //MARK: - Extensions
-extension TripQuestionnairePartThreeViewController: DatePickerDelegate {
-    func dateSelected(_ date: Date?) {
-        dayDateLabel?.text = date?.formatToStringWithLongDateAndTime()
-        ItineraryController.sharedInstance.itineraryData["currentDay"] = date
-    }
-}//End of extension
-
 extension TripQuestionnairePartThreeViewController: MapPinDropped {
     func droppedPin(title: String) {
         for textField in activitiesTextFieldItems {
@@ -447,7 +381,7 @@ extension TripQuestionnairePartThreeViewController: MapPinDropped {
                 return
             }
         }
-        setupScrollableStackViewConstraints()
+        addActivityButtonAction()
     }
 }//End of extension
 

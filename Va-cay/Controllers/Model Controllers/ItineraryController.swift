@@ -29,8 +29,6 @@ class ItineraryController {
         itineraryReference.setData(itineraryData)
     }
     
-//    func editItinerary(userId: String, ItineraryId)
-    
     func fetchItineraries(userId: String, completion: @escaping (Bool) -> Void) {
         var itinerariesPlaceholder: [Itinerary] = []
         db.collection("users").document(userId).collection("itineraries").addSnapshotListener { (snapshot, error) in
@@ -49,16 +47,17 @@ class ItineraryController {
                     let hotelAirbnb = itineraryData["hotelAirbnb"] as? String ?? ""
                     let hotelAirbnbCoordinates = itineraryData["hotelAirbnbCoordinates"] as? [ [String?? : [Double] ] ] ?? []
                     let budget = itineraryData["budget"] as? String ?? ""
+
                     let checklist = itineraryData["checklist"] as? [ [String?? : Bool] ] ?? []
                     
                     let dayCounter = itineraryData["dayCounter"] as? Int ?? 1
+
                     let activities = itineraryData["activities"] as? [ [ String : [String] ] ] ?? nil
-                    let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String?? : [Double] ] ] ?? []
-//                    let costOfActivities = itineraryData["costOfActivities"] as? [String] ?? []
+                    let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String : [String?? : [Double] ] ] ] ?? []
                     
                     let id = doc.documentID
                    
-                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate?.dateValue(), tripImage: tripImage, flightArrival: flightArrival?.dateValue(), flightDeparture: flightDeparture?.dateValue(), hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, dayCounter: dayCounter, activities: activities, activitiesCoordinates: activitiesCoordinates, id: id)
+                    let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate?.dateValue(), tripImage: tripImage, flightArrival: flightArrival?.dateValue(), flightDeparture: flightDeparture?.dateValue(), hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, activities: activities, activitiesCoordinates: activitiesCoordinates, id: id)
                     
                     itinerariesPlaceholder.append(retrievedItinerary)
                 }
@@ -88,7 +87,6 @@ class ItineraryController {
     }
     
     func deleteItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void){
-        
         db.collection("users").document(userId).collection("itineraries").document(itinerary.id).delete() { error in
             if let error = error {
                 print(error.localizedDescription)
