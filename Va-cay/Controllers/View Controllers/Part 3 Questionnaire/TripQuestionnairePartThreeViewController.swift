@@ -15,9 +15,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var dayCounter = 1
     var dayDateLabel: UILabel?
     var activities = [ [ String : [String] ] ]()
-//    var days = [ String : [ [String : Any] ] ]()
-//    ["Day \(dayCounter)" : [  ["activities" : [String], ["coordinates" : [ [String?? : [Double] ] ] ] ]
-//    var activitiesCoordinates = [ [ String : [String] ] ]()
     var placeholderActivities = [String]()
     var activitiesTextFieldItems = [UITextField]()
     
@@ -32,16 +29,19 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         updateView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+//        saveActivities() - need for saving activity on current view if view gets deallocated from memory
+        ItineraryController.sharedInstance.isEditing = true
+    }
+    
     //MARK: - Create Itinerary Functions
     func updateView() {
         if let activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [ [ String : [String] ] ] {
             self.activities = activities
-//            print("Self.activities:", self.activities)
+            print("Self.activities:", self.activities)
             updateActivitiesView()
         }
-//        if let activitiesCoordinates = ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] as? [ [String?? : [Double] ] ] {
-//            print(activitiesCoordinates)
-//        }
     }
     
     func updateActivitiesView() {
@@ -64,6 +64,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         }
         
         placeholderActivities = []
+        addActivityButtonAction()
     }
     
     func updateDay() {
@@ -75,7 +76,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     func displayActivities(for day: String) {
         dayLabel.text = day
         for index in 0..<placeholderActivities.count {
-            setupScrollableStackViewConstraints()
+            addActivityButtonAction()
             activitiesTextFieldItems[index].text = placeholderActivities[index]
         }
     }
@@ -98,12 +99,13 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                 }
             }
         } else {
+            //creating itinerary activities
             activitiesTextFieldItems.forEach {
                 if !$0.text!.isEmpty {
                     placeholderActivities.append($0.text!)
                 }
             }
-            
+
             activities.append([day : placeholderActivities])
         }
         
@@ -113,7 +115,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                     placeholderActivities.append($0.text!)
                 }
             }
-            
+
             activities.append([day : placeholderActivities])
         }
         
@@ -134,7 +136,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         for textfield in subviews {
             textfield.removeFromSuperview()
         }
-//        addActivityButtonAction()
     }
     
     //MARK: - Programmatic Constraint Functions
@@ -392,7 +393,7 @@ extension TripQuestionnairePartThreeViewController: MapPinDropped {
                 return
             }
         }
-        setupScrollableStackViewConstraints()
+        addActivityButtonAction()
     }
 }//End of extension
 
