@@ -31,9 +31,15 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         updateView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateView()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        saveActivities() - need for saving activity on current view if view gets deallocated from memory
+//        // need for saving activity once view gets deallocated from memory
+        saveActivities()
     }
     
     //MARK: - Create Itinerary Functions
@@ -93,6 +99,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                     if key == "Day \(dayCounter)" {
                         addActivitiesFromTextFields()
                         activities[index].updateValue(dayActivities, forKey: key)
+                        break
                     }
                 }
             }
@@ -380,10 +387,12 @@ class TripQuestionnairePartThreeViewController: UIViewController {
 //MARK: - Extensions
 extension TripQuestionnairePartThreeViewController: MapPinDropped {
     func droppedPin(title: String) {
+        addActivityButtonAction()
         for textField in activitiesTextFieldItems {
             if textField.text == "" {
                 textField.text = title
-                return
+                dayActivities.append(title)
+                break
             }
         }
         addActivityButtonAction()

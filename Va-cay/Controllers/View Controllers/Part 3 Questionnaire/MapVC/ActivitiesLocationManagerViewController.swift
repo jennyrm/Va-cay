@@ -85,9 +85,7 @@ class ActivitiesLocationManagerViewController: UIViewController {
             for (key, value) in activityCoordinates {
                 if key == day {
                     for (_, activity) in activities.enumerated() {
-                        print(activity)
                         for (title, coordinate) in value {
-                            print(title!!)
                             if activity == title!! {
                                 let annotation = MKPointAnnotation()
                                 let latitude = coordinate[0]
