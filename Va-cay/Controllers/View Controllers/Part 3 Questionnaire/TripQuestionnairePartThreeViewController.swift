@@ -18,6 +18,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var activities = [ [ String : [String] ] ]()
     var dayActivities = [String]()
     var activitiesTextFieldItems = [UITextField]()
+    var activitiesToSend = [String]()
     
     //MARK: - Lifecycles
     override func loadView() {
@@ -33,7 +34,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 //        saveActivities() - need for saving activity on current view if view gets deallocated from memory
-//        ItineraryController.sharedInstance.isEditing = true
     }
     
     //MARK: - Create Itinerary Functions
@@ -54,6 +54,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                     } else {
                         clearEditedTextFields()
                         value.forEach { dayActivities.append($0) }
+                        activitiesToSend = dayActivities
                         displayActivities(for: key)
                     }
                 }
@@ -120,6 +121,9 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                 dayActivities.append($0.text!)
             }
         }
+        
+        activitiesToSend = dayActivities
+        print(activitiesToSend)
     }
     
     func clearEditedTextFields() {
@@ -366,6 +370,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         if segue.identifier == "toActivitiesMapVC" {
             guard let destinationVC = segue.destination as? ActivitiesLocationManagerViewController else { return }
             destinationVC.day = "Day \(dayCounter)"
+            destinationVC.activities = activitiesToSend
             destinationVC.mapPinDelegate = self
         }
     }

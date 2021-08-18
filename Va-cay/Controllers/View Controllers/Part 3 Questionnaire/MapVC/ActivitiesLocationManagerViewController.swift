@@ -18,17 +18,12 @@ class ActivitiesLocationManagerViewController: UIViewController {
     let locationManager = CLLocationManager()
     var resultSearchController: UISearchController?
     var selectedPin: MKPlacemark?
-    var day: String?
-    var activitiesCoordinates =  [ [String : [String?? : [Double] ] ] ]()
     weak var mapPinDelegate: MapPinDropped?
-    var arrayOfMapPinTitles = [String]()
+    var day: String?
+    var activities: [String]?
+    var activitiesCoordinates =  [ [String : [String?? : [Double] ] ] ]()
     
     //MARK: - Lifecycle
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        saveMapAnnotations()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +52,15 @@ class ActivitiesLocationManagerViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveMapAnnotations()
+    }
+    
     //MARK: - Actions
     @IBAction func getCurrentLocationButtonTapped(_ sender: UIButton) {
         locationManager.requestLocation()
@@ -74,24 +78,31 @@ class ActivitiesLocationManagerViewController: UIViewController {
     }
     
     func loadMapPins() {
-        guard let day = day else { return }
+        guard let day = day,
+              let activities = activities else { return }
         
         activitiesCoordinates.forEach { activityCoordinates in
             for (key, value) in activityCoordinates {
                 if key == day {
-                    for (title, coordinate) in value {
-                        let annotation = MKPointAnnotation()
-                        let latitude = coordinate[0]
-                        let longitude = coordinate[1]
-                        annotation.title = title as? String
-                        annotation.coordinate.latitude = latitude
-                        annotation.coordinate.longitude = longitude
-                        mapView.addAnnotation(annotation)
-                        
-                        let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-                        let region = MKCoordinateRegion(center: center, span: span)
-                        mapView.setRegion(region, animated: true)
+                    for (_, activity) in activities.enumerated() {
+                        print(activity)
+                        for (title, coordinate) in value {
+                            print(title!!)
+                            if activity == title!! {
+                                let annotation = MKPointAnnotation()
+                                let latitude = coordinate[0]
+                                let longitude = coordinate[1]
+                                annotation.title = title as? String
+                                annotation.coordinate.latitude = latitude
+                                annotation.coordinate.longitude = longitude
+                                mapView.addAnnotation(annotation)
+                                
+                                let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                                let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                                let region = MKCoordinateRegion(center: center, span: span)
+                                mapView.setRegion(region, animated: true)
+                            }
+                        }
                     }
                 }
             }
