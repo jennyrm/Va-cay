@@ -19,8 +19,6 @@ class TripQuestionnairePartOneViewController: UIViewController {
     
     //MARK: - Properties
     var tripImage: UIImage?
-
-    
     
     static weak var delegate: updateImageDelegate?
     
@@ -36,7 +34,6 @@ class TripQuestionnairePartOneViewController: UIViewController {
         guard let imageStr = ItineraryController.sharedInstance.itineraryData["tripImage"] else {return}
         
         TripQuestionnairePartOneViewController.delegate?.updateImage(image: (UIImage(data: imageStr as! Data) ?? UIImage(named: "grey"))!)
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -65,7 +62,6 @@ class TripQuestionnairePartOneViewController: UIViewController {
             MediaSelectorViewController.delegate = self
         }
         if segue.identifier == "toTripQuestionnairePartTwoVC" {
-
             saveTextFieldInputs()
         }
         if segue.identifier == "toTripCalendarVC" {

@@ -148,6 +148,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
                   let destinationVC = segue.destination as? ItineraryDetailViewController else { return }
             let itineraryToSend = ItineraryController.sharedInstance.itineraries[indexPathRow]
             destinationVC.itinerary = itineraryToSend
+            ItineraryController.sharedInstance.setItineraryData(itinerary: itineraryToSend)
         }
     }
     
