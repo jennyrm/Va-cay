@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */; };
 		0D299F2D26CC40C200A5CE31 /* grey.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0D299F2C26CC40C200A5CE31 /* grey.jpeg */; };
+		0D299F2F26CC55D500A5CE31 /* CheckListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */; };
 		0D5A963026B2072700CD5707 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A962F26B2072700CD5707 /* User.swift */; };
 		0D5A963226B2121900CD5707 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A963126B2121900CD5707 /* UserController.swift */; };
 		0D5A963426B215E900CD5707 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A963326B215E900CD5707 /* UserError.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistModalViewController.swift; sourceTree = "<group>"; };
 		0D299F2C26CC40C200A5CE31 /* grey.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grey.jpeg; sourceTree = "<group>"; };
+		0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItemTableViewCell.swift; sourceTree = "<group>"; };
 		0D5A962F26B2072700CD5707 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0D5A963126B2121900CD5707 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		0D5A963326B215E900CD5707 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				9B4EE8BF266FFA6D007EB937 /* ItineraryTableViewCell.swift */,
 				9BEFE51826A79012003DDD1D /* dayActivitiesTableViewCell.swift */,
+				0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				0D5A963026B2072700CD5707 /* User.swift in Sources */,
 				9B543C05265F309500F5353A /* AppDelegate.swift in Sources */,
 				0D5A963426B215E900CD5707 /* UserError.swift in Sources */,
+				0D299F2F26CC55D500A5CE31 /* CheckListItemTableViewCell.swift in Sources */,
 				9B335CF32660546C00FC202B /* ErrorAlert.swift in Sources */,
 				9B543C07265F309500F5353A /* SceneDelegate.swift in Sources */,
 				9BB77727266DE8C4008D3645 /* HotelAirbnbLocationSearchTableViewController.swift in Sources */,

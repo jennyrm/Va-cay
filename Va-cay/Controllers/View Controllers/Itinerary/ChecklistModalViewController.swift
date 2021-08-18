@@ -25,7 +25,7 @@ class ChecklistModalViewController: UIViewController {
     
     // MARK: - FNs
     
-}
+}//End of class
 
 extension ChecklistModalViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,8 +33,11 @@ extension ChecklistModalViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "checkCell", for: indexPath) as? CheckListItemTableViewCell
+        
+        
         return UITableViewCell()
     }
     
     
-}
+}//End of extension
