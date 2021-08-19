@@ -63,7 +63,7 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
                 coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude]])
             }
             let title = (mapView.annotations[0].title) as? String
-            mapPinDelegate?.droppedPin(title: title ?? "")
+            mapPinDelegate?.droppedPin(title: title ?? "", mapDay: "", mapActivities: [])
             if !coordinates.isEmpty {
                 ItineraryController.sharedInstance.itineraryData["hotelAirbnbCoordinates"] = coordinates
                 print(coordinates)
