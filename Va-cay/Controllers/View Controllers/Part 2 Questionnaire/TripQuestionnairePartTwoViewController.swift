@@ -416,7 +416,7 @@ extension TripQuestionnairePartTwoViewController: DatePickerDelegate {
 }//End of extension
 
 extension TripQuestionnairePartTwoViewController: MapPinDropped {
-    func droppedPin(title: String) {
+    func droppedPin(title: String, mapDay day: String, mapActivities activities: [String]) {
         hotelAirbnbTextField?.text = title
     }
 }//End of extension

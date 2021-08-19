@@ -17,7 +17,7 @@ protocol HandleMapSearch: AnyObject {
 }
 
 protocol MapPinDropped: AnyObject {
-    func droppedPin(title: String)
+    func droppedPin(title: String, mapDay: String, mapActivities: [String])
 }
 
 protocol getIndexPathRow: AnyObject {

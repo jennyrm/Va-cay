@@ -125,6 +125,8 @@ extension ActivitiesLocationManagerViewController: CLLocationManagerDelegate {
 
 extension ActivitiesLocationManagerViewController: HandleMapSearch {
     func dropPinZoomIn(placemark: MKPlacemark) {
+        guard let day = day else { return }
+        
         selectedPin = placemark
 //        mapView.removeAnnotations(mapView.annotations)
         let annotation = MKPointAnnotation()
@@ -139,7 +141,9 @@ extension ActivitiesLocationManagerViewController: HandleMapSearch {
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)
         
-        mapPinDelegate?.droppedPin(title: annotation.title!)
+        activities?.append(annotation.title!)
+        
+        mapPinDelegate?.droppedPin(title: annotation.title!, mapDay: day, mapActivities: activities!)
     }
     
 }//End of extension

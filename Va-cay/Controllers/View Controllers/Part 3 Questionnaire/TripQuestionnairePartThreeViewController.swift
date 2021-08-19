@@ -16,19 +16,15 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var dayCounter = 1
     var dayDateLabel: UILabel?
     var activities = [ [ String : [String] ] ]()
-    var dayActivities = [String]()
     var activitiesTextFieldItems = [UITextField]()
-    var activitiesToSend = [String]()
+    var dayActivities = [String]()
+    var mapPinActivities = [String]()
     
     //MARK: - Lifecycles
+    //load only if view is nil
     override func loadView() {
         super.loadView()
         setupConstraints()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        updateView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +34,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        // need for saving activity once view gets deallocated from memory
+        // need for saving activity once view gets deallocated from memory
         saveActivities()
     }
     
@@ -46,7 +42,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     func updateView() {
         if let activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [ [ String : [String] ] ] {
             self.activities = activities
-            print("Self.activities:", self.activities)
+//            print("Self.activities:", self.activities)
             updateActivitiesView()
         }
     }
@@ -57,11 +53,13 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                 if key == "Day \(dayCounter)" {
                     if value.isEmpty {
                         updateDay()
+                        break
                     } else {
                         clearEditedTextFields()
                         value.forEach { dayActivities.append($0) }
-                        activitiesToSend = dayActivities
+                        mapPinActivities = dayActivities
                         displayActivities(for: key)
+                        break
                     }
                 }
             }
@@ -83,6 +81,12 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     func displayActivities(for day: String) {
         dayLabel.text = day
+        
+        if dayCounter == 1 {
+            activitiesTextFieldItems = []
+            removeTextFields()
+        }
+        
         for index in 0..<dayActivities.count {
             addActivityButtonAction()
             activitiesTextFieldItems[index].text = dayActivities[index]
@@ -129,8 +133,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
             }
         }
         
-        activitiesToSend = dayActivities
-        print(activitiesToSend)
+        mapPinActivities = dayActivities
     }
     
     func clearEditedTextFields() {
@@ -377,7 +380,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         if segue.identifier == "toActivitiesMapVC" {
             guard let destinationVC = segue.destination as? ActivitiesLocationManagerViewController else { return }
             destinationVC.day = "Day \(dayCounter)"
-            destinationVC.activities = activitiesToSend
+            destinationVC.activities = mapPinActivities
             destinationVC.mapPinDelegate = self
         }
     }
@@ -386,17 +389,20 @@ class TripQuestionnairePartThreeViewController: UIViewController {
 
 //MARK: - Extensions
 extension TripQuestionnairePartThreeViewController: MapPinDropped {
-    func droppedPin(title: String) {
-        addActivityButtonAction()
-        for textField in activitiesTextFieldItems {
-            if textField.text == "" {
-                textField.text = title
-                dayActivities.append(title)
-                break
+    func droppedPin(title: String, mapDay: String, mapActivities: [String]) {
+        guard var activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [ [ String : [String] ] ] else { return }
+  
+        for (index, activity) in activities.enumerated() {
+            for (key, _) in activity {
+                if key == mapDay {
+                    activities.remove(at: index)
+                    activities.insert([mapDay : mapActivities], at: index)
+                    break
+                }
             }
         }
-        addActivityButtonAction()
+        
+        ItineraryController.sharedInstance.itineraryData["activities"] = activities
     }
 }//End of extension
-
 
