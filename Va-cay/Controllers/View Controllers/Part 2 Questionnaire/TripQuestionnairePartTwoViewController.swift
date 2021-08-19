@@ -8,7 +8,6 @@
 import UIKit
 
 class TripQuestionnairePartTwoViewController: UIViewController {
-    
     //MARK: - Properties
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
@@ -20,8 +19,8 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     var hotelAirbnbTextField: UITextField?
     var budgetTextField: UITextField?
     var checklistTextFieldItems = [UITextField]()
+    var checklistButtons = [UIButton]()
     var checklist = [ [String : Bool] ]()
-
     
     //MARK: - Lifecyle
     override func loadView() {
@@ -54,10 +53,10 @@ class TripQuestionnairePartTwoViewController: UIViewController {
             budgetTextField?.text = budget
         }
         if let checklist = ItineraryController.sharedInstance.itineraryData["checklist"] as? [ [String?? : Bool] ] {
-            //            for index in 0..<checklist.count {
-            //                checklistTextFieldItems[index].text = checklist[index]
-            //                setupScrollableStackViewConstraints()
-            //            }
+//                        for index in 0..<checklist.count {
+//                            checklistTextFieldItems[index].text = checklist[index]
+//                            setupScrollableStackViewConstraints()
+//                        }
         }
     }
     
@@ -70,7 +69,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         }
         if checklistTextFieldItems[0].text != "" {
             //            if checklist textfield is empty, dont append to local checklist variable
-            //            checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
+//                        checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
             //            add
             ItineraryController.sharedInstance.itineraryData["checklist"] = checklist
             checklist = []
