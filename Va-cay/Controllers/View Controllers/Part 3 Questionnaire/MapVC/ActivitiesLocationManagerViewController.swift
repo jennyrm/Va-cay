@@ -67,16 +67,6 @@ class ActivitiesLocationManagerViewController: UIViewController {
     }
     
     //MARK: - Functions
-    func saveMapAnnotations() {
-        guard let day = day else { return }
-        
-        for annotation in mapView.annotations {
-            activitiesCoordinates.append([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ])
-        }
-        
-        ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] = activitiesCoordinates
-    }
-    
     func loadMapPins() {
         guard let day = day,
               let activities = activities else { return }
@@ -109,6 +99,16 @@ class ActivitiesLocationManagerViewController: UIViewController {
         //add code here to center map pin
     }
     
+    func saveMapAnnotations() {
+        guard let day = day else { return }
+        
+        for annotation in mapView.annotations {
+            activitiesCoordinates.append([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ])
+        }
+        
+        ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] = activitiesCoordinates
+    }
+    
 }//End of class
 
 //MARK: - Extensions
@@ -135,10 +135,12 @@ extension ActivitiesLocationManagerViewController: HandleMapSearch {
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
+        
         if let city = placemark.name,
            let state = placemark.administrativeArea {
             annotation.subtitle = "\(city) \(state)"
         }
+        
         mapView.addAnnotation(annotation)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)

@@ -14,13 +14,13 @@ class ItineraryTableViewCell: UITableViewCell {
     @IBOutlet weak var tripImageView: UIImageView!
     
     //MARK: - Properties
-    var row: Int?
     var itinerary: Itinerary? {
         didSet {
             updateView()
         }
     }
-    var delegate: getIndexPathRow?
+    var row: Int?
+    weak var delegate: getIndexPathRow?
     
     //MARK: - Actions
     @IBAction func mapPinButtonTapped(_ sender: UIButton) {

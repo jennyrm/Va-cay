@@ -64,15 +64,18 @@ class ItineraryMapPinsLocationManagerViewController: UIViewController {
     //MARK: - Functions
     func loadMapPins() {
         guard let itinerary = itinerary else { return }
+        
         if let destinationCoordinates = itinerary.destinationCoordinates?.first {
             var key: String?
             var valuesArr = [Double]()
+            
             destinationCoordinates.values.forEach({
                 valuesArr.append(contentsOf: $0)
             })
             destinationCoordinates.keys.forEach({
                 key = $0 ?? ""
             })
+            
             let annotation = MKPointAnnotation()
             let latitude = valuesArr[0]
             let longitude = valuesArr[1]
@@ -92,6 +95,7 @@ class ItineraryMapPinsLocationManagerViewController: UIViewController {
         for annotation in mapView.annotations {
             coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] )
         }
+        
         if !coordinates.isEmpty {
             guard let user = UserController.shared.user,
                   let itinerary = itinerary else {return}
@@ -121,27 +125,21 @@ extension ItineraryMapPinsLocationManagerViewController: CLLocationManagerDelega
 extension ItineraryMapPinsLocationManagerViewController: HandleMapSearch {
     func dropPinZoomIn(placemark: MKPlacemark) {
         selectedPin = placemark
+        
         mapView.removeAnnotations(mapView.annotations)
+        
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
+        
         if let city = placemark.name,
            let state = placemark.administrativeArea {
             annotation.subtitle = "\(city) \(state)"
         }
         mapView.addAnnotation(annotation)
+        
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)
-        
-//        mapPinDelegate?.droppedPin(title: annotation.title!)
     }
-    
-//    func saveMapAnnotations() {
-//        for annotation in mapView.annotations {
-//            coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] )
-//        }
-//        ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] = coordinates
-//    }
-        
-}//End of class
+}//End of extension

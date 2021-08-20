@@ -14,6 +14,7 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     //MARK: - Properties
+    var onDetailVC = false
     let locationManager = CLLocationManager()
     var resultSearchController: UISearchController?
     var selectedPin: MKPlacemark?
@@ -24,11 +25,26 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveMapAnnotations()
+        onDetailVC = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if !onDetailVC {
+            addLocationSearchTableVC()
+        }
+        
+        loadMapPins()
+    }
+    
+    //MARK: - Actions
+    @IBAction func getCurrentLocationButtonTapped(_ sender: UIButton) {
+        locationManager.requestLocation()
+    }
+    
+    //MARK: - Functions
+    func addLocationSearchTableVC() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
@@ -47,28 +63,6 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
         
         locationSearchTableVC.mapView = mapView
         locationSearchTableVC.handleMapSearchDelegate = self
-        
-        loadMapPins()
-    }
-    
-    //MARK: - Actions
-    @IBAction func getCurrentLocationButtonTapped(_ sender: UIButton) {
-        locationManager.requestLocation()
-    }
-    
-    //MARK: - Functions
-    func saveMapAnnotations() {
-        if selectedPin != nil {
-            for annotation in mapView.annotations {
-                coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude]])
-            }
-            let title = (mapView.annotations[0].title) as? String
-            mapPinDelegate?.droppedPin(title: title ?? "", mapDay: "", mapActivities: [])
-            if !coordinates.isEmpty {
-                ItineraryController.sharedInstance.itineraryData["hotelAirbnbCoordinates"] = coordinates
-                print(coordinates)
-            }
-        }
     }
     
     func loadMapPins() {
@@ -88,6 +82,22 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
                     let region = MKCoordinateRegion(center: center, span: span)
                     mapView.setRegion(region, animated: true)
                 }
+            }
+        }
+    }
+    
+    func saveMapAnnotations() {
+        if selectedPin != nil {
+            for annotation in mapView.annotations {
+                coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude]])
+            }
+            
+            let title = (mapView.annotations[0].title) as? String
+            mapPinDelegate?.droppedPin(title: title ?? "", mapDay: "", mapActivities: [])
+            
+            if !coordinates.isEmpty {
+                ItineraryController.sharedInstance.itineraryData["hotelAirbnbCoordinates"] = coordinates
+                print(coordinates)
             }
         }
     }
@@ -112,15 +122,19 @@ extension HotelAirbnbLocationManagerViewController: CLLocationManagerDelegate {
 extension HotelAirbnbLocationManagerViewController: HandleMapSearch {
     func dropPinZoomIn(placemark: MKPlacemark) {
         selectedPin = placemark
+        
         mapView.removeAnnotations(mapView.annotations)
+        
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
+        
         if let city = placemark.name,
            let state = placemark.administrativeArea {
             annotation.subtitle = "\(city) \(state)"
         }
         mapView.addAnnotation(annotation)
+        
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)
