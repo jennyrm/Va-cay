@@ -135,10 +135,12 @@ extension ActivitiesLocationManagerViewController: HandleMapSearch {
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
+        
         if let city = placemark.name,
            let state = placemark.administrativeArea {
             annotation.subtitle = "\(city) \(state)"
         }
+        
         mapView.addAnnotation(annotation)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)

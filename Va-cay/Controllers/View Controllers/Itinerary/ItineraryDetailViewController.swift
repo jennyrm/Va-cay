@@ -62,7 +62,8 @@ class ItineraryDetailViewController: UIViewController {
         ItineraryController.sharedInstance.itinToEdit = itinerary
         
         if segue.identifier == "toHotelAirbnbMapVC" {
-//            guard let destinationVC = segue.destination as?
+            guard let destinationVC = segue.destination as? HotelAirbnbLocationManagerViewController else { return }
+            destinationVC.onDetailVC = true
         }
         
         if segue.identifier == "toActivitiesMapVC" {

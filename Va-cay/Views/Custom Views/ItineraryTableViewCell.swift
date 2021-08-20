@@ -20,7 +20,7 @@ class ItineraryTableViewCell: UITableViewCell {
         }
     }
     var row: Int?
-    var delegate: getIndexPathRow?
+    weak var delegate: getIndexPathRow?
     
     //MARK: - Actions
     @IBAction func mapPinButtonTapped(_ sender: UIButton) {

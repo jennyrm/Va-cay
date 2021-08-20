@@ -25,7 +25,7 @@ class dayActivitiesTableViewCell: UITableViewCell {
         }
     }
     var row: Int?
-    var delegate: getIndexPathRow?
+    weak var delegate: getIndexPathRow?
     
     //MARK: - Actions
     @IBAction func activitiesMapButtonTapped(_ sender: UIButton) {
