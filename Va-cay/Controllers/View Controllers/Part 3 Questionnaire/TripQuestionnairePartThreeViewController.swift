@@ -173,7 +173,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         
         let textField = UITextField()
         textField.backgroundColor = .white
-        textField.placeholder = "Enter activity here"
+        textField.placeholder = "Activity name"
         textField.borderStyle = .line
         activitiesTextFieldItems.append(textField)
         

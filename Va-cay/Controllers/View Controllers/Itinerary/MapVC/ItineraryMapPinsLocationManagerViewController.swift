@@ -17,19 +17,29 @@ class ItineraryMapPinsLocationManagerViewController: UIViewController {
     let locationManager = CLLocationManager()
     var resultSearchController: UISearchController?
     var selectedPin: MKPlacemark?
-    var coordinates = [ [String?? : [Double] ] ]()
-//    weak var mapPinDelegate: MapPinDropped?
-    var arrayOfMapPinTitles = [String]()
+    
     var itinerary: Itinerary?
+    var coordinates = [ [String?? : [Double] ] ]()
+    var arrayOfMapPinTitles = [String]()
     
     //MARK: - Lifecycle
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-//        saveMapAnnotations()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        addLocationSearchTableVC()
+        loadMapPins()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        saveMapAnnotations()
+    }
+    
+    //MARK: - Actions
+    @IBAction func getCurrentLocationButtonTapped(_ sender: UIButton) {
+        locationManager.requestLocation()
+    }
+    
+    //MARK: - Functions
+    func addLocationSearchTableVC() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
@@ -48,20 +58,8 @@ class ItineraryMapPinsLocationManagerViewController: UIViewController {
         
         locationSearchTableVC.mapView = mapView
         locationSearchTableVC.handleMapSearchDelegate = self
-        
-        loadMapPins()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        saveMapAnnotations()
-    }
-    
-    //MARK: - Actions
-    @IBAction func getCurrentLocationButtonTapped(_ sender: UIButton) {
-        locationManager.requestLocation()
-    }
-    
-    //MARK: - Functions
     func loadMapPins() {
         guard let itinerary = itinerary else { return }
         

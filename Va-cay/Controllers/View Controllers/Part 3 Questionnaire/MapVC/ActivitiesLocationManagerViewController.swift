@@ -13,12 +13,16 @@ class ActivitiesLocationManagerViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var getCurrentLocationButton: UIButton!
     
     //MARK: - Properties
+    var onDetailVC = false
+    
     let locationManager = CLLocationManager()
     var resultSearchController: UISearchController?
     var selectedPin: MKPlacemark?
     weak var mapPinDelegate: MapPinDropped?
+    
     var day: String?
     var activities: [String]?
     var activitiesCoordinates =  [ [String : [String?? : [Double] ] ] ]()
@@ -26,7 +30,32 @@ class ActivitiesLocationManagerViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !onDetailVC {
+            addLocationSearchTableVC()
+        } else {
+            getCurrentLocationButton.isHidden = true
+        }
         
+        if let activitiesCoordinates = ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] as? [ [String : [String?? : [Double] ] ] ] {
+            self.activitiesCoordinates = activitiesCoordinates
+            loadMapPins()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveMapAnnotations()
+        onDetailVC = false
+        getCurrentLocationButton.isHidden = false
+    }
+    
+    //MARK: - Actions
+    @IBAction func getCurrentLocationButtonTapped(_ sender: UIButton) {
+        locationManager.requestLocation()
+    }
+    
+    //MARK: - Functions
+    func addLocationSearchTableVC() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
@@ -36,7 +65,7 @@ class ActivitiesLocationManagerViewController: UIViewController {
         
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = "Find an activity"
+        searchBar.placeholder = "Find an activity location"
         navigationItem.searchController = resultSearchController
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false
@@ -45,28 +74,8 @@ class ActivitiesLocationManagerViewController: UIViewController {
         
         locationSearchTableVC.mapView = mapView
         locationSearchTableVC.handleMapSearchDelegate = self
-        
-        if let activitiesCoordinates = ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] as? [ [String : [String?? : [Double] ] ] ] {
-            self.activitiesCoordinates = activitiesCoordinates
-            loadMapPins()
-        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        saveMapAnnotations()
-    }
-    
-    //MARK: - Actions
-    @IBAction func getCurrentLocationButtonTapped(_ sender: UIButton) {
-        locationManager.requestLocation()
-    }
-    
-    //MARK: - Functions
     func loadMapPins() {
         guard let day = day,
               let activities = activities else { return }
@@ -97,6 +106,8 @@ class ActivitiesLocationManagerViewController: UIViewController {
         }
         
         //add code here to center map pin
+        //
+        //
     }
     
     func saveMapAnnotations() {

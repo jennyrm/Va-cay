@@ -69,10 +69,13 @@ class ItineraryDetailViewController: UIViewController {
         if segue.identifier == "toActivitiesMapVC" {
             guard let destinationVC = segue.destination as? ActivitiesLocationManagerViewController,
                   let indexPath = indexPath else { return }
+            
             let dayToSend = days[indexPath]
             let activitiesToSend = activities[indexPath]
+            
+            destinationVC.onDetailVC = true
             destinationVC.day = dayToSend
-            destinationVC.activities = activitiesToSend 
+            destinationVC.activities = activitiesToSend
         }
     }
     
