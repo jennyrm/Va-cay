@@ -41,7 +41,6 @@
 		9BB77710266ADB04008D3645 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7770F266ADB03008D3645 /* DateExtension.swift */; };
 		9BB77715266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77714266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift */; };
 		9BB77719266B3A7E008D3645 /* FlightDepartureCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77718266B3A7E008D3645 /* FlightDepartureCalendarViewController.swift */; };
-		9BB7771D266B3B4D008D3645 /* DayCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7771C266B3B4D008D3645 /* DayCalendarViewController.swift */; };
 		9BB77721266C1ECE008D3645 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77720266C1ECE008D3645 /* Protocols.swift */; };
 		9BB77724266DDFE1008D3645 /* HotelAirbnbLocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77723266DDFE1008D3645 /* HotelAirbnbLocationManagerViewController.swift */; };
 		9BB77727266DE8C4008D3645 /* HotelAirbnbLocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77726266DE8C4008D3645 /* HotelAirbnbLocationSearchTableViewController.swift */; };
@@ -88,7 +87,6 @@
 		9BB7770F266ADB03008D3645 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		9BB77714266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightArrivalCalendarViewController.swift; sourceTree = "<group>"; };
 		9BB77718266B3A7E008D3645 /* FlightDepartureCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDepartureCalendarViewController.swift; sourceTree = "<group>"; };
-		9BB7771C266B3B4D008D3645 /* DayCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCalendarViewController.swift; sourceTree = "<group>"; };
 		9BB77720266C1ECE008D3645 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		9BB77723266DDFE1008D3645 /* HotelAirbnbLocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAirbnbLocationManagerViewController.swift; sourceTree = "<group>"; };
 		9BB77726266DE8C4008D3645 /* HotelAirbnbLocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAirbnbLocationSearchTableViewController.swift; sourceTree = "<group>"; };
@@ -170,14 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */,
-			);
-			path = CalendarVC;
-			sourceTree = "<group>";
-		};
-		9B4EE8B9266F314B007EB937 /* CalendarVC */ = {
-			isa = PBXGroup;
-			children = (
-				9BB7771C266B3B4D008D3645 /* DayCalendarViewController.swift */,
 			);
 			path = CalendarVC;
 			sourceTree = "<group>";
@@ -346,7 +336,6 @@
 			isa = PBXGroup;
 			children = (
 				9BE480EE266169800079DDBF /* TripQuestionnairePartThreeViewController.swift */,
-				9B4EE8B9266F314B007EB937 /* CalendarVC */,
 				9B4EE8B2266F3107007EB937 /* MapVC */,
 			);
 			path = "Part 3 Questionnaire";
@@ -489,7 +478,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BB7771D266B3B4D008D3645 /* DayCalendarViewController.swift in Sources */,
 				9B1C572726648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift in Sources */,
 				0D7D498526B86B34006218D8 /* SettingsViewController.swift in Sources */,
 				9BB77710266ADB04008D3645 /* DateExtension.swift in Sources */,
