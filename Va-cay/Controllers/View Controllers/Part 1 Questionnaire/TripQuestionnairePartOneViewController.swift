@@ -32,7 +32,6 @@ class TripQuestionnairePartOneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let imageStr = ItineraryController.sharedInstance.itineraryData["tripImage"] else {return}
-        
         TripQuestionnairePartOneViewController.delegate?.updateImage(image: (UIImage(data: imageStr as! Data) ?? UIImage(named: "grey"))!)
     }
     
