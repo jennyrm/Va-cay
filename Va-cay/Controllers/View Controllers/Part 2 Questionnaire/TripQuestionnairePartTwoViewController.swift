@@ -20,7 +20,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     var budgetTextField: UITextField?
     var checklistTextFieldItems = [UITextField]()
     var checklistButtons = [UIButton]()
-    var checklist = [ [String : Bool] ]()
+    var checklist = [ [String??: Bool] ]()
     
     //MARK: - Lifecyle
     override func loadView() {
@@ -53,10 +53,16 @@ class TripQuestionnairePartTwoViewController: UIViewController {
             budgetTextField?.text = budget
         }
         if let checklist = ItineraryController.sharedInstance.itineraryData["checklist"] as? [ [String?? : Bool] ] {
-//                        for index in 0..<checklist.count {
-//                            checklistTextFieldItems[index].text = checklist[index]
-//                            setupScrollableStackViewConstraints()
-//                        }
+                        for index in 0..<checklist.count {
+                            for (key, value) in checklist[index] {
+                                checklistTextFieldItems[index].text = key as! String
+                                if value {
+                                    checklistButtons[index].setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+                                }
+                            }
+                            setupScrollableStackViewConstraints()
+                        }
+            self.checklist = checklist
         }
     }
     
@@ -68,13 +74,36 @@ class TripQuestionnairePartTwoViewController: UIViewController {
             ItineraryController.sharedInstance.itineraryData["budget"] = budgetTextField?.text
         }
         if checklistTextFieldItems[0].text != "" {
-            //            if checklist textfield is empty, dont append to local checklist variable
-//                        checklistTextFieldItems.forEach { if !$0.text!.isEmpty { checklist.append($0.text!) } }
-            //            add
+//                        if checklist textfield is empty, dont append to local checklist variable
+//                        checklistTextFieldItems.forEach { if !$0.text!.isEmpty {
+//                            print("hit")
+//
+//                            checklist.append($0.text!)
+//                            }
+//                        }
+            var checklistPlaceholder: [ [String??: Bool] ] = []
+            checklistTextFieldItems.enumerated().forEach { (index, el) in
+                if index > checklist.count - 1 && !el.text!.isEmpty {
+                    print(el.text)
+                    if checklistButtons[index].currentImage == UIImage(named: "square") {
+                        checklist.append([el.text : true])
+                    } else {
+                        checklist.append([el.text : false])
+                    }
+                }
+            }
+            
             ItineraryController.sharedInstance.itineraryData["checklist"] = checklist
-            checklist = []
+ 
+            
         }
     }
+    
+//    func saveNewChecklistItem(){
+//        checklistTextFieldItems.forEach { <#UITextField#> in
+//            <#code#>
+//        }
+//    }
     
     func createLabelCalendarButton(with flightLabel: UILabel) -> UIStackView {
         flightLabel.textColor = .black
@@ -218,6 +247,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         button.backgroundColor = .systemGray6
         button.tintColor = .black
         button.addTarget(self, action: #selector(checklistButtonTapped), for: .touchUpInside)
+        checklistButtons.append(button)
         
         let textField = UITextField()
         textField.backgroundColor = .systemGray6
@@ -263,11 +293,26 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     @objc func checklistButtonTapped(sender: UIButton){
+        saveTextFieldInputs()
+        guard let index = checklistButtons.firstIndex(of: sender) else {return}
         if sender.currentImage == UIImage(systemName: "square") {
             sender.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            if index < checklist.count {
+                for (key, _) in checklist[index] {
+                    checklist[index][key] = true
+                    print(key)
+                }
+            }
         } else {
             sender.setImage(UIImage(systemName: "square"), for: .normal)
+            if index < checklist.count {
+                for (key, _) in checklist[index] {
+                    checklist[index][key] = false
+                    print(key)
+                }
+            }
         }
+        
     }
     
     @objc func nextVC(sender: UIButton) {
