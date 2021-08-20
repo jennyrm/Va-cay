@@ -24,7 +24,16 @@ class dayActivitiesTableViewCell: UITableViewCell {
             updateView()
         }
     }
+    var row: Int?
+    var delegate: getIndexPathRow?
     
+    //MARK: - Actions
+    @IBAction func activitiesMapButtonTapped(_ sender: UIButton) {
+        guard let row = row else { return }
+        delegate?.indexPath(row: row)
+    }
+    
+    //MARK: - Functions
     func updateView() {
         guard let day = day,
               let activities = activities else { return }

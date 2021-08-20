@@ -36,22 +36,19 @@ class ItineraryController {
                 for doc in snapshot.documents {
                     let itineraryData = doc.data()
                     
+                    //Part 1
                     let destinationCoordinates = itineraryData["destinationCoordinates"] as? [ [String?? : [Double] ] ] ?? []
                     let tripName = itineraryData["tripName"] as? String ?? ""
                     let tripDate = itineraryData["tripDate"] as? Timestamp ?? nil
                     let tripImage = itineraryData["tripImage"] as? Data ?? Data()
-                    
+                    //Part 2
                     let flightArrival = itineraryData["flightArrival"] as? Timestamp ?? nil
                     let flightDeparture = itineraryData["flightDeparture"] as? Timestamp ?? nil
-                    
                     let hotelAirbnb = itineraryData["hotelAirbnb"] as? String ?? ""
                     let hotelAirbnbCoordinates = itineraryData["hotelAirbnbCoordinates"] as? [ [String?? : [Double] ] ] ?? []
                     let budget = itineraryData["budget"] as? String ?? ""
-
                     let checklist = itineraryData["checklist"] as? [ [String?? : Bool] ] ?? []
-                    
-                    let dayCounter = itineraryData["dayCounter"] as? Int ?? 1
-
+                    //Part 3
                     let activities = itineraryData["activities"] as? [ [ String : [String] ] ] ?? nil
                     let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String : [String?? : [Double] ] ] ] ?? []
                     

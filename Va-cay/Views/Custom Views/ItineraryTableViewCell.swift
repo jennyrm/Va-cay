@@ -14,12 +14,12 @@ class ItineraryTableViewCell: UITableViewCell {
     @IBOutlet weak var tripImageView: UIImageView!
     
     //MARK: - Properties
-    var row: Int?
     var itinerary: Itinerary? {
         didSet {
             updateView()
         }
     }
+    var row: Int?
     var delegate: getIndexPathRow?
     
     //MARK: - Actions

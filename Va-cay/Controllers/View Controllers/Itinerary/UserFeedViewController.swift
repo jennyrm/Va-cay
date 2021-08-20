@@ -125,10 +125,12 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "itineraryCell", for: indexPath) as? ItineraryTableViewCell else { return UITableViewCell() }
+       
         let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
+        cell.itinerary = itinerary
         cell.row = indexPath.row
         cell.delegate = self
-        cell.itinerary = itinerary
+        
         return cell
     }
     
@@ -143,6 +145,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
             let itineraryToSend = ItineraryController.sharedInstance.itineraries[indexPathRow]
             destinationVC.itinerary = itineraryToSend
         }
+    
         if segue.identifier == "toItineraryDetailVC" {
             guard let indexPathRow = self.indexPathRow,
                   let destinationVC = segue.destination as? ItineraryDetailViewController else { return }

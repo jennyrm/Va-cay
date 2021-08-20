@@ -57,20 +57,6 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
     }
     
     //MARK: - Functions
-    func saveMapAnnotations() {
-        if selectedPin != nil {
-            for annotation in mapView.annotations {
-                coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude]])
-            }
-            let title = (mapView.annotations[0].title) as? String
-            mapPinDelegate?.droppedPin(title: title ?? "", mapDay: "", mapActivities: [])
-            if !coordinates.isEmpty {
-                ItineraryController.sharedInstance.itineraryData["hotelAirbnbCoordinates"] = coordinates
-                print(coordinates)
-            }
-        }
-    }
-    
     func loadMapPins() {
         if let hotelAirbnbCoordinates = ItineraryController.sharedInstance.itineraryData["hotelAirbnbCoordinates"] as? [ [String?? : [Double] ] ] {
             hotelAirbnbCoordinates.forEach { coordinate in
@@ -88,6 +74,20 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
                     let region = MKCoordinateRegion(center: center, span: span)
                     mapView.setRegion(region, animated: true)
                 }
+            }
+        }
+    }
+    
+    func saveMapAnnotations() {
+        if selectedPin != nil {
+            for annotation in mapView.annotations {
+                coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude]])
+            }
+            let title = (mapView.annotations[0].title) as? String
+            mapPinDelegate?.droppedPin(title: title ?? "", mapDay: "", mapActivities: [])
+            if !coordinates.isEmpty {
+                ItineraryController.sharedInstance.itineraryData["hotelAirbnbCoordinates"] = coordinates
+                print(coordinates)
             }
         }
     }

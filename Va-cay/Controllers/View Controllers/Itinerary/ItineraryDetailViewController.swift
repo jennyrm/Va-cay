@@ -21,6 +21,7 @@ class ItineraryDetailViewController: UIViewController {
     var checklist = ""
     var days = [String]()
     var activities = [[String]]()
+    var indexPath: Int?
     var itinerary: Itinerary? {
         didSet {
             loadViewIfNeeded()
@@ -47,7 +48,6 @@ class ItineraryDetailViewController: UIViewController {
         itinerary.checklist?.forEach({
             checklist.append("•\($0)\n")
         })
-//        checklistLabel.text = checklist
         itinerary.activities?.forEach({ (day) in
             for (key, value) in day {
                 days.append(key)
@@ -58,16 +58,32 @@ class ItineraryDetailViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let itinerary = itinerary else { return }
-//            let destinationVC = segue.destination as? TripQuestionnairePartOneViewController else { return }
         ItineraryController.sharedInstance.isEditing = true
         ItineraryController.sharedInstance.itinToEdit = itinerary
-//        destinationVC.itinerary = itinerary
         
+        if segue.identifier == "toHotelAirbnbMapVC" {
+//            guard let destinationVC = segue.destination as?
+        }
+        
+        if segue.identifier == "toActivitiesMapVC" {
+            guard let destinationVC = segue.destination as? ActivitiesLocationManagerViewController,
+                  let indexPath = indexPath else { return }
+            let dayToSend = days[indexPath]
+            let activitiesToSend = activities[indexPath]
+            destinationVC.day = dayToSend
+            destinationVC.activities = activitiesToSend 
+        }
     }
     
 }//End of class
 
 //MARK: - Extensions
+extension ItineraryDetailViewController: getIndexPathRow {
+    func indexPath(row: Int) {
+        self.indexPath = row
+    }
+}//End of extension
+
 extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itinerary?.activities?.count ?? 0
@@ -75,8 +91,12 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "dayActivityCell") as? dayActivitiesTableViewCell else { return UITableViewCell() }
+        
         cell.day = days[indexPath.row]
         cell.activities = activities[indexPath.row]
+        cell.row = indexPath.row
+        cell.delegate = self
+        
         return cell
     }
     
