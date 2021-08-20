@@ -105,7 +105,10 @@ class ActivitiesLocationManagerViewController: UIViewController {
                 }
             }
         }
+        
+        //add code here to center map pin
     }
+    
 }//End of class
 
 //MARK: - Extensions
@@ -128,7 +131,7 @@ extension ActivitiesLocationManagerViewController: HandleMapSearch {
         guard let day = day else { return }
         
         selectedPin = placemark
-//        mapView.removeAnnotations(mapView.annotations)
+
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
@@ -137,6 +140,7 @@ extension ActivitiesLocationManagerViewController: HandleMapSearch {
             annotation.subtitle = "\(city) \(state)"
         }
         mapView.addAnnotation(annotation)
+        
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)

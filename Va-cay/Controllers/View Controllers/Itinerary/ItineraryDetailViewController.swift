@@ -79,4 +79,14 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
         cell.activities = activities[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Activities"
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Copperplate", size: 30.0)
+        header.textLabel?.textAlignment = NSTextAlignment.center
+    }
 }//End of extension
