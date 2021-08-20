@@ -74,14 +74,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
             ItineraryController.sharedInstance.itineraryData["budget"] = budgetTextField?.text
         }
         if checklistTextFieldItems[0].text != "" {
-//                        if checklist textfield is empty, dont append to local checklist variable
-//                        checklistTextFieldItems.forEach { if !$0.text!.isEmpty {
-//                            print("hit")
-//
-//                            checklist.append($0.text!)
-//                            }
-//                        }
-            var checklistPlaceholder: [ [String??: Bool] ] = []
             checklistTextFieldItems.enumerated().forEach { (index, el) in
                 if index > checklist.count - 1 && !el.text!.isEmpty {
                     print(el.text)
@@ -92,18 +84,9 @@ class TripQuestionnairePartTwoViewController: UIViewController {
                     }
                 }
             }
-            
             ItineraryController.sharedInstance.itineraryData["checklist"] = checklist
- 
-            
         }
     }
-    
-//    func saveNewChecklistItem(){
-//        checklistTextFieldItems.forEach { <#UITextField#> in
-//            <#code#>
-//        }
-//    }
     
     func createLabelCalendarButton(with flightLabel: UILabel) -> UIStackView {
         flightLabel.textColor = .black
@@ -293,14 +276,12 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     @objc func checklistButtonTapped(sender: UIButton){
-        saveTextFieldInputs()
         guard let index = checklistButtons.firstIndex(of: sender) else {return}
         if sender.currentImage == UIImage(systemName: "square") {
             sender.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
             if index < checklist.count {
                 for (key, _) in checklist[index] {
                     checklist[index][key] = true
-                    print(key)
                 }
             }
         } else {
@@ -308,10 +289,10 @@ class TripQuestionnairePartTwoViewController: UIViewController {
             if index < checklist.count {
                 for (key, _) in checklist[index] {
                     checklist[index][key] = false
-                    print(key)
                 }
             }
         }
+        saveTextFieldInputs()
         
     }
     
