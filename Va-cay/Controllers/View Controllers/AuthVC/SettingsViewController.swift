@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 
 class SettingsViewController: UIViewController {
+    
     // MARK: - Outlets
     @IBOutlet weak var LogOutButton: UIButton!
     
@@ -22,14 +23,17 @@ class SettingsViewController: UIViewController {
     @IBAction func LogOutButtonTapped(_ sender: Any) {
         do {
             try Auth.auth().signOut()
+            
             guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() else {return}
             vc.modalPresentationStyle = .fullScreen
+            
             self.present(vc, animated: true, completion: nil)
         } catch {
             print("Error signing out: %@")
         }
     }
     
+    //MARK: - Functions
     func updateViews() {
         LogOutButton.backgroundColor = .systemRed
         LogOutButton.layer.cornerRadius = 10

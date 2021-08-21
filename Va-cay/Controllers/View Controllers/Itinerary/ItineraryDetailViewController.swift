@@ -8,13 +8,13 @@
 import UIKit
 
 class ItineraryDetailViewController: UIViewController {
+    
     //MARK: - Outlets
     @IBOutlet weak var tripNameLabel: UILabel!
     @IBOutlet weak var tripDateLabel: UILabel!
     @IBOutlet weak var flightArrivalLabel: UILabel!
     @IBOutlet weak var flightDepartureLabel: UILabel!
     @IBOutlet weak var hotelAirbnbLabel: UILabel!
-    @IBOutlet weak var checklistLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Properties
@@ -32,7 +32,6 @@ class ItineraryDetailViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -58,8 +57,8 @@ class ItineraryDetailViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let itinerary = itinerary else { return }
-        ItineraryController.sharedInstance.isEditing = true
-        ItineraryController.sharedInstance.itinToEdit = itinerary
+        ItineraryController.sharedInstance.editingItinerary = true
+        ItineraryController.sharedInstance.itineraryToEdit = itinerary
         
         if segue.identifier == "toHotelAirbnbMapVC" {
             guard let destinationVC = segue.destination as? HotelAirbnbLocationManagerViewController else { return }

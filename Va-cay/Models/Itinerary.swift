@@ -28,6 +28,7 @@ class Itinerary: Codable {
     ///ID
     let id: String
 
+    //MARK: - Initializer
     init(destinationCoordinates: [ [String?? : [Double] ] ]?,
         tripName: String,
         tripDate: Date?,

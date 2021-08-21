@@ -9,9 +9,10 @@ import UIKit
 import FirebaseAuth
 
 class UserFeedViewController: UIViewController {
+    
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var itinerarySearchBar: UISearchBar!
     
     //MARK: - Properties
     var indexPathRow: Int?
@@ -19,19 +20,14 @@ class UserFeedViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//                do {
-//                    try Auth.auth().signOut()
-//                } catch {
-//                    print("Error signing out: %@")
-//                }
+        //james - move out of here
         if Auth.auth().currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let VC = storyboard.instantiateViewController(identifier: "AuthVC")
             VC.modalPresentationStyle = .fullScreen
             self.present(VC, animated: true, completion: nil)
         }
-        tableView.delegate = self
-        tableView.dataSource = self
+        
         guard let user = Auth.auth().currentUser else {return}
         UserController.shared.fetchUser(userId: user.uid) { result in
             switch result {
@@ -41,20 +37,23 @@ class UserFeedViewController: UIViewController {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
             }
         }
+        
+        //keep in viewDL
+        tableView.delegate = self
+        tableView.dataSource = self
+        itinerarySearchBar.delegate = self
+        
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         ItineraryController.sharedInstance.itineraries = []
         ItineraryController.sharedInstance.itineraryData = [:]
-        ItineraryController.sharedInstance.isEditing = false
+        ItineraryController.sharedInstance.editingItinerary = false
         fetchData()
     }
     
+    //MARK: - Actions
     @IBAction func addItineraryButtonTapped(_ sender: UIButton) {
         ItineraryController.sharedInstance.itineraries = []
     }
@@ -74,6 +73,23 @@ class UserFeedViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMapVC" {
+            guard let indexPathRow = self.indexPathRow,
+                  let destinationVC = segue.destination as? ItineraryMapPinsLocationManagerViewController else { return }
+            let itineraryToSend = ItineraryController.sharedInstance.itineraries[indexPathRow]
+            destinationVC.itinerary = itineraryToSend
+        }
+    
+        if segue.identifier == "toItineraryDetailVC" {
+            guard let indexPathRow = self.indexPathRow,
+                  let destinationVC = segue.destination as? ItineraryDetailViewController else { return }
+            let itineraryToSend = ItineraryController.sharedInstance.itineraries[indexPathRow]
+            destinationVC.itinerary = itineraryToSend
+            ItineraryController.sharedInstance.setItineraryData(itinerary: itineraryToSend)
+        }
+    }
+    
 }//End of class
 
 //MARK: - Extensions
@@ -84,6 +100,21 @@ extension UserFeedViewController: getIndexPathRow {
 }//End of extension
 
 extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        ItineraryController.sharedInstance.itineraries.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itineraryCell", for: indexPath) as? ItineraryTableViewCell else { return UITableViewCell() }
+        
+        let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
+        cell.itinerary = itinerary
+        cell.row = indexPath.row
+        cell.delegate = self
+        
+        return cell
+    }
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -99,7 +130,6 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
                     ItineraryController.sharedInstance.deleteItinerary(userId: UserController.shared.user!.userId, itinerary: itinerary) { result in
                         switch result {
                         case true:
-                            
 //                            self.tableView.deleteRows(at: [indexPath], with: .fade)
                             self.tableView.reloadData()
                         case false:
@@ -119,41 +149,11 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
         return [deleteAction]
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ItineraryController.sharedInstance.itineraries.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itineraryCell", for: indexPath) as? ItineraryTableViewCell else { return UITableViewCell() }
-       
-        let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
-        cell.itinerary = itinerary
-        cell.row = indexPath.row
-        cell.delegate = self
-        
-        return cell
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 225
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMapVC" {
-            guard let indexPathRow = self.indexPathRow,
-                  let destinationVC = segue.destination as? ItineraryMapPinsLocationManagerViewController else { return }
-            let itineraryToSend = ItineraryController.sharedInstance.itineraries[indexPathRow]
-            destinationVC.itinerary = itineraryToSend
-        }
-    
-        if segue.identifier == "toItineraryDetailVC" {
-            guard let indexPathRow = self.indexPathRow,
-                  let destinationVC = segue.destination as? ItineraryDetailViewController else { return }
-            let itineraryToSend = ItineraryController.sharedInstance.itineraries[indexPathRow]
-            destinationVC.itinerary = itineraryToSend
-            ItineraryController.sharedInstance.setItineraryData(itinerary: itineraryToSend)
-        }
-    }
-    
 }//End of extension
 
+extension UserFeedViewController: UISearchBarDelegate {
+    
+}//End of extension

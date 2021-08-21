@@ -10,6 +10,7 @@ import FirebaseAuth
 import Lottie
 
 class AuthViewController: UIViewController {
+    
     // MARK: - Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordOneTextField: UITextField!
@@ -19,15 +20,21 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var animationView: AnimationView!
     
+    //MARK: - Properties
+    var loginBool: Bool = true
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAnimation()
         animationView.backgroundColor = nil
+        
         passwordOneTextField.isSecureTextEntry = true
         passwordTwoTextField.isSecureTextEntry = true
         passwordTwoTextField.isHidden = true
+        
         errorLabel.isHidden = true
+        
         switchButton.setTitle("Register here", for: .normal)
     }
     
@@ -35,16 +42,16 @@ class AuthViewController: UIViewController {
         errorLabel.isHidden = true
     }
     
-    var loginBool: Bool = true
-    
     // MARK: - Actions
     @IBAction func loginRegisterButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordOneTextField.text, !password.isEmpty else {
+            
             errorLabel.text = "Please fill out all fields"
             errorLabel.isHidden = false
             return
         }
+        
         if loginBool {
             AuthViewModel.login(email: email, password: password) { result in
                 if result {
@@ -60,6 +67,7 @@ class AuthViewController: UIViewController {
                 errorLabel.isHidden = false
                 return
             }
+            
             AuthViewModel.register(email: email, password: password, confirmPassword: confirmPass) { result in
                 if result {
                     self.transitionToHome()
@@ -73,24 +81,29 @@ class AuthViewController: UIViewController {
     
     @IBAction func switchButtonTapped(_ sender: Any) {
         loginBool.toggle()
+        
         if loginBool {
             passwordOneTextField.text = ""
             passwordTwoTextField.text = ""
             passwordTwoTextField.isHidden = true
+            
             switchButton.setTitle("Register here", for: .normal)
             loginRegisterButton.setTitle("Login", for: .normal)
+            
             errorLabel.isHidden = true
         } else {
             passwordOneTextField.text = ""
             passwordTwoTextField.text = ""
             passwordTwoTextField.isHidden = false
+            
             switchButton.setTitle("Sign in here", for: .normal)
             loginRegisterButton.setTitle("Register", for: .normal)
+            
             errorLabel.isHidden = true
         }
     }
     
-    // MARK: - FNs
+    // MARK: - Functions
     func transitionToHome(){
         self.dismiss(animated: true, completion: nil)
     }

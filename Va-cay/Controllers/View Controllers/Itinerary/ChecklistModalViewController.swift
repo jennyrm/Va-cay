@@ -8,6 +8,7 @@
 import UIKit
 
 class ChecklistModalViewController: UIViewController {
+    
     // MARK: - Outlets
     @IBOutlet weak var checkListTableView: UITableView!
     
@@ -23,8 +24,6 @@ class ChecklistModalViewController: UIViewController {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - FNs
-    
 }//End of class
 
 extension ChecklistModalViewController: UITableViewDataSource, UITableViewDelegate {
@@ -35,9 +34,6 @@ extension ChecklistModalViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "checkCell", for: indexPath) as? CheckListItemTableViewCell
         
-        
         return UITableViewCell()
     }
-    
-    
 }//End of extension
