@@ -6,15 +6,20 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseFirestore
 
 class UserController {
     
+    //MARK: - Shared Instance
     static let shared = UserController()
     
+    //MARK: - Properties
     var user: User?
+    
+    //MARK: - Reference to DB
     let db = Firestore.firestore()
     
+    //MARK: - Functions
     func createUser(user: User){
         db.collection("users").document(user.userId).setData([
             "email" : user.email,

@@ -9,14 +9,15 @@ import Foundation
 import FirebaseFirestore
 
 class ItineraryController {
+    
     //MARK: - Shared Instance
     static let sharedInstance = ItineraryController()
     
     //MARK: - Source of Truth
     var itineraryData = [String : Any]()
     var itineraries = [Itinerary]()
-    var itinToEdit: Itinerary?
-    var isEditing = false
+    var itineraryToEdit: Itinerary?
+    var editingItinerary = false
     
     //MARK: - Reference to DB
     let db = Firestore.firestore()
@@ -25,12 +26,15 @@ class ItineraryController {
     func createItinerary(userId: String) {
         let id = UUID().uuidString
         itineraryData["id"] = id
+        
         let itineraryReference = db.collection("users").document(userId).collection("itineraries").document(id)
         itineraryReference.setData(itineraryData)
     }
     
     func fetchItineraries(userId: String, completion: @escaping (Bool) -> Void) {
+        
         var itinerariesPlaceholder: [Itinerary] = []
+        
         db.collection("users").document(userId).collection("itineraries").addSnapshotListener { (snapshot, error) in
             if let snapshot = snapshot {
                 for doc in snapshot.documents {
@@ -51,39 +55,42 @@ class ItineraryController {
                     //Part 3
                     let activities = itineraryData["activities"] as? [ [ String : [String] ] ] ?? nil
                     let activitiesCoordinates = itineraryData["activitiesCoordinates"] as? [ [String : [String?? : [Double] ] ] ] ?? []
-                    
+                    //itinerary document id
                     let id = doc.documentID
                    
                     let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate?.dateValue(), tripImage: tripImage, flightArrival: flightArrival?.dateValue(), flightDeparture: flightDeparture?.dateValue(), hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, activities: activities, activitiesCoordinates: activitiesCoordinates, id: id)
                     
                     itinerariesPlaceholder.append(retrievedItinerary)
                 }
+                
                 self.itineraries = itinerariesPlaceholder
                 itinerariesPlaceholder = []
+                
                 completion(true)
             }
         }
     }
     
-    func editItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void){
-        let itinRef = db.collection("users").document(userId).collection("itineraries").document(itinerary.id)
+    func editItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void) {
+        let itineraryRef = db.collection("users").document(userId).collection("itineraries").document(itinerary.id)
         
-        itinRef.setData(itineraryData)
+        itineraryRef.setData(itineraryData)
 
         completion(true)
     }
     
     
-    func editDestinationCoordinates(userId: String, itinerary: Itinerary, coords: [[String?? : [Double]]], completion: @escaping (Bool) -> Void){
+    func editDestinationCoordinates(userId: String, itinerary: Itinerary, coords: [[String?? : [Double]]], completion: @escaping (Bool) -> Void) {
         guard let index = itineraries.firstIndex(of: itinerary) else {return}
-        db.collection("users").document(userId).collection("itineraries").document(itinerary.id).setData([
-            "destinationCoordinates" : coords
-        ], merge: true)
+        
+        db.collection("users").document(userId).collection("itineraries").document(itinerary.id).setData(["destinationCoordinates" : coords], merge: true)
+        
         itineraries[index].destinationCoordinates = coords
+        
         completion(true)
     }
     
-    func deleteItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void){
+    func deleteItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void) {
         db.collection("users").document(userId).collection("itineraries").document(itinerary.id).delete() { error in
             if let error = error {
                 print(error.localizedDescription)
@@ -94,20 +101,20 @@ class ItineraryController {
         }
     }
     
-    func setItineraryData(itinerary: Itinerary){
-        ItineraryController.sharedInstance.itineraryData["destinationCoordinates"] = itinerary.destinationCoordinates
-        ItineraryController.sharedInstance.itineraryData["tripName"] = itinerary.tripName
-        ItineraryController.sharedInstance.itineraryData["tripDate"] = itinerary.tripDate
-        ItineraryController.sharedInstance.itineraryData["tripImage"] = itinerary.tripImage
-        ItineraryController.sharedInstance.itineraryData["flightArrival"] = itinerary.flightArrival
-        ItineraryController.sharedInstance.itineraryData["flightDeparture"] = itinerary.flightDeparture
-        ItineraryController.sharedInstance.itineraryData["hotelAirbnb"] = itinerary.hotelAirbnb
-        ItineraryController.sharedInstance.itineraryData["hotelAirbnbCoordinates"] = itinerary.hotelAirbnbCoordinates
-        ItineraryController.sharedInstance.itineraryData["budget"] = itinerary.budget
-        ItineraryController.sharedInstance.itineraryData["checklist"] = itinerary.checklist
-        ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] = itinerary.activitiesCoordinates
-        ItineraryController.sharedInstance.itineraryData["activities"] = itinerary.activities
-        ItineraryController.sharedInstance.itineraryData["id"] = itinerary.id
+    func setItineraryData(itinerary: Itinerary) {
+        itineraryData["destinationCoordinates"] = itinerary.destinationCoordinates
+        itineraryData["tripName"] = itinerary.tripName
+        itineraryData["tripDate"] = itinerary.tripDate
+        itineraryData["tripImage"] = itinerary.tripImage
+        itineraryData["flightArrival"] = itinerary.flightArrival
+        itineraryData["flightDeparture"] = itinerary.flightDeparture
+        itineraryData["hotelAirbnb"] = itinerary.hotelAirbnb
+        itineraryData["hotelAirbnbCoordinates"] = itinerary.hotelAirbnbCoordinates
+        itineraryData["budget"] = itinerary.budget
+        itineraryData["checklist"] = itinerary.checklist
+        itineraryData["activitiesCoordinates"] = itinerary.activitiesCoordinates
+        itineraryData["activities"] = itinerary.activities
+        itineraryData["id"] = itinerary.id
     }
     
 }//End of class

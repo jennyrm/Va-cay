@@ -12,27 +12,32 @@ import MapKit
 class HotelAirbnbLocationManagerViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var getCurrentLocationButton: UIButton!
     
     //MARK: - Properties
     var onDetailVC = false
+    
     let locationManager = CLLocationManager()
     var resultSearchController: UISearchController?
     var selectedPin: MKPlacemark?
-    var coordinates = [ [String?? : [Double] ] ]()
     weak var mapPinDelegate: MapPinDropped?
+    
+    var coordinates = [ [String?? : [Double] ] ]()
     
     //MARK: - Lifecycle
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveMapAnnotations()
         onDetailVC = false
+        getCurrentLocationButton.isHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if !onDetailVC {
             addLocationSearchTableVC()
+        } else {
+            getCurrentLocationButton.isHidden = true
         }
         
         loadMapPins()

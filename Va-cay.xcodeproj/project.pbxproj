@@ -344,9 +344,9 @@
 		9BE03A882672DF4D00D97F76 /* Itinerary */ = {
 			isa = PBXGroup;
 			children = (
-				0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */,
 				9B335CB4265F3EF700FC202B /* UserFeedViewController.swift */,
 				9B3247FF267DD85600C16040 /* ItineraryDetailViewController.swift */,
+				0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */,
 				9BE03A892672DF6100D97F76 /* MapVC */,
 			);
 			path = Itinerary;

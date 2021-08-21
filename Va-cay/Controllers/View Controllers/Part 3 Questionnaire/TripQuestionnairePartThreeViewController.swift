@@ -97,7 +97,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         let day = "Day \(dayCounter)"
         
         //editing itinerary activities
-        if ItineraryController.sharedInstance.isEditing || !activities.isEmpty {
+        if ItineraryController.sharedInstance.editingItinerary || !activities.isEmpty {
             for (index, activity) in activities.enumerated() {
                 for (key, _) in activity {
                     if key == "Day \(dayCounter)" {
@@ -173,7 +173,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         
         let textField = UITextField()
         textField.backgroundColor = .white
-        textField.placeholder = "Enter activity here"
+        textField.placeholder = "Activity name"
         textField.borderStyle = .line
         activitiesTextFieldItems.append(textField)
         
@@ -253,8 +253,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         
         saveActivities()
         
-        if ItineraryController.sharedInstance.isEditing {
-            guard let itineraryToEdit = ItineraryController.sharedInstance.itinToEdit else {return}
+        if ItineraryController.sharedInstance.editingItinerary {
+            guard let itineraryToEdit = ItineraryController.sharedInstance.itineraryToEdit else {return}
             ItineraryController.sharedInstance.itineraryData["activities"] = activities
             ItineraryController.sharedInstance.editItinerary(userId: user.userId, itinerary: itineraryToEdit) { result in
                 self.navigationController?.popToRootViewController(animated: true)

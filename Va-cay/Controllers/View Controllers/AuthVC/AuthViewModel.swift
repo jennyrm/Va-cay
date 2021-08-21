@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 
 class AuthViewModel {
+    
     static func login(email: String, password: String, completion: @escaping (Bool) -> Void) {
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error {
@@ -52,7 +53,5 @@ class AuthViewModel {
             completion(false)
         }
     }
-    
-    
-    
+
 }//End of class

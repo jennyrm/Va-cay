@@ -8,6 +8,7 @@
 import UIKit
 
 class CheckListItemTableViewCell: UITableViewCell {
+    
     // MARK: - Outlets
     @IBOutlet weak var checkListBoolButton: UIButton!
     @IBOutlet weak var checkListName: UILabel!
