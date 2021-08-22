@@ -15,7 +15,7 @@ class ChecklistModalViewController: UIViewController {
     // MARK: - Properties
     var checklist: [ [String??: Bool] ]? {
         didSet {
-            print(checklist)
+            
         }
     }
     
@@ -35,7 +35,7 @@ class ChecklistModalViewController: UIViewController {
 
 extension ChecklistModalViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return checklist?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,7 +43,8 @@ extension ChecklistModalViewController: UITableViewDataSource, UITableViewDelega
         if let checklist = checklist {
             cell?.checklistItem = checklist[indexPath.row]
         }
+        cell?.index = indexPath.row
         
-        return UITableViewCell()
+        return cell ?? UITableViewCell()
     }
 }//End of extension

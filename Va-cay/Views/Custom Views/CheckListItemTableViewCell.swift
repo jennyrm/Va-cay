@@ -19,6 +19,19 @@ class CheckListItemTableViewCell: UITableViewCell {
             updateViews()
         }
     }
+    var index: Int?
+    
+    // MARK: - Actions
+    @IBAction func checklistBoolButtonTapped(_ sender: Any) {
+        guard let checklistItem = checklistItem else {return}
+        
+        for (key, value) in checklistItem {
+            if value {
+                
+            }
+        }
+        
+    }
     
     // MARK: - Functions
     func updateViews(){
@@ -26,7 +39,9 @@ class CheckListItemTableViewCell: UITableViewCell {
         for (key, value) in checklistItem {
             checkListNameLabel.text = key ?? ""
             if value {
-                
+                checkListBoolButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            } else {
+                checkListBoolButton.setImage(UIImage(systemName: "square"), for: .normal)
             }
         }
     }
