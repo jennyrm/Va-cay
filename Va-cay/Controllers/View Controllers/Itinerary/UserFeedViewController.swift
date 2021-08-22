@@ -20,29 +20,10 @@ class UserFeedViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //james - move out of here
-        if Auth.auth().currentUser == nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let VC = storyboard.instantiateViewController(identifier: "AuthVC")
-            VC.modalPresentationStyle = .fullScreen
-            self.present(VC, animated: true, completion: nil)
-        }
-        
-        guard let user = Auth.auth().currentUser else {return}
-        UserController.shared.fetchUser(userId: user.uid) { result in
-            switch result {
-            case .success(let user):
-                UserController.shared.user = user
-            case .failure(let error):
-                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-            }
-        }
-        
-        //keep in viewDL
+        checkForLoggedIn()
         tableView.delegate = self
         tableView.dataSource = self
         itinerarySearchBar.delegate = self
-        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -69,6 +50,25 @@ class UserFeedViewController: UIViewController {
                 case false:
                     return
                 }
+            }
+        }
+    }
+    
+    func checkForLoggedIn() {
+        if Auth.auth().currentUser == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let VC = storyboard.instantiateViewController(identifier: "AuthVC")
+            VC.modalPresentationStyle = .fullScreen
+            self.present(VC, animated: true, completion: nil)
+        }
+        
+        guard let user = Auth.auth().currentUser else {return}
+        UserController.shared.fetchUser(userId: user.uid) { result in
+            switch result {
+            case .success(let user):
+                UserController.shared.user = user
+            case .failure(let error):
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
             }
         }
     }

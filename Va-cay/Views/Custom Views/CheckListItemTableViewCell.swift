@@ -27,14 +27,16 @@ class CheckListItemTableViewCell: UITableViewCell {
         
         for (key, value) in checklistItem {
             if value {
-                
+                self.checklistItem = [key : false]
+            } else {
+                self.checklistItem = [key : true]
             }
         }
         
     }
     
     // MARK: - Functions
-    func updateViews(){
+    func updateViews() {
         guard let checklistItem = checklistItem else {return}
         for (key, value) in checklistItem {
             checkListNameLabel.text = key ?? ""

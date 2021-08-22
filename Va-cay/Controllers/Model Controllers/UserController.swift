@@ -20,7 +20,7 @@ class UserController {
     let db = Firestore.firestore()
     
     //MARK: - Functions
-    func createUser(user: User){
+    func createUser(user: User) {
         db.collection("users").document(user.userId).setData([
             "email" : user.email,
             "userId" : user.userId

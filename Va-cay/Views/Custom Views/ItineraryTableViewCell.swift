@@ -40,5 +40,6 @@ class ItineraryTableViewCell: UITableViewCell {
         tripImageView.image = UIImage(data: imageData ?? Data())
     }
     
+    
 }//End of class
 
