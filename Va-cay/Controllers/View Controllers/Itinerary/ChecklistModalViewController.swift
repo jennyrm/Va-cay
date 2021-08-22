@@ -12,6 +12,13 @@ class ChecklistModalViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var checkListTableView: UITableView!
     
+    // MARK: - Properties
+    var checklist: [ [String??: Bool] ]? {
+        didSet {
+            print(checklist)
+        }
+    }
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +40,9 @@ extension ChecklistModalViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "checkCell", for: indexPath) as? CheckListItemTableViewCell
+        if let checklist = checklist {
+            cell?.checklistItem = checklist[indexPath.row]
+        }
         
         return UITableViewCell()
     }

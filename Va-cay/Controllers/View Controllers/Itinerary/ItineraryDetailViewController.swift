@@ -76,6 +76,13 @@ class ItineraryDetailViewController: UIViewController {
             destinationVC.day = dayToSend
             destinationVC.activities = activitiesToSend
         }
+        if segue.identifier == "toChecklistVC" {
+            guard let destinationVC = segue.destination as? ChecklistModalViewController else {return}
+            
+            let checklistToSend = itinerary.checklist
+            destinationVC.checklist = checklistToSend
+            
+        }
     }
     
 }//End of class
@@ -112,4 +119,22 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
         header.textLabel?.font = UIFont(name: "Copperplate", size: 30.0)
         header.textLabel?.textAlignment = NSTextAlignment.center
     }
+    
+    // JAMLEA: Deleting activities action
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let itinerary = itinerary,
+              let user = UserController.shared.user else {return}
+        if editingStyle == .delete {
+            itinerary.activities?.remove(at: indexPath.row)
+            ItineraryController.sharedInstance.itineraryData["activities"] = self.itinerary?.activities
+            ItineraryController.sharedInstance.editItinerary(userId: user.userId, itinerary: itinerary) { result in
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
+    }
+    
 }//End of extension

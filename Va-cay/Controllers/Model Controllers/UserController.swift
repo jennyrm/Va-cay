@@ -28,6 +28,7 @@ class UserController {
         self.user = user
     }
     
+    // JAMLEA: Used to fetch user and store it on above user property
     func fetchUser(userId: String, completion: @escaping (Result<User, UserError>) -> Void) {
                     let queriedUser = db.collection("users").whereField("userId", isEqualTo: userId)
         
