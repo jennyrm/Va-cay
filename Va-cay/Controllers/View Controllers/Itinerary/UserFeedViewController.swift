@@ -12,7 +12,6 @@ class UserFeedViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var itinerarySearchBar: UISearchBar!
     
     //MARK: - Properties
     var indexPathRow: Int?
@@ -23,7 +22,6 @@ class UserFeedViewController: UIViewController {
         checkForLoggedIn()
         tableView.delegate = self
         tableView.dataSource = self
-        itinerarySearchBar.delegate = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -41,7 +39,8 @@ class UserFeedViewController: UIViewController {
     
     //MARK: - Functions
     func fetchData() {
-        guard let user = Auth.auth().currentUser else {return}
+        guard let user = Auth.auth().currentUser else { return }
+        
         DispatchQueue.main.async {
             ItineraryController.sharedInstance.fetchItineraries(userId: user.uid) { result in
                 switch result {
@@ -114,11 +113,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let confirmDeleteController = UIAlertController(title: "Delete Itinerary", message: "Are you sure you want to delete this itinerary", preferredStyle: .alert)
@@ -182,6 +177,3 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }//End of extension
 
-extension UserFeedViewController: UISearchBarDelegate {
-    
-}//End of extension

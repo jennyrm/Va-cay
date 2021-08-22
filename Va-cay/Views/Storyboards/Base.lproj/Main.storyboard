@@ -588,18 +588,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eEC-Za-Vrv">
-                                <rect key="frame" x="0.0" y="139" width="414" height="624.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="675.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itineraryCell" id="Hf2-aO-9K2" customClass="ItineraryTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="345"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itineraryCell" rowHeight="259" id="Hf2-aO-9K2" customClass="ItineraryTableViewCell" customModule="Va_cay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="259"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hf2-aO-9K2" id="QPu-e8-g1F">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="345"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="259"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="nN1-zn-d8x">
-                                                    <rect key="frame" x="70" y="11" width="274" height="323"/>
+                                                    <rect key="frame" x="70" y="11" width="274" height="237"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qNH-IS-HKg">
                                                             <rect key="frame" x="0.0" y="0.0" width="274" height="31.5"/>
@@ -641,7 +641,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4NX-qG-XJ4">
-                                                            <rect key="frame" x="3" y="55.5" width="268" height="267.5"/>
+                                                            <rect key="frame" x="46" y="55.5" width="182" height="181.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="4NX-qG-XJ4" secondAttribute="height" multiplier="1:1" id="BOK-xr-KxP"/>
                                                             </constraints>
@@ -668,10 +668,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="xze-mH-ucy">
-                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az4-YK-P8D">
                                 <rect key="frame" x="145" y="763.5" width="124" height="98.5"/>
                                 <color key="tintColor" systemColor="linkColor"/>
@@ -688,17 +684,13 @@
                         <viewLayoutGuide key="safeArea" id="4yy-J3-xVb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eEC-Za-Vrv" firstAttribute="top" secondItem="xze-mH-ucy" secondAttribute="bottom" id="9VL-Ov-OVP"/>
-                            <constraint firstItem="eEC-Za-Vrv" firstAttribute="top" secondItem="xze-mH-ucy" secondAttribute="bottom" id="Bc7-X2-rmm"/>
                             <constraint firstItem="4yy-J3-xVb" firstAttribute="trailing" secondItem="az4-YK-P8D" secondAttribute="trailing" constant="145" id="KjA-LG-BTd"/>
                             <constraint firstItem="az4-YK-P8D" firstAttribute="leading" secondItem="4yy-J3-xVb" secondAttribute="leading" constant="145" id="M1y-fn-53O"/>
                             <constraint firstItem="az4-YK-P8D" firstAttribute="top" secondItem="eEC-Za-Vrv" secondAttribute="bottom" id="MhA-5h-xji"/>
                             <constraint firstItem="eEC-Za-Vrv" firstAttribute="trailing" secondItem="4yy-J3-xVb" secondAttribute="trailing" id="Q9Y-Af-bsw"/>
-                            <constraint firstItem="xze-mH-ucy" firstAttribute="top" secondItem="4yy-J3-xVb" secondAttribute="top" id="UXM-ov-1hb"/>
                             <constraint firstItem="eEC-Za-Vrv" firstAttribute="leading" secondItem="4yy-J3-xVb" secondAttribute="leading" id="b8B-bd-iu2"/>
                             <constraint firstItem="az4-YK-P8D" firstAttribute="bottom" secondItem="4yy-J3-xVb" secondAttribute="bottom" id="bep-hH-qKX"/>
-                            <constraint firstItem="xze-mH-ucy" firstAttribute="leading" secondItem="4yy-J3-xVb" secondAttribute="leading" id="sPy-XD-opL"/>
-                            <constraint firstItem="xze-mH-ucy" firstAttribute="trailing" secondItem="4yy-J3-xVb" secondAttribute="trailing" id="zlE-oS-nqY"/>
+                            <constraint firstItem="eEC-Za-Vrv" firstAttribute="top" secondItem="4yy-J3-xVb" secondAttribute="top" id="ynq-sY-EOJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Itineraries" id="CAq-3m-DlV">
@@ -710,7 +702,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="itinerarySearchBar" destination="xze-mH-ucy" id="VD9-De-nDQ"/>
                         <outlet property="tableView" destination="eEC-Za-Vrv" id="gmf-Dh-0lF"/>
                     </connections>
                 </viewController>
