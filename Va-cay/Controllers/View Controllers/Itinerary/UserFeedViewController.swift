@@ -119,8 +119,8 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
         return true
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { action, indexPath in
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             let confirmDeleteController = UIAlertController(title: "Delete Itinerary", message: "Are you sure you want to delete this itinerary", preferredStyle: .alert)
             
             let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
@@ -130,8 +130,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
                     ItineraryController.sharedInstance.deleteItinerary(userId: UserController.shared.user!.userId, itinerary: itinerary) { result in
                         switch result {
                         case true:
-//                            self.tableView.deleteRows(at: [indexPath], with: .fade)
-                            self.tableView.reloadData()
+                                self.tableView.reloadData()
                         case false:
                             print("error deleting itinerary")
                         }
@@ -146,8 +145,37 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
             
             self.present(confirmDeleteController, animated: true)
         }
-        return [deleteAction]
     }
+    // JAMLEA: YO JENNY ASK ME ABOUT THIS A WEIRD BUG BETWEEN THE TWO
+//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { action, indexPath in
+//            let confirmDeleteController = UIAlertController(title: "Delete Itinerary", message: "Are you sure you want to delete this itinerary", preferredStyle: .alert)
+//
+//            let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
+//
+//            let confirmAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+//                DispatchQueue.main.async {
+//                    ItineraryController.sharedInstance.deleteItinerary(userId: UserController.shared.user!.userId, itinerary: itinerary) { result in
+//                        switch result {
+//                        case true:
+////                            self.tableView.deleteRows(at: [indexPath], with: .fade)
+//                            self.tableView.reloadData()
+//                        case false:
+//                            print("error deleting itinerary")
+//                        }
+//                    }
+//                }
+//            }
+//
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+//
+//            confirmDeleteController.addAction(confirmAction)
+//            confirmDeleteController.addAction(cancelAction)
+//
+//            self.present(confirmDeleteController, animated: true)
+//        }
+//        return [deleteAction]
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 225

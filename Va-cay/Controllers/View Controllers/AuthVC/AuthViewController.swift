@@ -27,15 +27,7 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAnimation()
-        animationView.backgroundColor = nil
-        
-        passwordOneTextField.isSecureTextEntry = true
-        passwordTwoTextField.isSecureTextEntry = true
-        passwordTwoTextField.isHidden = true
-        
-        errorLabel.isHidden = true
-        
-        switchButton.setTitle("Register here", for: .normal)
+        setupOutlets()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,6 +71,7 @@ class AuthViewController: UIViewController {
         }
     }
     
+    // JAMLEA: - Switches outlets to be displayed when user is trying login or register
     @IBAction func switchButtonTapped(_ sender: Any) {
         loginBool.toggle()
         
@@ -113,6 +106,18 @@ class AuthViewController: UIViewController {
         animationView.animation = planeAnimation
         animationView.loopMode = .loop
         animationView.play()
+    }
+    
+    func setupOutlets() {
+        animationView.backgroundColor = nil
+        
+        passwordOneTextField.isSecureTextEntry = true
+        passwordTwoTextField.isSecureTextEntry = true
+        passwordTwoTextField.isHidden = true
+        
+        errorLabel.isHidden = true
+        
+        switchButton.setTitle("Register here", for: .normal)
     }
     
 }//End of class

@@ -11,10 +11,10 @@ class CheckListItemTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
     @IBOutlet weak var checkListBoolButton: UIButton!
-    @IBOutlet weak var checkListName: UILabel!
+    @IBOutlet weak var checkListNameLabel: UILabel!
     
     // MARK: - Properties
-    var check: [String : Bool]? {
+    var checklistItem: [String?? : Bool]? {
         didSet {
             updateViews()
         }
@@ -22,11 +22,13 @@ class CheckListItemTableViewCell: UITableViewCell {
     
     // MARK: - Functions
     func updateViews(){
-        
-    }
-    
-    @objc func yea(){
-
+        guard let checklistItem = checklistItem else {return}
+        for (key, value) in checklistItem {
+            checkListNameLabel.text = key ?? ""
+            if value {
+                
+            }
+        }
     }
     
 }//End of class

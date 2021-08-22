@@ -32,8 +32,8 @@ class ItineraryController {
     }
     
     func fetchItineraries(userId: String, completion: @escaping (Bool) -> Void) {
-        
-        var itinerariesPlaceholder: [Itinerary] = []
+        // JAMLEA: Create Itinerary placeholder while awaiting fetch to complete
+        var fetchedItineraries: [Itinerary] = []
         
         db.collection("users").document(userId).collection("itineraries").addSnapshotListener { (snapshot, error) in
             if let snapshot = snapshot {
@@ -60,11 +60,11 @@ class ItineraryController {
                    
                     let retrievedItinerary = Itinerary(destinationCoordinates: destinationCoordinates, tripName: tripName, tripDate: tripDate?.dateValue(), tripImage: tripImage, flightArrival: flightArrival?.dateValue(), flightDeparture: flightDeparture?.dateValue(), hotelAirbnb: hotelAirbnb, hotelAirbnbCoordinates: hotelAirbnbCoordinates, budget: budget, checklist: checklist, activities: activities, activitiesCoordinates: activitiesCoordinates, id: id)
                     
-                    itinerariesPlaceholder.append(retrievedItinerary)
+                    fetchedItineraries.append(retrievedItinerary)
                 }
-                
-                self.itineraries = itinerariesPlaceholder
-                itinerariesPlaceholder = []
+                // JAMLEA: Overwrite itineraries vaariable with fetched itineraries
+                self.itineraries = fetchedItineraries
+                fetchedItineraries = []
                 
                 completion(true)
             }
@@ -75,11 +75,11 @@ class ItineraryController {
         let itineraryRef = db.collection("users").document(userId).collection("itineraries").document(itinerary.id)
         
         itineraryRef.setData(itineraryData)
-
+        
         completion(true)
     }
     
-    
+    // JAMLEA: Used for updating location from UserFeedVC
     func editDestinationCoordinates(userId: String, itinerary: Itinerary, coords: [[String?? : [Double]]], completion: @escaping (Bool) -> Void) {
         guard let index = itineraries.firstIndex(of: itinerary) else {return}
         

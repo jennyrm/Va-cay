@@ -55,7 +55,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         if let checklist = ItineraryController.sharedInstance.itineraryData["checklist"] as? [ [String?? : Bool] ] {
                         for index in 0..<checklist.count {
                             for (key, value) in checklist[index] {
-                                checklistTextFieldItems[index].text = key as! String
+                                checklistTextFieldItems[index].text = key!
                                 if value {
                                     checklistButtons[index].setImage(UIImage(systemName: "checkmark.square"), for: .normal)
                                 }
@@ -76,7 +76,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         if checklistTextFieldItems[0].text != "" {
             checklistTextFieldItems.enumerated().forEach { (index, el) in
                 if index > checklist.count - 1 && !el.text!.isEmpty {
-                    print(el.text)
                     if checklistButtons[index].currentImage == UIImage(named: "square") {
                         checklist.append([el.text : true])
                     } else {
