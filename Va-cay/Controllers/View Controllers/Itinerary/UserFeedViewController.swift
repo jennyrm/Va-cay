@@ -12,6 +12,8 @@ class UserFeedViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var showSortButton: UIButton!
+    @IBOutlet weak var sortButton: UIButton!
     
     //MARK: - Properties
     var indexPathRow: Int?
@@ -20,8 +22,11 @@ class UserFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkForLoggedIn()
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        sortButton.isHidden = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -33,6 +38,14 @@ class UserFeedViewController: UIViewController {
     }
     
     //MARK: - Actions
+    @IBAction func showSortButton(_ sender: UIButton) {
+        sortButton.isHidden = false
+    }
+    @IBAction func sortItineraries(_ sender: UIButton) {
+        ItineraryController.sharedInstance.itineraries.forEach { itinerary in
+            print(itinerary.tripName)
+        }
+    }
     @IBAction func addItineraryButtonTapped(_ sender: UIButton) {
         ItineraryController.sharedInstance.itineraries = []
     }
