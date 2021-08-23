@@ -12,7 +12,8 @@ class UserFeedViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var itinerarySearchBar: UISearchBar!
+    @IBOutlet weak var showSortButton: UIButton!
+    @IBOutlet weak var sortButton: UIButton!
     
     //MARK: - Properties
     var indexPathRow: Int?
@@ -21,9 +22,11 @@ class UserFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkForLoggedIn()
+        
         tableView.delegate = self
         tableView.dataSource = self
-        itinerarySearchBar.delegate = self
+        
+        sortButton.isHidden = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -35,13 +38,22 @@ class UserFeedViewController: UIViewController {
     }
     
     //MARK: - Actions
+    @IBAction func showSortButton(_ sender: UIButton) {
+        sortButton.isHidden = false
+    }
+    @IBAction func sortItineraries(_ sender: UIButton) {
+        ItineraryController.sharedInstance.itineraries.forEach { itinerary in
+            print(itinerary.tripName)
+        }
+    }
     @IBAction func addItineraryButtonTapped(_ sender: UIButton) {
         ItineraryController.sharedInstance.itineraries = []
     }
     
     //MARK: - Functions
     func fetchData() {
-        guard let user = Auth.auth().currentUser else {return}
+        guard let user = Auth.auth().currentUser else { return }
+        
         DispatchQueue.main.async {
             ItineraryController.sharedInstance.fetchItineraries(userId: user.uid) { result in
                 switch result {
@@ -114,11 +126,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let confirmDeleteController = UIAlertController(title: "Delete Itinerary", message: "Are you sure you want to delete this itinerary", preferredStyle: .alert)
@@ -182,6 +190,3 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }//End of extension
 
-extension UserFeedViewController: UISearchBarDelegate {
-    
-}//End of extension
