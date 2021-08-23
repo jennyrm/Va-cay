@@ -28,9 +28,7 @@ class CheckListItemTableViewCell: UITableViewCell {
     
     // MARK: - Actions
     @IBAction func checklistBoolButtonTapped(_ sender: Any) {
-        guard let checklistItem = checklistItem,
-              let index = index else {return}
-        
+        guard let checklistItem = checklistItem else {return}
         for (key, value) in checklistItem {
             if value {
                 self.checklistItem = [key : false]
@@ -38,6 +36,7 @@ class CheckListItemTableViewCell: UITableViewCell {
                 self.checklistItem = [key : true]
             }
         }
+        
     }
     
     // MARK: - Functions
