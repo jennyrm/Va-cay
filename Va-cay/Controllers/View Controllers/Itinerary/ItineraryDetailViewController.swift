@@ -34,6 +34,7 @@ class ItineraryDetailViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        CheckListItemTableViewCell.delegate = self
     }
     
     //MARK: - Functions
@@ -131,6 +132,13 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }
+    }
+    
+}//End of extension
+
+extension ItineraryDetailViewController: updateItinerary {
+    func updateItinerary(checklistItem: [String?? : Bool], index: Int) {
+        print("hit")
     }
     
 }//End of extension

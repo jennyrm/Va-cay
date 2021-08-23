@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol updateItinerary: AnyObject {
+    func updateItinerary(checklistItem: [String?? : Bool], index: Int)
+}
+
 class CheckListItemTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
@@ -20,10 +24,12 @@ class CheckListItemTableViewCell: UITableViewCell {
         }
     }
     var index: Int?
+    static weak var delegate: updateItinerary?
     
     // MARK: - Actions
     @IBAction func checklistBoolButtonTapped(_ sender: Any) {
-        guard let checklistItem = checklistItem else {return}
+        guard let checklistItem = checklistItem,
+              let index = index else {return}
         
         for (key, value) in checklistItem {
             if value {
@@ -32,7 +38,6 @@ class CheckListItemTableViewCell: UITableViewCell {
                 self.checklistItem = [key : true]
             }
         }
-        
     }
     
     // MARK: - Functions
@@ -42,6 +47,7 @@ class CheckListItemTableViewCell: UITableViewCell {
             checkListNameLabel.text = key ?? ""
             if value {
                 checkListBoolButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+                
             } else {
                 checkListBoolButton.setImage(UIImage(systemName: "square"), for: .normal)
             }
