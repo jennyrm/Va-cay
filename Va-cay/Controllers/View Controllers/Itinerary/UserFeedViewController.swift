@@ -44,10 +44,16 @@ class UserFeedViewController: UIViewController {
         sortAlphabetButton.isHidden.toggle()
         sortDateButton.isHidden.toggle()
     }
-    @IBAction func sortItineraries(_ sender: UIButton) {
-        ItineraryController.sharedInstance.itineraries.forEach { itinerary in
-            print(itinerary.tripName)
+    @IBAction func sortItinerariesAlphabetically(_ sender: UIButton) {
+        sortAlphabetButton.setTitle("Z-A", for: .normal)
+        
+        let sortedItinerariesAlphabetically = ItineraryController.sharedInstance.itineraries.sorted {
+            return $0.tripName.lowercased() < $1.tripName.lowercased()
         }
+        
+        ItineraryController.sharedInstance.itineraries = sortedItinerariesAlphabetically
+        
+        tableView.reloadData()
     }
     @IBAction func addItineraryButtonTapped(_ sender: UIButton) {
         ItineraryController.sharedInstance.itineraries = []

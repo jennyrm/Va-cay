@@ -692,7 +692,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="sortItineraries:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="Ock-ew-YO6"/>
+                                            <action selector="sortItinerariesAlphabetically:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="Ock-ew-YO6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fs-CY-MF7">
