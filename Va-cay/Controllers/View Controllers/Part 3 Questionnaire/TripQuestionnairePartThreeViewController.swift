@@ -67,6 +67,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         
         if dayCounter > activities.count {
             updateDay()
+            mapPinActivities = []
         }
         
         dayActivities = []
@@ -122,7 +123,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         removeTextFields()
         activitiesTextFieldItems = []
         dayActivities = []
-
+        
         ItineraryController.sharedInstance.itineraryData["activities"] = activities
     }
     
@@ -391,7 +392,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
 extension TripQuestionnairePartThreeViewController: MapPinDropped {
     func droppedPin(title: String, mapDay: String, mapActivities: [String]) {
         guard var activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [ [ String : [String] ] ] else { return }
-  
+        
         for (index, activity) in activities.enumerated() {
             for (key, _) in activity {
                 if key == mapDay {
