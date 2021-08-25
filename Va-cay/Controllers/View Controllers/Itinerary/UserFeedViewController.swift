@@ -68,6 +68,13 @@ class UserFeedViewController: UIViewController {
         
         tableView.reloadData()
     }
+    @IBAction func sortItinerariesByDate(_ sender: UIButton) {
+        let sortedItinerariesByRecentDate = ItineraryController.sharedInstance.itineraries.filter({ itinerary in
+            <#code#>
+        })
+        
+        ItineraryController.sharedInstance.itineraries = sortedItinerariesByRecentDate
+    }
     @IBAction func addItineraryButtonTapped(_ sender: UIButton) {
         ItineraryController.sharedInstance.itineraries = []
     }
