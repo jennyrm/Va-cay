@@ -701,6 +701,9 @@
                                         <state key="normal" title="Date">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sortItinerariesByDate:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="1aE-zx-a0K"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
