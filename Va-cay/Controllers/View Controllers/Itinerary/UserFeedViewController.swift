@@ -18,6 +18,7 @@ class UserFeedViewController: UIViewController {
     
     //MARK: - Properties
     var indexPathRow: Int?
+    var sortTitle = "A-Z"
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -45,13 +46,25 @@ class UserFeedViewController: UIViewController {
         sortDateButton.isHidden.toggle()
     }
     @IBAction func sortItinerariesAlphabetically(_ sender: UIButton) {
-        sortAlphabetButton.setTitle("Z-A", for: .normal)
-        
-        let sortedItinerariesAlphabetically = ItineraryController.sharedInstance.itineraries.sorted {
-            return $0.tripName.lowercased() < $1.tripName.lowercased()
+        if sortTitle == "A-Z" {
+            let sortedItinerariesByAtoZ = ItineraryController.sharedInstance.itineraries.sorted {
+                return $0.tripName.lowercased() < $1.tripName.lowercased()
+            }
+            
+            ItineraryController.sharedInstance.itineraries = sortedItinerariesByAtoZ
+            
+            sortTitle = "Z-A"
+            sortAlphabetButton.setTitle(sortTitle, for: .normal)
+        } else {
+            let sortedItinerariesByZtoA = ItineraryController.sharedInstance.itineraries.sorted {
+                return $0.tripName.lowercased() > $1.tripName.lowercased()
+            }
+            
+            ItineraryController.sharedInstance.itineraries = sortedItinerariesByZtoA
+            
+            sortTitle = "A-Z"
+            sortAlphabetButton.setTitle(sortTitle, for: .normal)
         }
-        
-        ItineraryController.sharedInstance.itineraries = sortedItinerariesAlphabetically
         
         tableView.reloadData()
     }
@@ -138,7 +151,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let confirmDeleteController = UIAlertController(title: "Delete Itinerary", message: "Are you sure you want to delete this itinerary", preferredStyle: .alert)
+            let confirmDeleteController = UIAlertController(title: "Delete Itinerary", message: "Are you sure you want to delete this itinerary?", preferredStyle: .alert)
             
             let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
             
