@@ -670,7 +670,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5r5-hU-oQ6">
-                                <rect key="frame" x="309" y="96" width="90" height="90"/>
+                                <rect key="frame" x="309" y="96" width="90" height="78"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztk-h0-TuK">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
@@ -695,11 +695,14 @@
                                             <action selector="sortItinerariesAlphabetically:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="Ock-ew-YO6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fs-CY-MF7">
-                                        <rect key="frame" x="0.0" y="60" width="90" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fs-CY-MF7">
+                                        <rect key="frame" x="0.0" y="60" width="90" height="18"/>
                                         <color key="backgroundColor" name="AccentColor"/>
-                                        <state key="normal" title="Date">
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Upcoming" image="arrow.up" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15"/>
                                         </state>
                                         <connections>
                                             <action selector="sortItinerariesByDate:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="1aE-zx-a0K"/>
@@ -1515,6 +1518,7 @@
         <segue reference="pcU-1e-Qrk"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="book.closed" catalog="system" width="115" height="128"/>
         <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
         <image name="camera" catalog="system" width="128" height="94"/>

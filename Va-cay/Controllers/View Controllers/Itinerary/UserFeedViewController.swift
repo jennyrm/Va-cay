@@ -18,7 +18,7 @@ class UserFeedViewController: UIViewController {
     
     //MARK: - Properties
     var indexPathRow: Int?
-    var sortTitle = "A-Z"
+    var sortAlphabeticalTitle = "A-Z"
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -46,15 +46,15 @@ class UserFeedViewController: UIViewController {
         sortDateButton.isHidden.toggle()
     }
     @IBAction func sortItinerariesAlphabetically(_ sender: UIButton) {
-        if sortTitle == "A-Z" {
+        if sortAlphabeticalTitle == "A-Z" {
             let sortedItinerariesByAtoZ = ItineraryController.sharedInstance.itineraries.sorted {
                 return $0.tripName.lowercased() < $1.tripName.lowercased()
             }
             
             ItineraryController.sharedInstance.itineraries = sortedItinerariesByAtoZ
             
-            sortTitle = "Z-A"
-            sortAlphabetButton.setTitle(sortTitle, for: .normal)
+            sortAlphabeticalTitle = "Z-A"
+            sortAlphabetButton.setTitle(sortAlphabeticalTitle, for: .normal)
         } else {
             let sortedItinerariesByZtoA = ItineraryController.sharedInstance.itineraries.sorted {
                 return $0.tripName.lowercased() > $1.tripName.lowercased()
@@ -62,18 +62,41 @@ class UserFeedViewController: UIViewController {
             
             ItineraryController.sharedInstance.itineraries = sortedItinerariesByZtoA
             
-            sortTitle = "A-Z"
-            sortAlphabetButton.setTitle(sortTitle, for: .normal)
+            sortAlphabeticalTitle = "A-Z"
+            sortAlphabetButton.setTitle(sortAlphabeticalTitle, for: .normal)
         }
         
         tableView.reloadData()
     }
     @IBAction func sortItinerariesByDate(_ sender: UIButton) {
-        let sortedItinerariesByRecentDate = ItineraryController.sharedInstance.itineraries.filter({ itinerary in
-            <#code#>
-        })
+        let datedItineraries = ItineraryController.sharedInstance.itineraries.filter {
+            return $0.tripDate != nil
+        }
+        let nonDatedItineraries = ItineraryController.sharedInstance.itineraries.filter {
+            return $0.tripDate == nil
+        }
         
-        ItineraryController.sharedInstance.itineraries = sortedItinerariesByRecentDate
+        if sender.currentImage == UIImage(systemName: "arrow.up") {
+            var sortedItinerariesByNewestDate = datedItineraries.sorted {
+                return $0.tripDate! < $1.tripDate!
+            }
+            sortedItinerariesByNewestDate.append(contentsOf: nonDatedItineraries)
+            
+            ItineraryController.sharedInstance.itineraries = sortedItinerariesByNewestDate
+            
+            sender.setImage(UIImage(systemName: "arrow.down"), for: .normal)
+        } else {
+            var sortedItinerariesByOldestDate = datedItineraries.sorted {
+                return $0.tripDate! > $1.tripDate!
+            }
+            sortedItinerariesByOldestDate.append(contentsOf: nonDatedItineraries)
+
+            ItineraryController.sharedInstance.itineraries = sortedItinerariesByOldestDate
+            
+            sender.setImage(UIImage(systemName: "arrow.up"), for: .normal)
+        }
+        
+        tableView.reloadData()
     }
     @IBAction func addItineraryButtonTapped(_ sender: UIButton) {
         ItineraryController.sharedInstance.itineraries = []
