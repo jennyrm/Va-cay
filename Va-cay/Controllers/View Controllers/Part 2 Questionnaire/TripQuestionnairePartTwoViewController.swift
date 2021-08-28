@@ -156,7 +156,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         label.text = "Hotel/Airbnb"
         label.textAlignment = .center
         
-        let textField = UITextField()
+        let textField = UITextField() 
         textField.borderStyle = .line
         hotelAirbnbTextField = textField
         
@@ -399,11 +399,11 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         return stackView
     }()
     
-    var nextButton: UIButton = {
-        let button = UIButton()
+    var nextButton: PrimaryButton = {
+        let button = PrimaryButton(frame: CGRect(x: 300, y: 100, width: 100, height: 100))
         button.setTitle("Next", for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        button.layer.cornerRadius = 30.0
+//        button.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+//        button.layer.cornerRadius = 30.0
         button.addTarget(self, action: #selector(nextVC), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
