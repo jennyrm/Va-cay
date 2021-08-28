@@ -90,6 +90,19 @@ class ItineraryController {
         completion(true)
     }
     
+    func editChecklist(userId: String, itinerary: Itinerary, checklist: [ [String?? : Bool] ], completion: @escaping (Bool) -> Void) {
+        guard let index = itineraries.firstIndex(of: itinerary) else {return}
+        
+        itineraryData["checklist"] = checklist
+        
+        db.collection("users").document(userId).collection("itineraries").document(itinerary.id).setData(
+            ["checklist" : checklist], merge: true)
+        
+        itineraries[index].checklist = checklist
+        
+        completion(true)
+    }
+    
     func deleteItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void) {
         db.collection("users").document(userId).collection("itineraries").document(itinerary.id).delete() { error in
             if let error = error {
