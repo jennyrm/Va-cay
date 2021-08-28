@@ -34,7 +34,6 @@ class ItineraryDetailViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        CheckListItemTableViewCell.delegate = self
     }
     
     //MARK: - Functions
