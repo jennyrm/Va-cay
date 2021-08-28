@@ -34,6 +34,7 @@ class ItineraryDetailViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        CheckListItemTableViewCell.delegate = self
     }
     
     //MARK: - Functions
@@ -135,9 +136,15 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
     
 }//End of extension
 
-extension ItineraryDetailViewController: updateItinerary {
+extension ItineraryDetailViewController: CheckListItemViewCellDelegate {
     func updateItinerary(checklistItem: [String?? : Bool], index: Int) {
-        print("hit")
+        guard var checklistPlaceholder = itinerary?.checklist!,
+              let user = UserController.shared.user else {return}
+        checklistPlaceholder[index] = checklistItem
+        ItineraryController.sharedInstance.editChecklist(userId: user.userId, itinerary: self.itinerary!, checklist: checklistPlaceholder) { result in
+            
+        }
+        self.itinerary?.checklist = checklistPlaceholder
     }
     
 }//End of extension

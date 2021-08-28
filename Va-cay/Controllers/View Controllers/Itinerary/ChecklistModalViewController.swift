@@ -26,6 +26,11 @@ class ChecklistModalViewController: UIViewController {
         checkListTableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        checkListTableView.reloadData()
+    }
+    
     // MARK: - Actions
     @IBAction func exitModalButtonTapped(_ sender: Any) {
         presentingViewController?.dismiss(animated: true, completion: nil)
