@@ -23,5 +23,5 @@ struct Colors {
 }//End of struct
 
 struct FontNames {
-    static let verdanaBold = "Verdana"
+    static let systemFont = "System"
 }//End of struct

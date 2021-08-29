@@ -24,9 +24,11 @@ class SecondaryLabel: UILabel {
     }
     
     func setupLabel() {
+        self.addAccentBorder()
+        
+        updateFontTo(font: FontNames.systemFont)
+        
         self.textColor = .black
-        self.backgroundColor = .systemGray6
-        updateFontTo(font: FontNames.verdanaBold)
     }
     
     func updateFontTo(font: String) {
