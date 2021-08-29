@@ -27,9 +27,6 @@ class UserFeedViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        sortAlphabetButton.isHidden = true
-        sortDateButton.isHidden = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -38,6 +35,12 @@ class UserFeedViewController: UIViewController {
         ItineraryController.sharedInstance.itineraryData = [:]
         ItineraryController.sharedInstance.editingItinerary = false
         fetchData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        sortAlphabetButton.isHidden = true
+        sortDateButton.isHidden = true
     }
     
     //MARK: - Actions
