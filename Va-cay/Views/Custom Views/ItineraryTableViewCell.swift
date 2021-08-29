@@ -11,6 +11,7 @@ class ItineraryTableViewCell: UITableViewCell {
 
     //MARK: - Outlets
     @IBOutlet weak var destinationLabel: UILabel!
+    @IBOutlet weak var tripDateLabel: PrimaryLabel!
     @IBOutlet weak var tripImageView: UIImageView!
     
     //MARK: - Properties
@@ -38,6 +39,10 @@ class ItineraryTableViewCell: UITableViewCell {
         destinationLabel.text = itinerary.tripName
         let imageData = itinerary.tripImage
         tripImageView.image = UIImage(data: imageData ?? Data())
+        guard let tripDate = itinerary.tripDate else {
+            tripDateLabel.isHidden = true
+            return}
+        tripDateLabel.text = tripDate.formatToString()
     }
     
     
