@@ -26,7 +26,7 @@ class TextField: UITextField {
     func setupTextfield() {
         self.addAccentBorder()
         
-        updateFontTo(font: FontNames.verdanaBold)
+        updateFontTo(font: FontNames.systemFont)
         
         self.backgroundColor = .white
         self.borderStyle = .line
@@ -35,7 +35,7 @@ class TextField: UITextField {
     
     func setPlaceholderText() {
         let currentPlaceholder = self.placeholder
-        self.attributedPlaceholder = NSAttributedString(string: currentPlaceholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : Colors.customBlue, NSAttributedString.Key.font: UIFont(name: FontNames.verdanaBold, size: 16)!
+        self.attributedPlaceholder = NSAttributedString(string: currentPlaceholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : Colors.customBlue, NSAttributedString.Key.font: UIFont(name: FontNames.systemFont, size: 16)!
         ])
     }
     

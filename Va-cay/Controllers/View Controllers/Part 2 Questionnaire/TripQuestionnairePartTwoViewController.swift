@@ -88,8 +88,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createLabelCalendarButton(with flightLabel: UILabel) -> UIStackView {
-        flightLabel.textColor = .black
-        flightLabel.backgroundColor = .systemGray6
+        flightLabel.addAccentBorder()
         flightLabel.textAlignment = .center
         
         let button = UIButton()
@@ -119,11 +118,9 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     func createFlightDetailsStackView() {
         let flightArrivalLabel = PrimaryLabel()
         flightArrivalLabel.text = "Flight Arrival"
-        flightArrivalLabel.textAlignment = .center
         
         let flightDepartureLabel = PrimaryLabel()
         flightDepartureLabel.text = "Flight Departure"
-        flightDepartureLabel.textAlignment = .center
         
         let flightArrivalStackView = UIStackView()
         flightArrivalStackView.axis = .vertical
@@ -154,7 +151,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     func createHotelAirbnbStackView() {
         let label = PrimaryLabel()
         label.text = "Hotel/Airbnb"
-        label.textAlignment = .center
         
         let textField = TextField()
         hotelAirbnbTextField = textField
@@ -187,7 +183,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     func createTotalBudgetStackView() {
         let label = PrimaryLabel()
         label.text = "Total Budget"
-        label.textAlignment = .center
         
         let textField = TextField()
         budgetTextField = textField
@@ -203,7 +198,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     func createAddToChecklistStackView() {
         let label = PrimaryLabel()
         label.text = "Checklist"
-        label.textAlignment = .center
         
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
@@ -398,7 +392,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }()
     
     var nextButton: UIButton = {
-        let button = PrimaryButton()
+        let button = SecondaryButton()
         button.setTitle("Next", for: .normal)
         button.addTarget(self, action: #selector(nextVC), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false

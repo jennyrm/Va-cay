@@ -24,9 +24,11 @@ class PrimaryLabel: UILabel {
     }
     
     func setupLabel() {
+        updateFontTo(font: FontNames.systemFont)
+        
         self.textColor = .black
-        self.backgroundColor = .systemGray6
-        updateFontTo(font: FontNames.verdanaBold)
+//        self.backgroundColor = .systemGray6
+        self.textAlignment = .center
     }
     
     func updateFontTo(font: String) {

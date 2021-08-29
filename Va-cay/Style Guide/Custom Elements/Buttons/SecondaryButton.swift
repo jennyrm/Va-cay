@@ -2,12 +2,12 @@
 //  PrimaryButton.swift
 //  Va-cay
 //
-//  Created by Jenny Morales on 8/28/21.
+//  Created by Jenny Morales on 8/26/21.
 //
 
 import UIKit
 
-class PrimaryButton: UIButton {
+class SecondaryButton: UIButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +28,7 @@ class PrimaryButton: UIButton {
         
         setTitleColor(.white, for: .normal)
         self.backgroundColor = Colors.customBlue
+        self.addCornerRadius()
     }
 
     func updateFontTo(font: String) {
@@ -36,4 +37,3 @@ class PrimaryButton: UIButton {
     }
     
 }//End of class
-

@@ -152,7 +152,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     func createAddActivityStackView() {
         let label = PrimaryLabel()
         label.text = "Add Activity"
-        label.textAlignment = .center
         
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
@@ -200,11 +199,11 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     func createPreviousNextDayButtonStackView() {
-        let previousDayButton = PrimaryButton()
+        let previousDayButton = SecondaryButton()
         previousDayButton.setTitle("Previous Day", for: .normal)
         previousDayButton.addTarget(self, action: #selector(previousDay), for: .touchUpInside)
         
-        let nextDayButton = PrimaryButton()
+        let nextDayButton = SecondaryButton()
         nextDayButton.setTitle("Next Day", for: .normal)
         nextDayButton.addTarget(self, action: #selector(nextDay), for: .touchUpInside)
         
@@ -309,7 +308,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         let label = PrimaryLabel()
         label.text = "Day 1"
         label.font = .systemFont(ofSize: 35)
-        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -361,7 +359,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }()
     
     var submitButton: UIButton = {
-        let button = PrimaryButton()
+        let button = SecondaryButton()
         button.setTitle("Submit", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(submitItineraryObject), for: .touchUpInside)
