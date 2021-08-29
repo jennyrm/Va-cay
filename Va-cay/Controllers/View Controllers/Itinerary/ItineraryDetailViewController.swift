@@ -10,6 +10,10 @@ import UIKit
 class ItineraryDetailViewController: UIViewController {
     
     //MARK: - Outlets
+    @IBOutlet weak var staticHotelAirBnBLabel: UILabel!
+    @IBOutlet weak var staticAirBnBImageView: UIButton!
+    @IBOutlet weak var staticFlightArrivalLabel: UILabel!
+    @IBOutlet weak var staticFlightDepartureLabel: UILabel!
     @IBOutlet weak var tripNameLabel: UILabel!
     @IBOutlet weak var tripDateLabel: UILabel!
     @IBOutlet weak var flightArrivalLabel: UILabel!
@@ -18,7 +22,6 @@ class ItineraryDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Properties
-    var checklist = ""
     var days = [String]()
     var activities = [[String]]()
     var indexPath: Int?
@@ -35,25 +38,54 @@ class ItineraryDetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         CheckListItemTableViewCell.delegate = self
+        
     }
     
     //MARK: - Functions
     func updateView() {
         guard let itinerary = itinerary else { return }
+        hideLabels()
         tripNameLabel.text = itinerary.tripName
-        tripDateLabel.text = itinerary.tripDate?.formatToString()
-        flightArrivalLabel.text = itinerary.flightArrival?.formatToStringWithShortDateAndTime()
-        flightDepartureLabel.text = itinerary.flightDeparture?.formatToStringWithShortDateAndTime()
-        hotelAirbnbLabel.text = itinerary.hotelAirbnb
-        itinerary.checklist?.forEach({
-            checklist.append("•\($0)\n")
-        })
         itinerary.activities?.forEach({ (day) in
             for (key, value) in day {
                 days.append(key)
                 activities.append(value)
             }
         })
+        
+        if itinerary.tripDate != nil {
+            tripDateLabel.isHidden = false
+            tripDateLabel.text = itinerary.tripDate?.formatToString()
+        }
+        
+        if itinerary.flightArrival != nil {
+            staticFlightArrivalLabel.isHidden = false
+            flightArrivalLabel.isHidden = false
+            flightArrivalLabel.text = itinerary.flightArrival?.formatToStringWithShortDateAndTime()
+        }
+        
+        if itinerary.flightDeparture != nil {
+            staticFlightDepartureLabel.isHidden = false
+            flightDepartureLabel.isHidden = false
+            flightDepartureLabel.text = itinerary.flightDeparture?.formatToStringWithShortDateAndTime()
+        }
+        if itinerary.hotelAirbnb?.count != 0 {
+            staticAirBnBImageView.isHidden = false
+            staticHotelAirBnBLabel.isHidden = false
+            hotelAirbnbLabel.isHidden = false
+            hotelAirbnbLabel.text = itinerary.hotelAirbnb
+        }
+    }
+    
+    func hideLabels(){
+        tripDateLabel.isHidden = true
+        flightArrivalLabel.isHidden = true
+        flightDepartureLabel.isHidden = true
+        hotelAirbnbLabel.isHidden = true
+        staticHotelAirBnBLabel.isHidden = true
+        staticAirBnBImageView.isHidden = true
+        staticFlightArrivalLabel.isHidden = true
+        staticFlightDepartureLabel.isHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
