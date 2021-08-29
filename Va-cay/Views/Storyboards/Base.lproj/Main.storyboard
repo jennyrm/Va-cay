@@ -34,7 +34,7 @@
                                     <segue destination="DDW-h3-aWU" kind="show" identifier="" id="znz-mM-Txb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where is your next destination?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrQ-R0-jfb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where is your next destination?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrQ-R0-jfb" customClass="PrimaryLabel" customModule="Va_cay" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="5zF-uc-WYA"/>
@@ -102,7 +102,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-sG-zXP">
                                 <rect key="frame" x="24" y="198" width="366" height="77.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-wr-eIH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-wr-eIH" customClass="PrimaryLabel" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -119,7 +119,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Gt-rJ-5XP">
                                 <rect key="frame" x="24" y="299.5" width="366" height="77.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wze-vp-gMD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wze-vp-gMD" customClass="PrimaryLabel" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -128,7 +128,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VE-DB-yvo">
                                         <rect key="frame" x="0.0" y="32" width="366" height="45.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxR-Rb-DcW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxR-Rb-DcW" customClass="SecondaryLabel" customModule="Va_cay" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="320.5" height="45.5"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
@@ -158,7 +158,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uYo-Eo-dBO">
                                 <rect key="frame" x="24" y="401" width="366" height="324"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add an image as your itinerary cover" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lf7-1j-pXS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add an image as your itinerary cover" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lf7-1j-pXS" customClass="PrimaryLabel" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -176,7 +176,7 @@
                                     </containerView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pm-AV-t5d">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pm-AV-t5d" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
                                 <rect key="frame" x="150" y="749" width="114" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.89740139249999995" blue="0.710036695" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -713,7 +713,7 @@
                                     <constraint firstAttribute="width" constant="90" id="hr7-XN-TaM"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az4-YK-P8D" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az4-YK-P8D">
                                 <rect key="frame" x="175" y="784" width="64" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>

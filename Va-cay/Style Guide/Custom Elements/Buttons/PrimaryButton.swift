@@ -22,12 +22,11 @@ class PrimaryButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
     }
-
     
     func setupButton() {
         updateFontTo(font: FontNames.verdanaBold)
         setTitleColor(.white, for: .normal)
-        self.backgroundColor = Colors.customGreen
+        self.backgroundColor = Colors.customBlue
         self.addCornerRadius()
     }
 

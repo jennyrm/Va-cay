@@ -150,7 +150,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     //MARK: - Programmatic Constraint Functions
     func createAddActivityStackView() {
-        let label = UILabel()
+        let label = PrimaryLabel()
         label.text = "Add Activity"
         label.textAlignment = .center
         
@@ -172,10 +172,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         self.view.addSubview(scrollView)
         self.view.addSubview(scrollableStackView)
         
-        let textField = UITextField()
-        textField.backgroundColor = .white
+        let textField = TextField()
         textField.placeholder = "Activity name"
-        textField.borderStyle = .line
         activitiesTextFieldItems.append(textField)
         
         let button = UIButton()
@@ -202,16 +200,12 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     func createPreviousNextDayButtonStackView() {
-        let previousDayButton = UIButton()
+        let previousDayButton = PrimaryButton()
         previousDayButton.setTitle("Previous Day", for: .normal)
-        previousDayButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        previousDayButton.layer.cornerRadius = 30.0
         previousDayButton.addTarget(self, action: #selector(previousDay), for: .touchUpInside)
         
-        let nextDayButton = UIButton()
+        let nextDayButton = PrimaryButton()
         nextDayButton.setTitle("Next Day", for: .normal)
-        nextDayButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        nextDayButton.layer.cornerRadius = 30.0
         nextDayButton.addTarget(self, action: #selector(nextDay), for: .touchUpInside)
         
         self.view.addSubview(previousDayButton)
@@ -312,7 +306,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     //MARK: - Views
     var dayLabel: UILabel = {
-        let label = UILabel()
+        let label = PrimaryLabel()
         label.text = "Day 1"
         label.font = .systemFont(ofSize: 35)
         label.textAlignment = .center
@@ -367,10 +361,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }()
     
     var submitButton: UIButton = {
-        let button = UIButton()
+        let button = PrimaryButton()
         button.setTitle("Submit", for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        button.layer.cornerRadius = 30.0
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(submitItineraryObject), for: .touchUpInside)
         return button

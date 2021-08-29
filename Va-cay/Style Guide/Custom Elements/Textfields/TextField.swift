@@ -14,19 +14,28 @@ class TextField: UITextField {
         setupTextfield()
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupTextfield()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
+    
     func setupTextfield() {
-        self.addCornerRadius()
         self.addAccentBorder()
         
         updateFontTo(font: FontNames.verdanaBold)
         
         self.backgroundColor = .white
+        self.borderStyle = .line
         self.layer.masksToBounds = true
     }
     
     func setPlaceholderText() {
         let currentPlaceholder = self.placeholder
-        self.attributedPlaceholder = NSAttributedString(string: currentPlaceholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : Colors.customGreen, NSAttributedString.Key.font: UIFont(name: FontNames.verdanaBold, size: 16)!
+        self.attributedPlaceholder = NSAttributedString(string: currentPlaceholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : Colors.customBlue, NSAttributedString.Key.font: UIFont(name: FontNames.verdanaBold, size: 16)!
         ])
     }
     

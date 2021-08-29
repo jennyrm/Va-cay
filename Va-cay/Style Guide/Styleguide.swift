@@ -8,20 +8,20 @@
 import UIKit
 
 extension UIView {
-    func addCornerRadius(_ radius: CGFloat = 10) {
+    func addCornerRadius(_ radius: CGFloat = 30) {
         self.layer.cornerRadius = radius
     }
     
-    func addAccentBorder(width: CGFloat = 1, color: UIColor = Colors.customGreen) {
+    func addAccentBorder(width: CGFloat = 1, color: UIColor = Colors.customBlue) {
         self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor
     }
 }//End of extension
 
 struct Colors {
-    static let customGreen = UIColor(red: 50/255, green: 216/255, blue: 127/255, alpha: 1)
+    static let customBlue = UIColor(red: 121/255, green: 214/255, blue: 249/255, alpha: 1)
 }//End of struct
 
 struct FontNames {
-    static let verdanaBold = "Verdana-Bold"
+    static let verdanaBold = "Verdana"
 }//End of struct

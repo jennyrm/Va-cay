@@ -39,6 +39,8 @@
 		9B543C11265F309800F5353A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B543C0F265F309800F5353A /* LaunchScreen.storyboard */; };
 		9B543C6F265F35AD00F5353A /* DestinationLocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C6E265F35AD00F5353A /* DestinationLocationManagerViewController.swift */; };
 		9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C71265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift */; };
+		9B5BCEA726DB0064007A9647 /* PrimaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEA626DB0064007A9647 /* PrimaryLabel.swift */; };
+		9B5BCEA926DB0D8A007A9647 /* SecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEA826DB0D8A007A9647 /* SecondaryLabel.swift */; };
 		9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83332926673108008EB6E9 /* Itinerary.swift */; };
 		9BB77709266A92BE008D3645 /* TripCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */; };
 		9BB77710266ADB04008D3645 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7770F266ADB03008D3645 /* DateExtension.swift */; };
@@ -88,6 +90,8 @@
 		9B543C12265F309800F5353A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B543C6E265F35AD00F5353A /* DestinationLocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationManagerViewController.swift; sourceTree = "<group>"; };
 		9B543C71265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationSearchTableViewController.swift; sourceTree = "<group>"; };
+		9B5BCEA626DB0064007A9647 /* PrimaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryLabel.swift; sourceTree = "<group>"; };
+		9B5BCEA826DB0D8A007A9647 /* SecondaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryLabel.swift; sourceTree = "<group>"; };
 		9B83332926673108008EB6E9 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCalendarViewController.swift; sourceTree = "<group>"; };
 		9BB7770F266ADB03008D3645 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 		9B4B68E826D80B6200B2D8AE /* Labels */ = {
 			isa = PBXGroup;
 			children = (
+				9B5BCEA626DB0064007A9647 /* PrimaryLabel.swift */,
+				9B5BCEA826DB0D8A007A9647 /* SecondaryLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B5BCEA926DB0D8A007A9647 /* SecondaryLabel.swift in Sources */,
 				9B1C572726648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift in Sources */,
 				0D7D498526B86B34006218D8 /* SettingsViewController.swift in Sources */,
 				9BB77710266ADB04008D3645 /* DateExtension.swift in Sources */,
@@ -538,6 +545,7 @@
 				9BB77715266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift in Sources */,
 				9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */,
 				0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */,
+				9B5BCEA726DB0064007A9647 /* PrimaryLabel.swift in Sources */,
 				9B335CEA265F493400FC202B /* ItineraryController.swift in Sources */,
 				9BB77724266DDFE1008D3645 /* HotelAirbnbLocationManagerViewController.swift in Sources */,
 				0D60FCC926B34D2500F75732 /* AuthViewModel.swift in Sources */,
