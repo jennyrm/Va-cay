@@ -117,11 +117,11 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createFlightDetailsStackView() {
-        let flightArrivalLabel = UILabel()
+        let flightArrivalLabel = PrimaryLabel()
         flightArrivalLabel.text = "Flight Arrival"
         flightArrivalLabel.textAlignment = .center
         
-        let flightDepartureLabel = UILabel()
+        let flightDepartureLabel = PrimaryLabel()
         flightDepartureLabel.text = "Flight Departure"
         flightDepartureLabel.textAlignment = .center
         
@@ -152,12 +152,11 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createHotelAirbnbStackView() {
-        let label = UILabel()
+        let label = PrimaryLabel()
         label.text = "Hotel/Airbnb"
         label.textAlignment = .center
         
-        let textField = UITextField()
-        textField.borderStyle = .line
+        let textField = TextField()
         hotelAirbnbTextField = textField
         
         let button = UIButton()
@@ -186,12 +185,11 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createTotalBudgetStackView() {
-        let label = UILabel()
+        let label = PrimaryLabel()
         label.text = "Total Budget"
         label.textAlignment = .center
         
-        let textField = UITextField()
-        textField.borderStyle = .line
+        let textField = TextField()
         budgetTextField = textField
         
         self.view.addSubview(label)
@@ -203,7 +201,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createAddToChecklistStackView() {
-        let label = UILabel()
+        let label = PrimaryLabel()
         label.text = "Checklist"
         label.textAlignment = .center
         
@@ -400,10 +398,8 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }()
     
     var nextButton: UIButton = {
-        let button = UIButton()
+        let button = PrimaryButton()
         button.setTitle("Next", for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        button.layer.cornerRadius = 30.0
         button.addTarget(self, action: #selector(nextVC), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
