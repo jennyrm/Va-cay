@@ -356,7 +356,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }()
     
     var colorBar: UIView = {
-        let view = AccentView(frame: CGRect(x: 0, y: 0, width: 320, height: 20))
+        let view = AccentView(frame: CGRect(x: 0, y: 0, width: 340, height: 20))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
