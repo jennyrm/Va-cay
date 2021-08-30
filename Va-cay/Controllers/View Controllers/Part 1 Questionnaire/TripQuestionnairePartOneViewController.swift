@@ -16,6 +16,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
     @IBOutlet weak var mediaContainerView: UIView!
     @IBOutlet weak var tripNameTextField: UITextField!
     @IBOutlet weak var tripDateLabel: UILabel!
+    @IBOutlet weak var dateLabelButtonStackView: UIStackView!
     
     //MARK: - Properties
     var tripImage: UIImage?
@@ -51,6 +52,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
         if let tripImage = ItineraryController.sharedInstance.itineraryData["tripImage"] as? UIImage {
             self.tripImage = tripImage
         }
+        dateLabelButtonStackView.addAccentBorder()
     }
 
     // MARK: - Navigation

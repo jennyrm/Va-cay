@@ -15,7 +15,7 @@ class UserFeedViewController: UIViewController {
     @IBOutlet weak var showSortButton: UIButton!
     @IBOutlet weak var sortAlphabetButton: UIButton!
     @IBOutlet weak var sortDateButton: UIButton!
-    
+        
     //MARK: - Properties
     var indexPathRow: Int?
     var sortAlphabeticalTitle = "A-Z"
@@ -39,8 +39,8 @@ class UserFeedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        sortAlphabetButton.isHidden = true
-        sortDateButton.isHidden = true
+//        sortAlphabetButton.isHidden = true
+//        sortDateButton.isHidden = true
     }
     
     //MARK: - Actions
@@ -244,7 +244,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
 //    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 225
+        return 300
     }
 }//End of extension
 
