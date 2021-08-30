@@ -23,5 +23,5 @@ struct Colors {
 }//End of struct
 
 struct FontNames {
-    static let systemFont = "System"
+    static let systemFont = "System-Semibold"
 }//End of struct

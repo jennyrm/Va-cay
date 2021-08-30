@@ -263,18 +263,29 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     //MARK: - Programmatic Constraints
     func setupConstraints() {
+        self.view.addSubview(travelItineraryLabel)
+        self.view.addSubview(colorBar)
         self.view.addSubview(dayLabel)
         createAddActivityStackView()
         createPreviousNextDayButtonStackView()
         self.view.addSubview(submitButton)
         
-        dayLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 100).isActive = true
+        travelItineraryLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0).isActive = true
+        travelItineraryLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
+        travelItineraryLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
+        
+        colorBar.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        colorBar.topAnchor.constraint(equalTo: travelItineraryLabel.bottomAnchor, constant: -12).isActive = true
+        colorBar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
+        colorBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
+        
+        dayLabel.topAnchor.constraint(equalTo: colorBar.bottomAnchor, constant: 32).isActive = true
         dayLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 150).isActive = true
         dayLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -150).isActive = true
 
         addActivityStackView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 32).isActive = true
-        addActivityStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 100).isActive = true
-        addActivityStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -100).isActive = true
+        addActivityStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 120).isActive = true
+        addActivityStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -120).isActive = true
         
         setupScrollableStackViewConstraints()
         
@@ -304,10 +315,28 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     //MARK: - Views
+    var travelItineraryLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Travel Itinerary"
+        label.font = .boldSystemFont(ofSize: 28)
+        label.textAlignment = .center
+        label.layer.zPosition = 1000
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    var colorBar: UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.8265370304, green: 0.9530281856, blue: 0.5563137313, alpha: 1)
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     var dayLabel: UILabel = {
         let label = PrimaryLabel()
         label.text = "Day 1"
-        label.font = .systemFont(ofSize: 35)
+        label.font = .boldSystemFont(ofSize: 30)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

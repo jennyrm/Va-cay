@@ -294,34 +294,45 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     
     //MARK: - Constraints
     func setupConstraints() {
+        self.view.addSubview(travelItineraryLabel)
+        self.view.addSubview(colorBar)
         createFlightDetailsStackView()
         createHotelAirbnbStackView()
         createTotalBudgetStackView()
         createAddToChecklistStackView()
         self.view.addSubview(nextButton)
         
-        flightDetailsStackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 100).isActive = true
+        travelItineraryLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0).isActive = true
+        travelItineraryLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
+        travelItineraryLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
+        
+        colorBar.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        colorBar.topAnchor.constraint(equalTo: travelItineraryLabel.bottomAnchor, constant: -12).isActive = true
+        colorBar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
+        colorBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
+        
+        flightDetailsStackView.topAnchor.constraint(equalTo: colorBar.bottomAnchor, constant: 32).isActive = true
         flightDetailsStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         flightDetailsStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
-        hotelAirbnbStackView.topAnchor.constraint(equalTo: flightDetailsStackView.bottomAnchor, constant: 32).isActive = true
+        hotelAirbnbStackView.topAnchor.constraint(equalTo: flightDetailsStackView.bottomAnchor, constant: 16).isActive = true
         hotelAirbnbStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         hotelAirbnbStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
-        totalBudgetStackView.topAnchor.constraint(equalTo: hotelAirbnbStackView.bottomAnchor, constant: 32).isActive = true
+        totalBudgetStackView.topAnchor.constraint(equalTo: hotelAirbnbStackView.bottomAnchor, constant: 16).isActive = true
         totalBudgetStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         totalBudgetStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
-        addToChecklistStackView.topAnchor.constraint(equalTo: totalBudgetStackView.bottomAnchor, constant: 32).isActive = true
-        addToChecklistStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 140).isActive = true
-        addToChecklistStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -140).isActive = true
+        addToChecklistStackView.topAnchor.constraint(equalTo: totalBudgetStackView.bottomAnchor, constant: 16).isActive = true
+        addToChecklistStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 120).isActive = true
+        addToChecklistStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -120).isActive = true
         
         setupScrollableStackViewConstraints()
         
         nextButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 32).isActive = true
         nextButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 140).isActive = true
         nextButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -140).isActive = true
-        nextButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -100).isActive = true
+        nextButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -64).isActive = true
     }
     
     func setupScrollableStackViewConstraints() {
@@ -330,7 +341,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         scrollView.topAnchor.constraint(equalTo: addToChecklistStackView.bottomAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -200).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -150).isActive = true
         
         scrollableStackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         scrollableStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
@@ -338,6 +349,24 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     //MARK: - Views
+    var travelItineraryLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Travel Itinerary"
+        label.font = .boldSystemFont(ofSize: 28)
+        label.textAlignment = .center
+        label.layer.zPosition = 1000
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    var colorBar: UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.8265370304, green: 0.9530281856, blue: 0.5563137313, alpha: 1)
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     var flightDetailsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
