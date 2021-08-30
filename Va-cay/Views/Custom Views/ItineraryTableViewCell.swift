@@ -13,6 +13,8 @@ class ItineraryTableViewCell: UITableViewCell {
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var tripDateLabel: PrimaryLabel!
     @IBOutlet weak var tripImageView: UIImageView!
+    @IBOutlet weak var itineraryCellStackView: UIStackView!
+    @IBOutlet weak var roundedCellEdge: UIView!
     
     //MARK: - Properties
     var itinerary: Itinerary? {
@@ -36,6 +38,7 @@ class ItineraryTableViewCell: UITableViewCell {
     //MARK: - Functions
     func updateView() {
         guard let itinerary = itinerary else { return }
+        roundedCellEdge.layer.cornerRadius = 25
         destinationLabel.text = itinerary.tripName
         let imageData = itinerary.tripImage
         tripImageView.image = UIImage(data: imageData ?? Data())
