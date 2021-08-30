@@ -150,7 +150,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     //MARK: - Programmatic Constraint Functions
     func createAddActivityStackView() {
-        let label = PrimaryLabel()
+        let label = QuestionnaireLabel()
         label.text = "Add Activity"
         
         let button = UIButton()
@@ -280,8 +280,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         colorBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
         dayLabel.topAnchor.constraint(equalTo: colorBar.bottomAnchor, constant: 32).isActive = true
-        dayLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 150).isActive = true
-        dayLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -150).isActive = true
+        dayLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 125).isActive = true
+        dayLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -125).isActive = true
 
         addActivityStackView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 32).isActive = true
         addActivityStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 120).isActive = true
@@ -316,25 +316,19 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     //MARK: - Views
     var travelItineraryLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Travel Itinerary"
-        label.font = .boldSystemFont(ofSize: 28)
-        label.textAlignment = .center
-        label.layer.zPosition = 1000
+        let label = HeaderLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     var colorBar: UIView = {
-        let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.8265370304, green: 0.9530281856, blue: 0.5563137313, alpha: 1)
-        view.layer.cornerRadius = 10
+        let view = AccentView(frame: CGRect(x: 0, y: 0, width: 320, height: 20))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     var dayLabel: UILabel = {
-        let label = PrimaryLabel()
+        let label = QuestionnaireLabel()
         label.text = "Day 1"
         label.font = .boldSystemFont(ofSize: 30)
         label.translatesAutoresizingMaskIntoConstraints = false

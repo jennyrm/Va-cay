@@ -1,13 +1,13 @@
 //
-//  PrimaryLabel.swift
+//  HeaderLabel.swift
 //  Va-cay
 //
-//  Created by Jenny Morales on 8/28/21.
+//  Created by Jenny Morales on 8/30/21.
 //
 
 import UIKit
 
-class QuestionnaireLabel: UILabel {
+class HeaderLabel: UILabel {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,9 +25,9 @@ class QuestionnaireLabel: UILabel {
     
     func setupLabel() {
         updateFontTo(font: FontNames.systemFont)
-        
-        self.textColor = .black
-//        self.backgroundColor = .systemGray6
+        self.text = "Travel Itinerary"
+        self.font = .boldSystemFont(ofSize: 28)
+        self.layer.zPosition = 1000
         self.textAlignment = .center
     }
     
