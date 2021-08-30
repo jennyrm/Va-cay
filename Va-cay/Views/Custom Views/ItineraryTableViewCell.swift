@@ -8,13 +8,14 @@
 import UIKit
 
 class ItineraryTableViewCell: UITableViewCell {
-
+    
     //MARK: - Outlets
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var tripDateLabel: QuestionnaireLabel!
     @IBOutlet weak var tripImageView: UIImageView!
     @IBOutlet weak var itineraryCellStackView: UIStackView!
     @IBOutlet weak var roundedCellEdge: UIView!
+    @IBOutlet weak var itineraryBreakBarView: UIView!
     
     //MARK: - Properties
     var itinerary: Itinerary? {
@@ -23,7 +24,7 @@ class ItineraryTableViewCell: UITableViewCell {
         }
     }
     var row: Int?
-    weak var delegate: getIndexPathRow? 
+    weak var delegate: getIndexPathRow?
     
     //MARK: - Actions
     @IBAction func mapPinButtonTapped(_ sender: UIButton) {
@@ -39,6 +40,7 @@ class ItineraryTableViewCell: UITableViewCell {
     func updateView() {
         guard let itinerary = itinerary else { return }
         roundedCellEdge.layer.cornerRadius = 25
+        itineraryBreakBarView.layer.cornerRadius = 10
         destinationLabel.text = itinerary.tripName
         let imageData = itinerary.tripImage
         tripImageView.image = UIImage(data: imageData ?? Data())
@@ -47,7 +49,6 @@ class ItineraryTableViewCell: UITableViewCell {
             return}
         tripDateLabel.text = tripDate.formatToString()
     }
-    
     
 }//End of class
 

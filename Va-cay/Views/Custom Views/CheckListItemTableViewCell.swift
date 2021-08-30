@@ -12,11 +12,7 @@ protocol CheckListItemViewCellDelegate: AnyObject {
 }
 
 class CheckListItemTableViewCell: UITableViewCell {
-    
-    // MARK: - Outlets
-    @IBOutlet weak var checkListBoolButton: UIButton!
-    @IBOutlet weak var checkListNameLabel: UILabel!
-    
+
     // MARK: - Properties
     var checklistItem: [String?? : Bool]? {
         didSet {
@@ -25,6 +21,10 @@ class CheckListItemTableViewCell: UITableViewCell {
     }
     var index: Int?
     static weak var delegate: CheckListItemViewCellDelegate?
+    
+    // MARK: - Outlets
+    @IBOutlet weak var checkListBoolButton: UIButton!
+    @IBOutlet weak var checkListNameLabel: UILabel!
     
     // MARK: - Actions
     @IBAction func checklistBoolButtonTapped(_ sender: Any) {
