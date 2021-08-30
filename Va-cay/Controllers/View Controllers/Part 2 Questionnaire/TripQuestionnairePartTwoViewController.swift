@@ -116,10 +116,10 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createFlightDetailsStackView() {
-        let flightArrivalLabel = QuestionnaireLabel()
+        let flightArrivalLabel = PrimaryLabel()
         flightArrivalLabel.text = "Flight Arrival"
         
-        let flightDepartureLabel = QuestionnaireLabel()
+        let flightDepartureLabel = PrimaryLabel()
         flightDepartureLabel.text = "Flight Departure"
         
         let flightArrivalStackView = UIStackView()
@@ -149,7 +149,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createHotelAirbnbStackView() {
-        let label = QuestionnaireLabel()
+        let label = PrimaryLabel()
         label.text = "Hotel/Airbnb"
         
         let textField = TextField()
@@ -181,7 +181,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createTotalBudgetStackView() {
-        let label = QuestionnaireLabel()
+        let label = PrimaryLabel()
         label.text = "Total Budget"
         
         let textField = TextField()
@@ -196,7 +196,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createAddToChecklistStackView() {
-        let label = QuestionnaireLabel()
+        let label = PrimaryLabel()
         label.text = "Checklist"
         
         let button = UIButton()
@@ -350,13 +350,19 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     
     //MARK: - Views
     var travelItineraryLabel: UILabel = {
-        let label = HeaderLabel()
+        let label = UILabel()
+        label.text = "Travel Itinerary"
+        label.font = .boldSystemFont(ofSize: 28)
+        label.textAlignment = .center
+        label.layer.zPosition = 1000
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     var colorBar: UIView = {
-        let view = AccentView(frame: CGRect(x: 0, y: 0, width: 320, height: 20))
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.8265370304, green: 0.9530281856, blue: 0.5563137313, alpha: 1)
+        view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuestionnaireLabel: UILabel {
+class PrimaryLabel: UILabel {
     
     override func awakeFromNib() {
         super.awakeFromNib()

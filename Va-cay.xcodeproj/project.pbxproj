@@ -29,8 +29,6 @@
 		9B4B68EB26D8456F00B2D8AE /* Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B68EA26D8456F00B2D8AE /* Styleguide.swift */; };
 		9B4B68ED26D8561A00B2D8AE /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B68EC26D8561A00B2D8AE /* SecondaryButton.swift */; };
 		9B4B68EF26D85F1600B2D8AE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B68EE26D85F1500B2D8AE /* TextField.swift */; };
-		9B4D9B8526DD3D5C0055B7CF /* AccentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D9B8426DD3D5C0055B7CF /* AccentView.swift */; };
-		9B4D9B8726DD5DF80055B7CF /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D9B8626DD5DF80055B7CF /* HeaderLabel.swift */; };
 		9B4EE8A6266E0C9E007EB937 /* ActivitiesLocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EE8A5266E0C9E007EB937 /* ActivitiesLocationSearchTableViewController.swift */; };
 		9B4EE8A9266E0CB8007EB937 /* ActivitiesLocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EE8A8266E0CB8007EB937 /* ActivitiesLocationManagerViewController.swift */; };
 		9B4EE8C0266FFA6E007EB937 /* ItineraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EE8BF266FFA6D007EB937 /* ItineraryTableViewCell.swift */; };
@@ -41,7 +39,7 @@
 		9B543C11265F309800F5353A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B543C0F265F309800F5353A /* LaunchScreen.storyboard */; };
 		9B543C6F265F35AD00F5353A /* DestinationLocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C6E265F35AD00F5353A /* DestinationLocationManagerViewController.swift */; };
 		9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C71265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift */; };
-		9B5BCEA726DB0064007A9647 /* QuestionnaireLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEA626DB0064007A9647 /* QuestionnaireLabel.swift */; };
+		9B5BCEA726DB0064007A9647 /* PrimaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEA626DB0064007A9647 /* PrimaryLabel.swift */; };
 		9B5BCEA926DB0D8A007A9647 /* SecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEA826DB0D8A007A9647 /* SecondaryLabel.swift */; };
 		9B5BCEAB26DB47F4007A9647 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */; };
 		9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83332926673108008EB6E9 /* Itinerary.swift */; };
@@ -81,8 +79,6 @@
 		9B4B68EA26D8456F00B2D8AE /* Styleguide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
 		9B4B68EC26D8561A00B2D8AE /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		9B4B68EE26D85F1500B2D8AE /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		9B4D9B8426DD3D5C0055B7CF /* AccentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentView.swift; sourceTree = "<group>"; };
-		9B4D9B8626DD5DF80055B7CF /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		9B4EE8A5266E0C9E007EB937 /* ActivitiesLocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesLocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		9B4EE8A8266E0CB8007EB937 /* ActivitiesLocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesLocationManagerViewController.swift; sourceTree = "<group>"; };
 		9B4EE8BF266FFA6D007EB937 /* ItineraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewCell.swift; sourceTree = "<group>"; };
@@ -95,7 +91,7 @@
 		9B543C12265F309800F5353A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B543C6E265F35AD00F5353A /* DestinationLocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationManagerViewController.swift; sourceTree = "<group>"; };
 		9B543C71265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationSearchTableViewController.swift; sourceTree = "<group>"; };
-		9B5BCEA626DB0064007A9647 /* QuestionnaireLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireLabel.swift; sourceTree = "<group>"; };
+		9B5BCEA626DB0064007A9647 /* PrimaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryLabel.swift; sourceTree = "<group>"; };
 		9B5BCEA826DB0D8A007A9647 /* SecondaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryLabel.swift; sourceTree = "<group>"; };
 		9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		9B83332926673108008EB6E9 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
@@ -165,7 +161,6 @@
 		9B4B68E526D80B0A00B2D8AE /* Custom Elements */ = {
 			isa = PBXGroup;
 			children = (
-				9B4D9B8326DD3CB00055B7CF /* Views */,
 				9B4B68E926D80B6600B2D8AE /* Textfields */,
 				9B4B68E826D80B6200B2D8AE /* Labels */,
 				9B4B68E626D80B4900B2D8AE /* Buttons */,
@@ -185,8 +180,7 @@
 		9B4B68E826D80B6200B2D8AE /* Labels */ = {
 			isa = PBXGroup;
 			children = (
-				9B4D9B8626DD5DF80055B7CF /* HeaderLabel.swift */,
-				9B5BCEA626DB0064007A9647 /* QuestionnaireLabel.swift */,
+				9B5BCEA626DB0064007A9647 /* PrimaryLabel.swift */,
 				9B5BCEA826DB0D8A007A9647 /* SecondaryLabel.swift */,
 			);
 			path = Labels;
@@ -198,14 +192,6 @@
 				9B4B68EE26D85F1500B2D8AE /* TextField.swift */,
 			);
 			path = Textfields;
-			sourceTree = "<group>";
-		};
-		9B4D9B8326DD3CB00055B7CF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				9B4D9B8426DD3D5C0055B7CF /* AccentView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		9B4EE8AE266F30D4007EB937 /* MapVC */ = {
@@ -557,13 +543,12 @@
 				9BB77721266C1ECE008D3645 /* Protocols.swift in Sources */,
 				9BB77709266A92BE008D3645 /* TripCalendarViewController.swift in Sources */,
 				9BE03A862672DF4000D97F76 /* ItineraryMapPinsLocationSearchTableViewController.swift in Sources */,
-				9B4D9B8726DD5DF80055B7CF /* HeaderLabel.swift in Sources */,
 				9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */,
 				0D5A963226B2121900CD5707 /* UserController.swift in Sources */,
 				9BB77715266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift in Sources */,
 				9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */,
 				0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */,
-				9B5BCEA726DB0064007A9647 /* QuestionnaireLabel.swift in Sources */,
+				9B5BCEA726DB0064007A9647 /* PrimaryLabel.swift in Sources */,
 				9B335CEA265F493400FC202B /* ItineraryController.swift in Sources */,
 				9BB77724266DDFE1008D3645 /* HotelAirbnbLocationManagerViewController.swift in Sources */,
 				0D60FCC926B34D2500F75732 /* AuthViewModel.swift in Sources */,
@@ -584,7 +569,6 @@
 				9B543C05265F309500F5353A /* AppDelegate.swift in Sources */,
 				0D5A963426B215E900CD5707 /* UserError.swift in Sources */,
 				0D299F2F26CC55D500A5CE31 /* CheckListItemTableViewCell.swift in Sources */,
-				9B4D9B8526DD3D5C0055B7CF /* AccentView.swift in Sources */,
 				9B335CF32660546C00FC202B /* ErrorAlert.swift in Sources */,
 				9B543C07265F309500F5353A /* SceneDelegate.swift in Sources */,
 				9BB77727266DE8C4008D3645 /* HotelAirbnbLocationSearchTableViewController.swift in Sources */,
