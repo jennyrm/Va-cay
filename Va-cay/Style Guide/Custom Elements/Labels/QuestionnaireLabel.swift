@@ -1,5 +1,5 @@
 //
-//  PrimaryLabel.swift
+//  QuestionnaireLabel.swift
 //  Va-cay
 //
 //  Created by Jenny Morales on 8/28/21.
