@@ -13,15 +13,13 @@ class sortByTableViewCell: UITableViewCell {
     @IBOutlet weak var sortByButton: UIButton!
     @IBOutlet weak var sortAZButton: UIButton!
     @IBOutlet weak var upcomingButton: UIButton!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-    }
+    
+    // MARK: - Properties
+    
+    
+    // MARK: - Functions
+    
+     
     
 }//End of class
+

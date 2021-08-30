@@ -8,6 +8,10 @@
 import UIKit
 import FirebaseAuth
 
+protocol UserFeedViewControllerDelegate: AnyObject {
+    func sortButtonTapped()
+}
+
 class UserFeedViewController: UIViewController {
     
     //MARK: - Outlets
@@ -39,8 +43,6 @@ class UserFeedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-//        sortAlphabetButton.isHidden = true
-//        sortDateButton.isHidden = true
     }
     
     //MARK: - Actions
@@ -171,22 +173,28 @@ extension UserFeedViewController: getIndexPathRow {
 
 extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ItineraryController.sharedInstance.itineraries.count
+        ItineraryController.sharedInstance.itineraries.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itineraryCell", for: indexPath) as? ItineraryTableViewCell else { return UITableViewCell() }
-        
-        let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
-        cell.itinerary = itinerary
-        cell.row = indexPath.row
-        cell.delegate = self
-        
-        return cell
+        if indexPath.row == 0 {
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "sortCell", for: indexPath) as? sortByTableViewCell else
+            
+            return UITableViewCell()
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "itineraryCell", for: indexPath) as? ItineraryTableViewCell else { return UITableViewCell() }
+            
+            let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row - 1]
+            cell.itinerary = itinerary
+            cell.row = indexPath.row - 1
+            cell.delegate = self
+            
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if editingStyle == .delete && indexPath.row > 0 {
             let confirmDeleteController = UIAlertController(title: "Delete Itinerary", message: "Are you sure you want to delete this itinerary?", preferredStyle: .alert)
             
             let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
@@ -203,7 +211,6 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             }
-            
             let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
             
             confirmDeleteController.addAction(confirmAction)
@@ -212,39 +219,13 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
             self.present(confirmDeleteController, animated: true)
         }
     }
-    // JAMLEA: YO JENNY ASK ME ABOUT THIS A WEIRD BUG BETWEEN THE TWO
-//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { action, indexPath in
-//            let confirmDeleteController = UIAlertController(title: "Delete Itinerary", message: "Are you sure you want to delete this itinerary", preferredStyle: .alert)
-//
-//            let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
-//
-//            let confirmAction = UIAlertAction(title: "Delete", style: .destructive) { action in
-//                DispatchQueue.main.async {
-//                    ItineraryController.sharedInstance.deleteItinerary(userId: UserController.shared.user!.userId, itinerary: itinerary) { result in
-//                        switch result {
-//                        case true:
-////                            self.tableView.deleteRows(at: [indexPath], with: .fade)
-//                            self.tableView.reloadData()
-//                        case false:
-//                            print("error deleting itinerary")
-//                        }
-//                    }
-//                }
-//            }
-//
-//            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-//
-//            confirmDeleteController.addAction(confirmAction)
-//            confirmDeleteController.addAction(cancelAction)
-//
-//            self.present(confirmDeleteController, animated: true)
-//        }
-//        return [deleteAction]
-//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        if indexPath.row == 0 {
+            return 100
+        } else {
+            return 300
+        }
     }
 }//End of extension
 
