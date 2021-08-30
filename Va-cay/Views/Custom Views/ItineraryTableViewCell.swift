@@ -11,7 +11,7 @@ class ItineraryTableViewCell: UITableViewCell {
     
     //MARK: - Outlets
     @IBOutlet weak var destinationLabel: UILabel!
-    @IBOutlet weak var tripDateLabel: QuestionnaireLabel!
+    @IBOutlet weak var tripDateLabel: CenterAlignedQuestionnaireLabel!
     @IBOutlet weak var tripImageView: UIImageView!
     @IBOutlet weak var itineraryCellStackView: UIStackView!
     @IBOutlet weak var roundedCellEdge: UIView!

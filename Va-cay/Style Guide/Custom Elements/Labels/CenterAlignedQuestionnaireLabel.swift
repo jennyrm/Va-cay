@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuestionnaireLabel: UILabel {
+class CenterAlignedQuestionnaireLabel: UILabel {
     
     override func awakeFromNib() {
         super.awakeFromNib()

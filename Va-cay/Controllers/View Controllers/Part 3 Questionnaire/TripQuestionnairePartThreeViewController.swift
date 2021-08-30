@@ -150,7 +150,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     //MARK: - Programmatic Constraint Functions
     func createAddActivityStackView() {
-        let label = QuestionnaireLabel()
+        let label = CenterAlignedQuestionnaireLabel()
         label.text = "Add Activity"
         
         let button = UIButton()
@@ -186,6 +186,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         textFieldButtonStackView.alignment = .fill
         textFieldButtonStackView.distribution = .fillProportionally
         textFieldButtonStackView.spacing = 0
+        textFieldButtonStackView.addAccentBorder()
         
         self.view.addSubview(textField)
         self.view.addSubview(button)
@@ -328,7 +329,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }()
     
     var dayLabel: UILabel = {
-        let label = QuestionnaireLabel()
+        let label = CenterAlignedQuestionnaireLabel()
         label.text = "Day 1"
         label.font = .boldSystemFont(ofSize: 30)
         label.translatesAutoresizingMaskIntoConstraints = false

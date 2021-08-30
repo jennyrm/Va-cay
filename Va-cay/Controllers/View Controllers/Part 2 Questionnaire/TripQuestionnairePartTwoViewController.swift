@@ -88,7 +88,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createLabelCalendarButton(with flightLabel: UILabel) -> UIStackView {
-        flightLabel.addAccentBorder()
         flightLabel.textAlignment = .center
         
         let button = UIButton()
@@ -104,6 +103,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         labelButtonStackView.alignment = .fill
         labelButtonStackView.distribution = .fill
         labelButtonStackView.spacing = 8
+        labelButtonStackView.addAccentBorder()
         
         self.view.addSubview(flightLabel)
         self.view.addSubview(button)
@@ -116,10 +116,10 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createFlightDetailsStackView() {
-        let flightArrivalLabel = QuestionnaireLabel()
+        let flightArrivalLabel = LeftAlignedQuestionnaireLabel()
         flightArrivalLabel.text = "Flight Arrival"
         
-        let flightDepartureLabel = QuestionnaireLabel()
+        let flightDepartureLabel = LeftAlignedQuestionnaireLabel()
         flightDepartureLabel.text = "Flight Departure"
         
         let flightArrivalStackView = UIStackView()
@@ -149,7 +149,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createHotelAirbnbStackView() {
-        let label = QuestionnaireLabel()
+        let label = CenterAlignedQuestionnaireLabel()
         label.text = "Hotel/Airbnb"
         
         let textField = TextField()
@@ -165,7 +165,8 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fill
-        stackView.spacing = 0
+        stackView.spacing = 10
+        stackView.addAccentBorder()
         
         self.view.addSubview(label)
         self.view.addSubview(textField)
@@ -181,7 +182,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createTotalBudgetStackView() {
-        let label = QuestionnaireLabel()
+        let label = CenterAlignedQuestionnaireLabel()
         label.text = "Total Budget"
         
         let textField = TextField()
@@ -196,7 +197,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }
     
     func createAddToChecklistStackView() {
-        let label = QuestionnaireLabel()
+        let label = CenterAlignedQuestionnaireLabel()
         label.text = "Checklist"
         
         let button = UIButton()
