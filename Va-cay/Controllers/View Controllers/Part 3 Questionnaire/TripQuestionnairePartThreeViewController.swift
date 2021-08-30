@@ -280,8 +280,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         colorBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
         dayLabel.topAnchor.constraint(equalTo: colorBar.bottomAnchor, constant: 32).isActive = true
-        dayLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 150).isActive = true
-        dayLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -150).isActive = true
+        dayLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 120).isActive = true
+        dayLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -120).isActive = true
 
         addActivityStackView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 32).isActive = true
         addActivityStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 120).isActive = true
@@ -322,7 +322,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }()
     
     var colorBar: UIView = {
-        let view = AccentView(frame: CGRect(x: 0, y: 0, width: 320, height: 20))
+        let view = AccentView(frame: CGRect(x: 0, y: 0, width: 340, height: 20))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

@@ -20,10 +20,10 @@ extension UIView {
 
 struct Colors {
     static let customBlue = UIColor(red: 121/255, green: 214/255, blue: 249/255, alpha: 1)
-    static let customGreen = UIColor(red: 211, green: 243, blue: 142, alpha: 1)
-    static let customYellow = UIColor(red: 243, green: 242, blue: 160, alpha: 1)
+    static let customGreen = UIColor(red: 211/255, green: 243/255, blue: 142/255, alpha: 1)
+    static let customYellow = UIColor(red: 243/255, green: 242/255, blue: 160/255, alpha: 1)
 }//End of struct
 
 struct FontNames {
-    static let systemFont = "System-Semibold"
+    static let systemFont = "System"
 }//End of struct
