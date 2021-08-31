@@ -331,7 +331,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var dayLabel: UILabel = {
         let label = CenterAlignedQuestionnaireLabel()
         label.text = "Day 1"
-        label.font = .boldSystemFont(ofSize: 30)
+        label.font = .boldSystemFont(ofSize: 35)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

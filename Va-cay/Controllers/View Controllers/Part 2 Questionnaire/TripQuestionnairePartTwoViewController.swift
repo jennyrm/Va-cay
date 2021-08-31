@@ -316,21 +316,21 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         flightDetailsStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         flightDetailsStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
-        hotelAirbnbStackView.topAnchor.constraint(equalTo: flightDetailsStackView.bottomAnchor, constant: 16).isActive = true
+        hotelAirbnbStackView.topAnchor.constraint(equalTo: flightDetailsStackView.bottomAnchor, constant: 24).isActive = true
         hotelAirbnbStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         hotelAirbnbStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
-        totalBudgetStackView.topAnchor.constraint(equalTo: hotelAirbnbStackView.bottomAnchor, constant: 16).isActive = true
+        totalBudgetStackView.topAnchor.constraint(equalTo: hotelAirbnbStackView.bottomAnchor, constant: 24).isActive = true
         totalBudgetStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         totalBudgetStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
-        addToChecklistStackView.topAnchor.constraint(equalTo: totalBudgetStackView.bottomAnchor, constant: 16).isActive = true
+        addToChecklistStackView.topAnchor.constraint(equalTo: totalBudgetStackView.bottomAnchor, constant: 24).isActive = true
         addToChecklistStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 120).isActive = true
         addToChecklistStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -120).isActive = true
         
         setupScrollableStackViewConstraints()
         
-        nextButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 32).isActive = true
+        nextButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 24).isActive = true
         nextButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 140).isActive = true
         nextButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -140).isActive = true
         nextButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -64).isActive = true
