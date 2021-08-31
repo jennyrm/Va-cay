@@ -15,6 +15,24 @@ class sortByTableViewCell: UITableViewCell {
     @IBOutlet weak var upcomingButton: UIButton!
     
     // MARK: - Properties
+    static weak var delegate: UserFeedViewControllerDelegate?
+    
+    // MARK: - Actions
+    @IBAction func sortByButtonTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func alphabeticalButtonTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func upcomingButtonTapped(_ sender: Any) {
+        
+    }
+    
+    
+    
+    
     
     
     // MARK: - Functions
