@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 
 protocol UserFeedViewControllerDelegate: AnyObject {
-    func sortButtonTapped()
+    func reloadTableView()
 }
 
 class UserFeedViewController: UIViewController {
@@ -31,6 +31,7 @@ class UserFeedViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        sortByTableViewCell.delegate = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -64,13 +65,11 @@ class UserFeedViewController: UIViewController {
             let sortedItinerariesByZtoA = ItineraryController.sharedInstance.itineraries.sorted {
                 return $0.tripName.lowercased() > $1.tripName.lowercased()
             }
-            
             ItineraryController.sharedInstance.itineraries = sortedItinerariesByZtoA
             
             sortAlphabeticalTitle = "A-Z"
             sortAlphabetButton.setTitle(sortAlphabeticalTitle, for: .normal)
         }
-        
         tableView.reloadData()
     }
     @IBAction func sortItinerariesByDate(_ sender: UIButton) {
@@ -102,9 +101,7 @@ class UserFeedViewController: UIViewController {
         }
         
         tableView.reloadData()
-
 //        ItineraryController.sharedInstance.itineraries = sortedItinerariesByRecentDate
-
     }
     @IBAction func addItineraryButtonTapped(_ sender: UIButton) {
         ItineraryController.sharedInstance.itineraries = []
@@ -229,3 +226,8 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }//End of extension
 
+extension UserFeedViewController: UserFeedViewControllerDelegate {
+    func reloadTableView() {
+        self.tableView.reloadData()
+    }
+}

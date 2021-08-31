@@ -167,7 +167,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pm-AV-t5d" customClass="SecondaryButton" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="147" y="780" width="120" height="50"/>
+                                <rect key="frame" x="147" y="764" width="120" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.89740139249999995" blue="0.710036695" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4T2-lo-D2U"/>
@@ -192,7 +192,7 @@
                             <constraint firstItem="CI7-4u-z1e" firstAttribute="top" secondItem="wIB-Bj-Uxn" secondAttribute="bottom" constant="-12" id="7ct-WP-WaE"/>
                             <constraint firstItem="0Pm-AV-t5d" firstAttribute="centerX" secondItem="GiY-g4-yIj" secondAttribute="centerX" id="HS7-Ub-8cc"/>
                             <constraint firstItem="Rjd-sG-zXP" firstAttribute="top" secondItem="CI7-4u-z1e" secondAttribute="bottom" constant="16" id="KEa-Bn-xAh"/>
-                            <constraint firstItem="GiY-g4-yIj" firstAttribute="bottom" secondItem="0Pm-AV-t5d" secondAttribute="bottom" constant="32" id="Lwm-S0-fbc"/>
+                            <constraint firstItem="GiY-g4-yIj" firstAttribute="bottom" secondItem="0Pm-AV-t5d" secondAttribute="bottom" constant="48" id="Lwm-S0-fbc"/>
                             <constraint firstItem="1Gt-rJ-5XP" firstAttribute="width" secondItem="7l7-wW-TbP" secondAttribute="width" multiplier="0.8" id="S29-zn-mC5"/>
                             <constraint firstItem="1Gt-rJ-5XP" firstAttribute="height" secondItem="7l7-wW-TbP" secondAttribute="height" multiplier="0.1" id="Xtk-3x-G4n"/>
                             <constraint firstItem="1Gt-rJ-5XP" firstAttribute="top" secondItem="Rjd-sG-zXP" secondAttribute="bottom" constant="16" id="YgS-VW-EwI"/>
@@ -613,6 +613,7 @@
                                                             </state>
                                                             <connections>
                                                                 <action selector="showSortButton:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="WTN-cv-DDg"/>
+                                                                <action selector="sortByButtonTapped:" destination="NyN-gt-jFM" eventType="touchUpInside" id="TWD-nQ-g5M"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryt-fG-8E2">
@@ -625,6 +626,7 @@
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
+                                                                <action selector="alphabeticalButtonTapped:" destination="NyN-gt-jFM" eventType="touchUpInside" id="xSO-Jy-xl9"/>
                                                                 <action selector="sortItinerariesAlphabetically:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="Ock-ew-YO6"/>
                                                             </connections>
                                                         </button>
@@ -642,6 +644,7 @@
                                                             </state>
                                                             <connections>
                                                                 <action selector="sortItinerariesByDate:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="1aE-zx-a0K"/>
+                                                                <action selector="upcomingButtonTapped:" destination="NyN-gt-jFM" eventType="touchUpInside" id="2TS-Bg-r4c"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
