@@ -34,7 +34,7 @@
                                     <segue destination="DDW-h3-aWU" kind="show" identifier="" id="znz-mM-Txb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where is your next destination?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrQ-R0-jfb" customClass="QuestionnaireLabel" customModule="Va_cay" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where is your next destination?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrQ-R0-jfb" customClass="CenterAlignedQuestionnaireLabel" customModule="Va_cay" customModuleProvider="target">
                                 <rect key="frame" x="75" y="104" width="264" height="22"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -83,27 +83,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="1Gt-rJ-5XP">
-                                <rect key="frame" x="41.5" y="235" width="331" height="89.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="1Gt-rJ-5XP">
+                                <rect key="frame" x="41.5" y="251" width="331" height="89.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wze-vp-gMD">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wze-vp-gMD" customClass="LeftAlignedQuestionnaireLabel" customModule="Va_cay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="46.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VE-DB-yvo">
-                                        <rect key="frame" x="0.0" y="40" width="331" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="43.5" width="331" height="46"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxR-Rb-DcW">
-                                                <rect key="frame" x="0.0" y="0.0" width="281.5" height="49.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="285" height="46"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7N-yd-Bee">
-                                                <rect key="frame" x="281.5" y="0.0" width="49.5" height="49.5"/>
+                                                <rect key="frame" x="285" y="0.0" width="46" height="46"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="O7N-yd-Bee" secondAttribute="height" multiplier="1:1" id="HAV-II-hEe"/>
@@ -122,7 +122,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uYo-Eo-dBO">
                                 <rect key="frame" x="41.5" y="356.5" width="331" height="340.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add an image as your itinerary cover" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lf7-1j-pXS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add an image as your itinerary cover" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lf7-1j-pXS" customClass="CenterAlignedQuestionnaireLabel" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -149,17 +149,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-sG-zXP">
-                                <rect key="frame" x="41.5" y="137.5" width="331" height="89.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-sG-zXP">
+                                <rect key="frame" x="41.5" y="145.5" width="331" height="89.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-wr-eIH">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-wr-eIH" customClass="LeftAlignedQuestionnaireLabel" customModule="Va_cay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="46.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="84f-hE-NwD" customClass="TextField" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="40" width="331" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="43.5" width="331" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -167,7 +167,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pm-AV-t5d" customClass="SecondaryButton" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="147" y="748" width="120" height="50"/>
+                                <rect key="frame" x="147" y="780" width="120" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.89740139249999995" blue="0.710036695" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4T2-lo-D2U"/>
@@ -185,17 +185,17 @@
                         <viewLayoutGuide key="safeArea" id="GiY-g4-yIj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uYo-Eo-dBO" firstAttribute="top" secondItem="1Gt-rJ-5XP" secondAttribute="bottom" constant="32" id="0Rc-47-2d5"/>
+                            <constraint firstItem="uYo-Eo-dBO" firstAttribute="top" secondItem="1Gt-rJ-5XP" secondAttribute="bottom" constant="16" id="0Rc-47-2d5"/>
                             <constraint firstItem="wIB-Bj-Uxn" firstAttribute="top" secondItem="GiY-g4-yIj" secondAttribute="top" id="2dU-wt-Pqk"/>
                             <constraint firstItem="YJU-Jx-sIC" firstAttribute="height" secondItem="7l7-wW-TbP" secondAttribute="height" multiplier="0.33" id="4rP-jm-gr2"/>
                             <constraint firstItem="uYo-Eo-dBO" firstAttribute="centerX" secondItem="GiY-g4-yIj" secondAttribute="centerX" id="7be-yL-3ZS"/>
                             <constraint firstItem="CI7-4u-z1e" firstAttribute="top" secondItem="wIB-Bj-Uxn" secondAttribute="bottom" constant="-12" id="7ct-WP-WaE"/>
                             <constraint firstItem="0Pm-AV-t5d" firstAttribute="centerX" secondItem="GiY-g4-yIj" secondAttribute="centerX" id="HS7-Ub-8cc"/>
-                            <constraint firstItem="Rjd-sG-zXP" firstAttribute="top" secondItem="CI7-4u-z1e" secondAttribute="bottom" constant="8" id="KEa-Bn-xAh"/>
-                            <constraint firstItem="GiY-g4-yIj" firstAttribute="bottom" secondItem="0Pm-AV-t5d" secondAttribute="bottom" constant="64" id="Lwm-S0-fbc"/>
+                            <constraint firstItem="Rjd-sG-zXP" firstAttribute="top" secondItem="CI7-4u-z1e" secondAttribute="bottom" constant="16" id="KEa-Bn-xAh"/>
+                            <constraint firstItem="GiY-g4-yIj" firstAttribute="bottom" secondItem="0Pm-AV-t5d" secondAttribute="bottom" constant="32" id="Lwm-S0-fbc"/>
                             <constraint firstItem="1Gt-rJ-5XP" firstAttribute="width" secondItem="7l7-wW-TbP" secondAttribute="width" multiplier="0.8" id="S29-zn-mC5"/>
                             <constraint firstItem="1Gt-rJ-5XP" firstAttribute="height" secondItem="7l7-wW-TbP" secondAttribute="height" multiplier="0.1" id="Xtk-3x-G4n"/>
-                            <constraint firstItem="1Gt-rJ-5XP" firstAttribute="top" secondItem="Rjd-sG-zXP" secondAttribute="bottom" constant="8" id="YgS-VW-EwI"/>
+                            <constraint firstItem="1Gt-rJ-5XP" firstAttribute="top" secondItem="Rjd-sG-zXP" secondAttribute="bottom" constant="16" id="YgS-VW-EwI"/>
                             <constraint firstItem="Rjd-sG-zXP" firstAttribute="height" secondItem="7l7-wW-TbP" secondAttribute="height" multiplier="0.1" id="Za1-65-HT6"/>
                             <constraint firstItem="CI7-4u-z1e" firstAttribute="centerX" secondItem="GiY-g4-yIj" secondAttribute="centerX" id="ZzT-du-r8u"/>
                             <constraint firstItem="wIB-Bj-Uxn" firstAttribute="width" secondItem="7l7-wW-TbP" secondAttribute="width" multiplier="0.75" id="fh5-IB-IYa"/>
@@ -716,12 +716,12 @@
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yt5-Tn-wVH">
                                                             <rect key="frame" x="0.0" y="47" width="331" height="10"/>
-                                                            <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                            <color key="backgroundColor" red="0.27164406243161798" green="0.61482442917264057" blue="0.87517416066136855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="10" id="AoX-TM-6nH"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSF-Wf-9qn" customClass="QuestionnaireLabel" customModule="Va_cay" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSF-Wf-9qn" customClass="CenterAlignedQuestionnaireLabel" customModule="Va_cay" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="61" width="331" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="zuW-VK-4kV"/>
@@ -1566,8 +1566,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="sUL-gB-KDv"/>
         <segue reference="vE9-dT-EKZ"/>
-        <segue reference="dGV-Da-kn8"/>
-        <segue reference="Zam-a7-cpo"/>
+        <segue reference="lQq-R3-EKe"/>
+        <segue reference="znz-mM-Txb"/>
         <segue reference="pcU-1e-Qrk"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1592,9 +1592,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
