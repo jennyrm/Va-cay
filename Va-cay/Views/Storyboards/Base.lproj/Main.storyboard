@@ -592,7 +592,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eEC-Za-Vrv">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sortCell" rowHeight="162" id="NyN-gt-jFM" customClass="sortByTableViewCell" customModule="Va_cay" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sortCell" rowHeight="162" id="NyN-gt-jFM" customClass="sortByTableViewCell" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="162"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NyN-gt-jFM" id="hfb-v0-2QF">
@@ -612,8 +612,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="showSortButton:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="WTN-cv-DDg"/>
-                                                                <action selector="sortByButtonTapped:" destination="NyN-gt-jFM" eventType="touchUpInside" id="TWD-nQ-g5M"/>
+                                                                <action selector="sortByButtonTapped:" destination="NyN-gt-jFM" eventType="touchUpInside" id="MH0-v8-7NT"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryt-fG-8E2">
@@ -626,8 +625,7 @@
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="alphabeticalButtonTapped:" destination="NyN-gt-jFM" eventType="touchUpInside" id="xSO-Jy-xl9"/>
-                                                                <action selector="sortItinerariesAlphabetically:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="Ock-ew-YO6"/>
+                                                                <action selector="alphabeticalButtonTapped:" destination="NyN-gt-jFM" eventType="touchUpInside" id="GEu-31-6fk"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fs-CY-MF7">
@@ -643,8 +641,7 @@
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="sortItinerariesByDate:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="1aE-zx-a0K"/>
-                                                                <action selector="upcomingButtonTapped:" destination="NyN-gt-jFM" eventType="touchUpInside" id="2TS-Bg-r4c"/>
+                                                                <action selector="upcomingButtonTapped:" destination="NyN-gt-jFM" eventType="touchUpInside" id="i2V-uW-dtQ"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -1215,30 +1212,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exK-7A-im9" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="0.0" y="389" width="414" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="ktB-z5-GrU"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDr-xb-Fl3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wDr-xb-Fl3" firstAttribute="trailing" secondItem="exK-7A-im9" secondAttribute="trailing" id="2m3-k4-HbE"/>
                             <constraint firstItem="EsR-yw-d30" firstAttribute="top" secondItem="wDr-xb-Fl3" secondAttribute="top" constant="32" id="6qi-1G-JRP"/>
-                            <constraint firstItem="exK-7A-im9" firstAttribute="leading" secondItem="wDr-xb-Fl3" secondAttribute="leading" id="7zY-Av-3iG"/>
                             <constraint firstItem="EsR-yw-d30" firstAttribute="centerX" secondItem="wDr-xb-Fl3" secondAttribute="centerX" id="A5O-6e-Xvc"/>
                             <constraint firstItem="Sv6-LM-KlG" firstAttribute="width" secondItem="fVj-rR-WTe" secondAttribute="width" multiplier="0.8" id="G4f-xT-VuX"/>
                             <constraint firstItem="Sv6-LM-KlG" firstAttribute="centerX" secondItem="wDr-xb-Fl3" secondAttribute="centerX" id="NWz-ej-9yA"/>
-                            <constraint firstItem="exK-7A-im9" firstAttribute="centerY" secondItem="wDr-xb-Fl3" secondAttribute="centerY" id="VpK-9n-Q1V"/>
                             <constraint firstItem="Sv6-LM-KlG" firstAttribute="top" secondItem="EsR-yw-d30" secondAttribute="bottom" constant="32" id="h8R-O5-p5J"/>
-                            <constraint firstItem="exK-7A-im9" firstAttribute="centerX" secondItem="wDr-xb-Fl3" secondAttribute="centerX" id="iVr-vF-QPS"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="animationView" destination="exK-7A-im9" id="6lW-gX-r82"/>
                         <outlet property="emailTextField" destination="27H-Xb-9j9" id="uc3-W4-2Fw"/>
                         <outlet property="errorLabel" destination="kat-gE-1Rp" id="i5F-q6-elr"/>
                         <outlet property="loginRegisterButton" destination="cNQ-89-cnM" id="Ecj-p6-WDf"/>
@@ -1563,9 +1548,6 @@
             <point key="canvasLocation" x="-533" y="-579"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="exK-7A-im9"/>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="sUL-gB-KDv"/>
         <segue reference="vE9-dT-EKZ"/>
