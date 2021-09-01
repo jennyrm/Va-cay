@@ -330,10 +330,10 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         
         setupScrollableStackViewConstraints()
         
-        nextButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 24).isActive = true
+        nextButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 40).isActive = true
         nextButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 140).isActive = true
         nextButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -140).isActive = true
-        nextButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -64).isActive = true
+        nextButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -48).isActive = true
     }
     
     func setupScrollableStackViewConstraints() {

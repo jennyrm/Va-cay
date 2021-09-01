@@ -12,7 +12,7 @@ extension UIView {
         self.layer.cornerRadius = radius
     }
     
-    func addAccentBorder(width: CGFloat = 1, color: UIColor = Colors.customBlue) {
+    func addAccentBorder(width: CGFloat = 1, color: UIColor = Colors.customDarkBlue) {
         self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor
     }
@@ -20,6 +20,7 @@ extension UIView {
 
 struct Colors {
     static let customBlue = UIColor(red: 121/255, green: 214/255, blue: 249/255, alpha: 1)
+    static let customDarkBlue = UIColor(red: 45/255, green: 127/255, blue: 193/255, alpha: 1)
     static let customGreen = UIColor(red: 211/255, green: 243/255, blue: 142/255, alpha: 1)
     static let customYellow = UIColor(red: 243/255, green: 242/255, blue: 160/255, alpha: 1)
 }//End of struct

@@ -35,7 +35,7 @@ class TextField: UITextField {
     
     func setPlaceholderText() {
         let currentPlaceholder = self.placeholder
-        self.attributedPlaceholder = NSAttributedString(string: currentPlaceholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : Colors.customBlue, NSAttributedString.Key.font: UIFont(name: FontNames.systemFont, size: 16)!
+        self.attributedPlaceholder = NSAttributedString(string: currentPlaceholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : Colors.customDarkBlue, NSAttributedString.Key.font: UIFont(name: FontNames.systemFont, size: 16)!
         ])
     }
     
