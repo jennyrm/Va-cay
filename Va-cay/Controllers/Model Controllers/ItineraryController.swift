@@ -18,6 +18,8 @@ class ItineraryController {
     var itineraries = [Itinerary]()
     var itineraryToEdit: Itinerary?
     var editingItinerary = false
+    var sortByBool = false
+    var sortAlphabeticalTitle = "A-Z"
     
     //MARK: - Reference to DB
     let db = Firestore.firestore()

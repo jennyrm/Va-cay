@@ -8,21 +8,14 @@
 import UIKit
 import FirebaseAuth
 
-protocol UserFeedViewControllerDelegate: AnyObject {
-    func reloadTableView()
-}
-
 class UserFeedViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var showSortButton: UIButton!
-    @IBOutlet weak var sortAlphabetButton: UIButton!
-    @IBOutlet weak var sortDateButton: UIButton!
         
     //MARK: - Properties
     var indexPathRow: Int?
-    var sortAlphabeticalTitle = "A-Z"
+    var sortByBool = false
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -42,67 +35,7 @@ class UserFeedViewController: UIViewController {
         fetchData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
-    
     //MARK: - Actions
-    @IBAction func showSortButton(_ sender: UIButton) {
-        sortAlphabetButton.isHidden.toggle()
-        sortDateButton.isHidden.toggle()
-    }
-    @IBAction func sortItinerariesAlphabetically(_ sender: UIButton) {
-        if sortAlphabeticalTitle == "A-Z" {
-            let sortedItinerariesByAtoZ = ItineraryController.sharedInstance.itineraries.sorted {
-                return $0.tripName.lowercased() < $1.tripName.lowercased()
-            }
-            
-            ItineraryController.sharedInstance.itineraries = sortedItinerariesByAtoZ
-            
-            sortAlphabeticalTitle = "Z-A"
-            sortAlphabetButton.setTitle(sortAlphabeticalTitle, for: .normal)
-        } else {
-            let sortedItinerariesByZtoA = ItineraryController.sharedInstance.itineraries.sorted {
-                return $0.tripName.lowercased() > $1.tripName.lowercased()
-            }
-            ItineraryController.sharedInstance.itineraries = sortedItinerariesByZtoA
-            
-            sortAlphabeticalTitle = "A-Z"
-            sortAlphabetButton.setTitle(sortAlphabeticalTitle, for: .normal)
-        }
-        tableView.reloadData()
-    }
-    @IBAction func sortItinerariesByDate(_ sender: UIButton) {
-        let datedItineraries = ItineraryController.sharedInstance.itineraries.filter {
-            return $0.tripDate != nil
-        }
-        let nonDatedItineraries = ItineraryController.sharedInstance.itineraries.filter {
-            return $0.tripDate == nil
-        }
-        
-        if sender.currentImage == UIImage(systemName: "arrow.up") {
-            var sortedItinerariesByNewestDate = datedItineraries.sorted {
-                return $0.tripDate! < $1.tripDate!
-            }
-            sortedItinerariesByNewestDate.append(contentsOf: nonDatedItineraries)
-            
-            ItineraryController.sharedInstance.itineraries = sortedItinerariesByNewestDate
-            
-            sender.setImage(UIImage(systemName: "arrow.down"), for: .normal)
-        } else {
-            var sortedItinerariesByOldestDate = datedItineraries.sorted {
-                return $0.tripDate! > $1.tripDate!
-            }
-            sortedItinerariesByOldestDate.append(contentsOf: nonDatedItineraries)
-
-            ItineraryController.sharedInstance.itineraries = sortedItinerariesByOldestDate
-            
-            sender.setImage(UIImage(systemName: "arrow.up"), for: .normal)
-        }
-        
-        tableView.reloadData()
-//        ItineraryController.sharedInstance.itineraries = sortedItinerariesByRecentDate
-    }
     @IBAction func addItineraryButtonTapped(_ sender: UIButton) {
         ItineraryController.sharedInstance.itineraries = []
     }
@@ -110,7 +43,6 @@ class UserFeedViewController: UIViewController {
     //MARK: - Functions
     func fetchData() {
         guard let user = Auth.auth().currentUser else { return }
-        
         DispatchQueue.main.async {
             ItineraryController.sharedInstance.fetchItineraries(userId: user.uid) { result in
                 switch result {
@@ -175,9 +107,9 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "sortCell", for: indexPath) as? sortByTableViewCell else
-            
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "sortCell", for: indexPath) as? sortByTableViewCell else {return UITableViewCell()}
+            cell.index = indexPath.row
+            return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "itineraryCell", for: indexPath) as? ItineraryTableViewCell else { return UITableViewCell() }
             
@@ -219,14 +151,18 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 100
+            if ItineraryController.sharedInstance.sortByBool {
+                return 90
+            } else {
+                return 30
+            }
         } else {
             return 300
         }
     }
 }//End of extension
 
-extension UserFeedViewController: UserFeedViewControllerDelegate {
+extension UserFeedViewController: sortByTableViewCellDelegate {
     func reloadTableView() {
         self.tableView.reloadData()
     }
