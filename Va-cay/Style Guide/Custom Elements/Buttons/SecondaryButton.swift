@@ -26,7 +26,7 @@ class SecondaryButton: UIButton {
     func setupButton() {
         updateFontTo(font: FontNames.systemFont)
         
-        setTitleColor(.white, for: .normal)
+        setTitleColor(.black, for: .normal)
         self.backgroundColor = Colors.customBlue
         self.addCornerRadius()
     }

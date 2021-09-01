@@ -202,10 +202,12 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     func createPreviousNextDayButtonStackView() {
         let previousDayButton = SecondaryButton()
         previousDayButton.setTitle("Previous Day", for: .normal)
+        previousDayButton.layer.cornerRadius = 18
         previousDayButton.addTarget(self, action: #selector(previousDay), for: .touchUpInside)
         
         let nextDayButton = SecondaryButton()
         nextDayButton.setTitle("Next Day", for: .normal)
+        nextDayButton.layer.cornerRadius = 18
         nextDayButton.addTarget(self, action: #selector(nextDay), for: .touchUpInside)
         
         self.view.addSubview(previousDayButton)
@@ -292,14 +294,13 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         
         //        previousNextDayButtonStackView.heightAnchor.constraint(equalToConstant: 75).isActive = true
         previousNextDayButtonStackView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 32).isActive = true
-        previousNextDayButtonStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 75).isActive = true
-        previousNextDayButtonStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -75).isActive = true
+        previousNextDayButtonStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 48).isActive = true
+        previousNextDayButtonStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -48).isActive = true
         
-        submitButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        submitButton.topAnchor.constraint(equalTo: previousNextDayButtonStackView.bottomAnchor, constant: 32).isActive = true
+        submitButton.topAnchor.constraint(equalTo: previousNextDayButtonStackView.bottomAnchor, constant: 40).isActive = true
         submitButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 140).isActive = true
         submitButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -140).isActive = true
-        submitButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -32).isActive = true
+        submitButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -48).isActive = true
     }
     
     func setupScrollableStackViewConstraints() {
@@ -385,6 +386,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     var submitButton: UIButton = {
         let button = SecondaryButton()
         button.setTitle("Submit", for: .normal)
+        button.layer.borderWidth = 2
+        button.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(submitItineraryObject), for: .touchUpInside)
         return button
