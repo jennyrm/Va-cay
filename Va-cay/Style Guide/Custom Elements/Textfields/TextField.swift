@@ -30,6 +30,7 @@ class TextField: UITextField {
         
         self.backgroundColor = .white
         self.layer.masksToBounds = true
+        self.borderStyle = .line
         self.layer.cornerRadius = 6
     }
     

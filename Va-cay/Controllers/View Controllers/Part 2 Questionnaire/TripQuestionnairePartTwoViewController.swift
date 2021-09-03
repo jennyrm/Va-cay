@@ -89,17 +89,18 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     
     func createLabelCalendarButton(with flightLabel: UILabel) -> UIStackView {
         flightLabel.textAlignment = .center
+        flightLabel.layer.cornerRadius = 5
+        flightLabel.layer.borderWidth = 1
+        flightLabel.layer.borderColor = Colors.customLightGray.cgColor
         
         let button = CalendarButton()
-        button.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 25).isActive = true
-        button.tintColor = .systemBlue
-        button.backgroundColor = .systemGray6
+        button.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 24).isActive = true
         button.tag = calendarCounter
         calendarCounter += 1
         button.addTarget(self, action: #selector(showCalendarButtonAction), for: .touchUpInside)
         
-        let labelButtonStackView = BorderedStackView()
+        let labelButtonStackView = UIStackView()
         labelButtonStackView.axis = .horizontal
         labelButtonStackView.alignment = .fill
         labelButtonStackView.distribution = .fill
@@ -153,7 +154,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         let label = CenterAlignedQuestionnaireLabel()
         label.text = "Hotel/Airbnb"
         
-        let textField = BorderlessTextField()
+        let textField = TextField()
         hotelAirbnbTextField = textField
         
         let button = MapPinButton()
@@ -161,7 +162,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         button.widthAnchor.constraint(equalToConstant: 30).isActive = true
         button.addTarget(self, action: #selector(showMapButtonAction), for: .touchUpInside)
         
-        let stackView = BorderedStackView()
+        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fill
@@ -225,7 +226,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         
         let textField = UITextField()
         textField.backgroundColor = .systemGray6
-        textField.placeholder = "Add a to-do item"
+        textField.placeholder = "To-do item"
         checklistTextFieldItems.append(textField)
         
         let textFieldButtonStackView = UIStackView()

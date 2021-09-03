@@ -171,25 +171,21 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         self.view.addSubview(scrollView)
         self.view.addSubview(scrollableStackView)
         
-        let textField = BorderlessTextField()
-        textField.placeholder = "Activity name"
-        textField.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        let textField = TextField()
+        textField.placeholder = "Activity"
         activitiesTextFieldItems.append(textField)
         
         let button = MapPinButton()
-//        button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
         button.heightAnchor.constraint(equalToConstant: 30).isActive = true
         button.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        button.backgroundColor = .white
-        button.tintColor = .red
         button.addTarget(self, action: #selector(showMapButtonAction), for: .touchUpInside)
         
-        let textFieldButtonStackView = BorderedStackView()
+        let textFieldButtonStackView = UIStackView()
         textFieldButtonStackView.axis = .horizontal
         textFieldButtonStackView.alignment = .fill
         textFieldButtonStackView.distribution = .fillProportionally
-        textFieldButtonStackView.spacing = 0
-        
+        textFieldButtonStackView.spacing = 10
+
         self.view.addSubview(textField)
         self.view.addSubview(button)
         self.view.addSubview(textFieldButtonStackView)
@@ -298,7 +294,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         previousNextDayButtonStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 48).isActive = true
         previousNextDayButtonStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -48).isActive = true
         
-        submitButton.topAnchor.constraint(equalTo: previousNextDayButtonStackView.bottomAnchor, constant: 40).isActive = true
+        submitButton.topAnchor.constraint(equalTo: previousNextDayButtonStackView.bottomAnchor, constant: 24).isActive = true
         submitButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 140).isActive = true
         submitButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -140).isActive = true
         submitButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -48).isActive = true
@@ -336,16 +332,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         label.font = .boldSystemFont(ofSize: 35)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
-    
-    var calendarStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .fillProportionally
-        stackView.spacing = 0
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
     }()
     
     var addActivityStackView: UIStackView = {
@@ -388,7 +374,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         let button = SecondaryButton()
         button.setTitle("Submit", for: .normal)
         button.layer.borderWidth = 2
-        button.layer.borderColor = #colorLiteral(red: 0.03501653373, green: 0.3171134159, blue: 0.1882501339, alpha: 1)
+        button.layer.borderColor = Colors.customDarkGreen.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(submitItineraryObject), for: .touchUpInside)
         return button

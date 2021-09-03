@@ -61,7 +61,7 @@ class MediaSelectorViewController: UIViewController {
         }
         uploadedMediaImageView.contentMode = .scaleAspectFill
         uploadedMediaImageView.clipsToBounds = true
-        uploadedMediaImageView.backgroundColor = .gray
+        uploadedMediaImageView.backgroundColor = Colors.customLightGray
         imagePicker.delegate = self
     }
     
