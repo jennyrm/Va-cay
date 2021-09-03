@@ -377,6 +377,9 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
+//        stackView.layer.cornerRadius = 10
+//        stackView.clipsToBounds = true
+//        stackView.backgroundColor = .black
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()

@@ -378,7 +378,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
-        stackView.spacing = 10
+        stackView.spacing = 24
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -387,7 +387,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         let button = SecondaryButton()
         button.setTitle("Submit", for: .normal)
         button.layer.borderWidth = 2
-        button.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        button.layer.borderColor = #colorLiteral(red: 0.03501653373, green: 0.3171134159, blue: 0.1882501339, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(submitItineraryObject), for: .touchUpInside)
         return button

@@ -26,10 +26,10 @@ class AccentView: UIView {
     func setupAccentView() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.bounds
-        gradientLayer.colors = [Colors.customYellow.cgColor, Colors.customGreen.cgColor]
+        gradientLayer.colors = [#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor, Colors.customLightGreen.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0, y: 1)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-        
+
         self.layer.addSublayer(gradientLayer)
         self.layer.cornerRadius = 10
     }
