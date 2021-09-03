@@ -10,6 +10,7 @@
 		0D17B44E26E1DC47003CC29D /* CalendarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B44D26E1DC47003CC29D /* CalendarButton.swift */; };
 		0D17B45026E282C5003CC29D /* BorderlessTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B44F26E282C5003CC29D /* BorderlessTextField.swift */; };
 		0D17B45326E28683003CC29D /* BorderedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B45226E28683003CC29D /* BorderedStackView.swift */; };
+		0D17B45526E2953D003CC29D /* calendar.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0D17B45426E2953D003CC29D /* calendar.svg */; };
 		0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */; };
 		0D299F2D26CC40C200A5CE31 /* grey.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0D299F2C26CC40C200A5CE31 /* grey.jpeg */; };
 		0D299F2F26CC55D500A5CE31 /* CheckListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */; };
@@ -68,6 +69,7 @@
 		0D17B44D26E1DC47003CC29D /* CalendarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarButton.swift; sourceTree = "<group>"; };
 		0D17B44F26E282C5003CC29D /* BorderlessTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderlessTextField.swift; sourceTree = "<group>"; };
 		0D17B45226E28683003CC29D /* BorderedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedStackView.swift; sourceTree = "<group>"; };
+		0D17B45426E2953D003CC29D /* calendar.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar.svg; sourceTree = "<group>"; };
 		0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistModalViewController.swift; sourceTree = "<group>"; };
 		0D299F2C26CC40C200A5CE31 /* grey.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grey.jpeg; sourceTree = "<group>"; };
 		0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			children = (
 				0D299F2C26CC40C200A5CE31 /* grey.jpeg */,
 				0DBDB50426C492C6000D26DE /* plane5.json */,
+				0D17B45426E2953D003CC29D /* calendar.svg */,
 				9B543C04265F309500F5353A /* AppDelegate.swift */,
 				9B543C06265F309500F5353A /* SceneDelegate.swift */,
 				9B543C0D265F309800F5353A /* Assets.xcassets */,
@@ -524,6 +527,7 @@
 				9B543C0E265F309800F5353A /* Assets.xcassets in Resources */,
 				0DBDB50526C492C6000D26DE /* plane5.json in Resources */,
 				9B543C0C265F309500F5353A /* Main.storyboard in Resources */,
+				0D17B45526E2953D003CC29D /* calendar.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
