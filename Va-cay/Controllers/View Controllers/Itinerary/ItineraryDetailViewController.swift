@@ -20,6 +20,7 @@ class ItineraryDetailViewController: UIViewController {
     @IBOutlet weak var flightDepartureLabel: UILabel!
     @IBOutlet weak var hotelAirbnbLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var checklistButton: SecondaryButton!
     
     //MARK: - Properties
     var days = [String]()
@@ -44,6 +45,7 @@ class ItineraryDetailViewController: UIViewController {
     //MARK: - Functions
     func updateView() {
         guard let itinerary = itinerary else { return }
+        checklistButton.layer.cornerRadius = 10
         hideLabels()
         tripNameLabel.text = itinerary.tripName
         itinerary.activities?.forEach({ (day) in
@@ -149,7 +151,7 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "Copperplate", size: 30.0)
+        header.textLabel?.font = UIFont(name: "System", size: 30.0)
         header.textLabel?.textAlignment = NSTextAlignment.center
     }
     
