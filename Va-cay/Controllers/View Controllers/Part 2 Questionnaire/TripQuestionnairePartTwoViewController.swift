@@ -103,6 +103,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         labelButtonStackView.alignment = .fill
         labelButtonStackView.distribution = .fill
         labelButtonStackView.spacing = 8
+        labelButtonStackView.heightAnchor.constraint(equalToConstant: 24).isActive = true
         
         self.view.addSubview(flightLabel)
         self.view.addSubview(button)
@@ -155,9 +156,8 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         hotelAirbnbTextField = textField
         
         let button = MapPinButton()
-        button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
-        button.backgroundColor = .white
-        button.tintColor = .red
+        button.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 15).isActive = true
         button.addTarget(self, action: #selector(showMapButtonAction), for: .touchUpInside)
         
         let stackView = BorderedStackView()
@@ -309,15 +309,17 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         colorBar.topAnchor.constraint(equalTo: travelItineraryLabel.bottomAnchor, constant: -12).isActive = true
         colorBar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         colorBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
-        
+
         flightDetailsStackView.topAnchor.constraint(equalTo: colorBar.bottomAnchor, constant: 32).isActive = true
         flightDetailsStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         flightDetailsStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
+        hotelAirbnbStackView.heightAnchor.constraint(equalToConstant: 64).isActive = true
         hotelAirbnbStackView.topAnchor.constraint(equalTo: flightDetailsStackView.bottomAnchor, constant: 24).isActive = true
         hotelAirbnbStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         hotelAirbnbStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
         
+        totalBudgetStackView.heightAnchor.constraint(equalToConstant: 64).isActive = true
         totalBudgetStackView.topAnchor.constraint(equalTo: hotelAirbnbStackView.bottomAnchor, constant: 24).isActive = true
         totalBudgetStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
         totalBudgetStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true

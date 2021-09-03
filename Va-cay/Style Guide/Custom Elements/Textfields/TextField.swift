@@ -30,7 +30,7 @@ class TextField: UITextField {
         
         self.backgroundColor = .white
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 6
     }
     
     func setPlaceholderText() {
