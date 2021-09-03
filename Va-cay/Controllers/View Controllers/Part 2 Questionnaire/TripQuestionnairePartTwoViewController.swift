@@ -155,7 +155,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         let textField = TextField()
         hotelAirbnbTextField = textField
         
-        let button = UIButton()
+        let button = MapPinButton()
         button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
         button.backgroundColor = .white
         button.tintColor = .red
@@ -299,9 +299,9 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         self.view.addSubview(colorBar)
         createFlightDetailsStackView()
         createHotelAirbnbStackView()
+        self.view.addSubview(nextButton)
         createTotalBudgetStackView()
         createAddToChecklistStackView()
-        self.view.addSubview(nextButton)
         
         travelItineraryLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0).isActive = true
         travelItineraryLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
