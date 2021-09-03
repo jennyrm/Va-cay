@@ -24,7 +24,7 @@ class MapPinButton: UIButton {
     }
     
     func setupButton() {
-        self.setImage(UIImage(named: "mapPin"), for: .normal)
+        self.setImage(UIImage(named: "pin"), for: .normal)
     }
     
 }//End of class

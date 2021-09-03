@@ -176,8 +176,10 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         textField.heightAnchor.constraint(equalToConstant: 32).isActive = true
         activitiesTextFieldItems.append(textField)
         
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
+        let button = MapPinButton()
+//        button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
+        button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 30).isActive = true
         button.backgroundColor = .white
         button.tintColor = .red
         button.addTarget(self, action: #selector(showMapButtonAction), for: .touchUpInside)
