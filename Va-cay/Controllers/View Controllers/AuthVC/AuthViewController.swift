@@ -102,10 +102,10 @@ class AuthViewController: UIViewController {
     }
     
     func setupAnimation(){
-        let planeAnimation = Animation.named("plane5")
-        animationView.animation = planeAnimation
-        animationView.loopMode = .loop
-        animationView.play()
+//        let planeAnimation = Animation.named("plane5")
+//        animationView.animation = planeAnimation
+//        animationView.loopMode = .loop
+//        animationView.play()
     }
     
     func setupOutlets() {

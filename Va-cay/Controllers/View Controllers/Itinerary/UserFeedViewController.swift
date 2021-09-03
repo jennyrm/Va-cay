@@ -22,8 +22,6 @@ class UserFeedViewController: UIViewController {
         super.viewDidLoad()
         checkForLoggedIn()
         
-        self.view.backgroundColor = Colors.customYellow
-        
         tableView.delegate = self
         tableView.dataSource = self
         sortByTableViewCell.delegate = self
