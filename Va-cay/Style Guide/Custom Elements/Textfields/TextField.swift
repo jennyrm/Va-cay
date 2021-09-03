@@ -31,11 +31,12 @@ class TextField: UITextField {
         self.backgroundColor = .white
         self.borderStyle = .line
         self.layer.masksToBounds = true
+        self.layer.cornerRadius = 10
     }
     
     func setPlaceholderText() {
         let currentPlaceholder = self.placeholder
-        self.attributedPlaceholder = NSAttributedString(string: currentPlaceholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : Colors.customDarkBlue, NSAttributedString.Key.font: UIFont(name: FontNames.systemFont, size: 16)!
+        self.attributedPlaceholder = NSAttributedString(string: currentPlaceholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : Colors.customGreen, NSAttributedString.Key.font: UIFont(name: FontNames.systemFont, size: 16)!
         ])
     }
     

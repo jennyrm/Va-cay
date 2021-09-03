@@ -166,12 +166,11 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pm-AV-t5d" customClass="SecondaryButton" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="147" y="764" width="120" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.89740139249999995" blue="0.710036695" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pm-AV-t5d" customClass="SecondaryButton" customModule="Va_cay" customModuleProvider="target">
+                                <rect key="frame" x="147" y="767" width="120" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4T2-lo-D2U"/>
-                                    <constraint firstAttribute="width" constant="120" id="pCU-Fm-I4B"/>
+                                    <constraint firstAttribute="height" constant="64" id="4T2-lo-D2U"/>
+                                    <constraint firstAttribute="width" constant="135" id="pCU-Fm-I4B"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Next">
@@ -725,14 +724,14 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yt5-Tn-wVH">
-                                                            <rect key="frame" x="0.0" y="78" width="331" height="10"/>
-                                                            <color key="backgroundColor" red="0.27164406243161798" green="0.61482442917264057" blue="0.87517416066136855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <rect key="frame" x="0.0" y="78" width="331" height="8"/>
+                                                            <color key="backgroundColor" red="0.99417001009999995" green="0.81677681209999997" blue="0.430806458" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="10" id="AoX-TM-6nH"/>
+                                                                <constraint firstAttribute="height" constant="8" id="AoX-TM-6nH"/>
                                                             </constraints>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4NX-qG-XJ4">
-                                                            <rect key="frame" x="0.0" y="92" width="331" height="175"/>
+                                                            <rect key="frame" x="0.0" y="90" width="331" height="177"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -760,15 +759,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az4-YK-P8D" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az4-YK-P8D">
                                 <rect key="frame" x="175" y="784" width="64" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="9q5-r3-nxG"/>
                                     <constraint firstAttribute="width" secondItem="az4-YK-P8D" secondAttribute="height" multiplier="1:1" id="fZa-kR-3DS"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="linkColor"/>
-                                <state key="normal" image="plus" catalog="system">
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" image="plus">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="96"/>
                                 </state>
@@ -968,16 +967,18 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAB-Df-Vfn" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="100" y="790" width="214" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Edit Itinerary"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAB-Df-Vfn">
+                                <rect key="frame" x="100" y="784" width="214" height="54"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                <state key="normal" title="Edit Itinerary">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="DDW-h3-aWU" kind="show" identifier="toEditItineraryVC" id="Zam-a7-cpo"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YaW-RH-2kG">
-                                <rect key="frame" x="0.0" y="309" width="414" height="461"/>
+                                <rect key="frame" x="0.0" y="309" width="414" height="455"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dayActivityCell" rowHeight="84" id="ZFK-4b-qpp" customClass="dayActivitiesTableViewCell" customModule="Va_cay" customModuleProvider="target">
@@ -987,7 +988,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDe-Qa-A4k">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="oDe-Qa-A4k">
                                                     <rect key="frame" x="20.5" y="12.5" width="373" height="59"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X2m-TV-cbK">
@@ -1044,7 +1045,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kt4-rp-uxJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Kt4-rp-uxJ" firstAttribute="bottom" secondItem="fAB-Df-Vfn" secondAttribute="bottom" constant="24" id="6xa-zg-K9S"/>
                             <constraint firstItem="fAB-Df-Vfn" firstAttribute="top" secondItem="YaW-RH-2kG" secondAttribute="bottom" constant="20" id="9hS-8J-BVY"/>
@@ -1566,16 +1567,13 @@
         <image name="earth" width="422.52499389648438" height="422.52499389648438"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="location-pin" width="512" height="512"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus" width="512" height="512"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
