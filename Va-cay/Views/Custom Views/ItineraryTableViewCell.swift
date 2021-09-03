@@ -40,6 +40,8 @@ class ItineraryTableViewCell: UITableViewCell {
     func updateView() {
         guard let itinerary = itinerary else { return }
         roundedCellEdge.layer.cornerRadius = 25
+        roundedCellEdge.layer.borderWidth = 2
+        roundedCellEdge.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).cgColor
         itineraryBreakBarView.layer.cornerRadius = 10
         destinationLabel.text = itinerary.tripName
         let imageData = itinerary.tripImage

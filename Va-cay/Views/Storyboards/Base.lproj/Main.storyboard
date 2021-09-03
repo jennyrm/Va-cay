@@ -108,7 +108,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="O7N-yd-Bee" secondAttribute="height" multiplier="1:1" id="HAV-II-hEe"/>
                                                 </constraints>
-                                                <state key="normal" image="calendar.badge.clock" catalog="system">
+                                                <state key="normal" image="calendar">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                                 </state>
                                                 <connections>
@@ -670,27 +670,27 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3F-Wd-edv">
                                                     <rect key="frame" x="20.5" y="16.5" width="373" height="301"/>
-                                                    <color key="backgroundColor" red="0.79162983070000004" green="0.98446988209999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nN1-zn-d8x">
                                                     <rect key="frame" x="41.5" y="33.5" width="331" height="267"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qNH-IS-HKg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="331" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="331" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(destinationLabel)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkU-tw-SCw">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="237" height="43"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="243" height="40"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJO-Mb-1gf">
-                                                                    <rect key="frame" x="241" y="0.0" width="43" height="43"/>
+                                                                    <rect key="frame" x="247" y="0.0" width="40" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="yJO-Mb-1gf" secondAttribute="height" multiplier="1:1" id="FiQ-Kh-oqM"/>
                                                                     </constraints>
                                                                     <color key="tintColor" systemColor="systemRedColor"/>
-                                                                    <state key="normal" image="mapPin">
+                                                                    <state key="normal" image="earth">
                                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                                                     </state>
                                                                     <connections>
@@ -699,12 +699,13 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODo-JB-36o">
-                                                                    <rect key="frame" x="288" y="0.0" width="43" height="43"/>
+                                                                    <rect key="frame" x="291" y="0.0" width="40" height="40"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="height" constant="40" id="0Aj-Em-1uw"/>
                                                                         <constraint firstAttribute="width" secondItem="ODo-JB-36o" secondAttribute="height" multiplier="1:1" id="iyf-b3-BrQ"/>
                                                                     </constraints>
                                                                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <state key="normal" image="book.closed" catalog="system">
+                                                                    <state key="normal" image="book">
                                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                                                     </state>
                                                                     <connections>
@@ -714,15 +715,8 @@
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yt5-Tn-wVH">
-                                                            <rect key="frame" x="0.0" y="47" width="331" height="10"/>
-                                                            <color key="backgroundColor" red="0.27164406243161798" green="0.61482442917264057" blue="0.87517416066136855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="10" id="AoX-TM-6nH"/>
-                                                            </constraints>
-                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSF-Wf-9qn" customClass="CenterAlignedQuestionnaireLabel" customModule="Va_cay" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="61" width="331" height="30"/>
+                                                            <rect key="frame" x="0.0" y="44" width="331" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="zuW-VK-4kV"/>
                                                             </constraints>
@@ -730,11 +724,18 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yt5-Tn-wVH">
+                                                            <rect key="frame" x="0.0" y="78" width="331" height="10"/>
+                                                            <color key="backgroundColor" red="0.27164406243161798" green="0.61482442917264057" blue="0.87517416066136855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="10" id="AoX-TM-6nH"/>
+                                                            </constraints>
+                                                        </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4NX-qG-XJ4">
-                                                            <rect key="frame" x="0.0" y="95" width="331" height="172"/>
+                                                            <rect key="frame" x="0.0" y="92" width="331" height="175"/>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.79162983072969173" green="0.98446988213355491" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -934,10 +935,11 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc8-sL-RKQ">
                                                         <rect key="frame" x="120" y="0.0" width="22" height="22"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="height" constant="22" id="LLa-Ao-vkC"/>
                                                             <constraint firstAttribute="width" secondItem="Vc8-sL-RKQ" secondAttribute="height" multiplier="1:1" id="T8I-oO-LPF"/>
                                                         </constraints>
                                                         <color key="tintColor" systemColor="systemRedColor"/>
-                                                        <state key="normal" image="mappin.and.ellipse" catalog="system"/>
+                                                        <state key="normal" image="location-pin"/>
                                                         <connections>
                                                             <segue destination="yku-Yu-6fU" kind="show" identifier="toHotelAirbnbMapVC" id="dGV-Da-kn8"/>
                                                         </connections>
@@ -989,22 +991,22 @@
                                                     <rect key="frame" x="20.5" y="12.5" width="373" height="59"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X2m-TV-cbK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="59"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="59"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(dayLabel)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM3-2b-PWm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="29.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="29.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-DG-d7A">
-                                                                    <rect key="frame" x="0.0" y="29.5" width="60" height="29.5"/>
+                                                                    <rect key="frame" x="0.0" y="29.5" width="30" height="29.5"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="30" id="aBW-aQ-2tl"/>
-                                                                        <constraint firstAttribute="width" constant="60" id="ldN-wc-cbk"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="Fy5-f2-iya"/>
+                                                                        <constraint firstAttribute="width" constant="30" id="NZi-NQ-uIO"/>
                                                                     </constraints>
                                                                     <color key="tintColor" systemColor="systemRedColor"/>
-                                                                    <state key="normal" image="mappin.and.ellipse" catalog="system"/>
+                                                                    <state key="normal" image="location-pin"/>
                                                                     <connections>
                                                                         <action selector="activitiesMapButtonTapped:" destination="ZFK-4b-qpp" eventType="touchUpInside" id="1pm-P8-692"/>
                                                                         <segue destination="Jbw-uv-hfN" kind="show" identifier="toActivitiesMapVC" id="vE9-dT-EKZ"/>
@@ -1013,10 +1015,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kyb-re-5M3">
-                                                            <rect key="frame" x="60" y="0.0" width="313" height="59"/>
+                                                            <rect key="frame" x="30" y="0.0" width="343" height="59"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(activitiesLabel)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGI-Jj-68W">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="313" height="59"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="59"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1551,19 +1553,19 @@
     <inferredMetricsTieBreakers>
         <segue reference="sUL-gB-KDv"/>
         <segue reference="vE9-dT-EKZ"/>
-        <segue reference="lQq-R3-EKe"/>
-        <segue reference="znz-mM-Txb"/>
+        <segue reference="dGV-Da-kn8"/>
+        <segue reference="Zam-a7-cpo"/>
         <segue reference="pcU-1e-Qrk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.up" catalog="system" width="120" height="128"/>
-        <image name="book.closed" catalog="system" width="115" height="128"/>
-        <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
+        <image name="book" width="512" height="512"/>
+        <image name="calendar" width="512" height="512"/>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="earth" width="422.52499389648438" height="422.52499389648438"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
-        <image name="mapPin" width="512" height="512"/>
-        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="location-pin" width="512" height="512"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
