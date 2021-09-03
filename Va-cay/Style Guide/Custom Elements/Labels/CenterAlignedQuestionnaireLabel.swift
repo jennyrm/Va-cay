@@ -27,7 +27,6 @@ class CenterAlignedQuestionnaireLabel: UILabel {
         updateFontTo(font: FontNames.systemFont)
         
         self.textColor = .black
-//        self.backgroundColor = .systemGray6
         self.textAlignment = .center
     }
     

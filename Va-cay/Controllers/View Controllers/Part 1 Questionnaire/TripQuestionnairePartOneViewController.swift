@@ -16,11 +16,9 @@ class TripQuestionnairePartOneViewController: UIViewController {
     @IBOutlet weak var mediaContainerView: UIView!
     @IBOutlet weak var tripNameTextField: UITextField!
     @IBOutlet weak var tripDateLabel: UILabel!
-    @IBOutlet weak var dateLabelButtonStackView: UIStackView!
     
     //MARK: - Properties
     var tripImage: UIImage?
-    
     static weak var delegate: updateImageDelegate?
     
     //MARK: - Lifecycle
@@ -33,6 +31,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let imageStr = ItineraryController.sharedInstance.itineraryData["tripImage"] else {return}
+        
         TripQuestionnairePartOneViewController.delegate?.updateImage(image: (UIImage(data: imageStr as! Data) ?? UIImage(named: "grey"))!)
     }
     
@@ -52,15 +51,23 @@ class TripQuestionnairePartOneViewController: UIViewController {
         if let tripImage = ItineraryController.sharedInstance.itineraryData["tripImage"] as? UIImage {
             self.tripImage = tripImage
         }
-        dateLabelButtonStackView.addAccentBorder()
-        dateLabelButtonStackView.layer.cornerRadius = 10
+        
+        styleOutlets()
+    }
+    
+    func styleOutlets() {
+//        tripDateLabel.layer.cornerRadius = 10
+//        tripDateLabel.layer.borderWidth = 1
+//        tripDateLabel.layer.borderColor = Colors.customLightGray.cgColor
     }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMediaSelectorVC" {
             guard let destinationVC = segue.destination as? MediaSelectorViewController else { return }
+            
             destinationVC.tripImage = tripImage
+            
             MediaSelectorViewController.delegate = self
         }
         if segue.identifier == "toTripQuestionnairePartTwoVC" {
@@ -68,18 +75,19 @@ class TripQuestionnairePartOneViewController: UIViewController {
         }
         if segue.identifier == "toTripCalendarVC" {
             guard let destinationVC = segue.destination as? TripCalendarViewController else { return }
+            
             destinationVC.delegate = self
-            if ItineraryController.sharedInstance.editingItinerary {
-                
-            }
         }
     }
     
     func saveTextFieldInputs() {
         guard let tripName = tripNameTextField.text, !tripName.isEmpty else { return presentErrorAlert(title: "Error", message: "Name of Trip field must not be empty.") }
+        
         ItineraryController.sharedInstance.itineraryData["tripName"] = tripNameTextField.text
+        
         if tripImage != nil {
             let imageData = tripImage?.jpegData(compressionQuality: 0.5)
+            
             ItineraryController.sharedInstance.itineraryData["tripImage"] = imageData
         }
     }
