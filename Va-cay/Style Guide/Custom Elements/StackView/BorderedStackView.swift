@@ -20,7 +20,7 @@ class BorderedStackView: UIStackView {
     
     func setupStackView() {
         self.addAccentBorder()
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 6
         
 //        updateFontTo(font: FontNames.systemFont)
         
