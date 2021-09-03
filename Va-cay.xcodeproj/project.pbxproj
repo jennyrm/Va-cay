@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D17B44E26E1DC47003CC29D /* CalendarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B44D26E1DC47003CC29D /* CalendarButton.swift */; };
 		0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */; };
 		0D299F2D26CC40C200A5CE31 /* grey.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0D299F2C26CC40C200A5CE31 /* grey.jpeg */; };
 		0D299F2F26CC55D500A5CE31 /* CheckListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */; };
@@ -17,11 +18,6 @@
 		0D60FCC926B34D2500F75732 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D60FCC826B34D2500F75732 /* AuthViewModel.swift */; };
 		0D7D498526B86B34006218D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D498426B86B34006218D8 /* SettingsViewController.swift */; };
 		0DA23CDD26DD60C6008F0B56 /* sortByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */; };
-		0DAEF46826E148F9002833C7 /* location1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0DAEF46726E148F9002833C7 /* location1.svg */; };
-		0DAEF46E26E1490E002833C7 /* earth.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0DAEF46D26E1490E002833C7 /* earth.svg */; };
-		0DAEF47A26E153C2002833C7 /* planner.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0DAEF47926E153C2002833C7 /* planner.svg */; };
-		0DAEF47C26E154E4002833C7 /* agendas.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0DAEF47B26E154E4002833C7 /* agendas.svg */; };
-		0DAEF47E26E15678002833C7 /* book.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0DAEF47D26E15678002833C7 /* book.svg */; };
 		0DBDB50526C492C6000D26DE /* plane5.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DBDB50426C492C6000D26DE /* plane5.json */; };
 		0DC34EBD26DD885900F65AE1 /* MapPinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */; };
 		645865D8133CD9789C54A4C6 /* Pods_Va_cay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DD421D3AC2E0A9378B7C84 /* Pods_Va_cay.framework */; };
@@ -67,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D17B44D26E1DC47003CC29D /* CalendarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarButton.swift; sourceTree = "<group>"; };
 		0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistModalViewController.swift; sourceTree = "<group>"; };
 		0D299F2C26CC40C200A5CE31 /* grey.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grey.jpeg; sourceTree = "<group>"; };
 		0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -77,11 +74,6 @@
 		0D60FCC826B34D2500F75732 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		0D7D498426B86B34006218D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortByTableViewCell.swift; sourceTree = "<group>"; };
-		0DAEF46726E148F9002833C7 /* location1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = location1.svg; sourceTree = "<group>"; };
-		0DAEF46D26E1490E002833C7 /* earth.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = earth.svg; sourceTree = "<group>"; };
-		0DAEF47926E153C2002833C7 /* planner.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = planner.svg; sourceTree = "<group>"; };
-		0DAEF47B26E154E4002833C7 /* agendas.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agendas.svg; sourceTree = "<group>"; };
-		0DAEF47D26E15678002833C7 /* book.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = book.svg; sourceTree = "<group>"; };
 		0DBDB50426C492C6000D26DE /* plane5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane5.json; sourceTree = "<group>"; };
 		0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinButton.swift; sourceTree = "<group>"; };
 		291561126532659012BB1D3B /* Pods-Va-cay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.release.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +187,7 @@
 				9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */,
 				9B4B68EC26D8561A00B2D8AE /* SecondaryButton.swift */,
 				0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */,
+				0D17B44D26E1DC47003CC29D /* CalendarButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -312,11 +305,6 @@
 		9B543C30265F345700F5353A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0DAEF46726E148F9002833C7 /* location1.svg */,
-				0DAEF46D26E1490E002833C7 /* earth.svg */,
-				0DAEF47926E153C2002833C7 /* planner.svg */,
-				0DAEF47B26E154E4002833C7 /* agendas.svg */,
-				0DAEF47D26E15678002833C7 /* book.svg */,
 				0D299F2C26CC40C200A5CE31 /* grey.jpeg */,
 				0DBDB50426C492C6000D26DE /* plane5.json */,
 				9B543C04265F309500F5353A /* AppDelegate.swift */,
@@ -517,16 +505,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D299F2D26CC40C200A5CE31 /* grey.jpeg in Resources */,
-				0DAEF46826E148F9002833C7 /* location1.svg in Resources */,
 				9B543C11265F309800F5353A /* LaunchScreen.storyboard in Resources */,
 				9B335CE5265F476800FC202B /* GoogleService-Info.plist in Resources */,
 				9B543C0E265F309800F5353A /* Assets.xcassets in Resources */,
 				0DBDB50526C492C6000D26DE /* plane5.json in Resources */,
 				9B543C0C265F309500F5353A /* Main.storyboard in Resources */,
-				0DAEF47A26E153C2002833C7 /* planner.svg in Resources */,
-				0DAEF47C26E154E4002833C7 /* agendas.svg in Resources */,
-				0DAEF47E26E15678002833C7 /* book.svg in Resources */,
-				0DAEF46E26E1490E002833C7 /* earth.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +573,7 @@
 				9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */,
 				0D5A963226B2121900CD5707 /* UserController.swift in Sources */,
 				9BB77715266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift in Sources */,
+				0D17B44E26E1DC47003CC29D /* CalendarButton.swift in Sources */,
 				9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */,
 				0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */,
 				9B4D9B8C26DD69A70055B7CF /* AccentView.swift in Sources */,

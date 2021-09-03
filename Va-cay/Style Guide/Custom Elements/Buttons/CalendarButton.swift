@@ -1,13 +1,13 @@
 //
-//  MapPinButton.swift
+//  CalendarButton.swift
 //  Va-cay
 //
-//  Created by James Lea on 8/30/21.
+//  Created by James Lea on 9/2/21.
 //
 
 import UIKit
 
-class MapPinButton: UIButton {
+class CalendarButton: UIButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +24,7 @@ class MapPinButton: UIButton {
     }
     
     func setupButton() {
-        self.setImage(UIImage(named: "mapPin"), for: .normal)
+        self.setImage(UIImage(named: "calendar"), for: .normal)
     }
     
 }//End of class
