@@ -1327,21 +1327,20 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyc-09-HIw">
-                                <rect key="frame" x="36" y="216" width="342" height="367"/>
+                                <rect key="frame" x="41.5" y="193.5" width="331" height="421"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="34P-Pn-IF0">
-                                        <rect key="frame" x="0.0" y="0.0" width="342" height="367"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="421"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="flightDepartureDatePickerChanged:" destination="xAC-ie-OlL" eventType="valueChanged" id="cR7-rJ-3lV"/>
                                         </connections>
                                     </datePicker>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="34P-Pn-IF0" secondAttribute="bottom" id="2FR-hL-n6s"/>
-                                    <constraint firstItem="34P-Pn-IF0" firstAttribute="top" secondItem="Nyc-09-HIw" secondAttribute="top" id="Ilg-fr-2Zv"/>
-                                    <constraint firstItem="34P-Pn-IF0" firstAttribute="leading" secondItem="Nyc-09-HIw" secondAttribute="leading" id="MaB-tY-gfy"/>
-                                    <constraint firstAttribute="trailing" secondItem="34P-Pn-IF0" secondAttribute="trailing" id="a0Z-TG-vHE"/>
+                                    <constraint firstItem="34P-Pn-IF0" firstAttribute="width" secondItem="Nyc-09-HIw" secondAttribute="width" id="FA8-qQ-JLS"/>
+                                    <constraint firstItem="34P-Pn-IF0" firstAttribute="height" secondItem="Nyc-09-HIw" secondAttribute="height" id="f3r-Ff-ixl"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1349,13 +1348,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dWF-VL-FJa" firstAttribute="width" secondItem="lN4-0R-v9c" secondAttribute="width" id="0ix-9H-UGQ"/>
-                            <constraint firstItem="YpW-oa-BqA" firstAttribute="trailing" secondItem="Nyc-09-HIw" secondAttribute="trailing" constant="36" id="1M3-il-Fjd"/>
-                            <constraint firstItem="Nyc-09-HIw" firstAttribute="leading" secondItem="YpW-oa-BqA" secondAttribute="leading" constant="36" id="NC3-us-ZsZ"/>
+                            <constraint firstItem="34P-Pn-IF0" firstAttribute="centerX" secondItem="YpW-oa-BqA" secondAttribute="centerX" id="5ip-ho-RQb"/>
+                            <constraint firstItem="Nyc-09-HIw" firstAttribute="width" secondItem="lN4-0R-v9c" secondAttribute="width" multiplier="0.8" id="7tY-yg-dBA"/>
                             <constraint firstItem="dWF-VL-FJa" firstAttribute="centerY" secondItem="YpW-oa-BqA" secondAttribute="centerY" id="Wob-z5-w2h"/>
-                            <constraint firstItem="YpW-oa-BqA" firstAttribute="bottom" secondItem="Nyc-09-HIw" secondAttribute="bottom" constant="225" id="oFR-G8-4xs"/>
+                            <constraint firstItem="Nyc-09-HIw" firstAttribute="centerX" secondItem="YpW-oa-BqA" secondAttribute="centerX" id="oMR-dY-xYR"/>
+                            <constraint firstItem="Nyc-09-HIw" firstAttribute="centerY" secondItem="YpW-oa-BqA" secondAttribute="centerY" id="osK-JL-JkX"/>
                             <constraint firstItem="dWF-VL-FJa" firstAttribute="centerX" secondItem="YpW-oa-BqA" secondAttribute="centerX" id="ppn-PD-bRY"/>
                             <constraint firstItem="dWF-VL-FJa" firstAttribute="height" secondItem="lN4-0R-v9c" secondAttribute="height" id="wNc-3R-Vj6"/>
-                            <constraint firstItem="Nyc-09-HIw" firstAttribute="top" secondItem="YpW-oa-BqA" secondAttribute="top" constant="216" id="x9t-Sk-djJ"/>
+                            <constraint firstItem="Nyc-09-HIw" firstAttribute="height" secondItem="lN4-0R-v9c" secondAttribute="height" multiplier="0.5" id="wfd-3V-9iu"/>
+                            <constraint firstItem="34P-Pn-IF0" firstAttribute="centerY" secondItem="YpW-oa-BqA" secondAttribute="centerY" id="zce-Vy-AQF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s79-jh-FI3"/>
@@ -1383,28 +1384,35 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAO-wz-sQK">
-                                <rect key="frame" x="36" y="216" width="342" height="367"/>
+                                <rect key="frame" x="41.5" y="193.5" width="331" height="421"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="quG-U1-SRf">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="421"/>
+                                        <connections>
+                                            <action selector="flightArrivalDatePickerChanged:" destination="uwX-ya-kOm" eventType="valueChanged" id="Yit-11-wTs"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="quG-U1-SRf" firstAttribute="height" secondItem="rAO-wz-sQK" secondAttribute="height" id="BVz-Bd-aWz"/>
+                                    <constraint firstItem="quG-U1-SRf" firstAttribute="width" secondItem="rAO-wz-sQK" secondAttribute="width" id="GK9-Ea-Czo"/>
+                                    <constraint firstItem="quG-U1-SRf" firstAttribute="centerY" secondItem="rAO-wz-sQK" secondAttribute="centerY" id="gHu-SG-VqD"/>
+                                    <constraint firstItem="quG-U1-SRf" firstAttribute="centerX" secondItem="rAO-wz-sQK" secondAttribute="centerX" id="o5x-v5-lGY"/>
+                                </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="quG-U1-SRf">
-                                <rect key="frame" x="36" y="237" width="342" height="367"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="flightArrivalDatePickerChanged:" destination="uwX-ya-kOm" eventType="valueChanged" id="Yit-11-wTs"/>
-                                </connections>
-                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vfk-Mg-9fT"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rAO-wz-sQK" firstAttribute="height" secondItem="Nkl-Ll-dgB" secondAttribute="height" multiplier="0.5" id="4St-r3-dzR"/>
                             <constraint firstItem="Jn1-RQ-i1y" firstAttribute="centerX" secondItem="Vfk-Mg-9fT" secondAttribute="centerX" id="8Sc-Ur-vQs"/>
-                            <constraint firstItem="Vfk-Mg-9fT" firstAttribute="trailing" secondItem="rAO-wz-sQK" secondAttribute="trailing" constant="36" id="E8B-70-tMG"/>
-                            <constraint firstItem="rAO-wz-sQK" firstAttribute="top" secondItem="Vfk-Mg-9fT" secondAttribute="top" constant="216" id="Ya8-Sa-kGd"/>
+                            <constraint firstItem="rAO-wz-sQK" firstAttribute="centerY" secondItem="Vfk-Mg-9fT" secondAttribute="centerY" id="Gaz-WS-8at"/>
                             <constraint firstItem="Jn1-RQ-i1y" firstAttribute="width" secondItem="Nkl-Ll-dgB" secondAttribute="width" id="aQU-9e-ZAA"/>
                             <constraint firstItem="Jn1-RQ-i1y" firstAttribute="centerY" secondItem="Vfk-Mg-9fT" secondAttribute="centerY" id="agW-hk-gr4"/>
                             <constraint firstItem="Jn1-RQ-i1y" firstAttribute="height" secondItem="Nkl-Ll-dgB" secondAttribute="height" id="huc-2E-kHB"/>
-                            <constraint firstItem="rAO-wz-sQK" firstAttribute="leading" secondItem="Vfk-Mg-9fT" secondAttribute="leading" constant="36" id="zCp-SI-MJR"/>
-                            <constraint firstItem="Vfk-Mg-9fT" firstAttribute="bottom" secondItem="rAO-wz-sQK" secondAttribute="bottom" constant="225" id="zZo-mn-6KJ"/>
+                            <constraint firstItem="rAO-wz-sQK" firstAttribute="centerX" secondItem="Vfk-Mg-9fT" secondAttribute="centerX" id="i4J-TD-ddO"/>
+                            <constraint firstItem="rAO-wz-sQK" firstAttribute="width" secondItem="Nkl-Ll-dgB" secondAttribute="width" multiplier="0.8" id="ujN-5Z-tST"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pg3-7N-UR6"/>

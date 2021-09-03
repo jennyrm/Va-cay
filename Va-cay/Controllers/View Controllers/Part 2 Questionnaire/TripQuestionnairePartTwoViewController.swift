@@ -91,7 +91,8 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         flightLabel.textAlignment = .center
         
         let button = CalendarButton()
-        button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
+        button.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 25).isActive = true
         button.tintColor = .systemBlue
         button.backgroundColor = .systemGray6
         button.tag = calendarCounter
@@ -156,8 +157,8 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         hotelAirbnbTextField = textField
         
         let button = MapPinButton()
-        button.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 30).isActive = true
         button.addTarget(self, action: #selector(showMapButtonAction), for: .touchUpInside)
         
         let stackView = BorderedStackView()
