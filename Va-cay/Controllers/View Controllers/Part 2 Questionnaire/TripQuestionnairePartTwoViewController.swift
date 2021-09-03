@@ -91,7 +91,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         flightLabel.textAlignment = .center
         
         let button = CalendarButton()
-//        button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
+        button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
         button.tintColor = .systemBlue
         button.backgroundColor = .systemGray6
         button.tag = calendarCounter
@@ -155,7 +155,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         hotelAirbnbTextField = textField
         
         let button = MapPinButton()
-//        button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
+        button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
         button.backgroundColor = .white
         button.tintColor = .red
         button.addTarget(self, action: #selector(showMapButtonAction), for: .touchUpInside)
