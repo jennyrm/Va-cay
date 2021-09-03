@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D17B44E26E1DC47003CC29D /* CalendarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B44D26E1DC47003CC29D /* CalendarButton.swift */; };
+		0D17B45026E282C5003CC29D /* BorderlessTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B44F26E282C5003CC29D /* BorderlessTextField.swift */; };
+		0D17B45326E28683003CC29D /* BorderedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B45226E28683003CC29D /* BorderedStackView.swift */; };
 		0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */; };
 		0D299F2D26CC40C200A5CE31 /* grey.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0D299F2C26CC40C200A5CE31 /* grey.jpeg */; };
 		0D299F2F26CC55D500A5CE31 /* CheckListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */; };
@@ -64,6 +66,8 @@
 
 /* Begin PBXFileReference section */
 		0D17B44D26E1DC47003CC29D /* CalendarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarButton.swift; sourceTree = "<group>"; };
+		0D17B44F26E282C5003CC29D /* BorderlessTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderlessTextField.swift; sourceTree = "<group>"; };
+		0D17B45226E28683003CC29D /* BorderedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedStackView.swift; sourceTree = "<group>"; };
 		0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistModalViewController.swift; sourceTree = "<group>"; };
 		0D299F2C26CC40C200A5CE31 /* grey.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grey.jpeg; sourceTree = "<group>"; };
 		0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +138,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D17B45126E28665003CC29D /* StackView */ = {
+			isa = PBXGroup;
+			children = (
+				0D17B45226E28683003CC29D /* BorderedStackView.swift */,
+			);
+			path = StackView;
+			sourceTree = "<group>";
+		};
 		0D5A963526B2284200CD5707 /* AuthVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +185,7 @@
 		9B4B68E526D80B0A00B2D8AE /* Custom Elements */ = {
 			isa = PBXGroup;
 			children = (
+				0D17B45126E28665003CC29D /* StackView */,
 				9B4D9B8A26DD699A0055B7CF /* Views */,
 				9B4B68E926D80B6600B2D8AE /* Textfields */,
 				9B4B68E826D80B6200B2D8AE /* Labels */,
@@ -207,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				9B4B68EE26D85F1500B2D8AE /* TextField.swift */,
+				0D17B44F26E282C5003CC29D /* BorderlessTextField.swift */,
 			);
 			path = Textfields;
 			sourceTree = "<group>";
@@ -572,6 +586,7 @@
 				9B4D9B8926DD696F0055B7CF /* HeaderLabel.swift in Sources */,
 				9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */,
 				0D5A963226B2121900CD5707 /* UserController.swift in Sources */,
+				0D17B45326E28683003CC29D /* BorderedStackView.swift in Sources */,
 				9BB77715266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift in Sources */,
 				0D17B44E26E1DC47003CC29D /* CalendarButton.swift in Sources */,
 				9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */,
@@ -593,6 +608,7 @@
 				9B4B68EB26D8456F00B2D8AE /* Styleguide.swift in Sources */,
 				9BE480EF266169800079DDBF /* TripQuestionnairePartThreeViewController.swift in Sources */,
 				9BEFE51926A79012003DDD1D /* dayActivitiesTableViewCell.swift in Sources */,
+				0D17B45026E282C5003CC29D /* BorderlessTextField.swift in Sources */,
 				9BB77719266B3A7E008D3645 /* FlightDepartureCalendarViewController.swift in Sources */,
 				9B335CED2660193300FC202B /* MediaSelectorViewController.swift in Sources */,
 				9B4B68EF26D85F1600B2D8AE /* TextField.swift in Sources */,

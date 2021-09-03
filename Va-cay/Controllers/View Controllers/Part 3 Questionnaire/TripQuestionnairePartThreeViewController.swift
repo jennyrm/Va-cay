@@ -156,7 +156,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.backgroundColor = .white
-        button.tintColor = .green
+        button.tintColor = Colors.customGreen
         button.addTarget(self, action: #selector(addActivityButtonAction), for: .touchUpInside)
         
         self.view.addSubview(label)
@@ -171,7 +171,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         self.view.addSubview(scrollView)
         self.view.addSubview(scrollableStackView)
         
-        let textField = TextField()
+        let textField = BorderlessTextField()
         textField.placeholder = "Activity name"
         activitiesTextFieldItems.append(textField)
         
@@ -181,12 +181,11 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         button.tintColor = .red
         button.addTarget(self, action: #selector(showMapButtonAction), for: .touchUpInside)
         
-        let textFieldButtonStackView = UIStackView()
+        let textFieldButtonStackView = BorderedStackView()
         textFieldButtonStackView.axis = .horizontal
         textFieldButtonStackView.alignment = .fill
         textFieldButtonStackView.distribution = .fillProportionally
         textFieldButtonStackView.spacing = 0
-        textFieldButtonStackView.addAccentBorder()
         
         self.view.addSubview(textField)
         self.view.addSubview(button)

@@ -53,6 +53,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
             self.tripImage = tripImage
         }
         dateLabelButtonStackView.addAccentBorder()
+        dateLabelButtonStackView.layer.cornerRadius = 10
     }
 
     // MARK: - Navigation

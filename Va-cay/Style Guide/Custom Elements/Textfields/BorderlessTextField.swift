@@ -1,13 +1,13 @@
 //
-//  Textfields.swift
+//  BorderlessTextField.swift
 //  Va-cay
 //
-//  Created by Jenny Morales on 8/26/21.
+//  Created by James Lea on 9/3/21.
 //
 
 import UIKit
 
-class TextField: UITextField {
+class BorderlessTextField: UITextField {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,17 +20,13 @@ class TextField: UITextField {
     }
     
     required init?(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
+        super.init(coder: aDecoder)
     }
     
     func setupTextfield() {
-        self.addAccentBorder()
-        
-        updateFontTo(font: FontNames.systemFont)
-        
         self.backgroundColor = .white
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = 10
+        updateFontTo(font: FontNames.systemFont)
     }
     
     func setPlaceholderText() {
@@ -45,4 +41,3 @@ class TextField: UITextField {
     }
     
 }//End of class
-

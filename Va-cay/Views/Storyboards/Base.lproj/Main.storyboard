@@ -938,7 +938,7 @@
                                                             <constraint firstAttribute="width" secondItem="Vc8-sL-RKQ" secondAttribute="height" multiplier="1:1" id="T8I-oO-LPF"/>
                                                         </constraints>
                                                         <color key="tintColor" systemColor="systemRedColor"/>
-                                                        <state key="normal" image="location-pin"/>
+                                                        <state key="normal" image="mapPin"/>
                                                         <connections>
                                                             <segue destination="yku-Yu-6fU" kind="show" identifier="toHotelAirbnbMapVC" id="dGV-Da-kn8"/>
                                                         </connections>
@@ -1000,7 +1000,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-DG-d7A">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-DG-d7A" customClass="MapPinButton" customModule="Va_cay" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="29.5" width="30" height="29.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="Fy5-f2-iya"/>
@@ -1567,6 +1567,7 @@
         <image name="earth" width="422.52499389648438" height="422.52499389648438"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="location-pin" width="512" height="512"/>
+        <image name="mapPin" width="512" height="512"/>
         <image name="plus" width="512" height="512"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">

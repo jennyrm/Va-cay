@@ -90,20 +90,19 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     func createLabelCalendarButton(with flightLabel: UILabel) -> UIStackView {
         flightLabel.textAlignment = .center
         
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
+        let button = CalendarButton()
+//        button.setImage(UIImage(systemName: "calendar.badge.clock"), for: .normal)
         button.tintColor = .systemBlue
         button.backgroundColor = .systemGray6
         button.tag = calendarCounter
         calendarCounter += 1
         button.addTarget(self, action: #selector(showCalendarButtonAction), for: .touchUpInside)
         
-        let labelButtonStackView = UIStackView()
+        let labelButtonStackView = BorderedStackView()
         labelButtonStackView.axis = .horizontal
         labelButtonStackView.alignment = .fill
         labelButtonStackView.distribution = .fill
         labelButtonStackView.spacing = 8
-        labelButtonStackView.addAccentBorder()
         
         self.view.addSubview(flightLabel)
         self.view.addSubview(button)
@@ -152,21 +151,20 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         let label = CenterAlignedQuestionnaireLabel()
         label.text = "Hotel/Airbnb"
         
-        let textField = TextField()
+        let textField = BorderlessTextField()
         hotelAirbnbTextField = textField
         
         let button = MapPinButton()
-        button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
+//        button.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
         button.backgroundColor = .white
         button.tintColor = .red
         button.addTarget(self, action: #selector(showMapButtonAction), for: .touchUpInside)
         
-        let stackView = UIStackView()
+        let stackView = BorderedStackView()
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.spacing = 10
-        stackView.addAccentBorder()
         
         self.view.addSubview(label)
         self.view.addSubview(textField)
@@ -202,7 +200,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
-        button.tintColor = .green
+        button.tintColor = Colors.customGreen
         button.addTarget(self, action: #selector(addNewChecklistItem), for: .touchUpInside)
         
         self.view.addSubview(label)
@@ -377,9 +375,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
-//        stackView.layer.cornerRadius = 10
-//        stackView.clipsToBounds = true
-//        stackView.backgroundColor = .black
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
