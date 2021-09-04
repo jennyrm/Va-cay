@@ -151,7 +151,7 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "System", size: 30.0)
+        header.textLabel?.font = .boldSystemFont(ofSize: 20)
         header.textLabel?.textAlignment = NSTextAlignment.center
     }
     

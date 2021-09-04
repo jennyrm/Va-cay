@@ -290,7 +290,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         
         setupScrollableStackViewConstraints()
         
-        previousNextDayButtonStackView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 32).isActive = true
+        previousNextDayButtonStackView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 40).isActive = true
         previousNextDayButtonStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 48).isActive = true
         previousNextDayButtonStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -48).isActive = true
         
