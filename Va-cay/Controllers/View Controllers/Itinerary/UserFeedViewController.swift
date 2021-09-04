@@ -25,6 +25,8 @@ class UserFeedViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         sortByTableViewCell.delegate = self
+        
+        self.navigationController?.isToolbarHidden = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
