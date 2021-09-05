@@ -87,6 +87,13 @@ class DestinationLocationManagerViewController: UIViewController {
             }
         }
     }
+    
+    func setupAnimation(){
+        //        let planeAnimation = Animation.named("plane5")
+        //        animationView.animation = planeAnimation
+        //        animationView.loopMode = .loop
+        //        animationView.play()
+    }
 
     
 }//End of class
