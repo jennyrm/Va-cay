@@ -17,14 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Pn-oo-3mX">
-                                <rect key="frame" x="0.0" y="145.5" width="414" height="414"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="3Pn-oo-3mX" secondAttribute="height" multiplier="1:1" id="QB5-9u-263"/>
-                                </constraints>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktR-Lp-bsa" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="124.5" y="621.5" width="165" height="42"/>
+                                <rect key="frame" x="124.5" y="564" width="165" height="42"/>
                                 <color key="backgroundColor" red="1" green="0.8857404680894333" blue="0.68719883418661221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Create Itinerary">
@@ -35,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urr-e8-x5P">
-                                <rect key="frame" x="135" y="575.5" width="144" height="30"/>
+                                <rect key="frame" x="135" y="518" width="144" height="30"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <state key="normal" title="Get Current Location">
                                     <color key="titleShadowColor" systemColor="labelColor"/>
@@ -44,40 +38,39 @@
                                     <action selector="getCurrentLocationButtonTapped:" destination="FcE-YC-VHs" eventType="touchUpInside" id="y54-Bi-ENc"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rp8-Xa-6IS" customClass="AccentView" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="40" y="109.5" width="334" height="20"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Pn-oo-3mX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="414"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="a0X-AM-nKX"/>
+                                    <constraint firstAttribute="width" secondItem="3Pn-oo-3mX" secondAttribute="height" multiplier="1:1" id="QB5-9u-263"/>
+                                </constraints>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hou-mW-dnM" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="630" width="414" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="kPP-wm-MHC"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel Itinerary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1M-v3-odJ" customClass="HeaderLabel" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="52" y="88" width="310.5" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9ZC-aH-V0T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="K1M-v3-odJ" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="BZi-Vp-U7f"/>
                             <constraint firstItem="Urr-e8-x5P" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" multiplier="0.347826" id="BxS-nP-ZMI"/>
                             <constraint firstItem="3Pn-oo-3mX" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="C4G-ke-hmo"/>
                             <constraint firstItem="Urr-e8-x5P" firstAttribute="top" secondItem="3Pn-oo-3mX" secondAttribute="bottom" constant="16" id="IK2-Sq-2Ys"/>
                             <constraint firstItem="ktR-Lp-bsa" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="IWp-bC-W3k"/>
                             <constraint firstItem="3Pn-oo-3mX" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" id="Iua-sQ-9GJ"/>
-                            <constraint firstItem="K1M-v3-odJ" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" multiplier="0.75" id="NOm-rF-uEK"/>
-                            <constraint firstItem="K1M-v3-odJ" firstAttribute="top" secondItem="9ZC-aH-V0T" secondAttribute="top" id="O2M-vJ-OIc"/>
-                            <constraint firstItem="Rp8-Xa-6IS" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" multiplier="0.806763" id="UC1-FT-Yto"/>
-                            <constraint firstItem="3Pn-oo-3mX" firstAttribute="top" secondItem="Rp8-Xa-6IS" secondAttribute="bottom" constant="16" id="UG5-Ww-vaY"/>
-                            <constraint firstItem="Rp8-Xa-6IS" firstAttribute="top" secondItem="K1M-v3-odJ" secondAttribute="bottom" constant="-12" id="hbC-r0-4Tx"/>
+                            <constraint firstItem="Hou-mW-dnM" firstAttribute="leading" secondItem="9ZC-aH-V0T" secondAttribute="leading" id="RlD-9y-zp0"/>
+                            <constraint firstItem="3Pn-oo-3mX" firstAttribute="top" secondItem="9ZC-aH-V0T" secondAttribute="top" id="Z3a-v8-WdH"/>
                             <constraint firstItem="ktR-Lp-bsa" firstAttribute="top" secondItem="Urr-e8-x5P" secondAttribute="bottom" constant="16" id="nKr-sG-EyS"/>
+                            <constraint firstItem="Hou-mW-dnM" firstAttribute="top" secondItem="3Pn-oo-3mX" secondAttribute="bottom" constant="128" id="oG0-22-EQf"/>
+                            <constraint firstItem="9ZC-aH-V0T" firstAttribute="trailing" secondItem="Hou-mW-dnM" secondAttribute="trailing" id="rwc-c5-Zaa"/>
                             <constraint firstItem="Urr-e8-x5P" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="vzM-23-RcX"/>
-                            <constraint firstItem="Rp8-Xa-6IS" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="ybB-VX-erU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cDl-wt-ujz"/>
                     <connections>
+                        <outlet property="animationView" destination="Hou-mW-dnM" id="Nxy-3E-fjK"/>
                         <outlet property="mapView" destination="3Pn-oo-3mX" id="pnx-MV-RW1"/>
                     </connections>
                 </viewController>
