@@ -39,6 +39,7 @@ class DestinationLocationManagerViewController: UIViewController {
         searchBar.placeholder = "Where to?"
 //        searchBar.tintColor = #colorLiteral(red: 0.6821300152, green: 0.963765997, blue: 1, alpha: 1)
         searchBar.backgroundColor = #colorLiteral(red: 0.6821300152, green: 0.963765997, blue: 1, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.6821300152, green: 0.963765997, blue: 1, alpha: 1)
         navigationItem.searchController = resultSearchController
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false
@@ -49,12 +50,16 @@ class DestinationLocationManagerViewController: UIViewController {
         locationSearchTableVC.handleMapSearchDelegate = self
         
         loadMapPins()
-        setupAnimation()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         saveMapAnnotations()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setupAnimation()
     }
     
     //MARK: - Actions
@@ -98,7 +103,7 @@ class DestinationLocationManagerViewController: UIViewController {
                 let planeAnimation = Animation.named("plane")
                 animationView.animation = planeAnimation
                 animationView.loopMode = .loop
-                animationView.animationSpeed = 2
+        animationView.animationSpeed = 1.5
                 animationView.play()
     }
 

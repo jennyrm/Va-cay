@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 class UserController {
     
@@ -52,6 +53,16 @@ class UserController {
                 return
             }
         }
+    }
+    
+    func updatePassword(password: String) {
+        Auth.auth().currentUser?.updatePassword(to: password, completion: { error in
+            if let error = error {
+                print("An error has occured")
+            } else {
+                print("Account successfully updated")
+            }
+        })
     }
     
 }//End of class

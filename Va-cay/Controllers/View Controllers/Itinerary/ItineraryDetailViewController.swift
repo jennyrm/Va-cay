@@ -21,6 +21,7 @@ class ItineraryDetailViewController: UIViewController {
     @IBOutlet weak var hotelAirbnbLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var checklistButton: SecondaryButton!
+    @IBOutlet weak var budgetLabel: UILabel!
     
     //MARK: - Properties
     var days = [String]()

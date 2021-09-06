@@ -21,8 +21,8 @@
 		0D60FCC926B34D2500F75732 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D60FCC826B34D2500F75732 /* AuthViewModel.swift */; };
 		0D7D498526B86B34006218D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D498426B86B34006218D8 /* SettingsViewController.swift */; };
 		0DA23CDD26DD60C6008F0B56 /* sortByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */; };
-		0DBDB50526C492C6000D26DE /* plane5.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DBDB50426C492C6000D26DE /* plane5.json */; };
 		0DC34EBD26DD885900F65AE1 /* MapPinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */; };
+		0DE5463826E6BDCF006C1904 /* plane1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5463726E6BDCF006C1904 /* plane1.json */; };
 		645865D8133CD9789C54A4C6 /* Pods_Va_cay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DD421D3AC2E0A9378B7C84 /* Pods_Va_cay.framework */; };
 		9B1C572726648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C572626648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift */; };
 		9B324800267DD85600C16040 /* ItineraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3247FF267DD85600C16040 /* ItineraryDetailViewController.swift */; };
@@ -80,8 +80,8 @@
 		0D60FCC826B34D2500F75732 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		0D7D498426B86B34006218D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortByTableViewCell.swift; sourceTree = "<group>"; };
-		0DBDB50426C492C6000D26DE /* plane5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane5.json; sourceTree = "<group>"; };
 		0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinButton.swift; sourceTree = "<group>"; };
+		0DE5463726E6BDCF006C1904 /* plane1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane1.json; sourceTree = "<group>"; };
 		291561126532659012BB1D3B /* Pods-Va-cay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.release.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.release.xcconfig"; sourceTree = "<group>"; };
 		9B1C572626648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripQuestionnairePartTwoViewController.swift; sourceTree = "<group>"; };
 		9B3247FF267DD85600C16040 /* ItineraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryDetailViewController.swift; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				0D299F2C26CC40C200A5CE31 /* grey.jpeg */,
-				0DBDB50426C492C6000D26DE /* plane5.json */,
+				0DE5463726E6BDCF006C1904 /* plane1.json */,
 				9B9E066626E5E52600B03503 /* plane.json */,
 				0D17B45426E2953D003CC29D /* calendar.svg */,
 				9B543C04265F309500F5353A /* AppDelegate.swift */,
@@ -525,9 +525,9 @@
 				9B543C11265F309800F5353A /* LaunchScreen.storyboard in Resources */,
 				9B335CE5265F476800FC202B /* GoogleService-Info.plist in Resources */,
 				9B543C0E265F309800F5353A /* Assets.xcassets in Resources */,
-				0DBDB50526C492C6000D26DE /* plane5.json in Resources */,
 				9B543C0C265F309500F5353A /* Main.storyboard in Resources */,
 				0D17B45526E2953D003CC29D /* calendar.svg in Resources */,
+				0DE5463826E6BDCF006C1904 /* plane1.json in Resources */,
 				9B9E066726E5E52700B03503 /* plane.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
