@@ -96,7 +96,7 @@ class DestinationLocationManagerViewController: UIViewController {
                 let planeAnimation = Animation.named("plane")
                 animationView.animation = planeAnimation
                 animationView.loopMode = .loop
-                animationView.animationSpeed = 5
+                animationView.animationSpeed = 2
                 animationView.play()
     }
 
