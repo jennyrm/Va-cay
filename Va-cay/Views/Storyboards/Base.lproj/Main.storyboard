@@ -772,7 +772,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az4-YK-P8D">
                                 <rect key="frame" x="175" y="784" width="64" height="64"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="9q5-r3-nxG"/>
                                     <constraint firstAttribute="width" secondItem="az4-YK-P8D" secondAttribute="height" multiplier="1:1" id="fZa-kR-3DS"/>
@@ -1584,6 +1584,9 @@
             <point key="canvasLocation" x="-533" y="-579"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Hou-mW-dnM"/>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="sUL-gB-KDv"/>
         <segue reference="vE9-dT-EKZ"/>
