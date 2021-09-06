@@ -17,13 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hou-mW-dnM" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="602" width="414" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="kPP-wm-MHC"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktR-Lp-bsa">
-                                <rect key="frame" x="92.5" y="580" width="229" height="54"/>
+                                <rect key="frame" x="103.5" y="588" width="207" height="89.5"/>
                                 <color key="backgroundColor" red="0.188279748" green="0.73409175869999999" blue="0.528785646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Create Itinerary">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="DDW-h3-aWU" kind="show" identifier="" id="znz-mM-Txb"/>
                                 </connections>
@@ -44,16 +57,9 @@
                                     <constraint firstAttribute="width" secondItem="3Pn-oo-3mX" secondAttribute="height" multiplier="1:1" id="QB5-9u-263"/>
                                 </constraints>
                             </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hou-mW-dnM" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="0.0" y="642" width="414" height="100"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="kPP-wm-MHC"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9ZC-aH-V0T"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Urr-e8-x5P" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" multiplier="0.347826" id="BxS-nP-ZMI"/>
                             <constraint firstItem="3Pn-oo-3mX" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="C4G-ke-hmo"/>
@@ -62,8 +68,10 @@
                             <constraint firstItem="3Pn-oo-3mX" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" id="Iua-sQ-9GJ"/>
                             <constraint firstItem="Hou-mW-dnM" firstAttribute="leading" secondItem="9ZC-aH-V0T" secondAttribute="leading" id="RlD-9y-zp0"/>
                             <constraint firstItem="3Pn-oo-3mX" firstAttribute="top" secondItem="9ZC-aH-V0T" secondAttribute="top" id="Z3a-v8-WdH"/>
-                            <constraint firstItem="ktR-Lp-bsa" firstAttribute="top" secondItem="Urr-e8-x5P" secondAttribute="bottom" constant="32" id="nKr-sG-EyS"/>
-                            <constraint firstItem="Hou-mW-dnM" firstAttribute="top" secondItem="3Pn-oo-3mX" secondAttribute="bottom" constant="140" id="oG0-22-EQf"/>
+                            <constraint firstItem="ktR-Lp-bsa" firstAttribute="height" secondItem="wIA-Gb-UmQ" secondAttribute="height" multiplier="0.1" id="efL-yw-Qqh"/>
+                            <constraint firstItem="ktR-Lp-bsa" firstAttribute="top" secondItem="Urr-e8-x5P" secondAttribute="bottom" constant="40" id="nKr-sG-EyS"/>
+                            <constraint firstItem="Hou-mW-dnM" firstAttribute="top" secondItem="3Pn-oo-3mX" secondAttribute="bottom" constant="100" id="oG0-22-EQf"/>
+                            <constraint firstItem="ktR-Lp-bsa" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" multiplier="0.5" id="qZA-f3-sk8"/>
                             <constraint firstItem="9ZC-aH-V0T" firstAttribute="trailing" secondItem="Hou-mW-dnM" secondAttribute="trailing" id="rwc-c5-Zaa"/>
                             <constraint firstItem="Urr-e8-x5P" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="vzM-23-RcX"/>
                         </constraints>
@@ -634,6 +642,11 @@
                                                             <state key="normal" title="A-Z">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                    <integer key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="alphabeticalButtonTapped:" destination="NyN-gt-jFM" eventType="touchUpInside" id="GEu-31-6fk"/>
                                                             </connections>
@@ -644,12 +657,17 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="gqV-LW-E4L"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Upcoming" image="arrow.up" catalog="system">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15"/>
                                                             </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                    <integer key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="upcomingButtonTapped:" destination="NyN-gt-jFM" eventType="touchUpInside" id="i2V-uW-dtQ"/>
                                                             </connections>
@@ -660,7 +678,7 @@
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.86908880580000003" blue="0.37538887589999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.42453433310280886" green="0.75119724271974553" blue="0.8765285097319504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="5r5-hU-oQ6" firstAttribute="centerY" secondItem="hfb-v0-2QF" secondAttribute="centerY" id="8f8-xA-njY"/>
                                                 <constraint firstAttribute="trailing" secondItem="5r5-hU-oQ6" secondAttribute="trailing" constant="24" id="oRl-j3-teF"/>
@@ -681,7 +699,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3F-Wd-edv">
                                                     <rect key="frame" x="20.5" y="8.5" width="373" height="317"/>
-                                                    <color key="backgroundColor" red="1" green="0.93263278001814409" blue="0.68893777339508255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.68213001521729155" green="0.96376599701516741" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nN1-zn-d8x">
                                                     <rect key="frame" x="41.5" y="33.5" width="331" height="267"/>
@@ -746,13 +764,10 @@
                                                             <rect key="frame" x="0.0" y="84" width="331" height="183"/>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="0.93263278000000005" blue="0.68893777339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
-                                                    </userDefinedRuntimeAttributes>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.86908880580000003" blue="0.37538887589999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.42453433309999999" green="0.75119724269999999" blue="0.87652850969999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="U3F-Wd-edv" firstAttribute="height" secondItem="QPu-e8-g1F" secondAttribute="height" multiplier="0.95" id="1zn-le-Nt1"/>
                                                 <constraint firstItem="U3F-Wd-edv" firstAttribute="centerY" secondItem="QPu-e8-g1F" secondAttribute="centerY" id="ABh-Ge-NCW"/>
@@ -787,6 +802,9 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="96"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addItineraryButtonTapped:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="lBo-Sc-6fw"/>
                                     <segue destination="FcE-YC-VHs" kind="show" id="pcU-1e-Qrk"/>
@@ -1286,7 +1304,7 @@
             <objects>
                 <viewController id="hxb-zM-tZ7" customClass="MediaSelectorViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u3Q-iE-VWE">
-                        <rect key="frame" x="0.0" y="0.0" width="331" height="295.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="331" height="295"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wNC-rp-gRk">

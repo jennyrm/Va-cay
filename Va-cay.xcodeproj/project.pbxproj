@@ -374,10 +374,10 @@
 		9B543C3A265F34CE00F5353A /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				9B4EE8BF266FFA6D007EB937 /* ItineraryTableViewCell.swift */,
-				9BEFE51826A79012003DDD1D /* dayActivitiesTableViewCell.swift */,
-				0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */,
 				0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */,
+				9B4EE8BF266FFA6D007EB937 /* ItineraryTableViewCell.swift */,
+				0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */,
+				9BEFE51826A79012003DDD1D /* dayActivitiesTableViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
