@@ -13,12 +13,6 @@ class DestinationLocationSearchTableViewController: UITableViewController {
     var matchingItems: [MKMapItem] = []
     var mapView: MKMapView? 
     var handleMapSearchDelegate: HandleMapSearch?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
 }//End of class
 
 //MARK: - Extensions
