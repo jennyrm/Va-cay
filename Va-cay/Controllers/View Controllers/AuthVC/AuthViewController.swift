@@ -109,15 +109,15 @@ class AuthViewController: UIViewController {
     }
     
     func setupOutlets() {
-        animationView.backgroundColor = nil
-        
-        passwordOneTextField.isSecureTextEntry = true
-        passwordTwoTextField.isSecureTextEntry = true
-        passwordTwoTextField.isHidden = true
-        
-        errorLabel.isHidden = true
-        
-        switchButton.setTitle("Register here", for: .normal)
+//        animationView.backgroundColor = nil
+//        
+//        passwordOneTextField.isSecureTextEntry = true
+//        passwordTwoTextField.isSecureTextEntry = true
+//        passwordTwoTextField.isHidden = true
+//        
+//        errorLabel.isHidden = true
+//        
+//        switchButton.setTitle("Register here", for: .normal)
     }
     
 }//End of class

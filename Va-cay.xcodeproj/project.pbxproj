@@ -51,6 +51,7 @@
 		9B5BCEA726DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEA626DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift */; };
 		9B5BCEAB26DB47F4007A9647 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */; };
 		9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83332926673108008EB6E9 /* Itinerary.swift */; };
+		9B9E066726E5E52700B03503 /* plane.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B9E066626E5E52600B03503 /* plane.json */; };
 		9BB77709266A92BE008D3645 /* TripCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */; };
 		9BB77710266ADB04008D3645 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7770F266ADB03008D3645 /* DateExtension.swift */; };
 		9BB77715266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77714266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift */; };
@@ -111,6 +112,7 @@
 		9B5BCEA626DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAlignedQuestionnaireLabel.swift; sourceTree = "<group>"; };
 		9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		9B83332926673108008EB6E9 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
+		9B9E066626E5E52600B03503 /* plane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane.json; sourceTree = "<group>"; };
 		9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCalendarViewController.swift; sourceTree = "<group>"; };
 		9BB7770F266ADB03008D3645 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		9BB77714266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightArrivalCalendarViewController.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			children = (
 				0D299F2C26CC40C200A5CE31 /* grey.jpeg */,
 				0DBDB50426C492C6000D26DE /* plane5.json */,
+				9B9E066626E5E52600B03503 /* plane.json */,
 				0D17B45426E2953D003CC29D /* calendar.svg */,
 				9B543C04265F309500F5353A /* AppDelegate.swift */,
 				9B543C06265F309500F5353A /* SceneDelegate.swift */,
@@ -525,6 +528,7 @@
 				0DBDB50526C492C6000D26DE /* plane5.json in Resources */,
 				9B543C0C265F309500F5353A /* Main.storyboard in Resources */,
 				0D17B45526E2953D003CC29D /* calendar.svg in Resources */,
+				9B9E066726E5E52700B03503 /* plane.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
