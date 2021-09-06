@@ -7,11 +7,14 @@
 
 import UIKit
 import MapKit
+import Lottie
 
 class DestinationLocationManagerViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var animationView: AnimationView!
+    
     
     //MARK: - Properties
     let locationManager = CLLocationManager()
@@ -44,6 +47,7 @@ class DestinationLocationManagerViewController: UIViewController {
         locationSearchTableVC.handleMapSearchDelegate = self
         
         loadMapPins()
+        setupAnimation()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -89,10 +93,10 @@ class DestinationLocationManagerViewController: UIViewController {
     }
     
     func setupAnimation(){
-        //        let planeAnimation = Animation.named("plane5")
-        //        animationView.animation = planeAnimation
-        //        animationView.loopMode = .loop
-        //        animationView.play()
+                let planeAnimation = Animation.named("plane5")
+                animationView.animation = planeAnimation
+                animationView.loopMode = .loop
+                animationView.play()
     }
 
     
