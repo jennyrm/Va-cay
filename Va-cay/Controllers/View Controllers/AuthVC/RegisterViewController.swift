@@ -24,6 +24,16 @@ class RegisterViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func createAccountButtonTapped(_ sender: Any) {
+        guard let email = emailTextfield.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty,
+              let confirmPassword = confirmPasswordTextfield.text, !confirmPassword.isEmpty else {return}
+        AuthViewModel.register(email: email, password: password, confirmPassword: confirmPassword) { result in
+            if result {
+                
+            } else {
+                
+            }
+        }
         
     }
     
