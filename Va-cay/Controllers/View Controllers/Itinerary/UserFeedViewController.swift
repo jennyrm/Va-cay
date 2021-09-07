@@ -127,7 +127,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete && indexPath.row > 0 {
             let confirmDeleteController = UIAlertController(title: "Delete Itinerary", message: "Are you sure you want to delete this itinerary?", preferredStyle: .alert)
             
-            let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row]
+            let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row - 1]
             
             let confirmAction = UIAlertAction(title: "Delete", style: .destructive) { action in
                 DispatchQueue.main.async {
