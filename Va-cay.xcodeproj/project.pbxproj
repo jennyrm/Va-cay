@@ -21,6 +21,9 @@
 		0D60FCC926B34D2500F75732 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D60FCC826B34D2500F75732 /* AuthViewModel.swift */; };
 		0D7D498526B86B34006218D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D498426B86B34006218D8 /* SettingsViewController.swift */; };
 		0DA23CDD26DD60C6008F0B56 /* sortByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */; };
+		0DA6676126E7DAD6007E1977 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676026E7DAD6007E1977 /* LandingPageViewController.swift */; };
+		0DA6676326E7DAE7007E1977 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676226E7DAE7007E1977 /* LoginViewController.swift */; };
+		0DA6676526E7DAFE007E1977 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676426E7DAFE007E1977 /* RegisterViewController.swift */; };
 		0DC34EBD26DD885900F65AE1 /* MapPinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */; };
 		0DE5463826E6BDCF006C1904 /* plane1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5463726E6BDCF006C1904 /* plane1.json */; };
 		645865D8133CD9789C54A4C6 /* Pods_Va_cay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DD421D3AC2E0A9378B7C84 /* Pods_Va_cay.framework */; };
@@ -80,6 +83,9 @@
 		0D60FCC826B34D2500F75732 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		0D7D498426B86B34006218D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortByTableViewCell.swift; sourceTree = "<group>"; };
+		0DA6676026E7DAD6007E1977 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
+		0DA6676226E7DAE7007E1977 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0DA6676426E7DAFE007E1977 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinButton.swift; sourceTree = "<group>"; };
 		0DE5463726E6BDCF006C1904 /* plane1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane1.json; sourceTree = "<group>"; };
 		291561126532659012BB1D3B /* Pods-Va-cay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.release.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +160,9 @@
 				0D5A963626B2287000CD5707 /* AuthViewController.swift */,
 				0D60FCC826B34D2500F75732 /* AuthViewModel.swift */,
 				0D7D498426B86B34006218D8 /* SettingsViewController.swift */,
+				0DA6676026E7DAD6007E1977 /* LandingPageViewController.swift */,
+				0DA6676226E7DAE7007E1977 /* LoginViewController.swift */,
+				0DA6676426E7DAFE007E1977 /* RegisterViewController.swift */,
 			);
 			path = AuthVC;
 			sourceTree = "<group>";
@@ -595,11 +604,13 @@
 				0D17B44E26E1DC47003CC29D /* CalendarButton.swift in Sources */,
 				9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */,
 				0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */,
+				0DA6676326E7DAE7007E1977 /* LoginViewController.swift in Sources */,
 				9B4D9B8C26DD69A70055B7CF /* AccentView.swift in Sources */,
 				9B4D9B8E26DD99DA0055B7CF /* LeftAlignedQuestionnaireLabel.swift in Sources */,
 				9B5BCEA726DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift in Sources */,
 				9B335CEA265F493400FC202B /* ItineraryController.swift in Sources */,
 				0DA23CDD26DD60C6008F0B56 /* sortByTableViewCell.swift in Sources */,
+				0DA6676126E7DAD6007E1977 /* LandingPageViewController.swift in Sources */,
 				9BB77724266DDFE1008D3645 /* HotelAirbnbLocationManagerViewController.swift in Sources */,
 				0D60FCC926B34D2500F75732 /* AuthViewModel.swift in Sources */,
 				9B4EE8A9266E0CB8007EB937 /* ActivitiesLocationManagerViewController.swift in Sources */,
@@ -620,6 +631,7 @@
 				9B543C05265F309500F5353A /* AppDelegate.swift in Sources */,
 				0D5A963426B215E900CD5707 /* UserError.swift in Sources */,
 				0D299F2F26CC55D500A5CE31 /* CheckListItemTableViewCell.swift in Sources */,
+				0DA6676526E7DAFE007E1977 /* RegisterViewController.swift in Sources */,
 				9B335CF32660546C00FC202B /* ErrorAlert.swift in Sources */,
 				9B543C07265F309500F5353A /* SceneDelegate.swift in Sources */,
 				0DC34EBD26DD885900F65AE1 /* MapPinButton.swift in Sources */,
