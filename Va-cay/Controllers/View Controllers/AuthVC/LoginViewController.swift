@@ -6,13 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
-    // MARK: - Properties
     
     
     // MARK: - Lifecycle
@@ -20,7 +20,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    
     
     // MARK: - Actions
     @IBAction func signInButtonTapped(_ sender: Any) {
@@ -30,14 +29,16 @@ class LoginViewController: UIViewController {
         AuthViewModel.login(email: email, password: password) { result in
             if result {
                 self.transitionToHome()
+            } else {
+                let errorController = UIAlertController(title: "Error", message: "Error logging in", preferredStyle: .alert)
+                errorController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.present(errorController, animated: true, completion: nil)
             }
         }
-        
-        
     }
     
     @IBAction func forgotPasswordButtonTapped(_ sender: Any) {
-        
+        forgotPassword()
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -49,15 +50,24 @@ class LoginViewController: UIViewController {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func forgotPassword() {
+        let forgotPasswordAlert = UIAlertController(title: "Please Enter Email Address", message: "You will be sent an email to change your Password", preferredStyle: .alert)
+        forgotPasswordAlert.addTextField { textField in
+            textField.placeholder = "Email"
+        }
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Send Email", style: .default, handler: { _ in
+            guard let resetEmail = forgotPasswordAlert.textFields?.first?.text else {return}
+            Auth.auth().sendPasswordReset(withEmail: resetEmail) { error in
+                if let error = error {
+                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                    print("Could not send email for password reset")
+                } else {
+                    print("Email Sent")
+                }
+            }
+        }))
+        present(forgotPasswordAlert, animated: true, completion: nil)
     }
-    */
 
 }
