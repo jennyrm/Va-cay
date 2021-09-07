@@ -25,6 +25,7 @@ class UserFeedViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         sortByTableViewCell.delegate = self
+        tableView.backgroundColor = UIColor(white: 1, alpha: 0.1)
     }
 
     override func viewDidAppear(_ animated: Bool) {
