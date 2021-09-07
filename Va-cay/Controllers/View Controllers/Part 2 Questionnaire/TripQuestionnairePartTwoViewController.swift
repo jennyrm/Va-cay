@@ -31,6 +31,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        self.view.backgroundColor = Colors.customOffWhite
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -91,7 +92,8 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         flightLabel.textAlignment = .center
         flightLabel.layer.cornerRadius = 5
         flightLabel.layer.borderWidth = 1
-        flightLabel.layer.borderColor = Colors.customLightGray.cgColor
+        flightLabel.layer.borderColor = Colors.customDarkGray.cgColor
+        flightLabel.backgroundColor = .systemGray6
         
         let button = CalendarButton()
         button.heightAnchor.constraint(equalToConstant: 24).isActive = true
@@ -397,7 +399,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillProportionally
-        stackView.spacing = 8
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()

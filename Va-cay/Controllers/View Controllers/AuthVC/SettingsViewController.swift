@@ -21,7 +21,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        self.view.backgroundColor = #colorLiteral(red: 0.4660670161, green: 0.7799585462, blue: 0.8957038522, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.9444853067, green: 0.9379343987, blue: 0.9166787267, alpha: 1)
         setupAnimation()
     }
     
@@ -47,7 +47,6 @@ class SettingsViewController: UIViewController {
         guard let user = UserController.shared.user else {return}
         emailLabel.text = user.email
         changePasswordButton.layer.cornerRadius = 10
-        logOutButton.backgroundColor = .systemRed
         logOutButton.layer.cornerRadius = 10
     }
     

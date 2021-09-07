@@ -57,7 +57,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
     
     func styleOutlets() {
         tripNameTextField.layer.cornerRadius = 10
-        tripDateLabel.layer.borderColor = Colors.customLightGray.cgColor
+        tripDateLabel.layer.borderColor = Colors.customDarkGray.cgColor
     }
 
     // MARK: - Navigation
