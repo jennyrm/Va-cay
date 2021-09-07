@@ -19,7 +19,7 @@ extension UIView {
 }//End of extension
 
 struct Colors {
-    static let customGreen = UIColor(red: 0/255, green: 187/255, blue: 135/255, alpha: 1)
+    static let customLightBlue = UIColor(red: 145/255, green: 189/255, blue: 202/255, alpha: 1)
     static let customLightGreen = UIColor(red: 190/255, green: 255/255, blue: 172/255, alpha: 1)
     static let customDarkGreen = UIColor(red: 1/255, green: 92/255, blue: 66/255, alpha: 1)
     static let customYellow = UIColor(red: 238/255, green: 200/255, blue: 87/255, alpha: 1)
