@@ -30,6 +30,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateView()
+        self.view.backgroundColor = Colors.customOffWhite
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -155,7 +156,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
-        button.backgroundColor = .white
+        button.backgroundColor = Colors.customOffWhite
         button.tintColor = Colors.customLightBlue
         button.addTarget(self, action: #selector(addActivityButtonAction), for: .touchUpInside)
         
@@ -339,7 +340,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillProportionally
-        stackView.spacing = 8
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()

@@ -41,9 +41,7 @@ class ItineraryTableViewCell: UITableViewCell {
         guard let itinerary = itinerary else { return }
         roundedCellEdge.layer.borderWidth = 2
         roundedCellEdge.layer.borderColor = Colors.customLightGray.cgColor
-        self.contentView.backgroundColor = UIColor(white: 1, alpha: 0.8)
-        roundedCellEdge.backgroundColor = UIColor(white: 1, alpha: 0.8)
-        itineraryCellStackView.backgroundColor = UIColor(white: 1, alpha: 0.1)
+        roundedCellEdge.backgroundColor = UIColor(white: 1, alpha: 0.9)
         itineraryBreakBarView.layer.cornerRadius = 10
         destinationLabel.text = itinerary.tripName
         let imageData = itinerary.tripImage
