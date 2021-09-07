@@ -156,7 +156,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.backgroundColor = .white
-        button.tintColor = Colors.customGreen
+        button.tintColor = Colors.customLightBlue
         button.addTarget(self, action: #selector(addActivityButtonAction), for: .touchUpInside)
         
         self.view.addSubview(label)
@@ -374,7 +374,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         let button = SecondaryButton()
         button.setTitle("Submit", for: .normal)
         button.layer.borderWidth = 2
-        button.layer.borderColor = Colors.customDarkGreen.cgColor
+        button.layer.borderColor = Colors.customLightGray.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(submitItineraryObject), for: .touchUpInside)
         return button

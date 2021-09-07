@@ -202,7 +202,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
-        button.tintColor = Colors.customGreen
+        button.tintColor = Colors.customLightBlue
         button.addTarget(self, action: #selector(addNewChecklistItem), for: .touchUpInside)
         
         self.view.addSubview(label)

@@ -27,7 +27,7 @@ class SecondaryButton: UIButton {
         updateFontTo(font: FontNames.systemFont)
         
         setTitleColor(.black, for: .normal)
-        self.backgroundColor = Colors.customGreen
+        self.backgroundColor = Colors.customLightBlue
         self.addCornerRadius()
     }
 

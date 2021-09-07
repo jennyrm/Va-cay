@@ -27,7 +27,7 @@ class PrimaryButton: UIButton {
         updateFontTo(font: FontNames.systemFont)
         
         setTitleColor(.white, for: .normal)
-        self.backgroundColor = Colors.customGreen
+        self.backgroundColor = Colors.customLightBlue
     }
 
     func updateFontTo(font: String) {

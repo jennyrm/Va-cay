@@ -14,7 +14,7 @@ class DestinationLocationManagerViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var animationView: AnimationView!
-    
+    @IBOutlet weak var createItineraryButton: UIButton!
     
     //MARK: - Properties
     let locationManager = CLLocationManager()
@@ -26,29 +26,7 @@ class DestinationLocationManagerViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        let locationSearchTableVC = storyboard!.instantiateViewController(withIdentifier: "DestinationLocationSearchTableVC") as! DestinationLocationSearchTableViewController
-        resultSearchController = UISearchController(searchResultsController: locationSearchTableVC)
-        resultSearchController?.searchResultsUpdater = locationSearchTableVC
-        
-        let searchBar = resultSearchController!.searchBar
-        searchBar.sizeToFit()
-        searchBar.placeholder = "Where to?"
-//        searchBar.tintColor = #colorLiteral(red: 0.6821300152, green: 0.963765997, blue: 1, alpha: 1)
-        searchBar.backgroundColor = #colorLiteral(red: 0.6821300152, green: 0.963765997, blue: 1, alpha: 1)
-        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.6821300152, green: 0.963765997, blue: 1, alpha: 1)
-        navigationItem.searchController = resultSearchController
-        
-        resultSearchController?.hidesNavigationBarDuringPresentation = false
-        resultSearchController?.obscuresBackgroundDuringPresentation = true
-        definesPresentationContext = true
-        
-        locationSearchTableVC.mapView = mapView
-        locationSearchTableVC.handleMapSearchDelegate = self
-        
+        setupView()
         loadMapPins()
     }
     
@@ -69,13 +47,28 @@ class DestinationLocationManagerViewController: UIViewController {
     }
     
     //MARK: - Functions
-    func saveMapAnnotations() {
-        for annotation in mapView.annotations {
-            coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] )
-        }
-        if !coordinates.isEmpty {
-            ItineraryController.sharedInstance.itineraryData["destinationCoordinates"] = coordinates
-        }
+    func setupView() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        let locationSearchTableVC = storyboard!.instantiateViewController(withIdentifier: "DestinationLocationSearchTableVC") as! DestinationLocationSearchTableViewController
+        resultSearchController = UISearchController(searchResultsController: locationSearchTableVC)
+        resultSearchController?.searchResultsUpdater = locationSearchTableVC
+        
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Where to?"
+        navigationItem.searchController = resultSearchController
+        
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.obscuresBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        
+        locationSearchTableVC.mapView = mapView
+        locationSearchTableVC.handleMapSearchDelegate = self
+        
+        createItineraryButton.layer.borderWidth = 1
+        createItineraryButton.layer.borderColor = Colors.customLightGray.cgColor
     }
     
     func loadMapPins() {
@@ -99,14 +92,22 @@ class DestinationLocationManagerViewController: UIViewController {
         }
     }
     
-    func setupAnimation(){
-                let planeAnimation = Animation.named("plane")
-                animationView.animation = planeAnimation
-                animationView.loopMode = .loop
+    func setupAnimation() {
+        let planeAnimation = Animation.named("plane")
+        animationView.animation = planeAnimation
+        animationView.loopMode = .loop
         animationView.animationSpeed = 1.5
-                animationView.play()
+        animationView.play()
     }
 
+    func saveMapAnnotations() {
+        for annotation in mapView.annotations {
+            coordinates.append( [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] )
+        }
+        if !coordinates.isEmpty {
+            ItineraryController.sharedInstance.itineraryData["destinationCoordinates"] = coordinates
+        }
+    }
     
 }//End of class
 

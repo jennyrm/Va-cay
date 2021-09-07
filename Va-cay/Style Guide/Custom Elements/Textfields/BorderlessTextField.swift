@@ -31,7 +31,7 @@ class BorderlessTextField: UITextField {
     
     func setPlaceholderText() {
         let currentPlaceholder = self.placeholder
-        self.attributedPlaceholder = NSAttributedString(string: currentPlaceholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : Colors.customGreen, NSAttributedString.Key.font: UIFont(name: FontNames.systemFont, size: 16)!
+        self.attributedPlaceholder = NSAttributedString(string: currentPlaceholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : Colors.customLightBlue, NSAttributedString.Key.font: UIFont(name: FontNames.systemFont, size: 16)!
         ])
     }
     

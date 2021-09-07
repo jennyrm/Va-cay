@@ -11,7 +11,7 @@ class ItineraryTableViewCell: UITableViewCell {
     
     //MARK: - Outlets
     @IBOutlet weak var destinationLabel: UILabel!
-    @IBOutlet weak var tripDateLabel: CenterAlignedQuestionnaireLabel!
+    @IBOutlet weak var tripDateLabel: UILabel!
     @IBOutlet weak var tripImageView: UIImageView!
     @IBOutlet weak var itineraryCellStackView: UIStackView!
     @IBOutlet weak var roundedCellEdge: UIView!
@@ -39,16 +39,13 @@ class ItineraryTableViewCell: UITableViewCell {
     //MARK: - Functions
     func updateView() {
         guard let itinerary = itinerary else { return }
-        roundedCellEdge.layer.cornerRadius = 25
         roundedCellEdge.layer.borderWidth = 2
-        roundedCellEdge.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).cgColor
+        roundedCellEdge.layer.borderColor = #colorLiteral(red: 0.5678636995, green: 0.742842365, blue: 0.7933996792, alpha: 1)
         itineraryBreakBarView.layer.cornerRadius = 10
         destinationLabel.text = itinerary.tripName
         let imageData = itinerary.tripImage
         tripImageView.image = UIImage(data: imageData ?? Data())
-        guard let tripDate = itinerary.tripDate else {
-            tripDateLabel.isHidden = true
-            return}
+        guard let tripDate = itinerary.tripDate else { tripDateLabel.isHidden = true; return }
         tripDateLabel.text = tripDate.formatToString()
     }
     
