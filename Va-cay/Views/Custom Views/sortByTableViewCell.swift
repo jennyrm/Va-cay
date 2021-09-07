@@ -22,7 +22,7 @@ class sortByTableViewCell: UITableViewCell {
     static weak var delegate: sortByTableViewCellDelegate?
     var index: Int? {
         didSet {
-                updateViews()
+            updateViews()
         }
     }
     
@@ -71,18 +71,14 @@ class sortByTableViewCell: UITableViewCell {
                 return $0.tripDate! < $1.tripDate!
             }
             sortedItinerariesByNewestDate.append(contentsOf: nonDatedItineraries)
-            
             ItineraryController.sharedInstance.itineraries = sortedItinerariesByNewestDate
-            
             sender.setImage(UIImage(systemName: "arrow.down"), for: .normal)
         } else {
             var sortedItinerariesByOldestDate = datedItineraries.sorted {
                 return $0.tripDate! > $1.tripDate!
             }
             sortedItinerariesByOldestDate.append(contentsOf: nonDatedItineraries)
-            
             ItineraryController.sharedInstance.itineraries = sortedItinerariesByOldestDate
-            
             sender.setImage(UIImage(systemName: "arrow.up"), for: .normal)
         }
         sortByTableViewCell.delegate?.reloadTableView()
@@ -90,10 +86,11 @@ class sortByTableViewCell: UITableViewCell {
     
     // MARK: - Functions
     func updateViews() {
-        sortByButton.tintColor = #colorLiteral(red: 0.5678636995, green: 0.742842365, blue: 0.7933996792, alpha: 1)
+        sortByButton.tintColor = Colors.customLightGray
+        self.contentView.backgroundColor = UIColor(white: 1, alpha: 0.8)
         if !ItineraryController.sharedInstance.sortByBool {
-        sortAZButton.isHidden = true
-        upcomingButton.isHidden = true
+            sortAZButton.isHidden = true
+            upcomingButton.isHidden = true
         } else {
             sortAZButton.isHidden = false
             upcomingButton.isHidden = false
