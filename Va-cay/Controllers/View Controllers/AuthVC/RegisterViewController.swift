@@ -13,10 +13,12 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextfield: UITextField!
     
+    @IBOutlet weak var createAccountLabel: UIButton!
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(white: 1, alpha: 0.9)
+        updateView()
     }
     
     // MARK: - Actions
@@ -31,7 +33,6 @@ class RegisterViewController: UIViewController {
                 
             }
         }
-        
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -41,6 +42,11 @@ class RegisterViewController: UIViewController {
     // MARK: - Functions
     func transitionToHome(){
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func updateView() {
+        self.view.backgroundColor = UIColor(white: 1, alpha: 0.9)
+        createAccountLabel.layer.cornerRadius = 14
     }
     
 }//End of class
