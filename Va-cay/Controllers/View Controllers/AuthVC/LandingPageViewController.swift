@@ -13,6 +13,7 @@ class LandingPageViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var videoView: QueuePlayerUIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     // MARK: - Properties
     var safeArea: UILayoutGuide {
@@ -22,13 +23,18 @@ class LandingPageViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateView()
     }
     
     // MARK: - Actions
     
     
     // MARK: - FNs
+    func updateView() {
+        titleLabel.backgroundColor = UIColor(white: 1, alpha: 0.8)
+        titleLabel.layer.cornerRadius = 10
+        titleLabel.layer.masksToBounds = true
+    }
     
     // MARK: - Navigation
     

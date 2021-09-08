@@ -70,4 +70,5 @@ class LoginViewController: UIViewController {
         present(forgotPasswordAlert, animated: true, completion: nil)
     }
 
-}
+}//End of class
+
