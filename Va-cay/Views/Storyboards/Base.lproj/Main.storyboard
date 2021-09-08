@@ -253,9 +253,11 @@
                                     <action selector="exitModalButtonTapped:" destination="35b-ar-bwY" eventType="touchUpInside" id="Ay4-tt-dlx"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RkB-ET-Tgq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RkB-ET-Tgq">
                                 <rect key="frame" x="83" y="235.5" width="248" height="337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.56917726989999995" green="0.74188441039999997" blue="0.7913460135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkCell" rowHeight="74" id="exB-Pq-6XX" customClass="CheckListItemTableViewCell" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="248" height="74"/>
@@ -1274,26 +1276,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uLm-En-gCV">
-                                <rect key="frame" x="0.0" y="88" width="414" height="576"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="594"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyN-eo-R2a">
-                                <rect key="frame" x="134.5" y="756" width="145" height="42"/>
-                                <color key="backgroundColor" red="0.56917726989999995" green="0.74188441039999997" blue="0.7913460135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                <state key="normal" title="Save Location">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                    <color key="titleShadowColor" systemColor="labelColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="getCurrentLocationButtonTapped:" destination="FcE-YC-VHs" eventType="touchUpInside" id="o8t-jG-kPY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZJ-Ks-VL1">
-                                <rect key="frame" x="186.5" y="680" width="41" height="36"/>
+                                <rect key="frame" x="186.5" y="698" width="41" height="36"/>
                                 <state key="normal" image="location" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                 </state>
@@ -1306,12 +1292,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uLm-En-gCV" firstAttribute="trailing" secondItem="FUN-VV-O7q" secondAttribute="trailing" id="0Qx-KO-XrZ"/>
-                            <constraint firstItem="TyN-eo-R2a" firstAttribute="width" secondItem="EYE-rh-2lg" secondAttribute="width" multiplier="0.35" id="4q3-dj-q9J"/>
                             <constraint firstItem="uLm-En-gCV" firstAttribute="top" secondItem="FUN-VV-O7q" secondAttribute="top" id="8fm-5d-Gx2"/>
                             <constraint firstItem="dZJ-Ks-VL1" firstAttribute="top" secondItem="uLm-En-gCV" secondAttribute="bottom" constant="16" id="945-qZ-9lt"/>
-                            <constraint firstItem="TyN-eo-R2a" firstAttribute="centerX" secondItem="FUN-VV-O7q" secondAttribute="centerX" id="9vF-95-ySp"/>
-                            <constraint firstItem="TyN-eo-R2a" firstAttribute="top" secondItem="dZJ-Ks-VL1" secondAttribute="bottom" constant="40" id="Cve-1o-uTf"/>
-                            <constraint firstItem="FUN-VV-O7q" firstAttribute="bottom" secondItem="TyN-eo-R2a" secondAttribute="bottom" constant="64" id="XJf-ka-gZT"/>
+                            <constraint firstItem="FUN-VV-O7q" firstAttribute="bottom" secondItem="dZJ-Ks-VL1" secondAttribute="bottom" constant="128" id="OvL-xP-j03"/>
                             <constraint firstItem="dZJ-Ks-VL1" firstAttribute="width" secondItem="EYE-rh-2lg" secondAttribute="width" multiplier="0.1" id="gEl-0W-FH2"/>
                             <constraint firstItem="uLm-En-gCV" firstAttribute="leading" secondItem="FUN-VV-O7q" secondAttribute="leading" id="nLz-DI-Gc4"/>
                             <constraint firstItem="dZJ-Ks-VL1" firstAttribute="centerX" secondItem="FUN-VV-O7q" secondAttribute="centerX" id="yGo-x1-hjQ"/>
