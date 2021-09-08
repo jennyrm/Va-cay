@@ -28,7 +28,7 @@ class TextField: UITextField {
         
         updateFontTo(font: FontNames.systemFont)
         
-        self.backgroundColor = .systemGray6
+        self.backgroundColor = .white
         self.layer.masksToBounds = true
         self.borderStyle = .line
         self.layer.cornerRadius = 6

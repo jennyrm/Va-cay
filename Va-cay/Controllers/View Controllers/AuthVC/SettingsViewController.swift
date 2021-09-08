@@ -21,7 +21,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        self.view.backgroundColor = #colorLiteral(red: 0.9444853067, green: 0.9379343987, blue: 0.9166787267, alpha: 1)
+        self.view.backgroundColor = Colors.customOffWhite
         setupAnimation()
     }
     
