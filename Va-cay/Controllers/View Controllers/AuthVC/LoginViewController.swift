@@ -13,12 +13,12 @@ class LoginViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
-    
+    @IBOutlet weak var signInLabel: PrimaryButton!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(white: 1, alpha: 0.9)
+        updateView()
     }
     
     // MARK: - Actions
@@ -68,6 +68,11 @@ class LoginViewController: UIViewController {
             }
         }))
         present(forgotPasswordAlert, animated: true, completion: nil)
+    }
+    
+    func updateView() {
+        self.view.backgroundColor = UIColor(white: 1, alpha: 0.9)
+        signInLabel.layer.cornerRadius = 14
     }
 
 }//End of class

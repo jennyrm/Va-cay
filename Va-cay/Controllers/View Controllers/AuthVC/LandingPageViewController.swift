@@ -14,6 +14,8 @@ class LandingPageViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var videoView: QueuePlayerUIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var createAccountLabel: PrimaryButton!
+    @IBOutlet weak var signInLabel: PrimaryButton!
     
     // MARK: - Properties
     var safeArea: UILayoutGuide {
@@ -34,6 +36,9 @@ class LandingPageViewController: UIViewController {
         titleLabel.backgroundColor = UIColor(white: 1, alpha: 0.8)
         titleLabel.layer.cornerRadius = 10
         titleLabel.layer.masksToBounds = true
+        
+        createAccountLabel.layer.cornerRadius = 20
+        signInLabel.layer.cornerRadius = 20
     }
     
     // MARK: - Navigation
