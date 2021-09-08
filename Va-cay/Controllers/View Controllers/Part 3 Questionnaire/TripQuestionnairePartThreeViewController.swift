@@ -157,7 +157,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.backgroundColor = Colors.customOffWhite
-        button.tintColor = Colors.customLightBlue
+        button.tintColor = Colors.customDarkBlue
         button.addTarget(self, action: #selector(addActivityButtonAction), for: .touchUpInside)
         
         self.view.addSubview(label)
@@ -201,12 +201,12 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     func createPreviousNextDayButtonStackView() {
         let previousDayButton = SecondaryButton()
         previousDayButton.setTitle("Previous Day", for: .normal)
-        previousDayButton.layer.cornerRadius = 18
+        previousDayButton.layer.cornerRadius = 16
         previousDayButton.addTarget(self, action: #selector(previousDay), for: .touchUpInside)
         
         let nextDayButton = SecondaryButton()
         nextDayButton.setTitle("Next Day", for: .normal)
-        nextDayButton.layer.cornerRadius = 18
+        nextDayButton.layer.cornerRadius = 16
         nextDayButton.addTarget(self, action: #selector(nextDay), for: .touchUpInside)
         
         self.view.addSubview(previousDayButton)
@@ -371,10 +371,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }()
     
     var submitButton: UIButton = {
-        let button = SecondaryButton()
+        let button = PrimaryButton()
         button.setTitle("Submit", for: .normal)
-        button.layer.borderWidth = 2
-        button.layer.borderColor = Colors.customLightGray.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(submitItineraryObject), for: .touchUpInside)
         return button

@@ -36,7 +36,6 @@
 		9B335CF32660546C00FC202B /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B335CF22660546B00FC202B /* ErrorAlert.swift */; };
 		9B335CF626605E4400FC202B /* TripQuestionnairePartOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B335CF526605E4400FC202B /* TripQuestionnairePartOneViewController.swift */; };
 		9B4B68EB26D8456F00B2D8AE /* Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B68EA26D8456F00B2D8AE /* Styleguide.swift */; };
-		9B4B68ED26D8561A00B2D8AE /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B68EC26D8561A00B2D8AE /* SecondaryButton.swift */; };
 		9B4B68EF26D85F1600B2D8AE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B68EE26D85F1500B2D8AE /* TextField.swift */; };
 		9B4D9B8926DD696F0055B7CF /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D9B8826DD696F0055B7CF /* HeaderLabel.swift */; };
 		9B4D9B8C26DD69A70055B7CF /* AccentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D9B8B26DD69A70055B7CF /* AccentView.swift */; };
@@ -51,6 +50,7 @@
 		9B543C11265F309800F5353A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B543C0F265F309800F5353A /* LaunchScreen.storyboard */; };
 		9B543C6F265F35AD00F5353A /* DestinationLocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C6E265F35AD00F5353A /* DestinationLocationManagerViewController.swift */; };
 		9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C71265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift */; };
+		9B57D10A26E816F2004A15B5 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B57D10926E816F2004A15B5 /* SecondaryButton.swift */; };
 		9B5BCEA726DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEA626DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift */; };
 		9B5BCEAB26DB47F4007A9647 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */; };
 		9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83332926673108008EB6E9 /* Itinerary.swift */; };
@@ -98,7 +98,6 @@
 		9B335CF22660546B00FC202B /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		9B335CF526605E4400FC202B /* TripQuestionnairePartOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripQuestionnairePartOneViewController.swift; path = "Va-cay/Controllers/View Controllers/Part 1 Questionnaire/TripQuestionnairePartOneViewController.swift"; sourceTree = SOURCE_ROOT; };
 		9B4B68EA26D8456F00B2D8AE /* Styleguide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
-		9B4B68EC26D8561A00B2D8AE /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		9B4B68EE26D85F1500B2D8AE /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		9B4D9B8826DD696F0055B7CF /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		9B4D9B8B26DD69A70055B7CF /* AccentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentView.swift; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		9B543C12265F309800F5353A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B543C6E265F35AD00F5353A /* DestinationLocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationManagerViewController.swift; sourceTree = "<group>"; };
 		9B543C71265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationSearchTableViewController.swift; sourceTree = "<group>"; };
+		9B57D10926E816F2004A15B5 /* SecondaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		9B5BCEA626DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAlignedQuestionnaireLabel.swift; sourceTree = "<group>"; };
 		9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		9B83332926673108008EB6E9 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */,
-				9B4B68EC26D8561A00B2D8AE /* SecondaryButton.swift */,
+				9B57D10926E816F2004A15B5 /* SecondaryButton.swift */,
 				0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */,
 				0D17B44D26E1DC47003CC29D /* CalendarButton.swift */,
 			);
@@ -384,8 +384,8 @@
 			isa = PBXGroup;
 			children = (
 				0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */,
-				9B4EE8BF266FFA6D007EB937 /* ItineraryTableViewCell.swift */,
 				0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */,
+				9B4EE8BF266FFA6D007EB937 /* ItineraryTableViewCell.swift */,
 				9BEFE51826A79012003DDD1D /* dayActivitiesTableViewCell.swift */,
 			);
 			path = "Custom Views";
@@ -600,6 +600,7 @@
 				9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */,
 				0D5A963226B2121900CD5707 /* UserController.swift in Sources */,
 				0D17B45326E28683003CC29D /* BorderedStackView.swift in Sources */,
+				9B57D10A26E816F2004A15B5 /* SecondaryButton.swift in Sources */,
 				9BB77715266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift in Sources */,
 				0D17B44E26E1DC47003CC29D /* CalendarButton.swift in Sources */,
 				9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */,
@@ -617,7 +618,6 @@
 				9B4EE8C0266FFA6E007EB937 /* ItineraryTableViewCell.swift in Sources */,
 				9B4EE8A6266E0C9E007EB937 /* ActivitiesLocationSearchTableViewController.swift in Sources */,
 				9B543C6F265F35AD00F5353A /* DestinationLocationManagerViewController.swift in Sources */,
-				9B4B68ED26D8561A00B2D8AE /* SecondaryButton.swift in Sources */,
 				9B324800267DD85600C16040 /* ItineraryDetailViewController.swift in Sources */,
 				9B5BCEAB26DB47F4007A9647 /* PrimaryButton.swift in Sources */,
 				9B4B68EB26D8456F00B2D8AE /* Styleguide.swift in Sources */,

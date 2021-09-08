@@ -22,6 +22,7 @@ class ItineraryDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var checklistButton: SecondaryButton!
     @IBOutlet weak var budgetLabel: UILabel!
+    @IBOutlet weak var editItineraryButton: PrimaryButton!
     
     //MARK: - Properties
     var days = [String]()
@@ -46,7 +47,9 @@ class ItineraryDetailViewController: UIViewController {
     //MARK: - Functions
     func updateView() {
         guard let itinerary = itinerary else { return }
-        checklistButton.layer.cornerRadius = 10
+        checklistButton.layer.cornerRadius = 18
+        editItineraryButton.layer.cornerRadius = 10
+
         hideLabels()
         tripNameLabel.text = itinerary.tripName
         itinerary.activities?.forEach({ (day) in

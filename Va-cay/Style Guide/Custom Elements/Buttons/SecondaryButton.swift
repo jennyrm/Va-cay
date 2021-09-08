@@ -24,11 +24,11 @@ class SecondaryButton: UIButton {
     }
     
     func setupButton() {
+        addCornerRadius(30)
         updateFontTo(font: FontNames.systemFont)
         
         setTitleColor(.black, for: .normal)
         self.backgroundColor = Colors.customLightBlue
-        self.addCornerRadius()
     }
 
     func updateFontTo(font: String) {
