@@ -24,9 +24,13 @@ class PrimaryButton: UIButton {
     }
     
     func setupButton() {
+        addCornerRadius(30)
+        
+        addAccentBorder(width: 2, color: Colors.customLightGray)
+        
         updateFontTo(font: FontNames.systemFont)
         
-        setTitleColor(.white, for: .normal)
+        setTitleColor(.black, for: .normal)
         self.backgroundColor = Colors.customLightBlue
     }
 

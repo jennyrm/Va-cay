@@ -49,7 +49,7 @@ class ItineraryMapPinsLocationManagerViewController: UIViewController {
         
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = ""
+        searchBar.placeholder = "Where to?"
         navigationItem.searchController = resultSearchController
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false

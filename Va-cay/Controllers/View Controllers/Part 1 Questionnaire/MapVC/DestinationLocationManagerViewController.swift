@@ -66,9 +66,6 @@ class DestinationLocationManagerViewController: UIViewController {
         
         locationSearchTableVC.mapView = mapView
         locationSearchTableVC.handleMapSearchDelegate = self
-        
-        createItineraryButton.layer.borderWidth = 1
-        createItineraryButton.layer.borderColor = Colors.customLightGray.cgColor
     }
     
     func loadMapPins() {
