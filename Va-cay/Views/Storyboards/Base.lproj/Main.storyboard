@@ -1395,9 +1395,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESO-qN-ipR">
                                         <rect key="frame" x="0.0" y="36.5" width="147.5" height="30"/>
                                         <state key="normal" title="Create an Account"/>
-                                        <connections>
-                                            <segue destination="fxc-Be-4YI" kind="show" id="EIO-XN-EWp"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1446,10 +1443,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9H-Uh-WeP" customClass="QueuePlayerUIView" customModule="Va_cay" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wMa-FQ-dwW">
                                 <rect key="frame" x="20.5" y="702" width="373" height="96"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fe-uH-eWv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fe-uH-eWv" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ygj-7H-xfM"/>
@@ -1459,7 +1460,7 @@
                                             <segue destination="fxc-Be-4YI" kind="show" id="UC7-9I-rLJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-d4-HVD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-d4-HVD" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="56" width="373" height="40"/>
                                         <state key="normal" title="Sign In"/>
                                         <connections>
@@ -1472,7 +1473,7 @@
                                     <constraint firstItem="3Ib-d4-HVD" firstAttribute="width" secondItem="wMa-FQ-dwW" secondAttribute="width" id="xrq-Vh-TSX"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Va - Cay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxb-zv-ljG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Va - Cay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxb-zv-ljG" customClass="HeaderLabel" customModule="Va_cay" customModuleProvider="target">
                                 <rect key="frame" x="163" y="438.5" width="88.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -1483,12 +1484,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wMa-FQ-dwW" firstAttribute="centerX" secondItem="XIW-dP-Jq1" secondAttribute="centerX" id="52m-FT-QFB"/>
+                            <constraint firstItem="e9H-Uh-WeP" firstAttribute="centerX" secondItem="XIW-dP-Jq1" secondAttribute="centerX" id="5Cj-XE-L8F"/>
                             <constraint firstItem="jxb-zv-ljG" firstAttribute="centerY" secondItem="XIW-dP-Jq1" secondAttribute="centerY" id="8cY-zi-4DQ"/>
+                            <constraint firstItem="e9H-Uh-WeP" firstAttribute="height" secondItem="8B1-2t-mXL" secondAttribute="height" id="HNI-Ot-U89"/>
+                            <constraint firstItem="e9H-Uh-WeP" firstAttribute="width" secondItem="8B1-2t-mXL" secondAttribute="width" id="IiJ-By-HBZ"/>
+                            <constraint firstItem="e9H-Uh-WeP" firstAttribute="centerY" secondItem="XIW-dP-Jq1" secondAttribute="centerY" id="dPj-BA-rvv"/>
                             <constraint firstItem="jxb-zv-ljG" firstAttribute="centerX" secondItem="XIW-dP-Jq1" secondAttribute="centerX" id="h8g-Av-ive"/>
                             <constraint firstItem="XIW-dP-Jq1" firstAttribute="bottom" secondItem="wMa-FQ-dwW" secondAttribute="bottom" constant="64" id="h8y-No-aN5"/>
                             <constraint firstItem="wMa-FQ-dwW" firstAttribute="width" secondItem="8B1-2t-mXL" secondAttribute="width" multiplier="0.9" id="u9S-Hs-nQc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="videoView" destination="e9H-Uh-WeP" id="mbD-JF-5of"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5w-QR-gIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1820,16 +1828,11 @@
             <point key="canvasLocation" x="-533" y="-579"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Hou-mW-dnM"/>
-        <designable name="eNi-bP-qIg"/>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="sUL-gB-KDv"/>
-        <segue reference="UC7-9I-rLJ"/>
         <segue reference="vE9-dT-EKZ"/>
         <segue reference="dGV-Da-kn8"/>
-        <segue reference="Zam-a7-cpo"/>
+        <segue reference="znz-mM-Txb"/>
         <segue reference="pcU-1e-Qrk"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -6,11 +6,18 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class LandingPageViewController: UIViewController {
     
     // MARK: - Outlets
+    @IBOutlet weak var videoView: QueuePlayerUIView!
     
+    // MARK: - Properties
+    var safeArea: UILayoutGuide {
+        return self.view.safeAreaLayoutGuide
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -21,9 +28,7 @@ class LandingPageViewController: UIViewController {
     // MARK: - Actions
     
     
-    
     // MARK: - FNs
-    
     
     // MARK: - Navigation
     

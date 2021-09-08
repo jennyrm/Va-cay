@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor(white: 1, alpha: 0.9)
     }
     
     // MARK: - Actions
