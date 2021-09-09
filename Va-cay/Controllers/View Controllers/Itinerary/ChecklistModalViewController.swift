@@ -52,4 +52,10 @@ extension ChecklistModalViewController: UITableViewDataSource, UITableViewDelega
         
         return cell ?? UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        return nil
+    }
+    
 }//End of extension

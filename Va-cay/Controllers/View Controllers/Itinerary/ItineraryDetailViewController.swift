@@ -81,6 +81,11 @@ class ItineraryDetailViewController: UIViewController {
             hotelAirbnbLabel.isHidden = false
             hotelAirbnbLabel.text = itinerary.hotelAirbnb
         }
+        
+        if itinerary.budget != nil {
+            budgetLabel.isHidden = false
+            budgetLabel.text = itinerary.budget
+        }
     }
     
     func hideLabels(){
@@ -120,7 +125,6 @@ class ItineraryDetailViewController: UIViewController {
             
             let checklistToSend = itinerary.checklist
             destinationVC.checklist = checklistToSend
-            
         }
     }
     
