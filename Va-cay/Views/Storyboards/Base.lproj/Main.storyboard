@@ -1020,7 +1020,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XAh-it-9oj">
-                                <rect key="frame" x="0.0" y="104" width="414" height="235.5"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="256"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8kq-oK-XG2">
                                         <rect key="frame" x="92" y="0.0" width="230.5" height="59.5"/>
@@ -1040,21 +1040,32 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMc-dg-vXf">
-                                        <rect key="frame" x="156.5" y="67.5" width="101" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iQL-BC-aS5">
+                                        <rect key="frame" x="156.5" y="67.5" width="101" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd9-Hz-plE">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMc-dg-vXf">
+                                                <rect key="frame" x="0.0" y="20.5" width="101" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="zUu-Dn-PKu">
-                                        <rect key="frame" x="26" y="96" width="362" height="41"/>
+                                        <rect key="frame" x="26" y="116.5" width="362" height="41"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EOI-um-wmF">
                                                 <rect key="frame" x="0.0" y="0.0" width="169" height="41"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Arrival" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTr-t9-sUg">
                                                         <rect key="frame" x="0.0" y="0.0" width="169" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1071,7 +1082,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Departure" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWg-Sh-LdB">
                                                         <rect key="frame" x="0.0" y="0.0" width="169" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1086,14 +1097,14 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AkV-az-bj0">
-                                        <rect key="frame" x="136" y="145" width="142" height="42.5"/>
+                                        <rect key="frame" x="136" y="165.5" width="142" height="42.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7Tv-Ql-DXo">
                                                 <rect key="frame" x="0.0" y="0.0" width="142" height="22"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel/Airbnb" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yx-tH-Ts4">
                                                         <rect key="frame" x="0.0" y="0.0" width="108" height="22"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1119,7 +1130,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfw-FK-YcH" customClass="SecondaryButton" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="151" y="195.5" width="112" height="40"/>
+                                        <rect key="frame" x="151" y="216" width="112" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="112" id="LBF-w1-4Lo"/>
                                             <constraint firstAttribute="height" constant="40" id="jst-VA-mbr"/>
@@ -1144,7 +1155,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YaW-RH-2kG">
-                                <rect key="frame" x="0.0" y="355.5" width="414" height="412.5"/>
+                                <rect key="frame" x="0.0" y="376" width="414" height="392"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dayActivityCell" rowHeight="84" id="ZFK-4b-qpp" customClass="dayActivitiesTableViewCell" customModule="Va_cay" customModuleProvider="target">
@@ -1240,6 +1251,7 @@
                         <outlet property="flightDepartureLabel" destination="MKZ-6B-wiI" id="OK0-JH-VYo"/>
                         <outlet property="hotelAirbnbLabel" destination="2XT-XI-blc" id="Vl2-FV-vNV"/>
                         <outlet property="staticAirBnBImageView" destination="Vc8-sL-RKQ" id="xaJ-MD-QCC"/>
+                        <outlet property="staticBudgetLabel" destination="rd9-Hz-plE" id="a1H-V0-epg"/>
                         <outlet property="staticFlightArrivalLabel" destination="qTr-t9-sUg" id="AeA-9z-Apb"/>
                         <outlet property="staticFlightDepartureLabel" destination="BWg-Sh-LdB" id="iCb-EB-Feu"/>
                         <outlet property="staticHotelAirBnBLabel" destination="9yx-tH-Ts4" id="ZO7-0h-lUK"/>
@@ -1801,15 +1813,11 @@
             <point key="canvasLocation" x="-533" y="-579"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Hou-mW-dnM"/>
-        <designable name="eNi-bP-qIg"/>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="sUL-gB-KDv"/>
         <segue reference="vE9-dT-EKZ"/>
         <segue reference="dGV-Da-kn8"/>
-        <segue reference="znz-mM-Txb"/>
+        <segue reference="Zam-a7-cpo"/>
         <segue reference="pcU-1e-Qrk"/>
     </inferredMetricsTieBreakers>
     <resources>
