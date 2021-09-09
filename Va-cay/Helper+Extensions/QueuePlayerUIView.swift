@@ -15,7 +15,7 @@ class QueuePlayerUIView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        setupVideo()
+        setupVideo()
     }
     
     override init(frame: CGRect) {
@@ -34,7 +34,7 @@ class QueuePlayerUIView: UIView {
     
     func setupVideo(){
         //Load Video
-        guard let path = Bundle.main.path(forResource: "Vacation", ofType: "mp4") else {return}
+        guard let path = Bundle.main.path(forResource: "VacayVid", ofType: "mp4") else {return}
         let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path))
         let playerItem = AVPlayerItem(asset: videoAsset)
         

@@ -21,6 +21,7 @@ class ItineraryDetailViewController: UIViewController {
     @IBOutlet weak var hotelAirbnbLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var checklistButton: SecondaryButton!
+    @IBOutlet weak var staticBudgetLabel: UILabel!
     @IBOutlet weak var budgetLabel: UILabel!
     @IBOutlet weak var editItineraryButton: PrimaryButton!
     
