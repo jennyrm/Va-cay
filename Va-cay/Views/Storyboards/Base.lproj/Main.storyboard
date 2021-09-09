@@ -882,7 +882,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKt-np-ts8" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="124" y="284" width="166" height="30"/>
+                                <rect key="frame" x="124" y="292" width="166" height="30"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
                                     <action selector="createAccountButtonTapped:" destination="fxc-Be-4YI" eventType="touchUpInside" id="Ypk-6b-Nn7"/>
@@ -908,7 +908,7 @@
                         <viewLayoutGuide key="safeArea" id="AIR-g8-TDX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pKt-np-ts8" firstAttribute="top" secondItem="iZU-qk-p4D" secondAttribute="bottom" constant="24" id="2Rw-S9-CnP"/>
+                            <constraint firstItem="pKt-np-ts8" firstAttribute="top" secondItem="iZU-qk-p4D" secondAttribute="bottom" constant="32" id="2Rw-S9-CnP"/>
                             <constraint firstItem="pKt-np-ts8" firstAttribute="width" secondItem="okl-dF-STK" secondAttribute="width" multiplier="0.4" id="HLj-81-vPA"/>
                             <constraint firstItem="vzn-A6-woQ" firstAttribute="top" secondItem="AIR-g8-TDX" secondAttribute="top" constant="32" id="HTQ-fS-H5L"/>
                             <constraint firstItem="RvX-DD-uud" firstAttribute="leading" secondItem="AIR-g8-TDX" secondAttribute="leading" constant="32" id="LA2-Td-0D3"/>
@@ -1337,7 +1337,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SX7-s4-MkJ">
-                                <rect key="frame" x="124" y="226" width="166" height="76"/>
+                                <rect key="frame" x="124" y="242" width="166" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cy-o9-vwJ" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="166" height="30"/>
@@ -1381,7 +1381,7 @@
                         <viewLayoutGuide key="safeArea" id="wDr-xb-Fl3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SX7-s4-MkJ" firstAttribute="top" secondItem="rct-8T-VwO" secondAttribute="bottom" constant="16" id="0dg-dZ-p0j"/>
+                            <constraint firstItem="SX7-s4-MkJ" firstAttribute="top" secondItem="rct-8T-VwO" secondAttribute="bottom" constant="32" id="0dg-dZ-p0j"/>
                             <constraint firstItem="SX7-s4-MkJ" firstAttribute="width" secondItem="fVj-rR-WTe" secondAttribute="width" multiplier="0.4" id="4Kr-RR-SBI"/>
                             <constraint firstItem="H0V-iu-noB" firstAttribute="centerX" secondItem="wDr-xb-Fl3" secondAttribute="centerX" id="5Bo-mV-LLJ"/>
                             <constraint firstItem="rct-8T-VwO" firstAttribute="centerX" secondItem="wDr-xb-Fl3" secondAttribute="centerX" id="8CH-rJ-VIA"/>
