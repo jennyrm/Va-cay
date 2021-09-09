@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
             if result {
                 self.transitionToHome()
             } else {
-                let errorController = UIAlertController(title: "Error", message: "Error logging in", preferredStyle: .alert)
+                let errorController = UIAlertController(title: "Error", message: "Error signing in", preferredStyle: .alert)
                 errorController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
                 self.present(errorController, animated: true, completion: nil)
             }
@@ -73,6 +73,7 @@ class LoginViewController: UIViewController {
     func updateView() {
         self.view.backgroundColor = UIColor(white: 1, alpha: 0.9)
         signInLabel.layer.cornerRadius = 14
+        passwordTextfield.isSecureTextEntry = true
     }
 
 }//End of class
