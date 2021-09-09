@@ -12,7 +12,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextfield: UITextField!
-    
     @IBOutlet weak var createAccountLabel: UIButton!
     
     // MARK: - Lifecycle
@@ -30,7 +29,9 @@ class RegisterViewController: UIViewController {
             if result {
                 self.transitionToHome()
             } else {
-                
+                let registerError = UIAlertController(title: "Error", message: "Login credentials are invalid", preferredStyle: .alert)
+                registerError.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
+                self.present(registerError, animated: true, completion: nil)
             }
         }
     }
@@ -40,13 +41,15 @@ class RegisterViewController: UIViewController {
     }
     
     // MARK: - Functions
-    func transitionToHome(){
+    func transitionToHome() {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     func updateView() {
         self.view.backgroundColor = UIColor(white: 1, alpha: 0.9)
         createAccountLabel.layer.cornerRadius = 14
+        passwordTextField.isSecureTextEntry = true
+        confirmPasswordTextfield.isSecureTextEntry = true
     }
     
 }//End of class
