@@ -22,7 +22,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         self.view.backgroundColor = Colors.customOffWhite
-        setupAnimation()
+//        setupAnimation()
     }
     
     // MARK: - Actions
