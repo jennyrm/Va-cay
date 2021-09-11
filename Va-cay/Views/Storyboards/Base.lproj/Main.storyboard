@@ -1389,6 +1389,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTU-y6-2Bm">
+                                <rect key="frame" x="187" y="363" width="40" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="applelogo" catalog="system"/>
+                                <connections>
+                                    <action selector="appleLoginButtonTapped:" destination="zKh-b0-bKQ" eventType="touchUpInside" id="EYK-e7-ZfU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDr-xb-Fl3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1414,7 +1422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBl-P8-J52" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1512" y="-102"/>
+            <point key="canvasLocation" x="-1513.0434782608697" y="-102.45535714285714"/>
         </scene>
         <!--Landing Page View Controller-->
         <scene sceneID="pTv-Z3-hWs">
@@ -1813,6 +1821,10 @@
             <point key="canvasLocation" x="-533" y="-579"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Hou-mW-dnM"/>
+        <designable name="eNi-bP-qIg"/>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="sUL-gB-KDv"/>
         <segue reference="vE9-dT-EKZ"/>
@@ -1821,6 +1833,7 @@
         <segue reference="pcU-1e-Qrk"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="applelogo" catalog="system" width="103" height="128"/>
         <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="book" width="512" height="512"/>
         <image name="calendar" width="512" height="512"/>

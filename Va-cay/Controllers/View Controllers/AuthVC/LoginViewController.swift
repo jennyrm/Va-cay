@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseOAuthUI
 
 class LoginViewController: UIViewController {
     
@@ -45,6 +46,16 @@ class LoginViewController: UIViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func appleLoginButtonTapped(_ sender: UIButton) {
+        if let authUI = FUIAuth.defaultAuthUI() {
+            authUI.providers = [FUIOAuth.appleAuthProvider()]
+            authUI.delegate = self
+            
+            let authViewController = authUI.authViewController()
+            self.present(authViewController, animated: true)
+        }
+    }
+    
     // MARK: - Functions
     func transitionToHome(){
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -77,3 +88,10 @@ class LoginViewController: UIViewController {
 
 }//End of class
 
+extension LoginViewController: FUIAuthDelegate {
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        if let user = authDataResult?.user {
+            print("Nice! You've signed in as \(user.uid). Your email is: \(user.email ?? "")")
+        }
+    }
+}//End of extension

@@ -8,6 +8,7 @@ target 'Va-cay' do
   # Pods for Va-cay
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
+  pod 'FirebaseUI'
   pod 'lottie-ios'
 
 end
