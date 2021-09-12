@@ -15,7 +15,7 @@ class QueuePlayerUIView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        setupVideo()
+        setupVideo()
     }
 
     override func layoutSubviews() {
