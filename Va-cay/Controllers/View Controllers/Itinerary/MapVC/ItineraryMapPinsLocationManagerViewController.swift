@@ -35,6 +35,7 @@ class ItineraryMapPinsLocationManagerViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func getCurrentLocationButtonTapped(_ sender: UIButton) {
+        locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
     
@@ -95,7 +96,7 @@ class ItineraryMapPinsLocationManagerViewController: UIViewController {
         }
         
         if !coordinates.isEmpty {
-            guard let user = UserController.shared.user,
+            guard let user = UserController.sharedInstance.user,
                   let itinerary = itinerary else {return}
             ItineraryController.sharedInstance.editDestinationCoordinates(userId: user.userId, itinerary: itinerary, coords: coordinates) { result in
                 
@@ -122,6 +123,7 @@ extension ItineraryMapPinsLocationManagerViewController: CLLocationManagerDelega
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        presentErrorAlert(title: "Error", message: "Please update location access in Settings")
         print("Error in \(#function): on line \(#line) : \(error.localizedDescription) \n---\n \(error)")
     }
 }//End of extension

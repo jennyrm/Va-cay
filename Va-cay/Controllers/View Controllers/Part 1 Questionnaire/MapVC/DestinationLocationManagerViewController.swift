@@ -128,6 +128,7 @@ extension DestinationLocationManagerViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        presentErrorAlert(title: "Error", message: "Please update location access in Settings")
         print("Error in \(#function): on line \(#line) : \(error.localizedDescription) \n---\n \(error)")
     }
 }//End of extension
