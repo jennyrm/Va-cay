@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kFR-ac-43y">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,15 +13,15 @@
             <objects>
                 <viewController id="FcE-YC-VHs" customClass="DestinationLocationManagerViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wIA-Gb-UmQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hou-mW-dnM" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="-16" y="600" width="446" height="148"/>
+                                <rect key="frame" x="-16" y="408" width="632" height="99"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktR-Lp-bsa" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="114" y="628" width="186" height="89.5"/>
+                                <rect key="frame" x="165" y="436" width="270" height="60"/>
                                 <color key="backgroundColor" red="0.56786369950000004" green="0.742842365" blue="0.79339967919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
@@ -40,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urr-e8-x5P">
-                                <rect key="frame" x="186.5" y="552" width="41" height="36"/>
+                                <rect key="frame" x="270" y="360" width="60" height="36"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="location" catalog="system">
                                     <color key="titleShadowColor" systemColor="labelColor"/>
@@ -51,7 +50,7 @@
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Pn-oo-3mX">
-                                <rect key="frame" x="0.0" y="88" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="300"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9ZC-aH-V0T"/>
@@ -90,23 +89,23 @@
             <objects>
                 <viewController id="DDW-h3-aWU" customClass="TripQuestionnairePartOneViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7l7-wW-TbP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="1Gt-rJ-5XP">
-                                <rect key="frame" x="41.5" y="251" width="331" height="89.5"/>
+                                <rect key="frame" x="60" y="177.5" width="480" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wze-vp-gMD" customClass="LeftAlignedQuestionnaireLabel" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="46.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="480" height="31.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7VE-DB-yvo">
-                                        <rect key="frame" x="0.0" y="43.5" width="331" height="46"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="480" height="31.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxR-Rb-DcW">
-                                                <rect key="frame" x="0.0" y="0.0" width="277" height="46"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="440.5" height="31.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -119,7 +118,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7N-yd-Bee">
-                                                <rect key="frame" x="285" y="0.0" width="46" height="46"/>
+                                                <rect key="frame" x="448.5" y="0.0" width="31.5" height="31.5"/>
                                                 <color key="backgroundColor" red="0.94057446720000004" green="0.93791466950000002" blue="0.91668266060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="O7N-yd-Bee" secondAttribute="height" multiplier="1:1" id="HAV-II-hEe"/>
@@ -136,16 +135,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uYo-Eo-dBO">
-                                <rect key="frame" x="41.5" y="356.5" width="331" height="340.5"/>
+                                <rect key="frame" x="60" y="253.5" width="480" height="228"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add an image as your itinerary cover" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lf7-1j-pXS" customClass="CenterAlignedQuestionnaireLabel" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="480" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJU-Jx-sIC">
-                                        <rect key="frame" x="0.0" y="45" width="331" height="295.5"/>
+                                        <rect key="frame" x="0.0" y="30" width="480" height="198"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <connections>
                                             <segue destination="hxb-zM-tZ7" kind="embed" identifier="toMediaSelectorVC" id="Dh7-l7-yyH"/>
@@ -154,28 +153,28 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CI7-4u-z1e" customClass="AccentView" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="40" y="109.5" width="334" height="20"/>
+                                <rect key="frame" x="58" y="65.5" width="484" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="wlx-xy-yH6"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel Itinerary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIB-Bj-Uxn" customClass="HeaderLabel" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="52" y="88" width="310.5" height="33.5"/>
+                                <rect key="frame" x="75" y="44" width="450" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-sG-zXP">
-                                <rect key="frame" x="41.5" y="145.5" width="331" height="89.5"/>
+                                <rect key="frame" x="60" y="101.5" width="480" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-wr-eIH" customClass="LeftAlignedQuestionnaireLabel" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="46.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="480" height="31.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="84f-hE-NwD" customClass="TextField" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="43.5" width="331" height="46"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="480" height="31.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -186,7 +185,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pm-AV-t5d" customClass="SecondaryButton" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="140" y="750" width="134" height="64"/>
+                                <rect key="frame" x="140" y="488" width="320" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="hqO-fr-XKu"/>
                                 </constraints>
@@ -242,11 +241,11 @@
             <objects>
                 <viewController id="35b-ar-bwY" customClass="ChecklistModalViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="juu-g8-WJb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cg-ze-ZCv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -254,20 +253,20 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RkB-ET-Tgq">
-                                <rect key="frame" x="83" y="235.5" width="248" height="337"/>
+                                <rect key="frame" x="120" y="174" width="360" height="232"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" systemColor="systemGray5Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkCell" rowHeight="74" id="exB-Pq-6XX" customClass="CheckListItemTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="248" height="74"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="360" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="exB-Pq-6XX" id="07t-T7-LzM">
-                                            <rect key="frame" x="0.0" y="0.0" width="248" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="lB1-PV-Vhj">
-                                                    <rect key="frame" x="25" y="22" width="198" height="30"/>
+                                                    <rect key="frame" x="36" y="22" width="288" height="30"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fid-UV-pyL">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -282,7 +281,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Checklist label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNE-UG-OMN">
-                                                            <rect key="frame" x="56" y="0.0" width="142" height="30"/>
+                                                            <rect key="frame" x="56" y="0.0" width="232" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -330,15 +329,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="HotelAirbnbLocationSearchTableVC" id="CdC-Hl-DSg" customClass="HotelAirbnbLocationSearchTableViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nCs-p2-RLE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hotelAirbnbLocationCell" textLabel="RYv-0Z-8Kp" detailTextLabel="np9-cN-2fW" rowHeight="94" style="IBUITableViewCellStyleSubtitle" id="ifB-9D-XVf">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="94"/>
+                                <rect key="frame" x="0.0" y="24.5" width="600" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ifB-9D-XVf" id="cF4-Yt-kuC">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="94"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RYv-0Z-8Kp">
@@ -374,14 +373,14 @@
             <objects>
                 <viewController id="yku-Yu-6fU" customClass="HotelAirbnbLocationManagerViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w7n-xZ-aga">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wVV-Cq-veG">
-                                <rect key="frame" x="0.0" y="88" width="414" height="594"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="376"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwg-3P-euN">
-                                <rect key="frame" x="186.5" y="698" width="41" height="36"/>
+                                <rect key="frame" x="270" y="436" width="60" height="36"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="location" catalog="system">
                                     <color key="titleShadowColor" systemColor="labelColor"/>
@@ -420,14 +419,14 @@
             <objects>
                 <viewController id="Jbw-uv-hfN" customClass="ActivitiesLocationManagerViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dII-Pe-D8w">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Sby-Fv-cbC">
-                                <rect key="frame" x="0.0" y="88" width="414" height="594"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="376"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tS-MI-42F">
-                                <rect key="frame" x="186.5" y="698" width="41" height="36"/>
+                                <rect key="frame" x="270" y="436" width="60" height="36"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="location" catalog="system">
                                     <color key="titleShadowColor" systemColor="labelColor"/>
@@ -467,20 +466,20 @@
             <objects>
                 <viewController id="E8T-T9-ejh" customClass="TripCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HwO-Yx-MY2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfv-wb-p6J">
-                                <rect key="frame" x="0.0" y="-17" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
                                 <connections>
                                     <action selector="closeModalCalendarButtonTapped:" destination="E8T-T9-ejh" eventType="touchUpInside" id="Sj9-dJ-rfF"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAa-On-l40">
-                                <rect key="frame" x="36" y="331" width="342" height="317"/>
+                                <rect key="frame" x="36" y="68" width="528" height="352"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="Vc2-AK-TBP">
-                                        <rect key="frame" x="0.0" y="0.0" width="342" height="317"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="528" height="352"/>
                                         <connections>
                                             <action selector="tripDatePickerChanged:" destination="E8T-T9-ejh" eventType="valueChanged" id="JB0-d6-eLg"/>
                                         </connections>
@@ -520,15 +519,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="ItineraryMapPinsLocationSearchTableVC" id="99T-mJ-4Dr" customClass="ItineraryMapPinsLocationSearchTableViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uT5-wE-YME">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itineraryMapPinsLocationCell" textLabel="osD-E2-PTq" detailTextLabel="gST-bb-dU1" rowHeight="81" style="IBUITableViewCellStyleSubtitle" id="vXy-P3-sWe">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="81"/>
+                                <rect key="frame" x="0.0" y="24.5" width="600" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vXy-P3-sWe" id="xZU-Zn-E6K">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="81"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="osD-E2-PTq">
@@ -564,15 +563,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="DestinationLocationSearchTableVC" id="BUn-KJ-oaE" customClass="DestinationLocationSearchTableViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="i4Q-Ny-1u7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="destinationLocationCell" textLabel="HYu-Xd-jDO" detailTextLabel="xU9-5j-rod" rowHeight="69" style="IBUITableViewCellStyleSubtitle" id="xZ6-Bo-HTq">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="69"/>
+                                <rect key="frame" x="0.0" y="24.5" width="600" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xZ6-Bo-HTq" id="YfP-o7-ief">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HYu-Xd-jDO">
@@ -608,24 +607,24 @@
             <objects>
                 <viewController id="m1P-Ch-jBs" customClass="UserFeedViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GsZ-pb-nUH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leaves" translatesAutoresizingMaskIntoConstraints="NO" id="D4j-0Q-geE">
-                                <rect key="frame" x="0.0" y="27" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="22" width="600" height="600"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eEC-Za-Vrv">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sortCell" rowHeight="129" id="NyN-gt-jFM" customClass="sortByTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="600" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NyN-gt-jFM" id="hfb-v0-2QF">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="129"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="129"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5r5-hU-oQ6">
-                                                    <rect key="frame" x="300" y="19.5" width="90" height="90"/>
+                                                    <rect key="frame" x="486" y="19.5" width="90" height="90"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztk-h0-TuK">
                                                             <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
@@ -700,29 +699,29 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itineraryCell" rowHeight="334" id="Hf2-aO-9K2" customClass="ItineraryTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="153.5" width="414" height="334"/>
+                                        <rect key="frame" x="0.0" y="153.5" width="600" height="334"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hf2-aO-9K2" id="QPu-e8-g1F">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="334"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3F-Wd-edv">
-                                                    <rect key="frame" x="0.0" y="8.5" width="414" height="317"/>
+                                                    <rect key="frame" x="0.0" y="8.5" width="600" height="317"/>
                                                 </view>
                                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nN1-zn-d8x">
-                                                    <rect key="frame" x="41.5" y="33.5" width="331" height="267"/>
+                                                    <rect key="frame" x="60" y="33.5" width="480" height="267"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qNH-IS-HKg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="331" height="40"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="480" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(destinationLabel)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkU-tw-SCw">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="243" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="392" height="40"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJO-Mb-1gf">
-                                                                    <rect key="frame" x="247" y="0.0" width="40" height="40"/>
+                                                                    <rect key="frame" x="396" y="0.0" width="40" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="yJO-Mb-1gf" secondAttribute="height" multiplier="1:1" id="FiQ-Kh-oqM"/>
                                                                     </constraints>
@@ -736,7 +735,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODo-JB-36o">
-                                                                    <rect key="frame" x="291" y="0.0" width="40" height="40"/>
+                                                                    <rect key="frame" x="440" y="0.0" width="40" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="0Aj-Em-1uw"/>
                                                                         <constraint firstAttribute="width" secondItem="ODo-JB-36o" secondAttribute="height" multiplier="1:1" id="iyf-b3-BrQ"/>
@@ -754,7 +753,7 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSF-Wf-9qn">
-                                                            <rect key="frame" x="0.0" y="44" width="331" height="30"/>
+                                                            <rect key="frame" x="0.0" y="44" width="480" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="zuW-VK-4kV"/>
                                                             </constraints>
@@ -763,14 +762,14 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yt5-Tn-wVH">
-                                                            <rect key="frame" x="0.0" y="78" width="331" height="4"/>
+                                                            <rect key="frame" x="0.0" y="78" width="480" height="4"/>
                                                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="4" id="AoX-TM-6nH"/>
                                                             </constraints>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4NX-qG-XJ4">
-                                                            <rect key="frame" x="0.0" y="86" width="331" height="181"/>
+                                                            <rect key="frame" x="0.0" y="86" width="480" height="181"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -802,7 +801,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az4-YK-P8D">
-                                <rect key="frame" x="175" y="784" width="64" height="64"/>
+                                <rect key="frame" x="268" y="522" width="64" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="9q5-r3-nxG"/>
@@ -858,31 +857,31 @@
             <objects>
                 <viewController id="fxc-Be-4YI" customClass="RegisterViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="okl-dF-STK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iZU-qk-p4D">
-                                <rect key="frame" x="20.5" y="126" width="373" height="134"/>
+                                <rect key="frame" x="30" y="126" width="540" height="134"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gta-tY-y8w">
-                                        <rect key="frame" x="0.0" y="0.0" width="373" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QFA-XN-XzD">
-                                        <rect key="frame" x="0.0" y="50" width="373" height="34"/>
+                                        <rect key="frame" x="0.0" y="50" width="540" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enI-Vu-wjq">
-                                        <rect key="frame" x="0.0" y="100" width="373" height="34"/>
+                                        <rect key="frame" x="0.0" y="100" width="540" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKt-np-ts8" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="124" y="292" width="166" height="30"/>
+                                <rect key="frame" x="180" y="292" width="240" height="30"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
                                     <action selector="createAccountButtonTapped:" destination="fxc-Be-4YI" eventType="touchUpInside" id="Ypk-6b-Nn7"/>
@@ -896,7 +895,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzn-A6-woQ">
-                                <rect key="frame" x="145.5" y="32" width="123.5" height="30"/>
+                                <rect key="frame" x="238.5" y="32" width="123.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mUs-kx-9H2"/>
                                 </constraints>
@@ -937,20 +936,20 @@
             <objects>
                 <viewController id="8Wq-D5-wSf" customClass="SettingsViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZgN-Ir-AQG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="9wb-8y-HmD">
-                                <rect key="frame" x="41.5" y="216" width="331" height="141"/>
+                                <rect key="frame" x="60" y="172" width="480" height="141"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMX-sC-mbG">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="480" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UD0-QX-Xdy">
-                                        <rect key="frame" x="91" y="45" width="149" height="40"/>
+                                        <rect key="frame" x="132" y="45" width="216" height="40"/>
                                         <color key="backgroundColor" red="0.93795250202047409" green="0.28691088879439347" blue="0.25745783238926351" alpha="0.75066355112436656" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="uOj-sU-TcD"/>
@@ -962,7 +961,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTp-9Z-uyW">
-                                        <rect key="frame" x="91" y="101" width="149" height="40"/>
+                                        <rect key="frame" x="132" y="101" width="216" height="40"/>
                                         <color key="backgroundColor" red="0.93795250200000002" green="0.28691088879999999" blue="0.25745783239999998" alpha="0.75066355110000005" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="b5g-nT-A5Z"/>
@@ -982,7 +981,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNi-bP-qIg" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="0.0" y="56" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="12" width="600" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="1VV-SK-012"/>
                                 </constraints>
@@ -1016,14 +1015,14 @@
             <objects>
                 <viewController id="Ky1-Yz-OcW" customClass="ItineraryDetailViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gwW-3s-kJT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XAh-it-9oj">
-                                <rect key="frame" x="0.0" y="104" width="414" height="256"/>
+                                <rect key="frame" x="0.0" y="60" width="600" height="256"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8kq-oK-XG2">
-                                        <rect key="frame" x="92" y="0.0" width="230.5" height="59.5"/>
+                                        <rect key="frame" x="185" y="0.0" width="230.5" height="59.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(tripNameLabel)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmg-6k-UBb">
                                                 <rect key="frame" x="0.0" y="0.0" width="230.5" height="36"/>
@@ -1041,7 +1040,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iQL-BC-aS5">
-                                        <rect key="frame" x="156.5" y="67.5" width="101" height="41"/>
+                                        <rect key="frame" x="249.5" y="67.5" width="101" height="41"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd9-Hz-plE">
                                                 <rect key="frame" x="0.0" y="0.0" width="101" height="20.5"/>
@@ -1058,7 +1057,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="zUu-Dn-PKu">
-                                        <rect key="frame" x="26" y="116.5" width="362" height="41"/>
+                                        <rect key="frame" x="119" y="116.5" width="362" height="41"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EOI-um-wmF">
                                                 <rect key="frame" x="0.0" y="0.0" width="169" height="41"/>
@@ -1097,7 +1096,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AkV-az-bj0">
-                                        <rect key="frame" x="136" y="165.5" width="142" height="42.5"/>
+                                        <rect key="frame" x="229" y="165.5" width="142" height="42.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7Tv-Ql-DXo">
                                                 <rect key="frame" x="0.0" y="0.0" width="142" height="22"/>
@@ -1130,7 +1129,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfw-FK-YcH" customClass="SecondaryButton" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="151" y="216" width="112" height="40"/>
+                                        <rect key="frame" x="244" y="216" width="112" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="112" id="LBF-w1-4Lo"/>
                                             <constraint firstAttribute="height" constant="40" id="jst-VA-mbr"/>
@@ -1144,7 +1143,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAB-Df-Vfn" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="50" y="784" width="314" height="54"/>
+                                <rect key="frame" x="50" y="522" width="500" height="54"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Edit Itinerary">
@@ -1155,30 +1154,30 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YaW-RH-2kG">
-                                <rect key="frame" x="0.0" y="376" width="414" height="392"/>
+                                <rect key="frame" x="0.0" y="332" width="600" height="174"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dayActivityCell" rowHeight="84" id="ZFK-4b-qpp" customClass="dayActivitiesTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="84"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="600" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZFK-4b-qpp" id="mIo-pA-CUG">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="oDe-Qa-A4k">
-                                                    <rect key="frame" x="10.5" y="12.5" width="393" height="59"/>
+                                                    <rect key="frame" x="15" y="12.5" width="570" height="59"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X2m-TV-cbK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="118" height="59"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="171" height="59"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(dayLabel)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM3-2b-PWm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="118" height="29"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="29"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-DG-d7A" customClass="MapPinButton" customModule="Va_cay" customModuleProvider="target">
-                                                                    <rect key="frame" x="44" y="29" width="30" height="30"/>
+                                                                    <rect key="frame" x="70.5" y="29" width="30" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="Fy5-f2-iya"/>
                                                                         <constraint firstAttribute="width" constant="30" id="NZi-NQ-uIO"/>
@@ -1196,10 +1195,10 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kyb-re-5M3">
-                                                            <rect key="frame" x="118" y="0.0" width="275" height="59"/>
+                                                            <rect key="frame" x="171" y="0.0" width="399" height="59"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(activitiesLabel)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGI-Jj-68W">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="275" height="59"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="399" height="59"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1269,14 +1268,14 @@
             <objects>
                 <viewController id="s9D-1W-1TA" customClass="ItineraryMapPinsLocationManagerViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EYE-rh-2lg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uLm-En-gCV">
-                                <rect key="frame" x="0.0" y="88" width="414" height="594"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="376"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZJ-Ks-VL1">
-                                <rect key="frame" x="186.5" y="698" width="41" height="36"/>
+                                <rect key="frame" x="270" y="436" width="60" height="36"/>
                                 <state key="normal" image="location" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                 </state>
@@ -1325,41 +1324,41 @@
             </objects>
             <point key="canvasLocation" x="829" y="-578"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="hY1-Ur-rog">
             <objects>
-                <viewController id="zKh-b0-bKQ" customClass="LoginViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zKh-b0-bKQ" customClass="SignInViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fVj-rR-WTe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rct-8T-VwO">
-                                <rect key="frame" x="20.5" y="126" width="373" height="84"/>
+                                <rect key="frame" x="30" y="126" width="540" height="84"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Th4-LS-axt">
-                                        <rect key="frame" x="0.0" y="0.0" width="373" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6S-q3-yX8">
-                                        <rect key="frame" x="0.0" y="50" width="373" height="34"/>
+                                        <rect key="frame" x="0.0" y="50" width="540" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SX7-s4-MkJ">
-                                <rect key="frame" x="124" y="242" width="166" height="76"/>
+                                <rect key="frame" x="180" y="242" width="240" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cy-o9-vwJ" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="166" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
                                         <state key="normal" title="Sign In"/>
                                         <connections>
                                             <action selector="signInButtonTapped:" destination="zKh-b0-bKQ" eventType="touchUpInside" id="Zc6-VW-EDr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJW-93-v3W">
-                                        <rect key="frame" x="25.5" y="46" width="115" height="30"/>
+                                        <rect key="frame" x="62.5" y="46" width="115" height="30"/>
                                         <state key="normal" title="Forgot Password"/>
                                         <connections>
                                             <action selector="forgotPasswordButtonTapped:" destination="zKh-b0-bKQ" eventType="touchUpInside" id="g0M-ub-SFi"/>
@@ -1381,7 +1380,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0V-iu-noB">
-                                <rect key="frame" x="180" y="32" width="54.5" height="30"/>
+                                <rect key="frame" x="273" y="32" width="54.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="90v-bp-3vf"/>
                                 </constraints>
@@ -1429,18 +1428,18 @@
             <objects>
                 <viewController storyboardIdentifier="AuthVC" id="YsP-jm-btf" customClass="LandingPageViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8B1-2t-mXL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9H-Uh-WeP" customClass="QueuePlayerUIView" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="36" width="414" height="860"/>
+                                <rect key="frame" x="0.0" y="24" width="600" height="576"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wMa-FQ-dwW">
-                                <rect key="frame" x="31" y="702" width="352" height="96"/>
+                                <rect key="frame" x="45" y="440" width="510" height="96"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fe-uH-eWv" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="510" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ygj-7H-xfM"/>
                                         </constraints>
@@ -1450,7 +1449,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-d4-HVD" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="352" height="40"/>
+                                        <rect key="frame" x="0.0" y="56" width="510" height="40"/>
                                         <state key="normal" title="Sign In"/>
                                         <connections>
                                             <segue destination="zKh-b0-bKQ" kind="show" id="aPV-Eg-6pd"/>
@@ -1463,7 +1462,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Va - Cay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxb-zv-ljG">
-                                <rect key="frame" x="124" y="284" width="166" height="29"/>
+                                <rect key="frame" x="180" y="240" width="240" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1572,7 +1571,7 @@
             <objects>
                 <viewController id="xAC-ie-OlL" customClass="FlightDepartureCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lN4-0R-v9c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWF-VL-FJa">
@@ -1628,21 +1627,21 @@
             <objects>
                 <viewController id="uwX-ya-kOm" customClass="FlightArrivalCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nkl-Ll-dgB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-RQ-i1y">
-                                <rect key="frame" x="0.0" y="-17" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="dismissModalView:" destination="uwX-ya-kOm" eventType="touchUpInside" id="GDF-qs-7Zc"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAO-wz-sQK">
-                                <rect key="frame" x="41.5" y="193.5" width="331" height="421"/>
+                                <rect key="frame" x="60" y="145" width="480" height="290"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="quG-U1-SRf">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="421"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="480" height="290"/>
                                         <connections>
                                             <action selector="flightArrivalDatePickerChanged:" destination="uwX-ya-kOm" eventType="valueChanged" id="Yit-11-wTs"/>
                                         </connections>
@@ -1684,7 +1683,7 @@
             <objects>
                 <viewController id="ewc-Yv-uN5" customClass="TripQuestionnairePartTwoViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CeB-BQ-K5u">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="TCs-9O-qJs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1706,7 +1705,7 @@
             <objects>
                 <viewController id="vkf-yf-Buo" customClass="TripQuestionnairePartThreeViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gL2-zI-6Zb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="uDO-Zz-puk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1763,15 +1762,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="ActivitiesLocationSearchTableVC" id="nkb-yC-hVJ" customClass="ActivitiesLocationSearchTableViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="La1-LR-0Ga">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityLocationCell" textLabel="YBR-Iu-dc9" detailTextLabel="SHi-8i-7HU" rowHeight="102" style="IBUITableViewCellStyleSubtitle" id="hnH-79-gL9">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="102"/>
+                                <rect key="frame" x="0.0" y="24.5" width="600" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hnH-79-gL9" id="ZQD-xM-e9Z">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YBR-Iu-dc9">
@@ -1821,10 +1820,6 @@
             <point key="canvasLocation" x="-533" y="-579"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Hou-mW-dnM"/>
-        <designable name="eNi-bP-qIg"/>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="sUL-gB-KDv"/>
         <segue reference="vE9-dT-EKZ"/>
