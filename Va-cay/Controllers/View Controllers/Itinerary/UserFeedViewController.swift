@@ -65,10 +65,10 @@ class UserFeedViewController: UIViewController {
         }
         
         guard let user = Auth.auth().currentUser else {return}
-        UserController.sharedInstance.fetchUser(userId: user.uid) { result in
+        UserController.shared.fetchUser(userId: user.uid) { result in
             switch result {
             case .success(let user):
-                UserController.sharedInstance.user = user
+                UserController.shared.user = user
             case .failure(let error):
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
             }
@@ -131,7 +131,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
             
             let confirmAction = UIAlertAction(title: "Delete", style: .destructive) { action in
                 DispatchQueue.main.async {
-                    ItineraryController.sharedInstance.deleteItinerary(userId: UserController.sharedInstance.user!.userId, itinerary: itinerary) { result in
+                    ItineraryController.sharedInstance.deleteItinerary(userId: UserController.shared.user!.userId, itinerary: itinerary) { result in
                         switch result {
                         case true:
                                 self.tableView.reloadData()

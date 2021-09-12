@@ -245,7 +245,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     }
     
     @objc func submitItineraryObject() {
-        guard let user = UserController.sharedInstance.user else {return}
+        guard let user = UserController.shared.user else {return}
         
         saveActivities()
         
