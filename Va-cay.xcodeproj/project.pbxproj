@@ -28,7 +28,6 @@
 		0DA6676826E88202007E1977 /* QueuePlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676726E88202007E1977 /* QueuePlayerUIView.swift */; };
 		0DC34EBD26DD885900F65AE1 /* MapPinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */; };
 		0DE5463826E6BDCF006C1904 /* plane1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5463726E6BDCF006C1904 /* plane1.json */; };
-		645865D8133CD9789C54A4C6 /* Pods_Va_cay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DD421D3AC2E0A9378B7C84 /* Pods_Va_cay.framework */; };
 		9B1C572726648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C572626648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift */; };
 		9B324800267DD85600C16040 /* ItineraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3247FF267DD85600C16040 /* ItineraryDetailViewController.swift */; };
 		9B335CB5265F3EF700FC202B /* UserFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B335CB4265F3EF700FC202B /* UserFeedViewController.swift */; };
@@ -68,6 +67,7 @@
 		9BE03A862672DF4000D97F76 /* ItineraryMapPinsLocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE03A852672DF4000D97F76 /* ItineraryMapPinsLocationSearchTableViewController.swift */; };
 		9BE480EF266169800079DDBF /* TripQuestionnairePartThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE480EE266169800079DDBF /* TripQuestionnairePartThreeViewController.swift */; };
 		9BEFE51926A79012003DDD1D /* dayActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEFE51826A79012003DDD1D /* dayActivitiesTableViewCell.swift */; };
+		ACA12B8517444B84A45DE486 /* Pods_Va_cay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB285C014851D2EAB74F7F04 /* Pods_Va_cay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,7 +92,8 @@
 		0DA6676726E88202007E1977 /* QueuePlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuePlayerUIView.swift; sourceTree = "<group>"; };
 		0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinButton.swift; sourceTree = "<group>"; };
 		0DE5463726E6BDCF006C1904 /* plane1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane1.json; sourceTree = "<group>"; };
-		291561126532659012BB1D3B /* Pods-Va-cay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.release.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.release.xcconfig"; sourceTree = "<group>"; };
+		3C09D0DA00AB72E7B7BE8816 /* Pods-Va-cay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.release.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.release.xcconfig"; sourceTree = "<group>"; };
+		6069CC11B0A1A056484520BE /* Pods-Va-cay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.debug.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.debug.xcconfig"; sourceTree = "<group>"; };
 		9B1C572626648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripQuestionnairePartTwoViewController.swift; sourceTree = "<group>"; };
 		9B3247FF267DD85600C16040 /* ItineraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryDetailViewController.swift; sourceTree = "<group>"; };
 		9B335CB4265F3EF700FC202B /* UserFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +119,10 @@
 		9B543C12265F309800F5353A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B543C6E265F35AD00F5353A /* DestinationLocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationManagerViewController.swift; sourceTree = "<group>"; };
 		9B543C71265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationSearchTableViewController.swift; sourceTree = "<group>"; };
+		9B54D09A26EDC19B00FA2D48 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = FacebookSDKStrings.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B54D09D26EDC1A100FA2D48 /* FirebaseAnonymousAuthUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = FirebaseAnonymousAuthUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B54D09F26EDC1A700FA2D48 /* FirebaseAuthUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = FirebaseAuthUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B54D0A126EDC1B800FA2D48 /* FirebaseOAuthUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = FirebaseOAuthUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B57D10926E816F2004A15B5 /* SecondaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		9B57D12E26EA98E6004A15B5 /* Va-cay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Va-cay.entitlements"; sourceTree = "<group>"; };
 		9B5BCEA626DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAlignedQuestionnaireLabel.swift; sourceTree = "<group>"; };
@@ -135,8 +140,7 @@
 		9BE03A852672DF4000D97F76 /* ItineraryMapPinsLocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapPinsLocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		9BE480EE266169800079DDBF /* TripQuestionnairePartThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripQuestionnairePartThreeViewController.swift; sourceTree = "<group>"; };
 		9BEFE51826A79012003DDD1D /* dayActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayActivitiesTableViewCell.swift; sourceTree = "<group>"; };
-		A8DD421D3AC2E0A9378B7C84 /* Pods_Va_cay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Va_cay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FADD31EF13CC4EA801DC69E5 /* Pods-Va-cay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.debug.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.debug.xcconfig"; sourceTree = "<group>"; };
+		AB285C014851D2EAB74F7F04 /* Pods_Va_cay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Va_cay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				645865D8133CD9789C54A4C6 /* Pods_Va_cay.framework in Frameworks */,
+				ACA12B8517444B84A45DE486 /* Pods_Va_cay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +179,11 @@
 		17B2C1C64974520684F3AEA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A8DD421D3AC2E0A9378B7C84 /* Pods_Va_cay.framework */,
+				9B54D0A126EDC1B800FA2D48 /* FirebaseOAuthUI.bundle */,
+				9B54D09F26EDC1A700FA2D48 /* FirebaseAuthUI.bundle */,
+				9B54D09D26EDC1A100FA2D48 /* FirebaseAnonymousAuthUI.bundle */,
+				9B54D09A26EDC19B00FA2D48 /* FacebookSDKStrings.bundle */,
+				AB285C014851D2EAB74F7F04 /* Pods_Va_cay.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,8 +191,8 @@
 		75E90ACE43081336350E3197 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FADD31EF13CC4EA801DC69E5 /* Pods-Va-cay.debug.xcconfig */,
-				291561126532659012BB1D3B /* Pods-Va-cay.release.xcconfig */,
+				6069CC11B0A1A056484520BE /* Pods-Va-cay.debug.xcconfig */,
+				3C09D0DA00AB72E7B7BE8816 /* Pods-Va-cay.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -486,12 +494,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B543C15265F309800F5353A /* Build configuration list for PBXNativeTarget "Va-cay" */;
 			buildPhases = (
-				21AB4F5DC28FA2D06273BA7B /* [CP] Check Pods Manifest.lock */,
+				BF145F69B06DD717E0B57BEF /* [CP] Check Pods Manifest.lock */,
 				9B543BFD265F309500F5353A /* Sources */,
 				9B543BFE265F309500F5353A /* Frameworks */,
 				9B543BFF265F309500F5353A /* Resources */,
-				CBA7FE5DEDE6AAABACB1EB31 /* [CP] Embed Pods Frameworks */,
-				A70BB0AF43C2B1C5C17920D8 /* [CP] Copy Pods Resources */,
+				4DCFB02D52440D3768FF2138 /* [CP] Embed Pods Frameworks */,
+				A37434D8718B60C2156A8EB5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -554,7 +562,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21AB4F5DC28FA2D06273BA7B /* [CP] Check Pods Manifest.lock */ = {
+		4DCFB02D52440D3768FF2138 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A37434D8718B60C2156A8EB5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF145F69B06DD717E0B57BEF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -574,40 +616,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A70BB0AF43C2B1C5C17920D8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CBA7FE5DEDE6AAABACB1EB31 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -811,7 +819,7 @@
 		};
 		9B543C16265F309800F5353A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FADD31EF13CC4EA801DC69E5 /* Pods-Va-cay.debug.xcconfig */;
+			baseConfigurationReference = 6069CC11B0A1A056484520BE /* Pods-Va-cay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -832,7 +840,7 @@
 		};
 		9B543C17265F309800F5353A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 291561126532659012BB1D3B /* Pods-Va-cay.release.xcconfig */;
+			baseConfigurationReference = 3C09D0DA00AB72E7B7BE8816 /* Pods-Va-cay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
