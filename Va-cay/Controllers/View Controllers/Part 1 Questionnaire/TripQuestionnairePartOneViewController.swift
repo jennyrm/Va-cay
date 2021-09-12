@@ -51,7 +51,6 @@ class TripQuestionnairePartOneViewController: UIViewController {
         if let tripImage = ItineraryController.sharedInstance.itineraryData["tripImage"] as? UIImage {
             self.tripImage = tripImage
         }
-        
         styleOutlets()
     }
     

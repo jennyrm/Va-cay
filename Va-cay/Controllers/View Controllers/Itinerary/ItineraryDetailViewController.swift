@@ -84,9 +84,11 @@ class ItineraryDetailViewController: UIViewController {
         }
         
         if itinerary.budget != nil {
+            staticBudgetLabel.isHidden = false
             budgetLabel.isHidden = false
             budgetLabel.text = itinerary.budget
         }
+        
     }
     
     func hideLabels(){
@@ -94,10 +96,12 @@ class ItineraryDetailViewController: UIViewController {
         flightArrivalLabel.isHidden = true
         flightDepartureLabel.isHidden = true
         hotelAirbnbLabel.isHidden = true
+        budgetLabel.isHidden = true
         staticHotelAirBnBLabel.isHidden = true
         staticAirBnBImageView.isHidden = true
         staticFlightArrivalLabel.isHidden = true
         staticFlightDepartureLabel.isHidden = true
+        staticBudgetLabel.isHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

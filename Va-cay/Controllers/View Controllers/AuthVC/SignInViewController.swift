@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseOAuthUI
 
-class LoginViewController: UIViewController {
+class SignInViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var emailTextfield: UITextField!
@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
             if result {
                 self.transitionToHome()
             } else {
-                let errorController = UIAlertController(title: "Error", message: "Error logging in", preferredStyle: .alert)
+                let errorController = UIAlertController(title: "Error", message: "Error signing in", preferredStyle: .alert)
                 errorController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
                 self.present(errorController, animated: true, completion: nil)
             }
@@ -84,11 +84,12 @@ class LoginViewController: UIViewController {
     func updateView() {
         self.view.backgroundColor = UIColor(white: 1, alpha: 0.9)
         signInLabel.layer.cornerRadius = 14
+        passwordTextfield.isSecureTextEntry = true
     }
 
 }//End of class
 
-extension LoginViewController: FUIAuthDelegate {
+extension SignInViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         if let user = authDataResult?.user {
             print("Nice! You've signed in as \(user.uid). Your email is: \(user.email ?? "")")
