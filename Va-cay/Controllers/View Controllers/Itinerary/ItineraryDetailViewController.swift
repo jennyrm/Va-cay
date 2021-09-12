@@ -167,7 +167,7 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
     // JAMLEA: Deleting activities action
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let itinerary = itinerary,
-              let user = UserController.shared.user else {return}
+              let user = UserController.sharedInstance.user else {return}
         if editingStyle == .delete {
             itinerary.activities?.remove(at: indexPath.row)
             ItineraryController.sharedInstance.itineraryData["activities"] = self.itinerary?.activities
@@ -182,7 +182,7 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
 extension ItineraryDetailViewController: CheckListItemViewCellDelegate {
     func updateItinerary(checklistItem: [String?? : Bool], index: Int) {
         guard var checklistPlaceholder = itinerary?.checklist!,
-              let user = UserController.shared.user else {return}
+              let user = UserController.sharedInstance.user else {return}
         checklistPlaceholder[index] = checklistItem
         ItineraryController.sharedInstance.editChecklist(userId: user.userId, itinerary: self.itinerary!, checklist: checklistPlaceholder) { result in
             

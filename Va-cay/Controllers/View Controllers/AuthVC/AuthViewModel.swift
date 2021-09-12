@@ -20,10 +20,10 @@ class AuthViewModel {
             if result != nil {
                 guard let result = result else {return}
                 DispatchQueue.main.async {
-                    UserController.shared.fetchUser(userId: result.user.uid) { result in
+                    UserController.sharedInstance.fetchUser(userId: result.user.uid) { result in
                         switch result {
                         case .success(let user):
-                            UserController.shared.user = user
+                            UserController.sharedInstance.user = user
                             completion(true)
                         case .failure(let error):
                             print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -45,7 +45,7 @@ class AuthViewModel {
                 if result != nil {
                     print("Succesfully created account")
                     let newUser = User(email: email, userId: result!.user.uid)
-                    UserController.shared.createUser(user: newUser)
+                    UserController.sharedInstance.createUser(user: newUser)
                     completion(true)
                 }
             }

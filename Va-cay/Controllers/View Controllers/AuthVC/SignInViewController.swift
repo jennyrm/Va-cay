@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  SignInViewController.swift
 //  Va-cay
 //
 //  Created by James Lea on 9/7/21.
@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseOAuthUI
 
-class LoginViewController: UIViewController {
+class SignInViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var emailTextfield: UITextField!
@@ -88,13 +88,13 @@ class LoginViewController: UIViewController {
 
 }//End of class
 
-extension LoginViewController: FUIAuthDelegate {
+extension SignInViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         if let user = authDataResult?.user {
             print("Nice! You've signed in as \(user.uid). Your email is: \(user.email ?? "")")
             
             let userDoc = User(email: user.email!, userId: user.uid)
-            UserController.shared.createUser(user: userDoc)
+            UserController.sharedInstance.createUser(user: userDoc)
             
             self.transitionToHome()
         }

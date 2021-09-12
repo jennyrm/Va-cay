@@ -23,7 +23,7 @@
 		0D7D498526B86B34006218D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D498426B86B34006218D8 /* SettingsViewController.swift */; };
 		0DA23CDD26DD60C6008F0B56 /* sortByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */; };
 		0DA6676126E7DAD6007E1977 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676026E7DAD6007E1977 /* LandingPageViewController.swift */; };
-		0DA6676326E7DAE7007E1977 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676226E7DAE7007E1977 /* LoginViewController.swift */; };
+		0DA6676326E7DAE7007E1977 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676226E7DAE7007E1977 /* SignInViewController.swift */; };
 		0DA6676526E7DAFE007E1977 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676426E7DAFE007E1977 /* RegisterViewController.swift */; };
 		0DA6676826E88202007E1977 /* QueuePlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676726E88202007E1977 /* QueuePlayerUIView.swift */; };
 		0DC34EBD26DD885900F65AE1 /* MapPinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */; };
@@ -87,7 +87,7 @@
 		0D7D498426B86B34006218D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortByTableViewCell.swift; sourceTree = "<group>"; };
 		0DA6676026E7DAD6007E1977 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
-		0DA6676226E7DAE7007E1977 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0DA6676226E7DAE7007E1977 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0DA6676426E7DAFE007E1977 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0DA6676726E88202007E1977 /* QueuePlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuePlayerUIView.swift; sourceTree = "<group>"; };
 		0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinButton.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 				0D5A963626B2287000CD5707 /* AuthViewController.swift */,
 				0D60FCC826B34D2500F75732 /* AuthViewModel.swift */,
 				0DA6676026E7DAD6007E1977 /* LandingPageViewController.swift */,
-				0DA6676226E7DAE7007E1977 /* LoginViewController.swift */,
+				0DA6676226E7DAE7007E1977 /* SignInViewController.swift */,
 				0DA6676426E7DAFE007E1977 /* RegisterViewController.swift */,
 				0D7D498426B86B34006218D8 /* SettingsViewController.swift */,
 			);
@@ -632,7 +632,7 @@
 				0D17B44E26E1DC47003CC29D /* CalendarButton.swift in Sources */,
 				9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */,
 				0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */,
-				0DA6676326E7DAE7007E1977 /* LoginViewController.swift in Sources */,
+				0DA6676326E7DAE7007E1977 /* SignInViewController.swift in Sources */,
 				9B4D9B8C26DD69A70055B7CF /* AccentView.swift in Sources */,
 				9B4D9B8E26DD99DA0055B7CF /* LeftAlignedQuestionnaireLabel.swift in Sources */,
 				0DA6676826E88202007E1977 /* QueuePlayerUIView.swift in Sources */,
