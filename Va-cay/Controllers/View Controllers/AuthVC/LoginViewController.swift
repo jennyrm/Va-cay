@@ -92,6 +92,11 @@ extension LoginViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         if let user = authDataResult?.user {
             print("Nice! You've signed in as \(user.uid). Your email is: \(user.email ?? "")")
+            
+            let userDoc = User(email: user.email!, userId: user.uid)
+            UserController.shared.createUser(user: userDoc)
+            
+            self.transitionToHome()
         }
     }
 }//End of extension
