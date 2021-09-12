@@ -30,6 +30,9 @@ class SettingsViewController: UIViewController {
         do {
             try Auth.auth().signOut()
             
+            UserController.sharedInstance.user = nil
+            ItineraryController.sharedInstance.itineraries = []
+            
             guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() else {return}
             vc.modalPresentationStyle = .fullScreen
             
@@ -44,7 +47,7 @@ class SettingsViewController: UIViewController {
     
     //MARK: - Functions
     func updateViews() {
-        guard let user = UserController.shared.user else {return}
+        guard let user = UserController.sharedInstance.user else {return}
         emailLabel.text = user.email
         changePasswordButton.layer.cornerRadius = 10
         logOutButton.layer.cornerRadius = 10
@@ -75,7 +78,7 @@ class SettingsViewController: UIViewController {
                   let confirmNewPassword = alert.textFields?.last?.text, !confirmNewPassword.isEmpty
             else {return}
             if newPassword == confirmNewPassword {
-                UserController.shared.updatePassword(password: newPassword)
+                UserController.sharedInstance.updatePassword(password: newPassword)
             } else {
                 print("Passwords do not match")
             }

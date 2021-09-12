@@ -95,7 +95,7 @@ extension SignInViewController: FUIAuthDelegate {
             print("Nice! You've signed in as \(user.uid). Your email is: \(user.email ?? "")")
             
             let userDoc = User(email: user.email!, userId: user.uid)
-            UserController.shared.createUser(user: userDoc)
+            UserController.sharedInstance.createUser(user: userDoc)
             
             self.transitionToHome()
         }
