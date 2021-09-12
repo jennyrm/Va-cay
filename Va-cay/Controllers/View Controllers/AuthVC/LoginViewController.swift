@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseOAuthUI
 
-class SignInViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var emailTextfield: UITextField!
@@ -88,7 +88,7 @@ class SignInViewController: UIViewController {
 
 }//End of class
 
-extension SignInViewController: FUIAuthDelegate {
+extension LoginViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         if let user = authDataResult?.user {
             print("Nice! You've signed in as \(user.uid). Your email is: \(user.email ?? "")")
