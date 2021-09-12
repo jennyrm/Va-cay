@@ -53,7 +53,6 @@
 		9B543C6F265F35AD00F5353A /* DestinationLocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C6E265F35AD00F5353A /* DestinationLocationManagerViewController.swift */; };
 		9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543C71265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift */; };
 		9B57D10A26E816F2004A15B5 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B57D10926E816F2004A15B5 /* SecondaryButton.swift */; };
-		9B57D12D26EA9847004A15B5 /* AppleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B57D12C26EA9847004A15B5 /* AppleLoginViewController.swift */; };
 		9B5BCEA726DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEA626DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift */; };
 		9B5BCEAB26DB47F4007A9647 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */; };
 		9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83332926673108008EB6E9 /* Itinerary.swift */; };
@@ -120,7 +119,6 @@
 		9B543C6E265F35AD00F5353A /* DestinationLocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationManagerViewController.swift; sourceTree = "<group>"; };
 		9B543C71265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		9B57D10926E816F2004A15B5 /* SecondaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
-		9B57D12C26EA9847004A15B5 /* AppleLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginViewController.swift; sourceTree = "<group>"; };
 		9B57D12E26EA98E6004A15B5 /* Va-cay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Va-cay.entitlements"; sourceTree = "<group>"; };
 		9B5BCEA626DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAlignedQuestionnaireLabel.swift; sourceTree = "<group>"; };
 		9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 			children = (
 				0D5A963626B2287000CD5707 /* AuthViewController.swift */,
 				0D60FCC826B34D2500F75732 /* AuthViewModel.swift */,
-				9B57D12C26EA9847004A15B5 /* AppleLoginViewController.swift */,
 				0DA6676026E7DAD6007E1977 /* LandingPageViewController.swift */,
 				0DA6676226E7DAE7007E1977 /* LoginViewController.swift */,
 				0DA6676426E7DAFE007E1977 /* RegisterViewController.swift */,
@@ -494,6 +491,7 @@
 				9B543BFE265F309500F5353A /* Frameworks */,
 				9B543BFF265F309500F5353A /* Resources */,
 				CBA7FE5DEDE6AAABACB1EB31 /* [CP] Embed Pods Frameworks */,
+				A70BB0AF43C2B1C5C17920D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -578,6 +576,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A70BB0AF43C2B1C5C17920D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Va-cay/Pods-Va-cay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CBA7FE5DEDE6AAABACB1EB31 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -621,7 +636,6 @@
 				9B4D9B8C26DD69A70055B7CF /* AccentView.swift in Sources */,
 				9B4D9B8E26DD99DA0055B7CF /* LeftAlignedQuestionnaireLabel.swift in Sources */,
 				0DA6676826E88202007E1977 /* QueuePlayerUIView.swift in Sources */,
-				9B57D12D26EA9847004A15B5 /* AppleLoginViewController.swift in Sources */,
 				9B5BCEA726DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift in Sources */,
 				9B335CEA265F493400FC202B /* ItineraryController.swift in Sources */,
 				0DA23CDD26DD60C6008F0B56 /* sortByTableViewCell.swift in Sources */,
