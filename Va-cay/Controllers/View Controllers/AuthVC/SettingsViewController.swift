@@ -15,7 +15,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var animationView: AnimationView!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var changePasswordButton: UIButton!
-    @IBOutlet weak var signOutButton: UIButton!
+    @IBOutlet weak var logOutButton: UIButton!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,12 +26,9 @@ class SettingsViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func signOutButtonTapped(_ sender: Any) {
+    @IBAction func LogOutButtonTapped(_ sender: Any) {
         do {
             try Auth.auth().signOut()
-            
-            UserController.sharedInstance.user = nil
-            ItineraryController.sharedInstance.itineraries = []
             
             guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() else {return}
             vc.modalPresentationStyle = .fullScreen
@@ -47,10 +44,10 @@ class SettingsViewController: UIViewController {
     
     //MARK: - Functions
     func updateViews() {
-        guard let user = UserController.sharedInstance.user else {return}
+        guard let user = UserController.shared.user else {return}
         emailLabel.text = user.email
         changePasswordButton.layer.cornerRadius = 10
-        signOutButton.layer.cornerRadius = 10
+        logOutButton.layer.cornerRadius = 10
     }
     
     func setupAnimation(){
@@ -78,7 +75,7 @@ class SettingsViewController: UIViewController {
                   let confirmNewPassword = alert.textFields?.last?.text, !confirmNewPassword.isEmpty
             else {return}
             if newPassword == confirmNewPassword {
-                UserController.sharedInstance.updatePassword(password: newPassword)
+                UserController.shared.updatePassword(password: newPassword)
             } else {
                 print("Passwords do not match")
             }

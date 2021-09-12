@@ -612,14 +612,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leaves" translatesAutoresizingMaskIntoConstraints="NO" id="D4j-0Q-geE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="27" width="414" height="896"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eEC-Za-Vrv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eEC-Za-Vrv">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="sortCell" rowHeight="129" id="NyN-gt-jFM" customClass="sortByTableViewCell" customModule="Va_cay" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sortCell" rowHeight="129" id="NyN-gt-jFM" customClass="sortByTableViewCell" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NyN-gt-jFM" id="hfb-v0-2QF">
@@ -825,18 +823,18 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4yy-J3-xVb"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="D4j-0Q-geE" firstAttribute="centerX" secondItem="4yy-J3-xVb" secondAttribute="centerX" id="7HE-HN-QSQ"/>
                             <constraint firstItem="4yy-J3-xVb" firstAttribute="bottom" secondItem="eEC-Za-Vrv" secondAttribute="bottom" id="A6e-bh-mII"/>
                             <constraint firstItem="az4-YK-P8D" firstAttribute="centerX" secondItem="4yy-J3-xVb" secondAttribute="centerX" id="CFT-R8-1MQ"/>
-                            <constraint firstItem="D4j-0Q-geE" firstAttribute="bottom" secondItem="4yy-J3-xVb" secondAttribute="bottom" id="CqM-49-rba"/>
+                            <constraint firstItem="D4j-0Q-geE" firstAttribute="height" secondItem="GsZ-pb-nUH" secondAttribute="height" id="Fjk-Zk-PPC"/>
                             <constraint firstItem="4yy-J3-xVb" firstAttribute="bottom" secondItem="az4-YK-P8D" secondAttribute="bottom" constant="14" id="KOj-DH-ra9"/>
                             <constraint firstItem="eEC-Za-Vrv" firstAttribute="trailing" secondItem="4yy-J3-xVb" secondAttribute="trailing" id="Q9Y-Af-bsw"/>
-                            <constraint firstItem="4yy-J3-xVb" firstAttribute="top" secondItem="D4j-0Q-geE" secondAttribute="top" id="ZfP-88-a1N"/>
+                            <constraint firstItem="D4j-0Q-geE" firstAttribute="centerY" secondItem="4yy-J3-xVb" secondAttribute="centerY" id="RGs-DE-e9c"/>
                             <constraint firstItem="eEC-Za-Vrv" firstAttribute="leading" secondItem="4yy-J3-xVb" secondAttribute="leading" id="b8B-bd-iu2"/>
                             <constraint firstItem="eEC-Za-Vrv" firstAttribute="top" secondItem="4yy-J3-xVb" secondAttribute="top" id="iEW-FT-J3r"/>
-                            <constraint firstItem="D4j-0Q-geE" firstAttribute="leading" secondItem="4yy-J3-xVb" secondAttribute="leading" id="uiH-aA-iIb"/>
-                            <constraint firstItem="4yy-J3-xVb" firstAttribute="trailing" secondItem="D4j-0Q-geE" secondAttribute="trailing" id="wr2-fN-LxR"/>
+                            <constraint firstItem="D4j-0Q-geE" firstAttribute="width" secondItem="GsZ-pb-nUH" secondAttribute="width" id="ye2-z4-Ik8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Itineraries" id="CAq-3m-DlV">
@@ -969,11 +967,11 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="b5g-nT-A5Z"/>
                                         </constraints>
-                                        <state key="normal" title="Sign Out">
+                                        <state key="normal" title="Log Out">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="signOutButtonTapped:" destination="8Wq-D5-wSf" eventType="touchUpInside" id="dhS-dX-KZY"/>
+                                            <action selector="LogOutButtonTapped:" destination="8Wq-D5-wSf" eventType="touchUpInside" id="CTT-0s-Fhe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1006,7 +1004,7 @@
                         <outlet property="animationView" destination="eNi-bP-qIg" id="duF-A4-8cF"/>
                         <outlet property="changePasswordButton" destination="UD0-QX-Xdy" id="t1s-Qh-uW3"/>
                         <outlet property="emailLabel" destination="BMX-sC-mbG" id="Rd2-3V-udf"/>
-                        <outlet property="signOutButton" destination="KTp-9Z-uyW" id="ULK-l9-eb9"/>
+                        <outlet property="logOutButton" destination="KTp-9Z-uyW" id="6BJ-zw-ONT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mg3-ir-j2d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1327,10 +1325,10 @@
             </objects>
             <point key="canvasLocation" x="829" y="-578"/>
         </scene>
-        <!--Sign In View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="hY1-Ur-rog">
             <objects>
-                <viewController id="zKh-b0-bKQ" customClass="SignInViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zKh-b0-bKQ" customClass="LoginViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fVj-rR-WTe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1419,7 +1417,7 @@
                     <connections>
                         <outlet property="emailTextfield" destination="Th4-LS-axt" id="BNY-KE-aka"/>
                         <outlet property="passwordTextfield" destination="d6S-q3-yX8" id="J7G-0S-YGS"/>
-                        <outlet property="signInLabel" destination="7cy-o9-vwJ" id="91c-q5-5bQ"/>
+                        <outlet property="signInLabel" destination="7cy-o9-vwJ" id="NWv-Xp-A5X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBl-P8-J52" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

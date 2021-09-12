@@ -12,7 +12,7 @@ import FirebaseAuth
 class UserController {
     
     //MARK: - Shared Instance
-    static let sharedInstance = UserController()
+    static let shared = UserController()
     
     //MARK: - Properties
     var user: User?

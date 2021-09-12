@@ -87,7 +87,7 @@ class sortByTableViewCell: UITableViewCell {
     // MARK: - Functions
     func updateViews() {
         sortByButton.tintColor = Colors.customLightGray
-
+        self.contentView.backgroundColor = UIColor(white: 1, alpha: 0.8)
         if !ItineraryController.sharedInstance.sortByBool {
             sortAZButton.isHidden = true
             upcomingButton.isHidden = true

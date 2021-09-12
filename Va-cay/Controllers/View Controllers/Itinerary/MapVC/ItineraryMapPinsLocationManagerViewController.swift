@@ -95,7 +95,7 @@ class ItineraryMapPinsLocationManagerViewController: UIViewController {
         }
         
         if !coordinates.isEmpty {
-            guard let user = UserController.sharedInstance.user,
+            guard let user = UserController.shared.user,
                   let itinerary = itinerary else {return}
             ItineraryController.sharedInstance.editDestinationCoordinates(userId: user.userId, itinerary: itinerary, coords: coordinates) { result in
                 
