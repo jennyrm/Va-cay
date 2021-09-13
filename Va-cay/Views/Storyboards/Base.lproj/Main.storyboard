@@ -1251,7 +1251,7 @@
                         <outlet property="flightDepartureLabel" destination="MKZ-6B-wiI" id="OK0-JH-VYo"/>
                         <outlet property="hotelAirbnbLabel" destination="2XT-XI-blc" id="Vl2-FV-vNV"/>
                         <outlet property="staticAirBnBImageView" destination="Vc8-sL-RKQ" id="xaJ-MD-QCC"/>
-                        <outlet property="staticBudgetLabel" destination="rd9-Hz-plE" id="a1H-V0-epg"/>
+                        <outlet property="staticBudgetLabel" destination="rd9-Hz-plE" id="rNc-qA-UC1"/>
                         <outlet property="staticFlightArrivalLabel" destination="qTr-t9-sUg" id="AeA-9z-Apb"/>
                         <outlet property="staticFlightDepartureLabel" destination="BWg-Sh-LdB" id="iCb-EB-Feu"/>
                         <outlet property="staticHotelAirBnBLabel" destination="9yx-tH-Ts4" id="ZO7-0h-lUK"/>
@@ -1813,11 +1813,15 @@
             <point key="canvasLocation" x="-533" y="-579"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Hou-mW-dnM"/>
+        <designable name="eNi-bP-qIg"/>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="sUL-gB-KDv"/>
         <segue reference="vE9-dT-EKZ"/>
         <segue reference="dGV-Da-kn8"/>
-        <segue reference="znz-mM-Txb"/>
+        <segue reference="Zam-a7-cpo"/>
         <segue reference="pcU-1e-Qrk"/>
     </inferredMetricsTieBreakers>
     <resources>

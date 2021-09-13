@@ -42,7 +42,7 @@ class ItineraryDetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         CheckListItemTableViewCell.delegate = self
-        
+        staticBudgetLabel.isHidden = true
     }
     
     //MARK: - Functions
@@ -83,7 +83,7 @@ class ItineraryDetailViewController: UIViewController {
             hotelAirbnbLabel.text = itinerary.hotelAirbnb
         }
         
-        if itinerary.budget != nil {
+        if itinerary.budget?.count != 0 {
             staticBudgetLabel.isHidden = false
             budgetLabel.isHidden = false
             budgetLabel.text = itinerary.budget
