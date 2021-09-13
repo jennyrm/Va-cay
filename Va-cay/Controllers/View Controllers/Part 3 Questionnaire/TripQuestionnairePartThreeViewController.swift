@@ -51,6 +51,10 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     func updateActivitiesView() {
         activities.forEach { activity in
             for (key, value) in activity {
+                if key == "" {
+                    updateDay()
+                    break
+                }
                 if key == "Day \(dayCounter)" {
                     if value.isEmpty {
                         updateDay()
