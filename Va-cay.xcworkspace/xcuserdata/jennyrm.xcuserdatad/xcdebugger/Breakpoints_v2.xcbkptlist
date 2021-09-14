@@ -14,8 +14,8 @@
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "updateActivitiesView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "nextDay()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "nextDay()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "updateActivitiesView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -72,7 +72,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B62C224C-F2B8-4742-97DC-56508F6B8D87"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
@@ -87,22 +87,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0350B098-5FB2-4B16-8B66-99A2B3FE186D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "updateActivitiesView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "14082EC8-9032-4797-AC48-714673B6ED00"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -110,8 +94,8 @@
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "updateActivitiesView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -119,15 +103,95 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6AA8DB5A-1CC5-45C6-B4BE-90A7D9903B15"
+            uuid = "42E39956-E71A-46BB-A33C-E85C9B12FA91"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "updateActivitiesView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B7B2638-1DF1-41D5-A044-1522E3800C86"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "updateActivitiesView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A98C1AB-C238-410D-9C1C-0770E22DC0C4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "updateActivitiesView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2A98C1AB-C238-410D-9C1C-0770E22DC0C4 - f8227602b59a51a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.Array&lt;Swift.String&gt;&gt;) -&gt; () in Va_cay.TripQuestionnairePartThreeViewController.updateActivitiesView() -&gt; ()"
+                  moduleName = "Va-cay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jennyrm/Developer/DevMtn_Projects/Va-cay/Va-cay/Controllers/View%20Controllers/Part%203%20Questionnaire/TripQuestionnairePartThreeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "3626">
+               </Location>
+               <Location
+                  uuid = "2A98C1AB-C238-410D-9C1C-0770E22DC0C4 - dbc7f54d47f3a25f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Dictionary&lt;Swift.String, Swift.Array&lt;Swift.String&gt;&gt;) -&gt; () in Va_cay.TripQuestionnairePartThreeViewController.updateActivitiesView() -&gt; ()"
+                  moduleName = "Va-cay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jennyrm/Developer/DevMtn_Projects/Va-cay/Va-cay/Controllers/View%20Controllers/Part%203%20Questionnaire/TripQuestionnairePartThreeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE313202-0844-4452-9A48-D17E29A1E754"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "updateActivitiesView()"
             landmarkType = "7">
          </BreakpointContent>
