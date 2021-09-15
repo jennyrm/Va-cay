@@ -65,11 +65,13 @@ class TripQuestionnairePartThreeViewController: UIViewController {
             }
         }
  
+        //jennyrm - refactor this
         if dayCounter > activities.count {
             updateDay()
             mapPinActivities = []
         }
         
+//        dayLabel.text = "Day \(dayCounter)"
         dayActivities = []
         addActivityButtonAction()
     }
@@ -114,6 +116,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
             activities.append([day : dayActivities])
         }
         
+        //jennyrm - refactor this
         //adding activities for a new day
         if dayCounter > activities.count {
             addActivitiesFromTextFields()
@@ -245,13 +248,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     
     @objc func submitItineraryObject() {
         guard let user = UserController.sharedInstance.user else {return}
-        
-        //jennyrm - if activities is not empty
-        activitiesTextFieldItems.forEach {
-            if !$0.text!.isEmpty {
-                dayActivities.append($0.text!)
-            }
-        }
+
         saveActivities()
         
         if ItineraryController.sharedInstance.editingItinerary {
