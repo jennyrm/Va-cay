@@ -43,6 +43,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     func updateView() {
         if let activities = ItineraryController.sharedInstance.itineraryData["activities"] as? [ [ String : [String] ] ] {
             self.activities = activities
+//            print("Self.activities:", self.activities)
             updateActivitiesView()
         }
     }
@@ -70,6 +71,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
             mapPinActivities = []
         }
         
+        dayLabel.text = "Day \(dayCounter)"
         dayActivities = []
         addActivityButtonAction()
     }
@@ -246,12 +248,6 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     @objc func submitItineraryObject() {
         guard let user = UserController.sharedInstance.user else {return}
         
-        //jennyrm - if activities is not empty
-        activitiesTextFieldItems.forEach {
-            if !$0.text!.isEmpty {
-                dayActivities.append($0.text!)
-            }
-        }
         saveActivities()
         
         if ItineraryController.sharedInstance.editingItinerary {
