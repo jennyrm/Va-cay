@@ -11,4 +11,7 @@ target 'Va-cay' do
   pod 'FirebaseUI'
   pod 'lottie-ios'
 
+pod 'GoogleSignIn'
+pod 'FirebaseFacebookAuthUI'
+
 end

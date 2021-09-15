@@ -40,6 +40,15 @@ class RegisterViewController: UIViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func appleRegisterButtonTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func googleRegisterButtonTapped(_ sender: Any) {
+        
+    }
+    
+    
     // MARK: - Functions
     func transitionToHome() {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)

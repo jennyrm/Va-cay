@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D00E88826F2A93900F7EE2D /* GoogleClientID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00E88726F2A93900F7EE2D /* GoogleClientID.swift */; };
+		0D00E88A26F2AB6300F7EE2D /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D00E88926F2AB6300F7EE2D /* credentials.plist */; };
 		0D17B44E26E1DC47003CC29D /* CalendarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B44D26E1DC47003CC29D /* CalendarButton.swift */; };
 		0D17B45026E282C5003CC29D /* BorderlessTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B44F26E282C5003CC29D /* BorderlessTextField.swift */; };
 		0D17B45326E28683003CC29D /* BorderedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B45226E28683003CC29D /* BorderedStackView.swift */; };
@@ -71,6 +73,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D00E88726F2A93900F7EE2D /* GoogleClientID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleClientID.swift; sourceTree = "<group>"; };
+		0D00E88926F2AB6300F7EE2D /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		0D17B44D26E1DC47003CC29D /* CalendarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarButton.swift; sourceTree = "<group>"; };
 		0D17B44F26E282C5003CC29D /* BorderlessTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderlessTextField.swift; sourceTree = "<group>"; };
 		0D17B45226E28683003CC29D /* BorderedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedStackView.swift; sourceTree = "<group>"; };
@@ -119,7 +123,6 @@
 		9B543C12265F309800F5353A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B543C6E265F35AD00F5353A /* DestinationLocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationManagerViewController.swift; sourceTree = "<group>"; };
 		9B543C71265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationSearchTableViewController.swift; sourceTree = "<group>"; };
-		9B54D09A26EDC19B00FA2D48 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = FacebookSDKStrings.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B54D09D26EDC1A100FA2D48 /* FirebaseAnonymousAuthUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = FirebaseAnonymousAuthUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B54D09F26EDC1A700FA2D48 /* FirebaseAuthUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = FirebaseAuthUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B54D0A126EDC1B800FA2D48 /* FirebaseOAuthUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = FirebaseOAuthUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +185,6 @@
 				9B54D0A126EDC1B800FA2D48 /* FirebaseOAuthUI.bundle */,
 				9B54D09F26EDC1A700FA2D48 /* FirebaseAuthUI.bundle */,
 				9B54D09D26EDC1A100FA2D48 /* FirebaseAnonymousAuthUI.bundle */,
-				9B54D09A26EDC19B00FA2D48 /* FacebookSDKStrings.bundle */,
 				AB285C014851D2EAB74F7F04 /* Pods_Va_cay.framework */,
 			);
 			name = Frameworks;
@@ -344,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				0D19570C26EA81730043CFE3 /* VacayVid.mp4 */,
+				0D00E88926F2AB6300F7EE2D /* credentials.plist */,
 				0D299F2C26CC40C200A5CE31 /* grey.jpeg */,
 				0DE5463726E6BDCF006C1904 /* plane1.json */,
 				9B9E066626E5E52600B03503 /* plane.json */,
@@ -353,6 +356,7 @@
 				9B543C0D265F309800F5353A /* Assets.xcassets */,
 				9B543C12265F309800F5353A /* Info.plist */,
 				9B335CE4265F476800FC202B /* GoogleService-Info.plist */,
+				0D00E88726F2A93900F7EE2D /* GoogleClientID.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -550,6 +554,7 @@
 				0D299F2D26CC40C200A5CE31 /* grey.jpeg in Resources */,
 				9B543C11265F309800F5353A /* LaunchScreen.storyboard in Resources */,
 				0D19570D26EA81840043CFE3 /* VacayVid.mp4 in Resources */,
+				0D00E88A26F2AB6300F7EE2D /* credentials.plist in Resources */,
 				9B335CE5265F476800FC202B /* GoogleService-Info.plist in Resources */,
 				9B543C0E265F309800F5353A /* Assets.xcassets in Resources */,
 				9B543C0C265F309500F5353A /* Main.storyboard in Resources */,
@@ -653,6 +658,7 @@
 				9B4EE8A9266E0CB8007EB937 /* ActivitiesLocationManagerViewController.swift in Sources */,
 				9B4EE8C0266FFA6E007EB937 /* ItineraryTableViewCell.swift in Sources */,
 				9B4EE8A6266E0C9E007EB937 /* ActivitiesLocationSearchTableViewController.swift in Sources */,
+				0D00E88826F2A93900F7EE2D /* GoogleClientID.swift in Sources */,
 				9B543C6F265F35AD00F5353A /* DestinationLocationManagerViewController.swift in Sources */,
 				9B324800267DD85600C16040 /* ItineraryDetailViewController.swift in Sources */,
 				9B5BCEAB26DB47F4007A9647 /* PrimaryButton.swift in Sources */,
