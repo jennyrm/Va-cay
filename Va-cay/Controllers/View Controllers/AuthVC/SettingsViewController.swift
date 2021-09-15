@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import Lottie
+import GoogleSignIn
 
 class SettingsViewController: UIViewController {
     
@@ -32,7 +33,9 @@ class SettingsViewController: UIViewController {
             
             UserController.sharedInstance.user = nil
             ItineraryController.sharedInstance.itineraries = []
-            
+            if GIDSignIn.sharedInstance.currentUser != nil {
+                GIDSignIn.sharedInstance.signOut()
+            }
             guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() else {return}
             vc.modalPresentationStyle = .fullScreen
             

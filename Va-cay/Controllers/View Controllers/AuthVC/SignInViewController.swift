@@ -60,7 +60,22 @@ class SignInViewController: UIViewController {
     @IBAction func googleLoginButtonTapped(_ sender: Any) {
         let signInConfig = GIDConfiguration(clientID: GoogleClientID.clientID)
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
-            guard error == nil else {return}
+            guard error == nil else { return }
+            guard let user = user else { return }
+            
+            guard let email = user.profile?.email else {return}
+            guard let idToken = user.authentication.idToken else { return }
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.authentication.accessToken)
+            Auth.auth().signIn(with: credential) { result, error in
+                if let error = error {
+                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                }
+                if result != nil {
+                    let newUser = User(email: email, userId: result!.user.uid)
+                    UserController.sharedInstance.createUser(user: newUser)
+                    self.transitionToHome()
+                }
+            }
         }
     }
     
