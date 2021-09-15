@@ -42,9 +42,7 @@ class dayActivitiesTableViewCell: UITableViewCell {
         
         var activitiesString = ""
         activities.forEach({
-            if !$0.isEmpty {
-                activitiesString.append("•\($0)\n")
-            }
+            activitiesString.append("•\($0)\n")
         })
         activitiesLabel.text = activitiesString
     }
