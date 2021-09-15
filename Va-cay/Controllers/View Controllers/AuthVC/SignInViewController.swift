@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseOAuthUI
+import GoogleSignIn
 
 class SignInViewController: UIViewController {
     
@@ -55,6 +56,14 @@ class SignInViewController: UIViewController {
             self.present(authViewController, animated: true)
         }
     }
+    
+    @IBAction func googleLoginButtonTapped(_ sender: Any) {
+        let signInConfig = GIDConfiguration(clientID: GoogleClientID.clientID)
+        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+            guard error == nil else {return}
+        }
+    }
+    
     
     // MARK: - Functions
     func transitionToHome(){

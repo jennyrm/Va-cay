@@ -415,7 +415,9 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
+  - FirebaseFacebookAuthUI
   - FirebaseUI
+  - GoogleSignIn
   - lottie-ios
 
 SPEC REPOS:
@@ -497,6 +499,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: 2c26d31f7d11d9fa286895c2135d68b0ed2edf2c
+PODFILE CHECKSUM: ec5104fbfaaa15b492b036bf8913ed05852ca2c6
 
 COCOAPODS: 1.10.1

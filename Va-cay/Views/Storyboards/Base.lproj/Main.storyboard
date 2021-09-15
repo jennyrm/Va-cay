@@ -904,6 +904,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="8lw-Hu-SIh">
+                                <rect key="frame" x="157" y="354" width="100" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlB-Tn-L0r">
+                                        <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="OlB-Tn-L0r" secondAttribute="height" multiplier="1:1" id="C2C-mb-zLJ"/>
+                                        </constraints>
+                                        <state key="normal" image="applelogo" catalog="system"/>
+                                        <connections>
+                                            <action selector="appleRegisterButtonTapped:" destination="fxc-Be-4YI" eventType="touchUpInside" id="wcN-0m-1mT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwP-pH-jGs">
+                                        <rect key="frame" x="66" y="0.0" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="lwP-pH-jGs" secondAttribute="height" multiplier="1:1" id="c6d-Eq-8bW"/>
+                                            <constraint firstAttribute="height" constant="34" id="mja-An-C7W"/>
+                                        </constraints>
+                                        <state key="normal" title="G"/>
+                                        <connections>
+                                            <action selector="googleRegisterButtonTapped:" destination="fxc-Be-4YI" eventType="touchUpInside" id="eM4-8p-gQ4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AIR-g8-TDX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -911,11 +937,13 @@
                             <constraint firstItem="pKt-np-ts8" firstAttribute="top" secondItem="iZU-qk-p4D" secondAttribute="bottom" constant="32" id="2Rw-S9-CnP"/>
                             <constraint firstItem="pKt-np-ts8" firstAttribute="width" secondItem="okl-dF-STK" secondAttribute="width" multiplier="0.4" id="HLj-81-vPA"/>
                             <constraint firstItem="vzn-A6-woQ" firstAttribute="top" secondItem="AIR-g8-TDX" secondAttribute="top" constant="32" id="HTQ-fS-H5L"/>
+                            <constraint firstItem="8lw-Hu-SIh" firstAttribute="centerX" secondItem="AIR-g8-TDX" secondAttribute="centerX" id="KOj-6K-3fr"/>
                             <constraint firstItem="RvX-DD-uud" firstAttribute="leading" secondItem="AIR-g8-TDX" secondAttribute="leading" constant="32" id="LA2-Td-0D3"/>
                             <constraint firstItem="RvX-DD-uud" firstAttribute="top" secondItem="AIR-g8-TDX" secondAttribute="top" constant="32" id="Lnq-9C-LV4"/>
                             <constraint firstItem="iZU-qk-p4D" firstAttribute="top" secondItem="vzn-A6-woQ" secondAttribute="bottom" constant="64" id="aDf-94-hWM"/>
                             <constraint firstItem="vzn-A6-woQ" firstAttribute="centerX" secondItem="AIR-g8-TDX" secondAttribute="centerX" id="gH9-N1-Iab"/>
                             <constraint firstItem="iZU-qk-p4D" firstAttribute="width" secondItem="okl-dF-STK" secondAttribute="width" multiplier="0.9" id="hfG-O9-iOh"/>
+                            <constraint firstItem="8lw-Hu-SIh" firstAttribute="top" secondItem="pKt-np-ts8" secondAttribute="bottom" constant="32" id="idY-Vq-t3W"/>
                             <constraint firstItem="iZU-qk-p4D" firstAttribute="centerX" secondItem="AIR-g8-TDX" secondAttribute="centerX" id="ihd-hi-Epw"/>
                             <constraint firstItem="pKt-np-ts8" firstAttribute="centerX" secondItem="AIR-g8-TDX" secondAttribute="centerX" id="oIK-Tl-7a3"/>
                         </constraints>
@@ -1417,14 +1445,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTU-y6-2Bm">
-                                <rect key="frame" x="187" y="363" width="40" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="applelogo" catalog="system"/>
-                                <connections>
-                                    <action selector="appleLoginButtonTapped:" destination="zKh-b0-bKQ" eventType="touchUpInside" id="EYK-e7-ZfU"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="qbk-4h-iWl">
+                                <rect key="frame" x="161" y="350" width="92" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTU-y6-2Bm">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qTU-y6-2Bm" secondAttribute="height" multiplier="1:1" id="Q6q-PM-pUX"/>
+                                        </constraints>
+                                        <state key="normal" image="applelogo" catalog="system"/>
+                                        <connections>
+                                            <action selector="appleLoginButtonTapped:" destination="zKh-b0-bKQ" eventType="touchUpInside" id="EYK-e7-ZfU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uro-Uk-n7y">
+                                        <rect key="frame" x="62" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1xp-9Y-Bda"/>
+                                            <constraint firstAttribute="width" secondItem="Uro-Uk-n7y" secondAttribute="height" multiplier="1:1" id="kOO-0W-wB8"/>
+                                        </constraints>
+                                        <state key="normal" title="G"/>
+                                        <connections>
+                                            <action selector="googleLoginButtonTapped:" destination="zKh-b0-bKQ" eventType="touchUpInside" id="F4i-2a-2N1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDr-xb-Fl3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1435,8 +1481,10 @@
                             <constraint firstItem="rct-8T-VwO" firstAttribute="centerX" secondItem="wDr-xb-Fl3" secondAttribute="centerX" id="8CH-rJ-VIA"/>
                             <constraint firstItem="SX7-s4-MkJ" firstAttribute="centerX" secondItem="wDr-xb-Fl3" secondAttribute="centerX" id="FJG-dp-aIe"/>
                             <constraint firstItem="H0V-iu-noB" firstAttribute="top" secondItem="wDr-xb-Fl3" secondAttribute="top" constant="32" id="KAr-Mz-lsa"/>
+                            <constraint firstItem="qbk-4h-iWl" firstAttribute="centerX" secondItem="wDr-xb-Fl3" secondAttribute="centerX" id="Z0b-JJ-0nc"/>
                             <constraint firstItem="rct-8T-VwO" firstAttribute="width" secondItem="fVj-rR-WTe" secondAttribute="width" multiplier="0.9" id="dxM-yS-h0L"/>
                             <constraint firstItem="rct-8T-VwO" firstAttribute="top" secondItem="H0V-iu-noB" secondAttribute="bottom" constant="64" id="muS-Hs-EtM"/>
+                            <constraint firstItem="qbk-4h-iWl" firstAttribute="top" secondItem="SX7-s4-MkJ" secondAttribute="bottom" constant="32" id="s8D-M9-uD0"/>
                             <constraint firstItem="rlq-ir-4BB" firstAttribute="top" secondItem="wDr-xb-Fl3" secondAttribute="top" constant="32" id="vhT-X1-Qrm"/>
                             <constraint firstItem="rlq-ir-4BB" firstAttribute="leading" secondItem="wDr-xb-Fl3" secondAttribute="leading" constant="32" id="yRa-By-LgA"/>
                         </constraints>
@@ -1547,7 +1595,7 @@
             <objects>
                 <viewController id="hxb-zM-tZ7" customClass="MediaSelectorViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u3Q-iE-VWE">
-                        <rect key="frame" x="0.0" y="0.0" width="331" height="295"/>
+                        <rect key="frame" x="0.0" y="0.0" width="331" height="295.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wNC-rp-gRk">
@@ -1850,6 +1898,10 @@
             <point key="canvasLocation" x="-533" y="-579"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Hou-mW-dnM"/>
+        <designable name="eNi-bP-qIg"/>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="sUL-gB-KDv"/>
         <segue reference="vE9-dT-EKZ"/>
