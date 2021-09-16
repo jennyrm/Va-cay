@@ -23,7 +23,7 @@ class Itinerary: Codable {
     let budget: String?
     var checklist: [ [String?? : Bool] ]?
     ///TripQuestionnairePart3
-    let activitiesCoordinates: [ [String : [String?? : [Double] ] ] ]?
+    var activitiesCoordinates: [ [String : [String?? : [Double] ] ] ]?
     var activities: [ [ String : [String] ] ]?
     ///ID
     let id: String
