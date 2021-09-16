@@ -46,12 +46,13 @@ class AuthViewController: UIViewController {
         
         if loginBool {
             AuthViewModel.login(email: email, password: password) { result in
-                if result {
-                    self.transitionToHome()
-                } else {
-                    self.errorLabel.text = "Email and password did not match"
-                    self.errorLabel.isHidden = false
-                }
+                print("result", result)
+//                if result == "Succesfully created account" {
+//                    self.transitionToHome()
+//                } else {
+//                    self.errorLabel.text = result
+//                    self.errorLabel.isHidden = false
+//                }
             }
         } else {
             guard let confirmPass = passwordTwoTextField.text, !confirmPass.isEmpty else {
@@ -61,12 +62,13 @@ class AuthViewController: UIViewController {
             }
             
             AuthViewModel.register(email: email, password: password, confirmPassword: confirmPass) { result in
-                if result {
-                    self.transitionToHome()
-                } else {
-                    self.errorLabel.text = "Error signing up"
-                    self.errorLabel.isHidden = false
-                }
+                print(result)
+//                if result {
+//                    self.transitionToHome()
+//                } else {
+//                    self.errorLabel.text = "Error signing up"
+//                    self.errorLabel.isHidden = false
+//                }
             }
         }
     }
