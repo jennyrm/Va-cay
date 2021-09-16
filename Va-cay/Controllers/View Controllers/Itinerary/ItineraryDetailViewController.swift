@@ -155,6 +155,7 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
         cell.activities = activities[indexPath.row]
         cell.row = indexPath.row
         cell.delegate = self
+        cell.updateView()
         
         return cell
     }
@@ -187,15 +188,13 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
                     itinerary.activities?.insert([key: [""]], at: indexPath.row)
                 }
             }
-//            itinerary.activities?.remove(at: indexPath.row)
-            
+ 
             ItineraryController.sharedInstance.itineraryData["activities"] = self.itinerary?.activities
             ItineraryController.sharedInstance.editItinerary(userId: user.userId, itinerary: itinerary) { result in
                 tableView.reloadData()
             }
         }
     }
-    
 }//End of extension
 
 extension ItineraryDetailViewController: CheckListItemViewCellDelegate {
@@ -203,10 +202,7 @@ extension ItineraryDetailViewController: CheckListItemViewCellDelegate {
         guard var checklistPlaceholder = itinerary?.checklist!,
               let user = UserController.sharedInstance.user else {return}
         checklistPlaceholder[index] = checklistItem
-        ItineraryController.sharedInstance.editChecklist(userId: user.userId, itinerary: self.itinerary!, checklist: checklistPlaceholder) { result in
-            
-        }
+        ItineraryController.sharedInstance.editChecklist(userId: user.userId, itinerary: self.itinerary!, checklist: checklistPlaceholder, completion: { _ in })
         self.itinerary?.checklist = checklistPlaceholder
     }
-    
 }//End of extension
