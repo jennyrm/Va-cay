@@ -114,6 +114,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
             addActivitiesFromTextFields()
             if !dayActivities.isEmpty {
                 activities.append([day : dayActivities])
+            } else {
+                activities.append([day : [""]])
             }
         }
         
@@ -122,6 +124,8 @@ class TripQuestionnairePartThreeViewController: UIViewController {
             addActivitiesFromTextFields()
             if !dayActivities.isEmpty {
                 activities.append([day : dayActivities])
+            } else {
+                activities.append([day : [""]])
             }
         }
         
