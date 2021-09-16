@@ -612,7 +612,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leaves" translatesAutoresizingMaskIntoConstraints="NO" id="D4j-0Q-geE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="814"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eEC-Za-Vrv">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
@@ -727,7 +727,7 @@
                                                                         <constraint firstAttribute="width" secondItem="yJO-Mb-1gf" secondAttribute="height" multiplier="1:1" id="FiQ-Kh-oqM"/>
                                                                     </constraints>
                                                                     <color key="tintColor" systemColor="systemRedColor"/>
-                                                                    <state key="normal" image="earth">
+                                                                    <state key="normal" image="globe">
                                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                                                     </state>
                                                                     <connections>
@@ -832,7 +832,7 @@
                             <constraint firstItem="eEC-Za-Vrv" firstAttribute="leading" secondItem="4yy-J3-xVb" secondAttribute="leading" id="b8B-bd-iu2"/>
                             <constraint firstItem="4yy-J3-xVb" firstAttribute="trailing" secondItem="D4j-0Q-geE" secondAttribute="trailing" id="hEx-QW-nQB"/>
                             <constraint firstItem="4yy-J3-xVb" firstAttribute="top" secondItem="D4j-0Q-geE" secondAttribute="top" id="mie-ws-elk"/>
-                            <constraint firstItem="D4j-0Q-geE" firstAttribute="bottom" secondItem="4yy-J3-xVb" secondAttribute="bottom" id="sfd-7g-HnX"/>
+                            <constraint firstItem="D4j-0Q-geE" firstAttribute="bottom" secondItem="4yy-J3-xVb" secondAttribute="bottom" constant="40" id="wUK-i5-sHs"/>
                             <constraint firstItem="D4j-0Q-geE" firstAttribute="leading" secondItem="4yy-J3-xVb" secondAttribute="leading" id="xYX-7K-w9L"/>
                             <constraint firstItem="eEC-Za-Vrv" firstAttribute="top" secondItem="4yy-J3-xVb" secondAttribute="top" id="zh4-aE-8Zs"/>
                         </constraints>
@@ -1642,7 +1642,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MfQ-u0-cZq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553.6231884057972" y="630.80357142857144"/>
+            <point key="canvasLocation" x="1554" y="648"/>
         </scene>
         <!--Flight Departure Calendar View Controller-->
         <scene sceneID="zNQ-P2-MN8">
@@ -1916,8 +1916,8 @@
         <image name="calendar" width="512" height="512"/>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
-        <image name="earth" width="422.52499389648438" height="422.52499389648438"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="globe" width="509.44000244140625" height="509.44000244140625"/>
         <image name="leaves" width="564" height="1000"/>
         <image name="location" catalog="system" width="128" height="121"/>
         <image name="location-pin" width="512" height="512"/>

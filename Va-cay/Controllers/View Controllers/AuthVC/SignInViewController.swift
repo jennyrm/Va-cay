@@ -63,7 +63,7 @@ class SignInViewController: UIViewController {
             guard error == nil else { return }
             guard let user = user else { return }
             
-            guard let email = user.profile?.email else {return}
+            guard let email = user.profile?.email else { return }
             guard let idToken = user.authentication.idToken else { return }
             let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.authentication.accessToken)
             Auth.auth().signIn(with: credential) { result, error in
