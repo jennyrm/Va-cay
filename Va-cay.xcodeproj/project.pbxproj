@@ -56,6 +56,7 @@
 		9B57D10A26E816F2004A15B5 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B57D10926E816F2004A15B5 /* SecondaryButton.swift */; };
 		9B5BCEA726DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEA626DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift */; };
 		9B5BCEAB26DB47F4007A9647 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */; };
+		9B609E2F26F3DE61005748A5 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B609E2E26F3DE61005748A5 /* KeyboardExtension.swift */; };
 		9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83332926673108008EB6E9 /* Itinerary.swift */; };
 		9B9E066726E5E52700B03503 /* plane.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B9E066626E5E52600B03503 /* plane.json */; };
 		9BB77709266A92BE008D3645 /* TripCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */; };
@@ -130,6 +131,7 @@
 		9B57D12E26EA98E6004A15B5 /* Va-cay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Va-cay.entitlements"; sourceTree = "<group>"; };
 		9B5BCEA626DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAlignedQuestionnaireLabel.swift; sourceTree = "<group>"; };
 		9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		9B609E2E26F3DE61005748A5 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
 		9B83332926673108008EB6E9 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		9B9E066626E5E52600B03503 /* plane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane.json; sourceTree = "<group>"; };
 		9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCalendarViewController.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				9BB77720266C1ECE008D3645 /* Protocols.swift */,
 				0D5A963326B215E900CD5707 /* UserError.swift */,
 				0DA6676726E88202007E1977 /* QueuePlayerUIView.swift */,
+				9B609E2E26F3DE61005748A5 /* KeyboardExtension.swift */,
 			);
 			path = "Helper+Extensions";
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				0D60FCC926B34D2500F75732 /* AuthViewModel.swift in Sources */,
 				9B4EE8A9266E0CB8007EB937 /* ActivitiesLocationManagerViewController.swift in Sources */,
 				9B4EE8C0266FFA6E007EB937 /* ItineraryTableViewCell.swift in Sources */,
+				9B609E2F26F3DE61005748A5 /* KeyboardExtension.swift in Sources */,
 				9B4EE8A6266E0C9E007EB937 /* ActivitiesLocationSearchTableViewController.swift in Sources */,
 				0D00E88826F2A93900F7EE2D /* GoogleClientID.swift in Sources */,
 				9B543C6F265F35AD00F5353A /* DestinationLocationManagerViewController.swift in Sources */,

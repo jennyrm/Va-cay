@@ -25,6 +25,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
     override func loadView() {
         super.loadView()
         setupConstraints()
+        self.hideKeyBoardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {

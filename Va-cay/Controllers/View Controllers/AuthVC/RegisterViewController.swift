@@ -26,7 +26,11 @@ class RegisterViewController: UIViewController {
     @IBAction func createAccountButtonTapped(_ sender: Any) {
         guard let email = emailTextfield.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty,
-              let confirmPassword = confirmPasswordTextfield.text, !confirmPassword.isEmpty else {return}
+              let confirmPassword = confirmPasswordTextfield.text, !confirmPassword.isEmpty else { return }
+        
+        if password != confirmPassword {
+            presentErrorAlert(title: "Error", message: "Passwords do not match.")
+        }
         
         AuthViewModel.register(email: email, password: password, confirmPassword: confirmPassword) { result in
 
