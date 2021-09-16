@@ -150,6 +150,10 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "dayActivityCell") as? dayActivitiesTableViewCell else { return UITableViewCell() }
         
+        if activities[indexPath.row] == [] {
+            return UITableViewCell()
+        }
+        
         cell.day = days[indexPath.row]
         cell.activities = activities[indexPath.row]
         cell.row = indexPath.row
@@ -173,16 +177,16 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
         guard let itinerary = itinerary,
               let user = UserController.sharedInstance.user else {return}
         if editingStyle == .delete {
-//            if let activityToEdit = itinerary.activities?[indexPath.row] {
-//                for (key, _) in activityToEdit {
-//                    itinerary.activities?.remove(at: indexPath.row)
-//                    itinerary.activities?.insert([key: [""]], at: indexPath.row)
-//                }
-//            }
-            itinerary.activities?.remove(at: indexPath.row)
+            if let activityToEdit = itinerary.activities?[indexPath.row] {
+                for (key, _) in activityToEdit {
+                    itinerary.activities?.remove(at: indexPath.row)
+                    itinerary.activities?.insert([key: [""]], at: indexPath.row)
+                }
+            }
+//            itinerary.activities?.remove(at: indexPath.row)
+            
             ItineraryController.sharedInstance.itineraryData["activities"] = self.itinerary?.activities
             ItineraryController.sharedInstance.editItinerary(userId: user.userId, itinerary: itinerary) { result in
-                //jennyrm - reload table view cell
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }
