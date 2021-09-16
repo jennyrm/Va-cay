@@ -182,6 +182,7 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
         guard let itinerary = itinerary,
               let user = UserController.sharedInstance.user else {return}
         if editingStyle == .delete {
+            
             if let activityToEdit = itinerary.activities?[indexPath.row] {
                 for (key, _) in activityToEdit {
                     activities.remove(at: indexPath.row)
