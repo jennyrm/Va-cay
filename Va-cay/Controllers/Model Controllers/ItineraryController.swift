@@ -73,6 +73,8 @@ class ItineraryController {
         }
     }
     
+    
+    
     func editItinerary(userId: String, itinerary: Itinerary, completion: @escaping (Bool) -> Void) {
         let itineraryRef = db.collection("users").document(userId).collection("itineraries").document(itinerary.id)
         

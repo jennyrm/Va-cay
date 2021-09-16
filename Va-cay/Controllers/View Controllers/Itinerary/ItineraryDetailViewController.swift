@@ -184,12 +184,17 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
         if editingStyle == .delete {
             if let activityToEdit = itinerary.activities?[indexPath.row] {
                 for (key, _) in activityToEdit {
+                    activities.remove(at: indexPath.row)
+                    activities.insert([""], at: indexPath.row)
                     itinerary.activities?.remove(at: indexPath.row)
                     itinerary.activities?.insert([key: [""]], at: indexPath.row)
+                    
+//                    itinerary.activitiesCoordinates?.insert(["": [:]], at: indexPath.row)
                 }
             }
- 
+            
             ItineraryController.sharedInstance.itineraryData["activities"] = self.itinerary?.activities
+//            ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"]
             ItineraryController.sharedInstance.editItinerary(userId: user.userId, itinerary: itinerary) { result in
                 tableView.reloadData()
             }
