@@ -1072,20 +1072,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="oDe-Qa-A4k">
-                                                    <rect key="frame" x="10.5" y="12.5" width="393" height="59"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oDe-Qa-A4k">
+                                                    <rect key="frame" x="10.5" y="2" width="393" height="80"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X2m-TV-cbK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="118" height="59"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="X2m-TV-cbK">
+                                                            <rect key="frame" x="0.0" y="13" width="118" height="54.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(dayLabel)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM3-2b-PWm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="118" height="29"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="118" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-DG-d7A" customClass="MapPinButton" customModule="Va_cay" customModuleProvider="target">
-                                                                    <rect key="frame" x="44" y="29" width="30" height="30"/>
+                                                                    <rect key="frame" x="44" y="24.5" width="30" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="Fy5-f2-iya"/>
                                                                         <constraint firstAttribute="width" constant="30" id="NZi-NQ-uIO"/>
@@ -1103,10 +1103,10 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kyb-re-5M3">
-                                                            <rect key="frame" x="118" y="0.0" width="275" height="59"/>
+                                                            <rect key="frame" x="118" y="30" width="275" height="20.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(activitiesLabel)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGI-Jj-68W">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="275" height="59"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="275" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1123,7 +1123,7 @@
                                                 <constraint firstItem="oDe-Qa-A4k" firstAttribute="width" secondItem="mIo-pA-CUG" secondAttribute="width" multiplier="0.95" id="7nI-x7-Y61"/>
                                                 <constraint firstItem="oDe-Qa-A4k" firstAttribute="centerY" secondItem="mIo-pA-CUG" secondAttribute="centerY" id="INf-ic-ito"/>
                                                 <constraint firstItem="oDe-Qa-A4k" firstAttribute="centerX" secondItem="mIo-pA-CUG" secondAttribute="centerX" id="ifv-re-leM"/>
-                                                <constraint firstItem="oDe-Qa-A4k" firstAttribute="height" secondItem="mIo-pA-CUG" secondAttribute="height" multiplier="0.7" id="rdr-GK-1cH"/>
+                                                <constraint firstItem="oDe-Qa-A4k" firstAttribute="height" secondItem="mIo-pA-CUG" secondAttribute="height" multiplier="0.95" id="rdr-GK-1cH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1901,10 +1901,6 @@
             <point key="canvasLocation" x="-533" y="-579"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Hou-mW-dnM"/>
-        <designable name="eNi-bP-qIg"/>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="sUL-gB-KDv"/>
         <segue reference="vE9-dT-EKZ"/>

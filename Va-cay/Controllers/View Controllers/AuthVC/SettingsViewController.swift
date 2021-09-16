@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         self.view.backgroundColor = Colors.customOffWhite
-//        setupAnimation()
+        setupAnimation()
     }
     
     // MARK: - Actions
@@ -56,7 +56,7 @@ class SettingsViewController: UIViewController {
         logOutButton.layer.cornerRadius = 10
     }
     
-    func setupAnimation(){
+    func setupAnimation() {
         let planeAnimation = Animation.named("plane1")
         animationView.animation = planeAnimation
         animationView.loopMode = .loop
