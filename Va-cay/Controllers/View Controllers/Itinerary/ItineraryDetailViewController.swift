@@ -173,7 +173,7 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
         if activities[indexPath.row] == [""] {
             return 0
         }
-        return 100
+        return UITableView.automaticDimension
     }
     
     // JAMLEA: Deleting activities action
@@ -191,7 +191,7 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
             
             ItineraryController.sharedInstance.itineraryData["activities"] = self.itinerary?.activities
             ItineraryController.sharedInstance.editItinerary(userId: user.userId, itinerary: itinerary) { result in
-                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
             }
         }
     }
