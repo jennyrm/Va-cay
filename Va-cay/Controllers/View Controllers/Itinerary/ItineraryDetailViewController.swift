@@ -91,7 +91,7 @@ class ItineraryDetailViewController: UIViewController {
         
     }
     
-    func hideLabels(){
+    func hideLabels() {
         tripDateLabel.isHidden = true
         flightArrivalLabel.isHidden = true
         flightDepartureLabel.isHidden = true
@@ -150,9 +150,6 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "dayActivityCell") as? dayActivitiesTableViewCell else { return UITableViewCell() }
         
-        if activities[indexPath.row] == [] {
-            return UITableViewCell()
-        }
         
         cell.day = days[indexPath.row]
         cell.activities = activities[indexPath.row]
@@ -170,6 +167,13 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.textLabel?.font = .boldSystemFont(ofSize: 20)
         header.textLabel?.textAlignment = NSTextAlignment.center
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if activities[indexPath.row] == [""] {
+            return 0
+        }
+        return 100
     }
     
     // JAMLEA: Deleting activities action
