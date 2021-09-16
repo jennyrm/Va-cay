@@ -33,6 +33,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         updateView()
         self.view.backgroundColor = Colors.customOffWhite
         budgetTextField?.delegate = self
+        self.hideKeyBoardWhenTappedAround()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

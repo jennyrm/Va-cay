@@ -26,6 +26,7 @@ class TripQuestionnairePartOneViewController: UIViewController {
         super.viewDidLoad()
         MediaSelectorViewController.delegate = self
         updateView()
+        self.hideKeyBoardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,3 +106,4 @@ extension TripQuestionnairePartOneViewController: DatePickerDelegate {
         tripDateLabel.text = date?.formatToString()
     }
 }//End of extension
+
