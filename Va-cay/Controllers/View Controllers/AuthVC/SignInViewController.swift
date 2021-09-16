@@ -29,12 +29,10 @@ class SignInViewController: UIViewController {
               let password = passwordTextfield.text, !password.isEmpty else {return}
         
         AuthViewModel.login(email: email, password: password) { result in
-            if result {
+            if result == "User logged in" {
                 self.transitionToHome()
             } else {
-                let errorController = UIAlertController(title: "Error", message: "Error signing in", preferredStyle: .alert)
-                errorController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                self.present(errorController, animated: true, completion: nil)
+                self.presentErrorAlert(title: "Error", message: result)
             }
         }
     }

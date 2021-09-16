@@ -27,13 +27,13 @@ class RegisterViewController: UIViewController {
         guard let email = emailTextfield.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty,
               let confirmPassword = confirmPasswordTextfield.text, !confirmPassword.isEmpty else {return}
+        
         AuthViewModel.register(email: email, password: password, confirmPassword: confirmPassword) { result in
-            if result {
+
+            if result == "Succesfully created account" {
                 self.transitionToHome()
             } else {
-                let registerError = UIAlertController(title: "Error", message: "Login credentials are invalid", preferredStyle: .alert)
-                registerError.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
-                self.present(registerError, animated: true, completion: nil)
+                self.presentErrorAlert(title: "Error", message: result)
             }
         }
     }

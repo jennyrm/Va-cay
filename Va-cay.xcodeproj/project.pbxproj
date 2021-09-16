@@ -169,8 +169,8 @@
 		0D5A963526B2284200CD5707 /* AuthVC */ = {
 			isa = PBXGroup;
 			children = (
-				0D5A963626B2287000CD5707 /* AuthViewController.swift */,
 				0D60FCC826B34D2500F75732 /* AuthViewModel.swift */,
+				0D5A963626B2287000CD5707 /* AuthViewController.swift */,
 				0DA6676026E7DAD6007E1977 /* LandingPageViewController.swift */,
 				0DA6676226E7DAE7007E1977 /* SignInViewController.swift */,
 				0DA6676426E7DAFE007E1977 /* RegisterViewController.swift */,
