@@ -64,14 +64,13 @@ class TripQuestionnairePartThreeViewController: UIViewController {
                 }
             }
         }
- 
-        //jennyrm - refactor this
-        if dayCounter > activities.count {
+
+        if dayCounter > activities.count, dayActivities.isEmpty {
             updateDay()
             mapPinActivities = []
         }
         
-//        dayLabel.text = "Day \(dayCounter)"
+        dayLabel.text = "Day \(dayCounter)"
         dayActivities = []
         addActivityButtonAction()
     }
@@ -113,14 +112,17 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         } else {
             //creating itinerary activities
             addActivitiesFromTextFields()
-            activities.append([day : dayActivities])
+            if !dayActivities.isEmpty {
+                activities.append([day : dayActivities])
+            }
         }
         
-        //jennyrm - refactor this
         //adding activities for a new day
-        if dayCounter > activities.count {
+        if dayCounter > activities.count, dayActivities.isEmpty {
             addActivitiesFromTextFields()
-            activities.append([day : dayActivities])
+            if !dayActivities.isEmpty {
+                activities.append([day : dayActivities])
+            }
         }
         
         removeTextFields()
