@@ -907,14 +907,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="8lw-Hu-SIh">
-                                <rect key="frame" x="154" y="406.5" width="106" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="8lw-Hu-SIh">
+                                <rect key="frame" x="163.5" y="406.5" width="87" height="28"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlB-Tn-L0r">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="OlB-Tn-L0r" secondAttribute="height" multiplier="1:1" id="C2C-mb-zLJ"/>
-                                            <constraint firstAttribute="height" constant="40" id="Ius-Mn-RNu"/>
+                                            <constraint firstAttribute="height" constant="28" id="5HG-Nz-Hjg"/>
+                                            <constraint firstAttribute="width" constant="24" id="eeg-EV-Iw6"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="applelogo" catalog="system">
@@ -925,10 +925,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwP-pH-jGs">
-                                        <rect key="frame" x="72" y="3" width="34" height="34"/>
+                                        <rect key="frame" x="64" y="2.5" width="23" height="23"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="lwP-pH-jGs" secondAttribute="height" multiplier="1:1" id="c6d-Eq-8bW"/>
-                                            <constraint firstAttribute="height" constant="34" id="mja-An-C7W"/>
+                                            <constraint firstAttribute="width" constant="23" id="2CJ-t2-99y"/>
+                                            <constraint firstAttribute="height" constant="23" id="PaP-ip-zCv"/>
                                         </constraints>
                                         <state key="normal" image="google"/>
                                         <connections>
@@ -1460,28 +1460,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="qbk-4h-iWl">
-                                <rect key="frame" x="154" y="402.5" width="106" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="qbk-4h-iWl">
+                                <rect key="frame" x="163.5" y="402.5" width="87" height="28"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTU-y6-2Bm">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="qTU-y6-2Bm" secondAttribute="height" multiplier="1:1" id="Q6q-PM-pUX"/>
-                                            <constraint firstAttribute="height" constant="40" id="zDe-5w-ggy"/>
+                                            <constraint firstAttribute="height" constant="28" id="4Zh-ZS-T2J"/>
+                                            <constraint firstAttribute="width" constant="24" id="wb5-o6-JIT"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="applelogo" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                         </state>
                                         <connections>
                                             <action selector="appleLoginButtonTapped:" destination="zKh-b0-bKQ" eventType="touchUpInside" id="EYK-e7-ZfU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uro-Uk-n7y">
-                                        <rect key="frame" x="72" y="3" width="34" height="34"/>
+                                        <rect key="frame" x="64" y="2.5" width="23" height="23"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="1xp-9Y-Bda"/>
-                                            <constraint firstAttribute="width" secondItem="Uro-Uk-n7y" secondAttribute="height" multiplier="1:1" id="kOO-0W-wB8"/>
+                                            <constraint firstAttribute="height" constant="23" id="1xp-9Y-Bda"/>
+                                            <constraint firstAttribute="width" constant="23" id="3hU-Tr-jqE"/>
                                         </constraints>
                                         <state key="normal" image="google"/>
                                         <connections>
@@ -1676,7 +1676,7 @@
             <objects>
                 <viewController id="xAC-ie-OlL" customClass="FlightDepartureCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lN4-0R-v9c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWF-VL-FJa">
@@ -1831,7 +1831,6 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="d7k-Bi-fSD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8UV-WA-iEO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
