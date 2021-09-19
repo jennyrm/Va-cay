@@ -26,7 +26,7 @@ class AccentView: UIView {
     func setupAccentView() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.bounds
-        gradientLayer.colors = [Colors.customOffWhite.cgColor, Colors.customLightBlue.cgColor]
+        gradientLayer.colors = [Colors.customOffWhite!.cgColor, Colors.customLightBlue!.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0, y: 1)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
 

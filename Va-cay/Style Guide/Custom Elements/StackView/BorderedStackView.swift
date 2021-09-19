@@ -19,7 +19,7 @@ class BorderedStackView: UIStackView {
     }
     
     func setupStackView() {
-        addAccentBorder(width: 1, color: Colors.customDarkGray)
+        addAccentBorder(width: 1, color: Colors.customDarkGray!)
         addCornerRadius(6)
         
 //        updateFontTo(font: FontNames.systemFont)

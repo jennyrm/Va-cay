@@ -26,7 +26,7 @@ class PrimaryButton: UIButton {
     func setupButton() {
         addCornerRadius(30)
         
-        addAccentBorder(width: 2, color: Colors.customLightGray)
+        addAccentBorder(width: 2, color: Colors.customLightGray!)
         
         updateFontTo(font: FontNames.systemFont)
         
