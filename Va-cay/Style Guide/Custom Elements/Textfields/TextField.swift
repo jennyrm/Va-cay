@@ -24,7 +24,7 @@ class TextField: UITextField {
     }
     
     func setupTextfield() {
-        self.addAccentBorder(width: 1, color: Colors.customDarkGray)
+        self.addAccentBorder(width: 1, color: Colors.customDarkGray!)
         
         updateFontTo(font: FontNames.systemFont)
         

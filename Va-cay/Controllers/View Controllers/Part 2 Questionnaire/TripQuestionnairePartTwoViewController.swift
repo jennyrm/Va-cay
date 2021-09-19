@@ -94,7 +94,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         flightLabel.textAlignment = .center
         flightLabel.layer.cornerRadius = 5
         flightLabel.layer.borderWidth = 1
-        flightLabel.layer.borderColor = Colors.customDarkGray.cgColor
+        flightLabel.layer.borderColor = Colors.customDarkGray!.cgColor
         flightLabel.backgroundColor = .white
         
         let button = CalendarButton()
