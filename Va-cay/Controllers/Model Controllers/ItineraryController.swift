@@ -94,6 +94,11 @@ class ItineraryController {
         completion(true)
     }
     
+    func editActivityCoordinates (userId: String, itinId: String, activityCoords: [ [String : [String?? : [Double] ] ] ]? ) {
+        guard let activityCoords = activityCoords else {return}
+        db.collection("users").document(userId).collection("itineraries").document(itinId).setData(["activitiesCoordinates" : activityCoords], merge: true)
+    }
+    
     func editChecklist(userId: String, itinerary: Itinerary, checklist: [ [String?? : Bool] ], completion: @escaping (Bool) -> Void) {
         guard let index = itineraries.firstIndex(of: itinerary) else {return}
         
