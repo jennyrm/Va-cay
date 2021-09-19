@@ -189,8 +189,18 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
                     activities.insert([""], at: indexPath.row)
                     itinerary.activities?.remove(at: indexPath.row)
                     itinerary.activities?.insert([key: [""]], at: indexPath.row)
-                    
-//                    itinerary.activitiesCoordinates?.insert(["": [:]], at: indexPath.row)
+                    var activityCoords: [ [String : [String?? : [Double] ] ] ]? = []
+                    for obj in itinerary.activitiesCoordinates! {
+                        for (coordKey, el) in obj {
+                            if coordKey != key {
+                                activityCoords?.append([ coordKey : el])
+                            }
+                        }
+                    }
+                    itinerary.activitiesCoordinates = activityCoords
+                    ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] = activityCoords
+                    guard let user = UserController.sharedInstance.user else {return}
+                    ItineraryController.sharedInstance.editActivityCoordinates(userId: user.userId, itinId: itinerary.id, activityCoords: activityCoords)
                 }
             }
             
