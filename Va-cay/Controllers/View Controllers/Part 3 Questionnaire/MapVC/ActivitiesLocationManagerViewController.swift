@@ -95,9 +95,11 @@ class ActivitiesLocationManagerViewController: UIViewController {
                                 mapView.addAnnotation(annotation)
                                 
                                 let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                                let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                                let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
                                 let region = MKCoordinateRegion(center: center, span: span)
                                 mapView.setRegion(region, animated: true)
+                                
+                                break
                             }
                         }
                     }
@@ -112,6 +114,8 @@ class ActivitiesLocationManagerViewController: UIViewController {
     
     func saveMapAnnotations() {
         guard let day = day else { return }
+        
+        activitiesCoordinates = []
         
         for annotation in mapView.annotations {
             activitiesCoordinates.append([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ])
