@@ -114,6 +114,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "itineraryCell", for: indexPath) as? ItineraryTableViewCell else { return UITableViewCell() }
             
+            //JAMLEA: Thread 1: Fatal error: Index out of range
             let itinerary = ItineraryController.sharedInstance.itineraries[indexPath.row - 1]
             cell.itinerary = itinerary
             cell.row = indexPath.row - 1
