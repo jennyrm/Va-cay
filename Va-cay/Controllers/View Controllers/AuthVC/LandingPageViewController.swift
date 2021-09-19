@@ -32,11 +32,11 @@ class LandingPageViewController: UIViewController {
     // MARK: - Functions
     func updateView() {
         titleLabel.backgroundColor = UIColor(white: 1, alpha: 0.8)
-        titleLabel.layer.cornerRadius = 10
+        titleLabel.layer.cornerRadius = 12
         titleLabel.layer.masksToBounds = true
         
-        createAccountLabel.layer.cornerRadius = 20
-        signInLabel.layer.cornerRadius = 20
+        createAccountLabel.layer.cornerRadius = 16
+        signInLabel.layer.cornerRadius = 16
     }
     
 }//End of class
