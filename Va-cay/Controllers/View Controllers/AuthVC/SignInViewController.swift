@@ -13,8 +13,8 @@ import GoogleSignIn
 class SignInViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var emailTextfield: TextField!
-    @IBOutlet weak var passwordTextfield: TextField!
+    @IBOutlet weak var emailTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var signInLabel: PrimaryButton!
     
     // MARK: - Lifecycle

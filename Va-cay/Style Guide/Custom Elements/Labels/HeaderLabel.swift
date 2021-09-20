@@ -26,7 +26,9 @@ class HeaderLabel: UILabel {
     func setupLabel() {
         updateFontTo(font: FontNames.systemFont)
         self.text = "Travel Itinerary"
-        self.font = .systemFont(ofSize: 28, weight: .light)
+        
+        self.font = UIFont(name: "Apple", size: 28)
+//            .systemFont(ofSize: 28, weight: .semibold)
         self.layer.zPosition = 1000
         self.textAlignment = .center
     }
