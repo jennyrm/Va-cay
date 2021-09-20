@@ -24,6 +24,10 @@ struct Colors {
     static let customOffWhite = UIColor(named: "customOffWhite")
     static let customLightGray = UIColor(named: "customLightGray")
     static let customDarkGray = UIColor(named: "customDarkGray")
+    static let textColor = UIColor(named: "textColor")
+    static let cellBackgroundColor = UIColor(named: "cellBackgroundColor")
+    static let tableVCBackgroundColor = UIColor(named: "tableVCBackgroundColor")
+    static let textfieldBackgroundColor = UIColor(named: "textfieldBackgroundColor")
 }//End of struct
 
 struct FontNames {
