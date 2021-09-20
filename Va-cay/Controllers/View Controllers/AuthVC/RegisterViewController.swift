@@ -11,9 +11,9 @@ import FirebaseAuth
 
 class RegisterViewController: UIViewController {
     // MARK: - Outlets
-    @IBOutlet weak var emailTextfield: TextField!
-    @IBOutlet weak var passwordTextField: TextField!
-    @IBOutlet weak var confirmPasswordTextfield: TextField!
+    @IBOutlet weak var emailTextfield: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextfield: UITextField!
     @IBOutlet weak var createAccountLabel: UIButton!
     
     // MARK: - Lifecycle

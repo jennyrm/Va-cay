@@ -31,7 +31,7 @@ class LandingPageViewController: UIViewController {
     
     // MARK: - Functions
     func updateView() {
-        titleLabel.backgroundColor = UIColor(white: 1, alpha: 0.8)
+        titleLabel.backgroundColor = Colors.tableVCBackgroundColor
         titleLabel.layer.cornerRadius = 12
         titleLabel.layer.masksToBounds = true
         

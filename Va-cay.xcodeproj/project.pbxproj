@@ -57,7 +57,6 @@
 		9B5BCEA726DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEA626DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift */; };
 		9B5BCEAB26DB47F4007A9647 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */; };
 		9B609E2F26F3DE61005748A5 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B609E2E26F3DE61005748A5 /* KeyboardExtension.swift */; };
-		9B609E3126F91BB8005748A5 /* SignInViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B609E3026F91BB4005748A5 /* SignInViewController copy.swift */; };
 		9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83332926673108008EB6E9 /* Itinerary.swift */; };
 		9B9E066726E5E52700B03503 /* plane.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B9E066626E5E52600B03503 /* plane.json */; };
 		9BB77709266A92BE008D3645 /* TripCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */; };
@@ -133,7 +132,6 @@
 		9B5BCEA626DB0064007A9647 /* CenterAlignedQuestionnaireLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAlignedQuestionnaireLabel.swift; sourceTree = "<group>"; };
 		9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		9B609E2E26F3DE61005748A5 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
-		9B609E3026F91BB4005748A5 /* SignInViewController copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController copy.swift"; sourceTree = "<group>"; };
 		9B83332926673108008EB6E9 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		9B9E066626E5E52600B03503 /* plane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane.json; sourceTree = "<group>"; };
 		9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCalendarViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 				0DA6676226E7DAE7007E1977 /* SignInViewController.swift */,
 				0DA6676426E7DAFE007E1977 /* RegisterViewController.swift */,
 				0D7D498426B86B34006218D8 /* SettingsViewController.swift */,
-				9B609E3026F91BB4005748A5 /* SignInViewController copy.swift */,
 			);
 			path = AuthVC;
 			sourceTree = "<group>";
@@ -652,7 +649,6 @@
 				9B543C72265F35CA00F5353A /* DestinationLocationSearchTableViewController.swift in Sources */,
 				0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */,
 				0DA6676326E7DAE7007E1977 /* SignInViewController.swift in Sources */,
-				9B609E3126F91BB8005748A5 /* SignInViewController copy.swift in Sources */,
 				9B4D9B8C26DD69A70055B7CF /* AccentView.swift in Sources */,
 				9B4D9B8E26DD99DA0055B7CF /* LeftAlignedQuestionnaireLabel.swift in Sources */,
 				0DA6676826E88202007E1977 /* QueuePlayerUIView.swift in Sources */,
