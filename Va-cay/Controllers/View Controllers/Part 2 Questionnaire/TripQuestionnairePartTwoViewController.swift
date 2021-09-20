@@ -95,7 +95,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         flightLabel.layer.cornerRadius = 5
         flightLabel.layer.borderWidth = 1
         flightLabel.layer.borderColor = Colors.customDarkGray!.cgColor
-        flightLabel.backgroundColor = .white
+        flightLabel.backgroundColor = Colors.textfieldBackgroundColor
         
         let button = CalendarButton()
         button.heightAnchor.constraint(equalToConstant: 24).isActive = true
@@ -223,19 +223,20 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         
         let button = UIButton()
         button.setImage(UIImage(systemName: "square"), for: .normal)
-        button.backgroundColor = .white
-        button.tintColor = .black
+        button.backgroundColor = Colors.textfieldBackgroundColor
+        button.tintColor = Colors.textColor
         button.addTarget(self, action: #selector(checklistButtonTapped), for: .touchUpInside)
         checklistButtons.append(button)
         
         let textField = UITextField()
-        textField.backgroundColor = .white
+        textField.backgroundColor = Colors.textfieldBackgroundColor
         textField.placeholder = "To-do item"
         checklistTextFieldItems.append(textField)
         
         let textFieldButtonStackView = UIStackView()
         textFieldButtonStackView.axis = .horizontal
         textFieldButtonStackView.alignment = .fill
+        
         textFieldButtonStackView.distribution = .fillProportionally
         textFieldButtonStackView.spacing = 0
         

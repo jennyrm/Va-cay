@@ -55,7 +55,7 @@
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9ZC-aH-V0T"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="customOffWhite"/>
                         <constraints>
                             <constraint firstItem="Hou-mW-dnM" firstAttribute="height" secondItem="wIA-Gb-UmQ" secondAttribute="height" multiplier="0.165" id="BAR-4z-aYv"/>
                             <constraint firstItem="Urr-e8-x5P" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" multiplier="0.1" id="BxS-nP-ZMI"/>
@@ -177,7 +177,6 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="84f-hE-NwD" customClass="TextField" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="43.5" width="331" height="46"/>
-                                        <color key="backgroundColor" name="textfieldBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -333,7 +332,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nCs-p2-RLE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="customOffWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hotelAirbnbLocationCell" textLabel="RYv-0Z-8Kp" detailTextLabel="np9-cN-2fW" rowHeight="94" style="IBUITableViewCellStyleSubtitle" id="ifB-9D-XVf">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="94"/>
@@ -395,7 +394,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kck-8M-4Q7"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="customOffWhite"/>
                         <constraints>
                             <constraint firstItem="zwg-3P-euN" firstAttribute="top" secondItem="wVV-Cq-veG" secondAttribute="bottom" constant="16" id="JLz-EY-hTm"/>
                             <constraint firstItem="zwg-3P-euN" firstAttribute="width" secondItem="w7n-xZ-aga" secondAttribute="width" multiplier="0.1" id="Jit-dD-9nG"/>
@@ -442,7 +441,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="udb-bl-mII"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="customOffWhite"/>
                         <constraints>
                             <constraint firstItem="Sby-Fv-cbC" firstAttribute="trailing" secondItem="udb-bl-mII" secondAttribute="trailing" id="PZO-FV-cRc"/>
                             <constraint firstItem="udb-bl-mII" firstAttribute="bottom" secondItem="2tS-MI-42F" secondAttribute="bottom" constant="128" id="QAp-bw-YhL"/>
@@ -844,7 +843,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Itineraries" id="CAq-3m-DlV">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="9Sm-Gf-l8y">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" name="textColor"/>
                             <connections>
                                 <segue destination="8Wq-D5-wSf" kind="show" id="s6O-0J-uV8"/>
                             </connections>
@@ -1932,11 +1931,11 @@
         <designable name="eNi-bP-qIg"/>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="sUL-gB-KDv"/>
-        <segue reference="vE9-dT-EKZ"/>
-        <segue reference="dGV-Da-kn8"/>
-        <segue reference="Zam-a7-cpo"/>
-        <segue reference="pcU-1e-Qrk"/>
+        <segue reference="FYC-gM-gRA"/>
+        <segue reference="JWi-GH-k9r"/>
+        <segue reference="noC-Nr-Z4w"/>
+        <segue reference="znz-mM-Txb"/>
+        <segue reference="VFW-jN-PSY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="applelogo" catalog="system" width="103" height="128"/>

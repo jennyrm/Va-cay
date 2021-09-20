@@ -24,7 +24,6 @@ class BorderlessTextField: UITextField {
     }
     
     func setupTextfield() {
-        self.backgroundColor = .white
         self.layer.masksToBounds = true
         updateFontTo(font: FontNames.systemFont)
     }

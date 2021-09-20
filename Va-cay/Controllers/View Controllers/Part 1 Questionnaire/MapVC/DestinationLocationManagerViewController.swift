@@ -66,6 +66,8 @@ class DestinationLocationManagerViewController: UIViewController {
         
         locationSearchTableVC.mapView = mapView
         locationSearchTableVC.handleMapSearchDelegate = self
+        searchBar.backgroundColor = Colors.customOffWhite
+        
     }
     
     func loadMapPins() {
@@ -91,6 +93,7 @@ class DestinationLocationManagerViewController: UIViewController {
     
     func setupAnimation() {
         let planeAnimation = Animation.named("plane")
+        animationView.backgroundColor = Colors.customOffWhite
         animationView.animation = planeAnimation
         animationView.loopMode = .loop
         animationView.animationSpeed = 1.5
