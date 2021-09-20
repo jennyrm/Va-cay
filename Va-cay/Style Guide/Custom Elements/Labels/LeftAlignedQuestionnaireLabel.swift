@@ -26,7 +26,7 @@ class LeftAlignedQuestionnaireLabel: UILabel {
     func setupLabel() {
         updateFontTo(font: FontNames.systemFont)
         
-        self.textColor = .black
+        self.textColor = Colors.textColor
         self.textAlignment = .left
     }
     
