@@ -28,6 +28,7 @@ struct Colors {
     static let cellBackgroundColor = UIColor(named: "cellBackgroundColor")
     static let tableVCBackgroundColor = UIColor(named: "tableVCBackgroundColor")
     static let textfieldBackgroundColor = UIColor(named: "textfieldBackgroundColor")
+    static let mapBackgroundColor = UIColor(named: "mapBackgroundColor")
 }//End of struct
 
 struct FontNames {

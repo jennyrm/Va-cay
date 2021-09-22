@@ -66,7 +66,7 @@ class DestinationLocationManagerViewController: UIViewController {
         
         locationSearchTableVC.mapView = mapView
         locationSearchTableVC.handleMapSearchDelegate = self
-        searchBar.backgroundColor = Colors.customOffWhite
+        searchBar.backgroundColor = Colors.mapBackgroundColor
         
     }
     
