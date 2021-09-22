@@ -22,13 +22,13 @@
 		0D5A963726B2287000CD5707 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A963626B2287000CD5707 /* AuthViewController.swift */; };
 		0D60FCC926B34D2500F75732 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D60FCC826B34D2500F75732 /* AuthViewModel.swift */; };
 		0D7D498526B86B34006218D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D498426B86B34006218D8 /* SettingsViewController.swift */; };
-		0D7FC8CD26FA893300F8D2E6 /* VaCayVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D7FC8CC26FA87D300F8D2E6 /* VaCayVideo.mp4 */; };
 		0DA23CDD26DD60C6008F0B56 /* sortByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */; };
 		0DA6676126E7DAD6007E1977 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676026E7DAD6007E1977 /* LandingPageViewController.swift */; };
 		0DA6676326E7DAE7007E1977 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676226E7DAE7007E1977 /* SignInViewController.swift */; };
 		0DA6676526E7DAFE007E1977 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676426E7DAFE007E1977 /* RegisterViewController.swift */; };
 		0DA6676826E88202007E1977 /* QueuePlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676726E88202007E1977 /* QueuePlayerUIView.swift */; };
 		0DC34EBD26DD885900F65AE1 /* MapPinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */; };
+		0DC7B32D26FB969B00351CBF /* VacayVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0DC7B32C26FB962000351CBF /* VacayVideo.mp4 */; };
 		0DE5463826E6BDCF006C1904 /* plane1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5463726E6BDCF006C1904 /* plane1.json */; };
 		9B1C572726648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C572626648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift */; };
 		9B324800267DD85600C16040 /* ItineraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3247FF267DD85600C16040 /* ItineraryDetailViewController.swift */; };
@@ -89,13 +89,13 @@
 		0D5A963626B2287000CD5707 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		0D60FCC826B34D2500F75732 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		0D7D498426B86B34006218D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		0D7FC8CC26FA87D300F8D2E6 /* VaCayVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = VaCayVideo.mp4; sourceTree = "<group>"; };
 		0DA23CDC26DD60C6008F0B56 /* sortByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortByTableViewCell.swift; sourceTree = "<group>"; };
 		0DA6676026E7DAD6007E1977 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		0DA6676226E7DAE7007E1977 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0DA6676426E7DAFE007E1977 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0DA6676726E88202007E1977 /* QueuePlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuePlayerUIView.swift; sourceTree = "<group>"; };
 		0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinButton.swift; sourceTree = "<group>"; };
+		0DC7B32C26FB962000351CBF /* VacayVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = VacayVideo.mp4; sourceTree = "<group>"; };
 		0DE5463726E6BDCF006C1904 /* plane1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane1.json; sourceTree = "<group>"; };
 		3C09D0DA00AB72E7B7BE8816 /* Pods-Va-cay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.release.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.release.xcconfig"; sourceTree = "<group>"; };
 		6069CC11B0A1A056484520BE /* Pods-Va-cay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.debug.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.debug.xcconfig"; sourceTree = "<group>"; };
@@ -347,7 +347,7 @@
 		9B543C30265F345700F5353A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0D7FC8CC26FA87D300F8D2E6 /* VaCayVideo.mp4 */,
+				0DC7B32C26FB962000351CBF /* VacayVideo.mp4 */,
 				0D00E88926F2AB6300F7EE2D /* credentials.plist */,
 				0D299F2C26CC40C200A5CE31 /* grey.jpeg */,
 				0DE5463726E6BDCF006C1904 /* plane1.json */,
@@ -555,8 +555,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D299F2D26CC40C200A5CE31 /* grey.jpeg in Resources */,
+				0DC7B32D26FB969B00351CBF /* VacayVideo.mp4 in Resources */,
 				9B543C11265F309800F5353A /* LaunchScreen.storyboard in Resources */,
-				0D7FC8CD26FA893300F8D2E6 /* VaCayVideo.mp4 in Resources */,
 				0D00E88A26F2AB6300F7EE2D /* credentials.plist in Resources */,
 				9B335CE5265F476800FC202B /* GoogleService-Info.plist in Resources */,
 				9B543C0E265F309800F5353A /* Assets.xcassets in Resources */,
@@ -835,7 +835,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Va-cay/Va-cay.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FZ45TYMJ82;
+				DEVELOPMENT_TEAM = 5L2PGYP5GB;
 				INFOPLIST_FILE = "Va-cay/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -856,7 +856,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Va-cay/Va-cay.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FZ45TYMJ82;
+				DEVELOPMENT_TEAM = 5L2PGYP5GB;
 				INFOPLIST_FILE = "Va-cay/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
