@@ -29,7 +29,7 @@ class QueuePlayerUIView: UIView {
     
     func setupVideo(){
         //Load Video
-        guard let path = Bundle.main.path(forResource: "VaCayVideo", ofType: "mp4") else {return}
+        guard let path = Bundle.main.path(forResource: "VacayVideo", ofType: "mp4") else {return}
         let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path))
         let playerItem = AVPlayerItem(asset: videoAsset)
         
