@@ -39,7 +39,7 @@ class ItineraryTableViewCell: UITableViewCell {
     //MARK: - Functions
     func updateView() {
         guard let itinerary = itinerary else { return }
-        roundedCellEdge.layer.borderWidth = 2
+        roundedCellEdge.layer.borderWidth = 0.5
         roundedCellEdge.layer.borderColor = Colors.customLightGray?.cgColor
         roundedCellEdge.backgroundColor = Colors.cellBackgroundColor
         itineraryBreakBarView.layer.cornerRadius = 10

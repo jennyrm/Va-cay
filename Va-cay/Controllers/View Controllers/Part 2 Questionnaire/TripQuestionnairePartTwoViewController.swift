@@ -314,8 +314,8 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         
         colorBar.heightAnchor.constraint(equalToConstant: 20).isActive = true
         colorBar.topAnchor.constraint(equalTo: travelItineraryLabel.bottomAnchor, constant: -12).isActive = true
-        colorBar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
-        colorBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32).isActive = true
+        colorBar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
+        colorBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
 
         flightDetailsStackView.topAnchor.constraint(equalTo: colorBar.bottomAnchor, constant: 32).isActive = true
         flightDetailsStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32).isActive = true
@@ -364,7 +364,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
     }()
     
     var colorBar: UIView = {
-        let view = AccentView(frame: CGRect(x: 0, y: 0, width: 340, height: 20))
+        let view = AccentView(frame: CGRect(x: 0, y: 0, width: 500, height: 20))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

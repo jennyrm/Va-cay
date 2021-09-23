@@ -79,7 +79,7 @@ extension MediaSelectorViewController: UIImagePickerControllerDelegate, UINaviga
             imagePicker.sourceType = .camera
             present(imagePicker, animated: true, completion: nil)
         } else {
-            presentErrorAlert(title: "No Access to Camera", message: "Pleaser allow access to the camera to use this feature")
+            presentErrorAlert(title: "No Access to Camera", message: "Please allow access to the camera to use this feature")
         }
     }
     
