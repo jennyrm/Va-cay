@@ -156,7 +156,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CI7-4u-z1e" customClass="AccentView" customModule="Va_cay" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="109.5" width="414" height="20"/>
+                                <rect key="frame" x="-20.5" y="109.5" width="455" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="wlx-xy-yH6"/>
                                 </constraints>
@@ -218,7 +218,7 @@
                             <constraint firstItem="0Pm-AV-t5d" firstAttribute="leading" secondItem="GiY-g4-yIj" secondAttribute="leading" constant="140" id="ZwV-Ft-V5a"/>
                             <constraint firstItem="CI7-4u-z1e" firstAttribute="centerX" secondItem="GiY-g4-yIj" secondAttribute="centerX" id="ZzT-du-r8u"/>
                             <constraint firstItem="wIB-Bj-Uxn" firstAttribute="width" secondItem="7l7-wW-TbP" secondAttribute="width" multiplier="0.75" id="fh5-IB-IYa"/>
-                            <constraint firstItem="CI7-4u-z1e" firstAttribute="width" secondItem="7l7-wW-TbP" secondAttribute="width" id="hXT-ZE-KKq"/>
+                            <constraint firstItem="CI7-4u-z1e" firstAttribute="width" secondItem="7l7-wW-TbP" secondAttribute="width" multiplier="1.1" id="hXT-ZE-KKq"/>
                             <constraint firstItem="Rjd-sG-zXP" firstAttribute="centerX" secondItem="GiY-g4-yIj" secondAttribute="centerX" id="kLR-tb-Exb"/>
                             <constraint firstItem="wIB-Bj-Uxn" firstAttribute="centerX" secondItem="GiY-g4-yIj" secondAttribute="centerX" id="lOR-S1-MHQ"/>
                             <constraint firstItem="lf7-1j-pXS" firstAttribute="height" secondItem="7l7-wW-TbP" secondAttribute="height" multiplier="0.05" id="nj1-KV-Lpn"/>
@@ -1642,7 +1642,7 @@
             <objects>
                 <viewController id="hxb-zM-tZ7" customClass="MediaSelectorViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="u3Q-iE-VWE">
-                        <rect key="frame" x="0.0" y="0.0" width="331" height="295.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="331" height="295"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wNC-rp-gRk">
@@ -1946,7 +1946,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sUL-gB-KDv"/>
+        <segue reference="FYC-gM-gRA"/>
         <segue reference="JWi-GH-k9r"/>
         <segue reference="noC-Nr-Z4w"/>
         <segue reference="znz-mM-Txb"/>
