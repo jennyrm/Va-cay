@@ -807,14 +807,13 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az4-YK-P8D">
-                                <rect key="frame" x="175" y="784" width="64" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="152.5" y="738.5" width="109.5" height="109.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="9q5-r3-nxG"/>
                                     <constraint firstAttribute="width" secondItem="az4-YK-P8D" secondAttribute="height" multiplier="1:1" id="fZa-kR-3DS"/>
                                 </constraints>
-                                <color key="tintColor" name="mapBackgroundColor"/>
-                                <state key="normal" image="plus.app.fill" catalog="system">
+                                <color key="tintColor" name="createItineraryButtonColor"/>
+                                <state key="normal" image="plus.app" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="96"/>
                                 </state>
@@ -834,6 +833,7 @@
                             <constraint firstItem="az4-YK-P8D" firstAttribute="centerX" secondItem="4yy-J3-xVb" secondAttribute="centerX" id="CFT-R8-1MQ"/>
                             <constraint firstItem="4yy-J3-xVb" firstAttribute="bottom" secondItem="az4-YK-P8D" secondAttribute="bottom" constant="14" id="KOj-DH-ra9"/>
                             <constraint firstItem="eEC-Za-Vrv" firstAttribute="trailing" secondItem="4yy-J3-xVb" secondAttribute="trailing" id="Q9Y-Af-bsw"/>
+                            <constraint firstItem="az4-YK-P8D" firstAttribute="width" secondItem="4yy-J3-xVb" secondAttribute="width" multiplier="0.264493" id="Vgb-pm-zOA"/>
                             <constraint firstItem="eEC-Za-Vrv" firstAttribute="leading" secondItem="4yy-J3-xVb" secondAttribute="leading" id="b8B-bd-iu2"/>
                             <constraint firstItem="4yy-J3-xVb" firstAttribute="trailing" secondItem="D4j-0Q-geE" secondAttribute="trailing" id="hEx-QW-nQB"/>
                             <constraint firstItem="4yy-J3-xVb" firstAttribute="top" secondItem="D4j-0Q-geE" secondAttribute="top" id="mie-ws-elk"/>
@@ -1965,13 +1965,16 @@
         <image name="leaves" width="564" height="1000"/>
         <image name="location" catalog="system" width="128" height="121"/>
         <image name="location-pin" width="512" height="512"/>
-        <image name="plus.app.fill" catalog="system" width="128" height="114"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="cellBackgroundColor">
             <color red="1" green="1" blue="1" alpha="0.89999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="createItineraryButtonColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="customDarkBlue">
             <color red="0.19599999487400055" green="0.50199997425079346" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1981,9 +1984,6 @@
         </namedColor>
         <namedColor name="customOffWhite">
             <color red="0.94509803921568625" green="0.93725490196078431" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="mapBackgroundColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
