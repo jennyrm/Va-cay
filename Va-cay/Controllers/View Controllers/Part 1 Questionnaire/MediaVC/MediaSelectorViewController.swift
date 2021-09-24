@@ -36,20 +36,20 @@ class MediaSelectorViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func uploadMediaButtonTapped(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Add a photo or video", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add a photo", message: nil, preferredStyle: .alert)
        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
             self.imagePicker.dismiss(animated: true, completion: nil)
         }
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { (_) in
-            self.openCamera()
-        }
+//        let cameraAction = UIAlertAction(title: "Camera", style: .default) { (_) in
+//            self.openCamera()
+//        }
         let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { (_) in
             self.openPhotoLibrary()
         }
         
         alert.addAction(cancelAction)
-        alert.addAction(cameraAction)
+//        alert.addAction(cameraAction)
         alert.addAction(photoLibraryAction)
         present(alert, animated: true, completion: nil)
     }
@@ -74,14 +74,14 @@ class MediaSelectorViewController: UIViewController {
 
 //MARK: - Extensions
 extension MediaSelectorViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func openCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.sourceType = .camera
-            present(imagePicker, animated: true, completion: nil)
-        } else {
-            presentErrorAlert(title: "No Access to Camera", message: "Please allow access to the camera to use this feature")
-        }
-    }
+//    func openCamera() {
+//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+//            imagePicker.sourceType = .camera
+//            present(imagePicker, animated: true, completion: nil)
+//        } else {
+//            presentErrorAlert(title: "No Access to Camera", message: "Please allow access to the camera to use this feature")
+//        }
+//    }
     
     func openPhotoLibrary() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
