@@ -58,7 +58,7 @@ class DestinationLocationManagerViewController: UIViewController {
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Where to?"
-        searchBar.backgroundColor = Colors.mapBackgroundColor
+//        searchBar.backgroundColor = Colors.mapBackgroundColor
         navigationItem.searchController = resultSearchController
 //        navigationController?.navigationBar.barTintColor = Colors.mapBackgroundColor
         

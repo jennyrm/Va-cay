@@ -60,7 +60,7 @@ class HotelAirbnbLocationManagerViewController: UIViewController {
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Find a Hotel or Airbnb"
-        searchBar.backgroundColor = Colors.mapBackgroundColor
+//        searchBar.backgroundColor = Colors.mapBackgroundColor
         navigationItem.searchController = resultSearchController
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false
