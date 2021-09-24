@@ -55,7 +55,7 @@
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9ZC-aH-V0T"/>
-                        <color key="backgroundColor" name="mapBackgroundColor"/>
+                        <color key="backgroundColor" name="customOffWhite"/>
                         <constraints>
                             <constraint firstItem="Hou-mW-dnM" firstAttribute="height" secondItem="wIA-Gb-UmQ" secondAttribute="height" multiplier="0.165" id="BAR-4z-aYv"/>
                             <constraint firstItem="Urr-e8-x5P" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" multiplier="0.1" id="BxS-nP-ZMI"/>
@@ -243,7 +243,7 @@
             <objects>
                 <viewController id="35b-ar-bwY" customClass="ChecklistModalViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="juu-g8-WJb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cg-ze-ZCv">
@@ -395,7 +395,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kck-8M-4Q7"/>
-                        <color key="backgroundColor" name="mapBackgroundColor"/>
+                        <color key="backgroundColor" name="customOffWhite"/>
                         <constraints>
                             <constraint firstItem="zwg-3P-euN" firstAttribute="top" secondItem="wVV-Cq-veG" secondAttribute="bottom" constant="16" id="JLz-EY-hTm"/>
                             <constraint firstItem="zwg-3P-euN" firstAttribute="width" secondItem="w7n-xZ-aga" secondAttribute="width" multiplier="0.1" id="Jit-dD-9nG"/>
@@ -442,7 +442,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="udb-bl-mII"/>
-                        <color key="backgroundColor" name="mapBackgroundColor"/>
+                        <color key="backgroundColor" name="customOffWhite"/>
                         <constraints>
                             <constraint firstItem="Sby-Fv-cbC" firstAttribute="trailing" secondItem="udb-bl-mII" secondAttribute="trailing" id="PZO-FV-cRc"/>
                             <constraint firstItem="udb-bl-mII" firstAttribute="bottom" secondItem="2tS-MI-42F" secondAttribute="bottom" constant="128" id="QAp-bw-YhL"/>
@@ -468,7 +468,7 @@
             <objects>
                 <viewController id="E8T-T9-ejh" customClass="TripCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HwO-Yx-MY2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfv-wb-p6J">
@@ -813,8 +813,8 @@
                                     <constraint firstAttribute="height" constant="64" id="9q5-r3-nxG"/>
                                     <constraint firstAttribute="width" secondItem="az4-YK-P8D" secondAttribute="height" multiplier="1:1" id="fZa-kR-3DS"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" image="plus">
+                                <color key="tintColor" name="mapBackgroundColor"/>
+                                <state key="normal" image="plus.app.fill" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="96"/>
                                 </state>
@@ -1363,7 +1363,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FUN-VV-O7q"/>
-                        <color key="backgroundColor" name="mapBackgroundColor"/>
+                        <color key="backgroundColor" name="customOffWhite"/>
                         <constraints>
                             <constraint firstItem="uLm-En-gCV" firstAttribute="trailing" secondItem="FUN-VV-O7q" secondAttribute="trailing" id="0Qx-KO-XrZ"/>
                             <constraint firstItem="uLm-En-gCV" firstAttribute="top" secondItem="FUN-VV-O7q" secondAttribute="top" id="8fm-5d-Gx2"/>
@@ -1696,7 +1696,7 @@
             <objects>
                 <viewController id="xAC-ie-OlL" customClass="FlightDepartureCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lN4-0R-v9c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWF-VL-FJa">
@@ -1752,7 +1752,7 @@
             <objects>
                 <viewController id="uwX-ya-kOm" customClass="FlightArrivalCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nkl-Ll-dgB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-RQ-i1y">
@@ -1965,7 +1965,7 @@
         <image name="leaves" width="564" height="1000"/>
         <image name="location" catalog="system" width="128" height="121"/>
         <image name="location-pin" width="512" height="512"/>
-        <image name="plus" width="512" height="512"/>
+        <image name="plus.app.fill" catalog="system" width="128" height="114"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

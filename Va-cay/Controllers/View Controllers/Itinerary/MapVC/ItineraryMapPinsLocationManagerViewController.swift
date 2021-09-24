@@ -51,7 +51,7 @@ class ItineraryMapPinsLocationManagerViewController: UIViewController {
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Where to?"
-        searchBar.backgroundColor = Colors.mapBackgroundColor
+//        searchBar.backgroundColor = Colors.mapBackgroundColor
         navigationItem.searchController = resultSearchController
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false
