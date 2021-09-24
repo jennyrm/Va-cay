@@ -29,6 +29,7 @@
 		0DA6676826E88202007E1977 /* QueuePlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6676726E88202007E1977 /* QueuePlayerUIView.swift */; };
 		0DC34EBD26DD885900F65AE1 /* MapPinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */; };
 		0DC7B32D26FB969B00351CBF /* VacayVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0DC7B32C26FB962000351CBF /* VacayVideo.mp4 */; };
+		0DD51B2A26FE831B00CEC114 /* PlaceholderItineraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD51B2926FE831B00CEC114 /* PlaceholderItineraryTableViewCell.swift */; };
 		0DE5463826E6BDCF006C1904 /* plane1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5463726E6BDCF006C1904 /* plane1.json */; };
 		9B1C572726648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C572626648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift */; };
 		9B324800267DD85600C16040 /* ItineraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3247FF267DD85600C16040 /* ItineraryDetailViewController.swift */; };
@@ -96,6 +97,7 @@
 		0DA6676726E88202007E1977 /* QueuePlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuePlayerUIView.swift; sourceTree = "<group>"; };
 		0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinButton.swift; sourceTree = "<group>"; };
 		0DC7B32C26FB962000351CBF /* VacayVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = VacayVideo.mp4; sourceTree = "<group>"; };
+		0DD51B2926FE831B00CEC114 /* PlaceholderItineraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderItineraryTableViewCell.swift; sourceTree = "<group>"; };
 		0DE5463726E6BDCF006C1904 /* plane1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane1.json; sourceTree = "<group>"; };
 		3C09D0DA00AB72E7B7BE8816 /* Pods-Va-cay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.release.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.release.xcconfig"; sourceTree = "<group>"; };
 		6069CC11B0A1A056484520BE /* Pods-Va-cay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.debug.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.debug.xcconfig"; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 				0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */,
 				9B4EE8BF266FFA6D007EB937 /* ItineraryTableViewCell.swift */,
 				9BEFE51826A79012003DDD1D /* dayActivitiesTableViewCell.swift */,
+				0DD51B2926FE831B00CEC114 /* PlaceholderItineraryTableViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				9B543C6F265F35AD00F5353A /* DestinationLocationManagerViewController.swift in Sources */,
 				9B324800267DD85600C16040 /* ItineraryDetailViewController.swift in Sources */,
 				9B5BCEAB26DB47F4007A9647 /* PrimaryButton.swift in Sources */,
+				0DD51B2A26FE831B00CEC114 /* PlaceholderItineraryTableViewCell.swift in Sources */,
 				9B4B68EB26D8456F00B2D8AE /* Styleguide.swift in Sources */,
 				9BE480EF266169800079DDBF /* TripQuestionnairePartThreeViewController.swift in Sources */,
 				9BEFE51926A79012003DDD1D /* dayActivitiesTableViewCell.swift in Sources */,

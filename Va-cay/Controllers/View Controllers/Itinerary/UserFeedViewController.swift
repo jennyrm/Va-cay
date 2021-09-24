@@ -107,11 +107,15 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && ItineraryController.sharedInstance.itineraries.count < 1 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "placeholderCell", for: indexPath) as? PlaceholderItineraryTableViewCell else {return UITableViewCell()}
+                return cell
+        } else if indexPath.row == 0 && ItineraryController.sharedInstance.itineraries.count > 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "sortCell", for: indexPath) as? sortByTableViewCell else {return UITableViewCell()}
             cell.index = indexPath.row
             return cell
         } else {
+            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "itineraryCell", for: indexPath) as? ItineraryTableViewCell else { return UITableViewCell() }
             
             //JAMLEA: Thread 1: Fatal error: Index out of range
