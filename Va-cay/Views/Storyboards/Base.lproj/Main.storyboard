@@ -243,7 +243,7 @@
             <objects>
                 <viewController id="35b-ar-bwY" customClass="ChecklistModalViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="juu-g8-WJb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cg-ze-ZCv">
@@ -468,7 +468,7 @@
             <objects>
                 <viewController id="E8T-T9-ejh" customClass="TripCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HwO-Yx-MY2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfv-wb-p6J">
@@ -1579,16 +1579,13 @@
                                     <constraint firstItem="3Ib-d4-HVD" firstAttribute="width" secondItem="wMa-FQ-dwW" secondAttribute="width" id="xrq-Vh-TSX"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Va-cay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxb-zv-ljG">
-                                <rect key="frame" x="-20.5" y="284" width="455" height="54"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="40"/>
-                                <color key="textColor" name="customDarkBlue"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" name="customLightGray"/>
-                                <size key="shadowOffset" width="1" height="2"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vacaylogo1" translatesAutoresizingMaskIntoConstraints="NO" id="L2e-zQ-EjO">
+                                <rect key="frame" x="143" y="184" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="2dx-b0-kvy"/>
+                                    <constraint firstAttribute="width" secondItem="L2e-zQ-EjO" secondAttribute="height" multiplier="1:1" id="vNl-hU-Lnj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XIW-dP-Jq1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1596,11 +1593,10 @@
                             <constraint firstItem="wMa-FQ-dwW" firstAttribute="centerX" secondItem="XIW-dP-Jq1" secondAttribute="centerX" id="52m-FT-QFB"/>
                             <constraint firstItem="e9H-Uh-WeP" firstAttribute="centerX" secondItem="XIW-dP-Jq1" secondAttribute="centerX" id="5Cj-XE-L8F"/>
                             <constraint firstAttribute="bottom" secondItem="e9H-Uh-WeP" secondAttribute="bottom" id="8M0-BD-NfU"/>
-                            <constraint firstItem="jxb-zv-ljG" firstAttribute="width" secondItem="8B1-2t-mXL" secondAttribute="width" multiplier="1.1" id="9DL-9I-PB5"/>
+                            <constraint firstItem="L2e-zQ-EjO" firstAttribute="centerX" secondItem="XIW-dP-Jq1" secondAttribute="centerX" id="A7A-cA-XDZ"/>
                             <constraint firstItem="e9H-Uh-WeP" firstAttribute="height" secondItem="8B1-2t-mXL" secondAttribute="height" id="HNI-Ot-U89"/>
                             <constraint firstItem="e9H-Uh-WeP" firstAttribute="width" secondItem="8B1-2t-mXL" secondAttribute="width" id="IiJ-By-HBZ"/>
-                            <constraint firstItem="jxb-zv-ljG" firstAttribute="top" secondItem="XIW-dP-Jq1" secondAttribute="top" constant="240" id="Zze-Ex-sxv"/>
-                            <constraint firstItem="jxb-zv-ljG" firstAttribute="centerX" secondItem="XIW-dP-Jq1" secondAttribute="centerX" id="h8g-Av-ive"/>
+                            <constraint firstItem="L2e-zQ-EjO" firstAttribute="top" secondItem="XIW-dP-Jq1" secondAttribute="top" constant="140" id="fCq-Pp-HaZ"/>
                             <constraint firstItem="XIW-dP-Jq1" firstAttribute="bottom" secondItem="wMa-FQ-dwW" secondAttribute="bottom" constant="64" id="h8y-No-aN5"/>
                             <constraint firstItem="wMa-FQ-dwW" firstAttribute="height" secondItem="8B1-2t-mXL" secondAttribute="height" multiplier="0.15" id="qq0-VG-c9s"/>
                             <constraint firstItem="wMa-FQ-dwW" firstAttribute="width" secondItem="8B1-2t-mXL" secondAttribute="width" id="u9S-Hs-nQc"/>
@@ -1609,7 +1605,6 @@
                     <connections>
                         <outlet property="createAccountLabel" destination="9fe-uH-eWv" id="JkD-fg-Nac"/>
                         <outlet property="signInLabel" destination="3Ib-d4-HVD" id="ryR-pY-7hz"/>
-                        <outlet property="titleLabel" destination="jxb-zv-ljG" id="r8l-TO-0IT"/>
                         <outlet property="videoView" destination="e9H-Uh-WeP" id="mbD-JF-5of"/>
                     </connections>
                 </viewController>
@@ -1696,7 +1691,7 @@
             <objects>
                 <viewController id="xAC-ie-OlL" customClass="FlightDepartureCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lN4-0R-v9c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWF-VL-FJa">
@@ -1752,7 +1747,7 @@
             <objects>
                 <viewController id="uwX-ya-kOm" customClass="FlightArrivalCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nkl-Ll-dgB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-RQ-i1y">
@@ -1967,6 +1962,7 @@
         <image name="location-pin" width="512" height="512"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <image name="square" catalog="system" width="128" height="114"/>
+        <image name="vacaylogo1" width="1024" height="1024"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1975,12 +1971,6 @@
         </namedColor>
         <namedColor name="createItineraryButtonColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="customDarkBlue">
-            <color red="0.19599999487400055" green="0.50199997425079346" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="customLightGray">
-            <color red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="customOffWhite">
             <color red="0.94509803921568625" green="0.93725490196078431" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
