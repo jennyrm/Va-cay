@@ -156,7 +156,9 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && ItineraryController.sharedInstance.itineraries.count < 1 {
+            return 1000
+        } else if indexPath.row == 0 && ItineraryController.sharedInstance.itineraries.count > 0 {
             if ItineraryController.sharedInstance.sortByBool {
                 return 90
             } else {
