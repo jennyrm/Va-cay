@@ -9,6 +9,82 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Destination Location Manager View Controller-->
+        <scene sceneID="hId-JS-JtM">
+            <objects>
+                <viewController id="FcE-YC-VHs" customClass="DestinationLocationManagerViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wIA-Gb-UmQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hou-mW-dnM" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="-16" y="600" width="446" height="148"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktR-Lp-bsa" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
+                                <rect key="frame" x="114" y="628" width="186" height="89.5"/>
+                                <color key="backgroundColor" red="0.56786369950000004" green="0.742842365" blue="0.79339967919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Create Itinerary">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="16"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="DDW-h3-aWU" kind="show" identifier="" id="znz-mM-Txb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urr-e8-x5P">
+                                <rect key="frame" x="186.5" y="552" width="41" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="location" catalog="system">
+                                    <color key="titleShadowColor" systemColor="labelColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
+                                </state>
+                                <connections>
+                                    <action selector="getCurrentLocationButtonTapped:" destination="FcE-YC-VHs" eventType="touchUpInside" id="y54-Bi-ENc"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Pn-oo-3mX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="448"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9ZC-aH-V0T"/>
+                        <color key="backgroundColor" name="customOffWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hou-mW-dnM" firstAttribute="height" secondItem="wIA-Gb-UmQ" secondAttribute="height" multiplier="0.165" id="BAR-4z-aYv"/>
+                            <constraint firstItem="Urr-e8-x5P" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" multiplier="0.1" id="BxS-nP-ZMI"/>
+                            <constraint firstItem="3Pn-oo-3mX" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="C4G-ke-hmo"/>
+                            <constraint firstItem="Hou-mW-dnM" firstAttribute="top" secondItem="3Pn-oo-3mX" secondAttribute="bottom" constant="64" id="HOw-Gx-fst"/>
+                            <constraint firstItem="Urr-e8-x5P" firstAttribute="top" secondItem="3Pn-oo-3mX" secondAttribute="bottom" constant="16" id="IK2-Sq-2Ys"/>
+                            <constraint firstItem="ktR-Lp-bsa" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="IWp-bC-W3k"/>
+                            <constraint firstItem="3Pn-oo-3mX" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" id="Iua-sQ-9GJ"/>
+                            <constraint firstItem="3Pn-oo-3mX" firstAttribute="height" secondItem="wIA-Gb-UmQ" secondAttribute="height" multiplier="0.5" id="QSg-GD-Xog"/>
+                            <constraint firstItem="Hou-mW-dnM" firstAttribute="leading" secondItem="9ZC-aH-V0T" secondAttribute="leading" constant="-16" id="RlD-9y-zp0"/>
+                            <constraint firstItem="3Pn-oo-3mX" firstAttribute="top" secondItem="9ZC-aH-V0T" secondAttribute="top" id="Z3a-v8-WdH"/>
+                            <constraint firstItem="ktR-Lp-bsa" firstAttribute="height" secondItem="wIA-Gb-UmQ" secondAttribute="height" multiplier="0.1" id="efL-yw-Qqh"/>
+                            <constraint firstItem="ktR-Lp-bsa" firstAttribute="top" secondItem="Urr-e8-x5P" secondAttribute="bottom" constant="40" id="nKr-sG-EyS"/>
+                            <constraint firstItem="ktR-Lp-bsa" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" multiplier="0.45" id="qZA-f3-sk8"/>
+                            <constraint firstItem="9ZC-aH-V0T" firstAttribute="trailing" secondItem="Hou-mW-dnM" secondAttribute="trailing" constant="-16" id="rwc-c5-Zaa"/>
+                            <constraint firstItem="Urr-e8-x5P" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="vzM-23-RcX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cDl-wt-ujz"/>
+                    <connections>
+                        <outlet property="animationView" destination="Hou-mW-dnM" id="Nxy-3E-fjK"/>
+                        <outlet property="createItineraryButton" destination="ktR-Lp-bsa" id="ebL-YD-Yrw"/>
+                        <outlet property="mapView" destination="3Pn-oo-3mX" id="pnx-MV-RW1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6d-05-Xnz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828.98550724637687" y="125.89285714285714"/>
+        </scene>
         <!--Trip Questionnaire Part One View Controller-->
         <scene sceneID="IHX-hT-bwC">
             <objects>
@@ -167,7 +243,7 @@
             <objects>
                 <viewController id="35b-ar-bwY" customClass="ChecklistModalViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="juu-g8-WJb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cg-ze-ZCv">
@@ -313,6 +389,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                 </state>
                                 <connections>
+                                    <action selector="getCurrentLocationButtonTapped:" destination="FcE-YC-VHs" eventType="touchUpInside" id="SUC-Ul-FGz"/>
                                     <action selector="getCurrentLocationButtonTapped:" destination="yku-Yu-6fU" eventType="touchUpInside" id="XQ3-02-Ikz"/>
                                 </connections>
                             </button>
@@ -360,6 +437,7 @@
                                 <connections>
                                     <action selector="getCurrentLocationButtonTapped:" destination="Jbw-uv-hfN" eventType="touchUpInside" id="TYW-ip-VEk"/>
                                     <action selector="getCurrentLocationButtonTapped:" destination="yku-Yu-6fU" eventType="touchUpInside" id="s2f-VO-gEn"/>
+                                    <action selector="getCurrentLocationButtonTapped:" destination="FcE-YC-VHs" eventType="touchUpInside" id="z3a-Ek-viC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -390,7 +468,7 @@
             <objects>
                 <viewController id="E8T-T9-ejh" customClass="TripCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HwO-Yx-MY2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfv-wb-p6J">
@@ -744,6 +822,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addItineraryButtonTapped:" destination="m1P-Ch-jBs" eventType="touchUpInside" id="lBo-Sc-6fw"/>
+                                    <segue destination="FcE-YC-VHs" kind="show" id="pcU-1e-Qrk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -810,12 +889,9 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKt-np-ts8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKt-np-ts8" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
                                 <rect key="frame" x="124" y="343" width="166" height="30"/>
-                                <color key="backgroundColor" name="landingPageButtonColor"/>
-                                <state key="normal" title="Create Account">
-                                    <color key="titleColor" name="textfieldBackgroundColor"/>
-                                </state>
+                                <state key="normal" title="Create Account"/>
                                 <connections>
                                     <action selector="createAccountButtonTapped:" destination="fxc-Be-4YI" eventType="touchUpInside" id="Ypk-6b-Nn7"/>
                                 </connections>
@@ -1318,6 +1394,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FcE-YC-VHs" kind="relationship" relationship="rootViewController" id="VFW-jN-PSY"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mxf-4j-OxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1351,12 +1430,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="SX7-s4-MkJ">
                                 <rect key="frame" x="124" y="284.5" width="166" height="72"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cy-o9-vwJ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cy-o9-vwJ" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="166" height="30"/>
-                                        <color key="backgroundColor" name="landingPageButtonColor"/>
-                                        <state key="normal" title="Sign In">
-                                            <color key="titleColor" name="textfieldBackgroundColor"/>
-                                        </state>
+                                        <state key="normal" title="Sign In"/>
                                         <connections>
                                             <action selector="signInButtonTapped:" destination="zKh-b0-bKQ" eventType="touchUpInside" id="Zc6-VW-EDr"/>
                                         </connections>
@@ -1478,7 +1554,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fe-uH-eWv">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="66.5"/>
                                         <color key="backgroundColor" name="cellBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Create an Account">
                                             <color key="titleColor" name="textColor"/>
                                         </state>
@@ -1489,7 +1565,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-d4-HVD">
                                         <rect key="frame" x="0.0" y="68.5" width="414" height="66"/>
                                         <color key="backgroundColor" name="cellBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" name="textColor"/>
                                         </state>
@@ -1503,7 +1579,7 @@
                                     <constraint firstItem="3Ib-d4-HVD" firstAttribute="width" secondItem="wMa-FQ-dwW" secondAttribute="width" id="xrq-Vh-TSX"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vacaylogo" translatesAutoresizingMaskIntoConstraints="NO" id="L2e-zQ-EjO">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vacaylogo1" translatesAutoresizingMaskIntoConstraints="NO" id="L2e-zQ-EjO">
                                 <rect key="frame" x="143" y="184" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="2dx-b0-kvy"/>
@@ -1615,7 +1691,7 @@
             <objects>
                 <viewController id="xAC-ie-OlL" customClass="FlightDepartureCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lN4-0R-v9c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWF-VL-FJa">
@@ -1671,7 +1747,7 @@
             <objects>
                 <viewController id="uwX-ya-kOm" customClass="FlightArrivalCalendarViewController" customModule="Va_cay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nkl-Ll-dgB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-RQ-i1y">
@@ -1868,6 +1944,8 @@
         <segue reference="sUL-gB-KDv"/>
         <segue reference="JWi-GH-k9r"/>
         <segue reference="noC-Nr-Z4w"/>
+        <segue reference="znz-mM-Txb"/>
+        <segue reference="pcU-1e-Qrk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="applelogo" catalog="system" width="103" height="128"/>
@@ -1884,7 +1962,7 @@
         <image name="location-pin" width="512" height="512"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <image name="square" catalog="system" width="128" height="114"/>
-        <image name="vacaylogo" width="1024" height="1024"/>
+        <image name="vacaylogo1" width="1024" height="1024"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1896,9 +1974,6 @@
         </namedColor>
         <namedColor name="customOffWhite">
             <color red="0.94509803921568625" green="0.93725490196078431" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="landingPageButtonColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
