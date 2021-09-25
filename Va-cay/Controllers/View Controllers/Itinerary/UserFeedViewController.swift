@@ -110,6 +110,7 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 && ItineraryController.sharedInstance.itineraries.count < 1 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "placeholderCell", for: indexPath) as? PlaceholderItineraryTableViewCell else {return UITableViewCell()}
+                cell.indexPath = indexPath.row
                 return cell
         } else if indexPath.row == 0 && ItineraryController.sharedInstance.itineraries.count > 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "sortCell", for: indexPath) as? sortByTableViewCell else {return UITableViewCell()}
