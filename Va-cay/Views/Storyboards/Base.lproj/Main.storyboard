@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kFR-ac-43y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kFR-ac-43y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hou-mW-dnM" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="-16" y="600" width="446" height="148"/>
+                                <rect key="frame" x="0.0" y="536" width="414" height="376.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktR-Lp-bsa" customClass="PrimaryButton" customModule="Va_cay" customModuleProvider="target">
@@ -57,20 +58,20 @@
                         <viewLayoutGuide key="safeArea" id="9ZC-aH-V0T"/>
                         <color key="backgroundColor" name="customOffWhite"/>
                         <constraints>
-                            <constraint firstItem="Hou-mW-dnM" firstAttribute="height" secondItem="wIA-Gb-UmQ" secondAttribute="height" multiplier="0.165" id="BAR-4z-aYv"/>
+                            <constraint firstItem="Hou-mW-dnM" firstAttribute="height" secondItem="wIA-Gb-UmQ" secondAttribute="height" multiplier="0.42" id="BAR-4z-aYv"/>
                             <constraint firstItem="Urr-e8-x5P" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" multiplier="0.1" id="BxS-nP-ZMI"/>
                             <constraint firstItem="3Pn-oo-3mX" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="C4G-ke-hmo"/>
-                            <constraint firstItem="Hou-mW-dnM" firstAttribute="top" secondItem="3Pn-oo-3mX" secondAttribute="bottom" constant="64" id="HOw-Gx-fst"/>
+                            <constraint firstItem="Hou-mW-dnM" firstAttribute="top" secondItem="3Pn-oo-3mX" secondAttribute="bottom" id="HOw-Gx-fst"/>
                             <constraint firstItem="Urr-e8-x5P" firstAttribute="top" secondItem="3Pn-oo-3mX" secondAttribute="bottom" constant="16" id="IK2-Sq-2Ys"/>
                             <constraint firstItem="ktR-Lp-bsa" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="IWp-bC-W3k"/>
                             <constraint firstItem="3Pn-oo-3mX" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" id="Iua-sQ-9GJ"/>
                             <constraint firstItem="3Pn-oo-3mX" firstAttribute="height" secondItem="wIA-Gb-UmQ" secondAttribute="height" multiplier="0.5" id="QSg-GD-Xog"/>
-                            <constraint firstItem="Hou-mW-dnM" firstAttribute="leading" secondItem="9ZC-aH-V0T" secondAttribute="leading" constant="-16" id="RlD-9y-zp0"/>
+                            <constraint firstItem="Hou-mW-dnM" firstAttribute="leading" secondItem="9ZC-aH-V0T" secondAttribute="leading" id="RlD-9y-zp0"/>
                             <constraint firstItem="3Pn-oo-3mX" firstAttribute="top" secondItem="9ZC-aH-V0T" secondAttribute="top" id="Z3a-v8-WdH"/>
                             <constraint firstItem="ktR-Lp-bsa" firstAttribute="height" secondItem="wIA-Gb-UmQ" secondAttribute="height" multiplier="0.1" id="efL-yw-Qqh"/>
                             <constraint firstItem="ktR-Lp-bsa" firstAttribute="top" secondItem="Urr-e8-x5P" secondAttribute="bottom" constant="40" id="nKr-sG-EyS"/>
                             <constraint firstItem="ktR-Lp-bsa" firstAttribute="width" secondItem="wIA-Gb-UmQ" secondAttribute="width" multiplier="0.45" id="qZA-f3-sk8"/>
-                            <constraint firstItem="9ZC-aH-V0T" firstAttribute="trailing" secondItem="Hou-mW-dnM" secondAttribute="trailing" constant="-16" id="rwc-c5-Zaa"/>
+                            <constraint firstItem="9ZC-aH-V0T" firstAttribute="trailing" secondItem="Hou-mW-dnM" secondAttribute="trailing" id="rwc-c5-Zaa"/>
                             <constraint firstItem="Urr-e8-x5P" firstAttribute="centerX" secondItem="9ZC-aH-V0T" secondAttribute="centerX" id="vzM-23-RcX"/>
                         </constraints>
                     </view>
@@ -261,7 +262,7 @@
                                 <color key="separatorColor" systemColor="systemGray5Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkCell" rowHeight="74" id="exB-Pq-6XX" customClass="CheckListItemTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="248" height="74"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="248" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="exB-Pq-6XX" id="07t-T7-LzM">
                                             <rect key="frame" x="0.0" y="0.0" width="248" height="74"/>
@@ -336,7 +337,7 @@
                         <color key="backgroundColor" name="customOffWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hotelAirbnbLocationCell" textLabel="RYv-0Z-8Kp" detailTextLabel="np9-cN-2fW" rowHeight="94" style="IBUITableViewCellStyleSubtitle" id="ifB-9D-XVf">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="94"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ifB-9D-XVf" id="cF4-Yt-kuC">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
@@ -478,10 +479,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAa-On-l40">
-                                <rect key="frame" x="36" y="331" width="342" height="317"/>
+                                <rect key="frame" x="36" y="319" width="342" height="329"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="Vc2-AK-TBP">
-                                        <rect key="frame" x="0.0" y="0.0" width="342" height="317"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="329"/>
                                         <connections>
                                             <action selector="tripDatePickerChanged:" destination="E8T-T9-ejh" eventType="valueChanged" id="JB0-d6-eLg"/>
                                         </connections>
@@ -526,7 +527,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itineraryMapPinsLocationCell" textLabel="osD-E2-PTq" detailTextLabel="gST-bb-dU1" rowHeight="81" style="IBUITableViewCellStyleSubtitle" id="vXy-P3-sWe">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="81"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vXy-P3-sWe" id="xZU-Zn-E6K">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
@@ -570,7 +571,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="destinationLocationCell" textLabel="HYu-Xd-jDO" detailTextLabel="xU9-5j-rod" rowHeight="69" style="IBUITableViewCellStyleSubtitle" id="xZ6-Bo-HTq">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="69"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xZ6-Bo-HTq" id="YfP-o7-ief">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
@@ -619,7 +620,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="814"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="sortCell" rowHeight="129" id="NyN-gt-jFM" customClass="sortByTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NyN-gt-jFM" id="hfb-v0-2QF">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="129"/>
@@ -703,7 +704,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="placeholderCell" rowHeight="215" id="BGI-js-CNQ" customClass="PlaceholderItineraryTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="153.5" width="414" height="215"/>
+                                        <rect key="frame" x="0.0" y="173.5" width="414" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BGI-js-CNQ" id="8iG-3E-uBR">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
@@ -715,27 +716,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="b10-rx-9Hp">
-                                                    <rect key="frame" x="87" y="137.5" width="240" height="600"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="600" id="jQv-P6-RwX"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="b10-rx-9Hp" firstAttribute="top" secondItem="ZXZ-ki-rGV" secondAttribute="bottom" constant="24" id="Fdf-aF-dWS"/>
                                                 <constraint firstItem="ZXZ-ki-rGV" firstAttribute="width" secondItem="8iG-3E-uBR" secondAttribute="width" multiplier="0.6" id="I95-I4-6bF"/>
-                                                <constraint firstItem="b10-rx-9Hp" firstAttribute="centerX" secondItem="8iG-3E-uBR" secondAttribute="centerX" id="LAc-5i-trO"/>
                                                 <constraint firstItem="ZXZ-ki-rGV" firstAttribute="centerY" secondItem="8iG-3E-uBR" secondAttribute="centerY" multiplier="0.5" id="TLv-cz-XWf"/>
-                                                <constraint firstItem="b10-rx-9Hp" firstAttribute="width" secondItem="8iG-3E-uBR" secondAttribute="width" multiplier="0.57971" id="ZvF-FE-N37"/>
                                                 <constraint firstItem="ZXZ-ki-rGV" firstAttribute="centerX" secondItem="8iG-3E-uBR" secondAttribute="centerX" id="o3l-Hl-dPD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itineraryCell" rowHeight="334" id="Hf2-aO-9K2" customClass="ItineraryTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="368.5" width="414" height="334"/>
+                                        <rect key="frame" x="0.0" y="388.5" width="414" height="334"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hf2-aO-9K2" id="QPu-e8-g1F">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="334"/>
@@ -1119,7 +1111,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dayActivityCell" rowHeight="84" id="ZFK-4b-qpp" customClass="dayActivitiesTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="84"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZFK-4b-qpp" id="mIo-pA-CUG">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
@@ -1498,7 +1490,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0V-iu-noB">
-                                <rect key="frame" x="180" y="32" width="54.5" height="30"/>
+                                <rect key="frame" x="180" y="32" width="54" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="90v-bp-3vf"/>
                                 </constraints>
@@ -1925,7 +1917,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityLocationCell" textLabel="YBR-Iu-dc9" detailTextLabel="SHi-8i-7HU" rowHeight="102" style="IBUITableViewCellStyleSubtitle" id="hnH-79-gL9">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="102"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hnH-79-gL9" id="ZQD-xM-e9Z">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
@@ -1996,12 +1988,11 @@
         <image name="calendar" width="512" height="512"/>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
-        <image name="downarrow" width="840" height="1060"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="globe" width="512" height="512"/>
         <image name="google" width="512" height="512"/>
         <image name="leaves" width="564" height="1000"/>
-        <image name="location" catalog="system" width="128" height="121"/>
+        <image name="location" catalog="system" width="128" height="118"/>
         <image name="location-pin" width="512" height="512"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <image name="square" catalog="system" width="128" height="114"/>
