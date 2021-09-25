@@ -127,6 +127,14 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row == 0 {
+            return false
+        } else {
+            return true
+        }
+    }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete && indexPath.row > 0 {
@@ -155,9 +163,10 @@ extension UserFeedViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 && ItineraryController.sharedInstance.itineraries.count < 1 {
-            return 1000
+            return 900
         } else if indexPath.row == 0 && ItineraryController.sharedInstance.itineraries.count > 0 {
             if ItineraryController.sharedInstance.sortByBool {
                 return 90
