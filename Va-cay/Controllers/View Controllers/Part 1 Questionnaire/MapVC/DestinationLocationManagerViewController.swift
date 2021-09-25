@@ -37,6 +37,10 @@ class DestinationLocationManagerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         setupAnimation()
     }
     
@@ -93,11 +97,11 @@ class DestinationLocationManagerViewController: UIViewController {
     }
     
     func setupAnimation() {
-        let planeAnimation = Animation.named("plane")
+        let planeAnimation = Animation.named("plane5")
         animationView.backgroundColor = Colors.customOffWhite
         animationView.animation = planeAnimation
         animationView.loopMode = .loop
-        animationView.animationSpeed = 1.5
+        animationView.animationSpeed = 0.7
         animationView.play()
     }
 
