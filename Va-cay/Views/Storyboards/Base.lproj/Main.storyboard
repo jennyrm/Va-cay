@@ -703,31 +703,43 @@
                                             <outlet property="upcomingButton" destination="2fs-CY-MF7" id="Hgl-6q-qvB"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="placeholderCell" rowHeight="215" id="BGI-js-CNQ" customClass="PlaceholderItineraryTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="173.5" width="414" height="215"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="placeholderCell" rowHeight="249" id="BGI-js-CNQ" customClass="PlaceholderItineraryTableViewCell" customModule="Va_cay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="173.5" width="414" height="249"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BGI-js-CNQ" id="8iG-3E-uBR">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your feed is empty. Click on the button below to create an itinerary." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXZ-ki-rGV">
-                                                    <rect key="frame" x="83" y="-6" width="248" height="119.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <rect key="frame" x="83" y="17.5" width="248" height="90"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jh0-Ut-0Sf" customClass="AnimationView" customModule="Lottie">
+                                                    <rect key="frame" x="103.5" y="139.5" width="207" height="74.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="jh0-Ut-0Sf" firstAttribute="centerX" secondItem="8iG-3E-uBR" secondAttribute="centerX" id="31l-24-FRU"/>
                                                 <constraint firstItem="ZXZ-ki-rGV" firstAttribute="width" secondItem="8iG-3E-uBR" secondAttribute="width" multiplier="0.6" id="I95-I4-6bF"/>
                                                 <constraint firstItem="ZXZ-ki-rGV" firstAttribute="centerY" secondItem="8iG-3E-uBR" secondAttribute="centerY" multiplier="0.5" id="TLv-cz-XWf"/>
+                                                <constraint firstItem="jh0-Ut-0Sf" firstAttribute="height" secondItem="8iG-3E-uBR" secondAttribute="height" multiplier="0.3" id="ZbT-f3-s8Y"/>
+                                                <constraint firstItem="jh0-Ut-0Sf" firstAttribute="width" secondItem="8iG-3E-uBR" secondAttribute="width" multiplier="0.5" id="bHl-hs-yzK"/>
+                                                <constraint firstItem="jh0-Ut-0Sf" firstAttribute="top" secondItem="ZXZ-ki-rGV" secondAttribute="bottom" constant="32" id="dul-bk-CFa"/>
                                                 <constraint firstItem="ZXZ-ki-rGV" firstAttribute="centerX" secondItem="8iG-3E-uBR" secondAttribute="centerX" id="o3l-Hl-dPD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="animationView" destination="jh0-Ut-0Sf" id="he2-80-uq2"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itineraryCell" rowHeight="334" id="Hf2-aO-9K2" customClass="ItineraryTableViewCell" customModule="Va_cay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="388.5" width="414" height="334"/>
+                                        <rect key="frame" x="0.0" y="422.5" width="414" height="334"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hf2-aO-9K2" id="QPu-e8-g1F">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="334"/>

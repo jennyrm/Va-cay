@@ -97,7 +97,7 @@ class DestinationLocationManagerViewController: UIViewController {
     }
     
     func setupAnimation() {
-        let planeAnimation = Animation.named("plane5")
+        let planeAnimation = Animation.named("plane")
         animationView.backgroundColor = Colors.customOffWhite
         animationView.animation = planeAnimation
         animationView.loopMode = .loop

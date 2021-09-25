@@ -13,6 +13,7 @@
 		0D17B45026E282C5003CC29D /* BorderlessTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B44F26E282C5003CC29D /* BorderlessTextField.swift */; };
 		0D17B45326E28683003CC29D /* BorderedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B45226E28683003CC29D /* BorderedStackView.swift */; };
 		0D17B45526E2953D003CC29D /* calendar.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0D17B45426E2953D003CC29D /* calendar.svg */; };
+		0D21F5FD26FFC09C00C351F1 /* arrow.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D21F5FC26FFC09C00C351F1 /* arrow.json */; };
 		0D299F2B26CC3EA400A5CE31 /* ChecklistModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */; };
 		0D299F2D26CC40C200A5CE31 /* grey.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0D299F2C26CC40C200A5CE31 /* grey.jpeg */; };
 		0D299F2F26CC55D500A5CE31 /* CheckListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */; };
@@ -30,12 +31,7 @@
 		0DC34EBD26DD885900F65AE1 /* MapPinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */; };
 		0DC7B32D26FB969B00351CBF /* VacayVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0DC7B32C26FB962000351CBF /* VacayVideo.mp4 */; };
 		0DD51B2A26FE831B00CEC114 /* PlaceholderItineraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD51B2926FE831B00CEC114 /* PlaceholderItineraryTableViewCell.swift */; };
-		0DD51B2C26FEA79C00CEC114 /* arrow3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DD51B2B26FEA79C00CEC114 /* arrow3.json */; };
-		0DD51B2E26FEA7A700CEC114 /* arrow2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DD51B2D26FEA7A700CEC114 /* arrow2.json */; };
-		0DD51B3026FEA7B400CEC114 /* arrow.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DD51B2F26FEA7B400CEC114 /* arrow.json */; };
-		0DD51B3226FEA92D00CEC114 /* plane2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DD51B3126FEA92D00CEC114 /* plane2.json */; };
-		0DD51B3426FEAD1D00CEC114 /* plane5.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DD51B3326FEAD1D00CEC114 /* plane5.json */; };
-		0DD51B3626FEAD2300CEC114 /* plane4.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DD51B3526FEAD2300CEC114 /* plane4.json */; };
+		0DD51B3426FEAD1D00CEC114 /* plane.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DD51B3326FEAD1D00CEC114 /* plane.json */; };
 		0DE5463826E6BDCF006C1904 /* plane1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5463726E6BDCF006C1904 /* plane1.json */; };
 		9B1C572726648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C572626648E2200CAAF0B /* TripQuestionnairePartTwoViewController.swift */; };
 		9B324800267DD85600C16040 /* ItineraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3247FF267DD85600C16040 /* ItineraryDetailViewController.swift */; };
@@ -65,7 +61,6 @@
 		9B5BCEAB26DB47F4007A9647 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */; };
 		9B609E2F26F3DE61005748A5 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B609E2E26F3DE61005748A5 /* KeyboardExtension.swift */; };
 		9B83332A26673108008EB6E9 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83332926673108008EB6E9 /* Itinerary.swift */; };
-		9B9E066726E5E52700B03503 /* plane.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B9E066626E5E52600B03503 /* plane.json */; };
 		9BB77709266A92BE008D3645 /* TripCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */; };
 		9BB77710266ADB04008D3645 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7770F266ADB03008D3645 /* DateExtension.swift */; };
 		9BB77715266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB77714266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift */; };
@@ -87,6 +82,7 @@
 		0D17B44F26E282C5003CC29D /* BorderlessTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderlessTextField.swift; sourceTree = "<group>"; };
 		0D17B45226E28683003CC29D /* BorderedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedStackView.swift; sourceTree = "<group>"; };
 		0D17B45426E2953D003CC29D /* calendar.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar.svg; sourceTree = "<group>"; };
+		0D21F5FC26FFC09C00C351F1 /* arrow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = arrow.json; sourceTree = "<group>"; };
 		0D299F2A26CC3EA400A5CE31 /* ChecklistModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistModalViewController.swift; sourceTree = "<group>"; };
 		0D299F2C26CC40C200A5CE31 /* grey.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grey.jpeg; sourceTree = "<group>"; };
 		0D299F2E26CC55D500A5CE31 /* CheckListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -104,12 +100,7 @@
 		0DC34EBC26DD885900F65AE1 /* MapPinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinButton.swift; sourceTree = "<group>"; };
 		0DC7B32C26FB962000351CBF /* VacayVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = VacayVideo.mp4; sourceTree = "<group>"; };
 		0DD51B2926FE831B00CEC114 /* PlaceholderItineraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderItineraryTableViewCell.swift; sourceTree = "<group>"; };
-		0DD51B2B26FEA79C00CEC114 /* arrow3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = arrow3.json; sourceTree = "<group>"; };
-		0DD51B2D26FEA7A700CEC114 /* arrow2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = arrow2.json; sourceTree = "<group>"; };
-		0DD51B2F26FEA7B400CEC114 /* arrow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = arrow.json; sourceTree = "<group>"; };
-		0DD51B3126FEA92D00CEC114 /* plane2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane2.json; sourceTree = "<group>"; };
-		0DD51B3326FEAD1D00CEC114 /* plane5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane5.json; sourceTree = "<group>"; };
-		0DD51B3526FEAD2300CEC114 /* plane4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane4.json; sourceTree = "<group>"; };
+		0DD51B3326FEAD1D00CEC114 /* plane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane.json; sourceTree = "<group>"; };
 		0DE5463726E6BDCF006C1904 /* plane1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane1.json; sourceTree = "<group>"; };
 		3C09D0DA00AB72E7B7BE8816 /* Pods-Va-cay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.release.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.release.xcconfig"; sourceTree = "<group>"; };
 		6069CC11B0A1A056484520BE /* Pods-Va-cay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Va-cay.debug.xcconfig"; path = "Target Support Files/Pods-Va-cay/Pods-Va-cay.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,7 +138,6 @@
 		9B5BCEAA26DB47F4007A9647 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		9B609E2E26F3DE61005748A5 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
 		9B83332926673108008EB6E9 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
-		9B9E066626E5E52600B03503 /* plane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane.json; sourceTree = "<group>"; };
 		9BB77708266A92BE008D3645 /* TripCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCalendarViewController.swift; sourceTree = "<group>"; };
 		9BB7770F266ADB03008D3645 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		9BB77714266B3A5F008D3645 /* FlightArrivalCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightArrivalCalendarViewController.swift; sourceTree = "<group>"; };
@@ -364,14 +354,9 @@
 				0DC7B32C26FB962000351CBF /* VacayVideo.mp4 */,
 				0D00E88926F2AB6300F7EE2D /* credentials.plist */,
 				0D299F2C26CC40C200A5CE31 /* grey.jpeg */,
-				0DD51B3526FEAD2300CEC114 /* plane4.json */,
-				0DD51B3326FEAD1D00CEC114 /* plane5.json */,
-				0DD51B3126FEA92D00CEC114 /* plane2.json */,
-				0DD51B2F26FEA7B400CEC114 /* arrow.json */,
-				0DD51B2D26FEA7A700CEC114 /* arrow2.json */,
-				0DD51B2B26FEA79C00CEC114 /* arrow3.json */,
+				0D21F5FC26FFC09C00C351F1 /* arrow.json */,
+				0DD51B3326FEAD1D00CEC114 /* plane.json */,
 				0DE5463726E6BDCF006C1904 /* plane1.json */,
-				9B9E066626E5E52600B03503 /* plane.json */,
 				0D17B45426E2953D003CC29D /* calendar.svg */,
 				9B543C04265F309500F5353A /* AppDelegate.swift */,
 				9B543C06265F309500F5353A /* SceneDelegate.swift */,
@@ -578,19 +563,14 @@
 				0D299F2D26CC40C200A5CE31 /* grey.jpeg in Resources */,
 				0DC7B32D26FB969B00351CBF /* VacayVideo.mp4 in Resources */,
 				9B543C11265F309800F5353A /* LaunchScreen.storyboard in Resources */,
-				0DD51B2C26FEA79C00CEC114 /* arrow3.json in Resources */,
 				0D00E88A26F2AB6300F7EE2D /* credentials.plist in Resources */,
 				9B335CE5265F476800FC202B /* GoogleService-Info.plist in Resources */,
-				0DD51B3226FEA92D00CEC114 /* plane2.json in Resources */,
 				9B543C0E265F309800F5353A /* Assets.xcassets in Resources */,
-				0DD51B3026FEA7B400CEC114 /* arrow.json in Resources */,
 				9B543C0C265F309500F5353A /* Main.storyboard in Resources */,
 				0D17B45526E2953D003CC29D /* calendar.svg in Resources */,
-				0DD51B3426FEAD1D00CEC114 /* plane5.json in Resources */,
-				0DD51B3626FEAD2300CEC114 /* plane4.json in Resources */,
+				0DD51B3426FEAD1D00CEC114 /* plane.json in Resources */,
 				0DE5463826E6BDCF006C1904 /* plane1.json in Resources */,
-				0DD51B2E26FEA7A700CEC114 /* arrow2.json in Resources */,
-				9B9E066726E5E52700B03503 /* plane.json in Resources */,
+				0D21F5FD26FFC09C00C351F1 /* arrow.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
