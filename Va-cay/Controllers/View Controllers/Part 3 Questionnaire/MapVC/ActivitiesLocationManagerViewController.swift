@@ -120,13 +120,19 @@ class ActivitiesLocationManagerViewController: UIViewController {
 //        activitiesCoordinates = []
         
         for annotation in mapView.annotations {
-            activitiesCoordinates.forEach { activityCoordinates in
-                for (key, _) in activityCoordinates {
-                    if key == day {
-                        if !activitiesCoordinates.contains([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ]) {
-                            activitiesCoordinates.append([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ])
+            if ItineraryController.sharedInstance.editingItinerary {
+                activitiesCoordinates.forEach { activityCoordinates in
+                    for (key, _) in activityCoordinates {
+                        if key == day {
+                            if !activitiesCoordinates.contains([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ]) {
+                                activitiesCoordinates.append([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ])
+                            }
                         }
                     }
+                }
+            } else {
+                if !activitiesCoordinates.contains([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ]) {
+                    activitiesCoordinates.append([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ])
                 }
             }
         }
