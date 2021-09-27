@@ -136,7 +136,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EE92FE1D-DB21-448A-ABDB-2B642BDD94EA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
@@ -152,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7E9F8DAD-9B2F-4F30-B033-883D2A5B2A74"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
@@ -264,7 +264,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "765EFA59-509C-4C06-A7BB-752D72086A11"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
@@ -353,22 +353,6 @@
             startingLineNumber = "153"
             endingLineNumber = "153"
             landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9BCA8458-2AB2-4DD9-BA3A-4C0B28023B3A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "saveActivities()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -712,7 +696,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "30F2BC14-24B0-41B0-A902-10BC182B307D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/MapVC/ActivitiesLocationManagerViewController.swift"
@@ -724,7 +708,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "30F2BC14-24B0-41B0-A902-10BC182B307D - e37c91273e2b5423"
+                  uuid = "30F2BC14-24B0-41B0-A902-10BC182B307D - e37c91273e2b5402"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -734,12 +718,12 @@
                   urlString = "file:///Users/jennyrm/Developer/DevMtn_Projects/Va-cay/Va-cay/Controllers/View%20Controllers/Part%203%20Questionnaire/MapVC/ActivitiesLocationManagerViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
                   offsetFromSymbolStart = "251">
                </Location>
                <Location
-                  uuid = "30F2BC14-24B0-41B0-A902-10BC182B307D - df7cdbecb1216a9"
+                  uuid = "30F2BC14-24B0-41B0-A902-10BC182B307D - df7cdbecb1216ce"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -749,8 +733,8 @@
                   urlString = "file:///Users/jennyrm/Developer/DevMtn_Projects/Va-cay/Va-cay/Controllers/View%20Controllers/Part%203%20Questionnaire/MapVC/ActivitiesLocationManagerViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
                   offsetFromSymbolStart = "650">
                </Location>
             </Locations>
@@ -760,7 +744,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "21060D6C-D011-44C0-80D6-33A12EF03C18"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/MapVC/ActivitiesLocationManagerViewController.swift"
@@ -776,7 +760,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "33C21711-214A-4950-898C-F2EF8D276B60"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/MapVC/ActivitiesLocationManagerViewController.swift"
@@ -801,6 +785,102 @@
             startingLineNumber = "101"
             endingLineNumber = "101"
             landmarkName = "loadMapPins()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DDC1217A-C8E2-46DD-AF2B-FAA3BC27E8C6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "saveActivities()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41910BA0-46E3-47E5-91D3-6AD2E5E26458"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "417"
+            endingLineNumber = "417"
+            landmarkName = "droppedPin(title:mapDay:mapActivities:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2002378D-BA13-4262-B507-AE75B8E253C4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
+            landmarkName = "droppedPin(title:mapDay:mapActivities:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28174BF9-AD91-463D-BE63-072815FD882B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "406"
+            endingLineNumber = "406"
+            landmarkName = "droppedPin(title:mapDay:mapActivities:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F91D28C-6581-4BA4-8C0C-9D30CC874197"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
+            landmarkName = "droppedPin(title:mapDay:mapActivities:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1F5C998-0F9A-4060-927D-0BA01D9D1FCD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Va-cay/Controllers/View Controllers/Part 3 Questionnaire/TripQuestionnairePartThreeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "previousDay()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

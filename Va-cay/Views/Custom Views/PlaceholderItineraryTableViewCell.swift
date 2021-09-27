@@ -9,28 +9,25 @@ import UIKit
 import Lottie
 
 class PlaceholderItineraryTableViewCell: UITableViewCell {
+    
     // MARK: - Outlets
     @IBOutlet weak var animationView: AnimationView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        animationView.transform = CGAffineTransform(rotationAngle: 4.7)
-        setupAnimation()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    //MARK: - Properties
+    var indexPath: Int? {
+        didSet {
+            setupAnimation()
+        }
     }
     
+    //MARK: - Functions
     func setupAnimation() {
         let planeAnimation = Animation.named("arrow")
         animationView.animation = planeAnimation
+        animationView.transform = CGAffineTransform(rotationAngle: 4.7)
         animationView.loopMode = .loop
         animationView.animationSpeed = 0.7
         animationView.play()
     }
 
-}
+}//End of class
