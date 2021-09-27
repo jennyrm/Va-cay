@@ -116,12 +116,13 @@ class ActivitiesLocationManagerViewController: UIViewController {
     func saveMapAnnotations() {
         guard let day = day else { return }
         
+        //breaks creating itineraries
 //        activitiesCoordinates = []
         
-        for annotation in mapView.annotations {
-            activitiesCoordinates.append([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ])
-        }
-        
+//        for annotation in mapView.annotations {
+//            activitiesCoordinates.append([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ])
+//        }
+
         ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] = activitiesCoordinates
     }
     
