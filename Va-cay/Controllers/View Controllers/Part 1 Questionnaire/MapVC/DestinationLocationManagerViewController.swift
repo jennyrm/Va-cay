@@ -35,10 +35,6 @@ class DestinationLocationManagerViewController: UIViewController {
         saveMapAnnotations()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupAnimation()
@@ -62,9 +58,7 @@ class DestinationLocationManagerViewController: UIViewController {
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Where to?"
-//        searchBar.backgroundColor = Colors.mapBackgroundColor
         navigationItem.searchController = resultSearchController
-//        navigationController?.navigationBar.barTintColor = Colors.mapBackgroundColor
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.obscuresBackgroundDuringPresentation = true

@@ -116,7 +116,7 @@ class ActivitiesLocationManagerViewController: UIViewController {
     func saveMapAnnotations() {
         guard let day = day else { return }
         
-        activitiesCoordinates = []
+//        activitiesCoordinates = []
         
         for annotation in mapView.annotations {
             activitiesCoordinates.append([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ])
