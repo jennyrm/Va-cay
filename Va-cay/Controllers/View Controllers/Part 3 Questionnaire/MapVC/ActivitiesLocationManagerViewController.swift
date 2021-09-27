@@ -23,7 +23,7 @@ class ActivitiesLocationManagerViewController: UIViewController {
     var selectedPin: MKPlacemark?
     weak var mapPinDelegate: MapPinDropped?
     
-    var day: String? 
+    var day: String?
     var activities: [String]?
     var activitiesCoordinates =  [ [String : [String?? : [Double] ] ] ]()
     
@@ -119,9 +119,17 @@ class ActivitiesLocationManagerViewController: UIViewController {
         //breaks creating itineraries
 //        activitiesCoordinates = []
         
-//        for annotation in mapView.annotations {
-//            activitiesCoordinates.append([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ])
-//        }
+        for annotation in mapView.annotations {
+            activitiesCoordinates.forEach { activityCoordinates in
+                for (key, _) in activityCoordinates {
+                    if key == day {
+                        if !activitiesCoordinates.contains([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ]) {
+                            activitiesCoordinates.append([ day : [annotation.title : [annotation.coordinate.latitude, annotation.coordinate.longitude] ] ])
+                        }
+                    }
+                }
+            }
+        }
 
         ItineraryController.sharedInstance.itineraryData["activitiesCoordinates"] = activitiesCoordinates
     }
