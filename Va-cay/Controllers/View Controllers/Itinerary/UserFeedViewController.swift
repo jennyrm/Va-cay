@@ -186,3 +186,4 @@ extension UserFeedViewController: sortByTableViewCellDelegate {
         self.tableView.reloadData()
     }
 }
+
