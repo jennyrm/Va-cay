@@ -194,6 +194,8 @@ extension ItineraryDetailViewController: UITableViewDelegate, UITableViewDataSou
                         for (coordKey, el) in obj {
                             if coordKey != key {
                                 activityCoords?.append([ coordKey : el])
+                            } else {
+                                activityCoords?.append([ coordKey : [:]])
                             }
                         }
                     }
