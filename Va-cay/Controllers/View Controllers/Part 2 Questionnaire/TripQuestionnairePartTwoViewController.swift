@@ -170,7 +170,6 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fill
-        stackView.spacing = 10
         
         self.view.addSubview(label)
         self.view.addSubview(textField)
@@ -225,6 +224,8 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         button.setImage(UIImage(systemName: "square"), for: .normal)
         button.backgroundColor = Colors.textfieldBackgroundColor
         button.tintColor = Colors.textColor
+        button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 30).isActive = true
         button.addTarget(self, action: #selector(checklistButtonTapped), for: .touchUpInside)
         checklistButtons.append(button)
         
@@ -236,8 +237,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         let textFieldButtonStackView = UIStackView()
         textFieldButtonStackView.axis = .horizontal
         textFieldButtonStackView.alignment = .fill
-        
-        textFieldButtonStackView.distribution = .fillProportionally
+        textFieldButtonStackView.distribution = .fill
         textFieldButtonStackView.spacing = 0
         
         self.view.addSubview(button)
@@ -417,7 +417,7 @@ class TripQuestionnairePartTwoViewController: UIViewController {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
-        stackView.spacing = 10
+        stackView.spacing = 8
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
