@@ -194,7 +194,7 @@ class TripQuestionnairePartThreeViewController: UIViewController {
         textFieldButtonStackView.axis = .horizontal
         textFieldButtonStackView.alignment = .fill
         textFieldButtonStackView.distribution = .fillProportionally
-        textFieldButtonStackView.spacing = 10
+//        textFieldButtonStackView.spacing = 10
 
         self.view.addSubview(textField)
         self.view.addSubview(button)
