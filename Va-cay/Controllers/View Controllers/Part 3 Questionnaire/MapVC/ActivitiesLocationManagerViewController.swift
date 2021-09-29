@@ -184,4 +184,3 @@ extension ActivitiesLocationManagerViewController: HandleMapSearch {
     }
     
 }//End of extension
-
